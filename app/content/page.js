@@ -1,11 +1,11 @@
 'use client';
-
+import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
+import NoteEmbed from '@/components/NoteEmbed';
 
 export default function Content() {
-  // URLクエリ ?tab=articles|audio|cards を読む
-  const params = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-  const tab = params?.get('tab') || 'articles';
+  const search = useSearchParams();
+  const tab = search.get('tab') || 'articles';
 
   const tabs = [
     { key:'articles', label:'記事' },
@@ -18,7 +18,7 @@ export default function Content() {
       return (
         <div>
           <h2>音声</h2>
-          <p style={{ color:'#666' }}>ここに音声（ポッドキャスト的）を並べます。</p>
+          <p style={{ color:'#666' }}>ここに音声（ポッドキャスト等）を並べます。</p>
           <audio controls src="" style={{ width:'100%' }} />
         </div>
       );
@@ -27,7 +27,7 @@ export default function Content() {
       return (
         <div>
           <h2>カード（一言メモ）</h2>
-          <div style={{ display:'grid', gap:'0.75rem', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))' }}>
+          <div style={{ display:'grid', gap:'0.75rem', gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))' }}>
             {[1,2,3].map(i => (
               <div key={i} style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'0.9rem' }}>
                 <div style={{ fontWeight:600 }}>カード {i}</div>
@@ -38,16 +38,18 @@ export default function Content() {
         </div>
       );
     }
-    // default: articles
+    // 記事タブ：note埋め込み
     return (
       <div>
-        <h2>記事</h2>
-        <p style={{ color:'#666' }}>ここに記事一覧を並べます（のちほどMDXや外部連携に差し替え）</p>
-        <ul>
-          <li><a href="#">民衆が騒動に加担するまでの道のり</a></li>
-          <li><a href="#">“違い”を受け入れることが世界を変える</a></li>
-          <li><a href="#">フィルター（エゴ）を脇に置く練習</a></li>
-        </ul>
+        <h2 style={{ marginTop:0 }}>記事</h2>
+        <p style={{ color:'#666' }}>外部プラットフォーム（note）で公開中の記事一覧をそのまま埋め込んで表示します。</p>
+
+        <NoteEmbed url="https://note.com/hiracoh" height={1600} />
+
+        <p style={{ color:'#777', fontSize:13, marginTop:'0.5rem' }}>
+          ※ ブラウザやnote側の設定により、埋め込みが表示されない場合があります。
+          その際は上の「直接開く →」リンクからご覧ください。
+        </p>
       </div>
     );
   }, [tab]);
@@ -55,8 +57,6 @@ export default function Content() {
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>コンテンツ</h1>
-
-      {/* タブ */}
       <div style={{ display:'flex', gap:'0.5rem', margin:'0.75rem 0 1rem' }}>
         {tabs.map(t => {
           const active = tab === t.key;
