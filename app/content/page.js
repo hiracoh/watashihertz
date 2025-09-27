@@ -2,20 +2,47 @@ import Parser from 'rss-parser';
 
 // サムネURLを取り出す（なければプレースホルダー）
 function pickThumbnail(item) {
+  // 0) ヘルパー：media系の様々な形からURLを抜く
+  const fromMediaNode = (node) => {
+    if (!node) return null;
+    const first = Array.isArray(node) ? node[0] : node;
+    if (!first) return null;
+    // 形その1: { $: { url: '...' } }
+    if (first.$ && first.$.url) return first.$.url;
+    // 形その2: { url: '...' } or { '@_url': '...' }
+    if (first.url) return first.url;
+    if (first['@_url']) return first['@_url'];
+    // 形その3: 文字列
+    if (typeof first === 'string') return first;
+    return null;
+  };
+
+  // 1) enclosure（画像の場合）
   if (item.enclosure && item.enclosure.url) return item.enclosure.url;
 
-  const mediaThumb = item['media:thumbnail'];
-  if (mediaThumb) {
-    const url = mediaThumb.url || (mediaThumb.$ && mediaThumb.$.url);
-    if (url) return url;
+  // 2) media:thumbnail
+  const mt = fromMediaNode(item['media:thumbnail']);
+  if (mt) return mt;
+
+  // 3) media:content（画像タイプが来ることもある）
+  const mc = fromMediaNode(item['media:content']);
+  if (mc) return mc;
+
+  // 4) HTML本文から <img src="..."> を抽出（content:encoded → description → content）
+  const html =
+    item['content:encoded'] ||
+    item.description ||
+    item.content ||
+    '';
+  if (html) {
+    const m = html.match(/<img[^>]+src=["'](https?:\/\/[^"']+)["']/i);
+    if (m && m[1]) return m[1];
   }
 
-  const html = item['content:encoded'] || item.content || '';
-  const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
-  if (match && match[1]) return match[1];
-
-  return '/map.jpg'; // ← public/map.jpg を用意（軽量JPG）
+  // 5) 何も無ければプレースホルダー
+  return '/map.jpg'; // public/map.jpg（or 名前に合わせて '/map.jpeg' に変更）
 }
+
 
 const FEED_URL = 'https://note.com/hiracoh/rss';
 
