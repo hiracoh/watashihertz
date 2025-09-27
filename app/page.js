@@ -1,11 +1,9 @@
 export default function Home() {
   return (
     <section>
-      <h1 style={{ fontSize: '1.75rem', margin: 0 }}>人間として生きる上での地図</h1>
+      <h1 style={{ fontSize: '1.75rem', margin: 0 }}>human atlas</h1>
       <p style={{ marginTop: '0.75rem', color:'#555' }}>
-        人間という存在・人生の意味を見取り図にして、今この瞬間の選択に活かすための場所。
-        硬くなりがちなテーマを、やわらかい言葉とUIで翻訳して届けます。
-      </p>
+        自分を生きていく上での地図のような場所      </p>
 
       <div style={{
         marginTop:'1.5rem', padding:'1rem', background:'#fff',
