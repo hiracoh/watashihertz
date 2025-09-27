@@ -1,15 +1,23 @@
 import Image from 'next/image';
-import articlesData from '../../data/articles.json'; // ← 相対パス。エイリアス未設定でも確実に動く
+import articlesData from '../../data/articles.json'; // ← 相対パスで安全
+
+// タグ一覧を集めるユーティリティ
+const collectTags = (items) => {
+  const set = new Set();
+  items.forEach(a => (a.tags || []).forEach(t => set.add(t)));
+  return Array.from(set).sort();
+};
 
 // （任意）後付けサマリー辞書：JSONにsummaryが無いときの保険
 const customSummaries = {
-  // "https://note.com/hiracoh/n/xxxxxxxx": "ここにあなたの要約",
   "https://note.com/hiracoh/n/n30bdf42b4dee": "SNSの炎上に見る、現代を生きる人間とは。",
   "https://note.com/hiracoh/n/n4d32a54331e6": "人間って実は…AIだった!?",
 };
 
 export default function Content({ searchParams }) {
-  const tab = (searchParams?.tab || 'articles');
+  const tab = searchParams?.tab || 'articles';
+  const q   = (searchParams?.q || '').trim().toLowerCase();   // 検索キーワード
+  const tag = (searchParams?.tag || '').trim();               // タグ絞り込み
 
   const tabs = [
     { key: 'articles', label: '記事' },
@@ -17,18 +25,39 @@ export default function Content({ searchParams }) {
     { key: 'cards',    label: 'カード' },
   ];
 
+
   // ===== 記事：JSONから作成（新しい順） =====
-  const articles = (articlesData || [])
-    .slice()
-    .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-    .map(item => ({
-      title: item.title,
-      link: item.url,
-      pubDate: item.date,
-      thumb: item.thumb,
-      summary: item.summary || customSummaries[item.url] || '',
-      tags: item.tags || [],
-    }));
+ // JSON → 並び替え
+const all = (articlesData || [])
+  .slice()
+  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+// 検索＆タグでフィルタリング
+let items = all;
+
+if (tag) {
+  items = items.filter(a => (a.tags || []).includes(tag));
+}
+
+if (q) {
+  items = items.filter(a => {
+    const hay = [a.title || '', a.summary || '', (a.tags || []).join(' ')].join(' ').toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+// 最終的に記事配列を作成
+const articles = items.map(item => ({
+  title: item.title,
+  link: item.url,
+  pubDate: item.date,
+  thumb: item.thumb,
+  summary: item.summary || '',
+  tags: item.tags || [],
+}));
+
+// タグ一覧をまとめておく
+const allTags = collectTags(all);
 
   return (
     <section>
@@ -63,6 +92,57 @@ export default function Content({ searchParams }) {
           <p style={{ color:'#666' }}>
             テーマ別に整理した記事の一覧です（クリックで note に移動）。
           </p>
+  {/* ① 検索フォーム */}
+<form action="/content" method="get" style={{ display:'flex', gap:'0.5rem', alignItems:'center' }}>
+  <input type="hidden" name="tab" value="articles" />
+  <input
+    name="q"
+    defaultValue={q}
+    placeholder="キーワード検索（例：嫉妬 / 選択）"
+    style={{ flex:1, padding:'0.55rem 0.75rem', borderRadius:10, border:'1px solid #ddd' }}
+  />
+  <button type="submit" style={{ padding:'0.55rem 0.9rem', borderRadius:10, border:'1px solid #222', background:'#fff' }}>
+    検索
+  </button>
+</form>
+
+{/* ② タグ一覧ピル */}
+<div style={{ display:'flex', gap:'0.5rem', flexWrap:'wrap', margin:'0.75rem 0' }}>
+  {/* 全件リンク */}
+  <a
+    href="/content?tab=articles"
+    style={{
+      fontSize:14, padding:'0.25rem 0.6rem', borderRadius:999,
+      border:'1px solid #ddd', textDecoration:'none',
+      color: tag ? '#222' : '#fff', background: tag ? '#fff' : '#222'
+    }}
+  >
+    すべて
+  </a>
+
+  {/* タグごとのリンク */}
+  {allTags.map(t => (
+    <a
+      key={t}
+      href={`/content?tab=articles&tag=${encodeURIComponent(t)}`}
+      style={{
+        fontSize:14, padding:'0.25rem 0.6rem', borderRadius:999,
+        border:'1px solid #ddd', textDecoration:'none',
+        background: tag === t ? '#222' : '#fff',
+        color: tag === t ? '#fff' : '#222'
+      }}
+    >
+      {t}
+    </a>
+  ))}
+</div>
+
+{/* ③ 件数表示（現在の絞り込み状況） */}
+<div style={{ color:'#777', fontSize:13, margin:'0.25rem 0 0.75rem' }}>
+  {articles.length} 件
+  {tag ? `（タグ: ${tag}）` : ''}{q ? `（検索: ${q}）` : ''}
+</div>
+
 
           <div
             style={{
