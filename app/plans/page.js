@@ -7,10 +7,12 @@ export default function Plans() {
       <div style={{ display:'grid', gap:'1rem', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', marginTop:'1rem' }}>
         <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
           <h2 style={{ marginTop:0 }}>まずは一杯</h2>
+    　　　　　<p>運営者に月に一度<strong>一杯</strong>奢ることができるプラン</p>
+
           <p style={{ margin:'0.25rem 0', color:'#666' }}>¥700 / 月</p>
           <ul>
-  　　　　　 <li>運営者に月に一度<strong>一杯</strong>奢ることができるプラン</li>
-            <li>ついでにすべての<strong>記事</strong>が読める</li>
+    　　　　　  <p><strong>ついでに…</strong></p>
+            <li>すべての<strong>記事</strong>が読める</li>
           </ul>
           <a href="#" style={{ display:'inline-block', marginTop:'0.75rem', padding:'0.5rem 0.9rem',
             borderRadius:8, background:'#222', color:'#fff', textDecoration:'none' }}>このプランにする</a>
@@ -18,9 +20,10 @@ export default function Plans() {
 
         <div style={{ background:'#fff', border:'2px solid #222', borderRadius:12, padding:'1rem' }}>
           <h2 style={{ marginTop:0 }}>チキン南蛮定食</h2>
+          <p>運営者に + <strong>チキン南蛮定食を</strong>ご馳走できるプラン</p>
           <p style={{ margin:'0.25rem 0', color:'#666' }}>¥1,500 / 月</p>
           <ul>
-  　　　　　　<li>運営者に + <strong>チキン南蛮定食を</strong>ご馳走できるプラン</li>
+　　　　　　  <p><strong>ついでに…</strong></p>
             <li>記事 + <strong>音声</strong> + <strong>カード</strong></li>
             <li>（将来）限定アーカイブ、プライベート配信など</li>
           </ul>
