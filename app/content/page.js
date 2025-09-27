@@ -1,5 +1,9 @@
 import Parser from 'rss-parser';
 import Image from 'next/image'; // ← これを追加
+const customSummaries = {
+  // "noteの記事URL": "ここにあなたの要約",
+  // "https://note.com/hiracoh/n/xxxxxxxx": "“違いを受け入れる/受け入れない”の分岐を解剖。",
+};
 
 
 // サムネURLを取り出す（なければプレースホルダー）
@@ -84,6 +88,7 @@ export default async function Content({ searchParams }) {
         excerpt: (item.contentSnippet || '').slice(0, 100),
         pubDate: item.pubDate,
         thumb: pickThumbnail(item),
+        summary: customSummaries[item.link] || '', 
       }));
     } catch (e) {
       rssError = 'RSSの取得に失敗しました。時間をおいて再度お試しください。';
@@ -169,32 +174,34 @@ export default async function Content({ searchParams }) {
 
 
                   {/* テキスト */}
-                  <div style={{ padding:'1rem' }}>
-                    <h3 style={{ margin:'0 0 .25rem', fontSize:'1.05rem', lineHeight:1.35 }}>
-                      {a.title}
-                    </h3>
-                    {a.pubDate && (
-                      <div style={{ color:'#888', fontSize:12, marginBottom:'.35rem' }}>
-                        {new Date(a.pubDate).toLocaleDateString('ja-JP')}
-                      </div>
-                    )}
-                    <a
-                      href={a.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display:'inline-block',
-                        marginTop:'.75rem',
-                        padding:'.5rem .9rem',
-                        borderRadius:8,
-                        background:'#222',
-                        color:'#fff',
-                        textDecoration:'none'
-                      }}
-                    >
-                      noteで読む
-                    </a>
-                  </div>
+                 <div style={{ padding:'1rem' }}>
+  <h3 style={{ margin:'0 0 0.25rem' }}>
+    <a href={a.link} target="_blank" style={{ textDecoration:'none', color:'#222' }}>
+      {a.title}
+    </a>
+  </h3>
+
+  {a.pubDate && (
+    <p style={{ color:'#999', fontSize:12, margin:'0 0 0.5rem' }}>
+      {new Date(a.pubDate).toLocaleDateString()}
+    </p>
+  )}
+
+  {/* サマリーがあれば表示、なければ何も出さない */}
+  {a.summary && (
+    <p style={{ color:'#555', margin:'0 0 0.75rem' }}>{a.summary}</p>
+  )}
+
+  <a href={a.link} target="_blank" rel="noopener"
+    style={{
+      display:'inline-block', padding:'0.4rem 0.8rem',
+      borderRadius:8, background:'#222', color:'#fff',
+      fontSize:14, textDecoration:'none'
+    }}>
+    noteで読む →
+  </a>
+</div>
+
                 </article>
               ))}
             </div>
