@@ -1,4 +1,6 @@
 import Parser from 'rss-parser';
+import Image from 'next/image'; // ← これを追加
+
 
 // サムネURLを取り出す（なければプレースホルダー）
 function pickThumbnail(item) {
@@ -143,25 +145,28 @@ export default async function Content({ searchParams }) {
                   key={a.link}
                   style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, overflow:'hidden' }}
                 >
-                  {/* サムネ（16:9） */}
-                  <div
-                    style={{
-                      position:'relative',
-                      width:'100%',
-                      height:0,
-                      paddingBottom:'56.25%',
-                      background:'#f4f2ed'
-                    }}
-                  >
-                    {a.thumb && (
-                      <img
-                        src={a.thumb}
-                        alt=""
-                        style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}
-                        loading="lazy"
-                      />
-                    )}
-                  </div>
+                 {/* サムネ（16:9） */}
+<div
+  style={{
+    position:'relative',
+    width:'100%',
+    height:0,
+    paddingBottom:'56.25%', // 16:9
+    background:'#f4f2ed'
+  }}
+>
+  {a.thumb && (
+    <Image
+      src={a.thumb}
+      alt=""
+      fill
+      sizes="(max-width: 768px) 100vw, 33vw"
+      style={{ objectFit:'cover' }}
+      loading="lazy"
+    />
+  )}
+</div>
+
 
                   {/* テキスト */}
                   <div style={{ padding:'1rem' }}>
