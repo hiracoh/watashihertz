@@ -178,7 +178,6 @@ export default async function Content({ searchParams }) {
                         {new Date(a.pubDate).toLocaleDateString('ja-JP')}
                       </div>
                     )}
-                    <p style={{ color:'#666', margin:0 }}>{a.excerpt}…</p>
                     <a
                       href={a.link}
                       target="_blank"
