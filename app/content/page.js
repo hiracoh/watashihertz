@@ -1,10 +1,6 @@
-'use client';
-import { useSearchParams } from 'next/navigation';
-import { useMemo } from 'react';
-
-export default function Content() {
-  const search = useSearchParams();
-  const tab = search.get('tab') || 'articles';
+// ★ クライアントフック不要版（サーバーコンポーネント）
+export default function Content({ searchParams }) {
+  const tab = (searchParams?.tab || 'articles');
 
   const tabs = [
     { key: 'articles', label: '記事' },
@@ -12,35 +8,34 @@ export default function Content() {
     { key: 'cards',    label: 'カード' },
   ];
 
-  const body = useMemo(() => {
-    if (tab === 'audio') {
-      return (
-        <div>
-          <h2>音声</h2>
-          <p style={{ color:'#666' }}>ここに音声（ポッドキャスト等）を並べます。</p>
-          <audio controls src="" style={{ width:'100%' }} />
-        </div>
-      );
-    }
-    if (tab === 'cards') {
-      return (
-        <div>
-          <h2>カード（一言メモ）</h2>
-          <div style={{ display:'grid', gap:'0.75rem', gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))' }}>
-            {[1,2,3].map(i => (
-              <div key={i} style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'0.9rem' }}>
-                <div style={{ fontWeight:600 }}>カード {i}</div>
-                <div style={{ color:'#666', marginTop:'0.25rem' }}>“違っても同じでも自分は自分”</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    }
+  const noteUrl = 'https://note.com/hiracoh';
 
-    // ===== 記事タブ：note埋め込み（コンポーネント無しの直書き） =====
-    const noteUrl = 'https://note.com/hiracoh';
-    return (
+  let body = null;
+  if (tab === 'audio') {
+    body = (
+      <div>
+        <h2>音声</h2>
+        <p style={{ color:'#666' }}>ここに音声（ポッドキャスト等）を並べます。</p>
+        <audio controls src="" style={{ width:'100%' }} />
+      </div>
+    );
+  } else if (tab === 'cards') {
+    body = (
+      <div>
+        <h2>カード（一言メモ）</h2>
+        <div style={{ display:'grid', gap:'0.75rem', gridTemplateColumns:'repeat(auto-fit, minmax(220px,1fr))' }}>
+          {[1,2,3].map(i => (
+            <div key={i} style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'0.9rem' }}>
+              <div style={{ fontWeight:600 }}>カード {i}</div>
+              <div style={{ color:'#666', marginTop:'0.25rem' }}>“違っても同じでも自分は自分”</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  } else {
+    // 記事タブ：note埋め込み（表示されない場合は上部リンクから）
+    body = (
       <div>
         <h2 style={{ marginTop:0 }}>記事</h2>
         <p style={{ color:'#666' }}>
@@ -55,7 +50,6 @@ export default function Content() {
               直接開く →
             </a>
           </div>
-
           <iframe
             src={noteUrl}
             style={{ width:'100%', height: 1600, border:0, display:'block' }}
@@ -72,11 +66,13 @@ export default function Content() {
         </p>
       </div>
     );
-  }, [tab]);
+  }
 
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>コンテンツ</h1>
+
+      {/* タブ */}
       <div style={{ display:'flex', gap:'0.5rem', margin:'0.75rem 0 1rem' }}>
         {tabs.map(t => {
           const active = tab === t.key;
@@ -94,6 +90,7 @@ export default function Content() {
           );
         })}
       </div>
+
       {body}
     </section>
   );
