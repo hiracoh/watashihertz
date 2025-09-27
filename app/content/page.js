@@ -1,5 +1,5 @@
-import Parser from 'rss-parser';
-import Image from 'next/image'; // ← これを追加
+import Image from 'next/image'; 
+import articlesData from '@/data/articles.json'
 const customSummaries = {
   // "noteの記事URL": "ここにあなたの要約",
  "https://note.com/hiracoh/n/n30bdf42b4dee": "SNSの炎上に見る、現代を生きる人間とは。",
@@ -7,51 +7,9 @@ const customSummaries = {
 };
 
 
-// サムネURLを取り出す（なければプレースホルダー）
-function pickThumbnail(item) {
-  // 0) ヘルパー：media系の様々な形からURLを抜く
-  const fromMediaNode = (node) => {
-    if (!node) return null;
-    const first = Array.isArray(node) ? node[0] : node;
-    if (!first) return null;
-    // 形その1: { $: { url: '...' } }
-    if (first.$ && first.$.url) return first.$.url;
-    // 形その2: { url: '...' } or { '@_url': '...' }
-    if (first.url) return first.url;
-    if (first['@_url']) return first['@_url'];
-    // 形その3: 文字列
-    if (typeof first === 'string') return first;
-    return null;
-  };
-
-  // 1) enclosure（画像の場合）
-  if (item.enclosure && item.enclosure.url) return item.enclosure.url;
-
-  // 2) media:thumbnail
-  const mt = fromMediaNode(item['media:thumbnail']);
-  if (mt) return mt;
-
-  // 3) media:content（画像タイプが来ることもある）
-  const mc = fromMediaNode(item['media:content']);
-  if (mc) return mc;
-
-  // 4) HTML本文から <img src="..."> を抽出（content:encoded → description → content）
-  const html =
-    item['content:encoded'] ||
-    item.description ||
-    item.content ||
-    '';
-  if (html) {
-    const m = html.match(/<img[^>]+src=["'](https?:\/\/[^"']+)["']/i);
-    if (m && m[1]) return m[1];
-  }
-
-  // 5) 何も無ければプレースホルダー
-  return '/map.jpg'; // public/map.jpg（or 名前に合わせて '/map.jpeg' に変更）
-}
 
 
-const FEED_URL = 'https://note.com/hiracoh/rss';
+
 
 // サーバーコンポーネント版（useSearchParams不要）
 export default async function Content({ searchParams }) {
@@ -65,37 +23,17 @@ export default async function Content({ searchParams }) {
 
   // 記事タブ：RSS取得
   let articles = [];
-  let rssError = null;
-  if (tab === 'articles') {
-    try {
-      const parser = new Parser({
-  timeout: 10000,
-  headers: { 'User-Agent': 'watashihertz-site/1.0 (+https://watashihertz.vercel.app)' },
-  customFields: {
-    item: [
-      ['media:thumbnail', 'media:thumbnail', { keepArray: true }],
-      ['media:content', 'media:content', { keepArray: true }],
-      ['content:encoded', 'content:encoded'],
-      ['description', 'description'],
-      ['enclosure', 'enclosure']
-    ]
-  }
-});
-
-      const feed = await parser.parseURL(FEED_URL);
-      articles = (feed.items || []).slice(0, 12).map(item => ({
-        title: item.title,
-        link: item.link,
-        excerpt: (item.contentSnippet || '').slice(0, 100),
-        pubDate: item.pubDate,
-        thumb: pickThumbnail(item),
-        summary: customSummaries[item.link] || '', 
-      }));
-    } catch (e) {
-      rssError = 'RSSの取得に失敗しました。時間をおいて再度お試しください。';
-    }
-  }
-
+  const articles = (articlesData || [])
+  .slice()
+  .sort((a, b) => (b.date || '').localeCompare(a.date || '')) // 新しい順
+  .map(item => ({
+    title: item.title,
+    link: item.url,       // note等へのリンク
+    pubDate: item.date,
+    thumb: item.thumb,    // JSONのthumbをそのまま
+    summary: item.summary || '',
+    tags: item.tags || [],
+  }));
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>コンテンツ</h1>
@@ -130,15 +68,7 @@ export default async function Content({ searchParams }) {
             noteの最新記事を自動で一覧表示します（クリックでnoteに移動）。
           </p>
 
-          {rssError ? (
-            <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem', color:'#a00' }}>
-              {rssError}{' '}
-              <a href="https://note.com/hiracoh" target="_blank" rel="noopener noreferrer">
-                noteを直接開く →
-              </a>
-            </div>
-          ) : (
-            <div
+              <div
               style={{
                 display:'grid',
                 gap:'1rem',
