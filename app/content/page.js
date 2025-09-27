@@ -1,16 +1,15 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { useMemo } from 'react';
-import NoteEmbed from '@/components/NoteEmbed';
 
 export default function Content() {
   const search = useSearchParams();
   const tab = search.get('tab') || 'articles';
 
   const tabs = [
-    { key:'articles', label:'記事' },
-    { key:'audio',    label:'音声' },
-    { key:'cards',    label:'カード' },
+    { key: 'articles', label: '記事' },
+    { key: 'audio',    label: '音声' },
+    { key: 'cards',    label: 'カード' },
   ];
 
   const body = useMemo(() => {
@@ -38,17 +37,38 @@ export default function Content() {
         </div>
       );
     }
-    // 記事タブ：note埋め込み
+
+    // ===== 記事タブ：note埋め込み（コンポーネント無しの直書き） =====
+    const noteUrl = 'https://note.com/hiracoh';
     return (
       <div>
         <h2 style={{ marginTop:0 }}>記事</h2>
-        <p style={{ color:'#666' }}>外部プラットフォーム（note）で公開中の記事一覧をそのまま埋め込んで表示します。</p>
+        <p style={{ color:'#666' }}>
+          外部プラットフォーム（note）の記事一覧を埋め込み表示しています。
+          表示されない場合は「直接開く」からご覧ください。
+        </p>
 
-        <NoteEmbed url="https://note.com/hiracoh" height={1600} />
+        <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, overflow:'hidden' }}>
+          <div style={{ padding:'0.75rem 1rem', borderBottom:'1px solid #eee', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+            <div style={{ fontWeight:600 }}>note（外部）</div>
+            <a href={noteUrl} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'#222' }}>
+              直接開く →
+            </a>
+          </div>
+
+          <iframe
+            src={noteUrl}
+            style={{ width:'100%', height: 1600, border:0, display:'block' }}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            title="note embed"
+          />
+        </div>
 
         <p style={{ color:'#777', fontSize:13, marginTop:'0.5rem' }}>
           ※ ブラウザやnote側の設定により、埋め込みが表示されない場合があります。
-          その際は上の「直接開く →」リンクからご覧ください。
+          その際は上の「直接開く →」からご覧ください。
         </p>
       </div>
     );
@@ -74,7 +94,6 @@ export default function Content() {
           );
         })}
       </div>
-
       {body}
     </section>
   );
