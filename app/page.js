@@ -8,12 +8,12 @@ export default function Home() {
       </div>
 
       <h1 style={{ fontSize:'1.9rem', margin:0 }}>life atlas</h1>
-      <p style={{ margin:'0.25rem 0 0.75rem', color:'#555', whiteSpace:'pre-line'  }}>
-        自分を生きる上での、地図のような場所を。
+      <p style={{ margin:'0.25rem 0 0.75rem', color:'#555', whiteSpace:'pre-line' }}>
+  {`自分を生きる上での、地図のような場所を。
 
-        ここには地図があります。生きている地図です。
-        過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。
-      </p>
+ここには地図があります。生きている地図です。
+過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
+</p>
 
       <div style={{ display:'flex', gap:'0.75rem', flexWrap:'wrap' }}>
         <a href="/plans" style={btnPrimary}>プランを見る</a>
