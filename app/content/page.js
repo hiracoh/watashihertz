@@ -1,18 +1,14 @@
-import Image from 'next/image'; 
-import articlesData from '@/data/articles.json'
+import Image from 'next/image';
+import articlesData from '../../data/articles.json'; // ← 相対パス。エイリアス未設定でも確実に動く
+
+// （任意）後付けサマリー辞書：JSONにsummaryが無いときの保険
 const customSummaries = {
-  // "noteの記事URL": "ここにあなたの要約",
- "https://note.com/hiracoh/n/n30bdf42b4dee": "SNSの炎上に見る、現代を生きる人間とは。",
- "https://note.com/hiracoh/n/n4d32a54331e6": "人間って実は…AIだった!?",
+  // "https://note.com/hiracoh/n/xxxxxxxx": "ここにあなたの要約",
+  "https://note.com/hiracoh/n/n30bdf42b4dee": "SNSの炎上に見る、現代を生きる人間とは。",
+  "https://note.com/hiracoh/n/n4d32a54331e6": "人間って実は…AIだった!?",
 };
 
-
-
-
-
-
-// サーバーコンポーネント版（useSearchParams不要）
-export default async function Content({ searchParams }) {
+export default function Content({ searchParams }) {
   const tab = (searchParams?.tab || 'articles');
 
   const tabs = [
@@ -21,19 +17,19 @@ export default async function Content({ searchParams }) {
     { key: 'cards',    label: 'カード' },
   ];
 
-  // 記事タブ：RSS取得
-  let articles = [];
+  // ===== 記事：JSONから作成（新しい順） =====
   const articles = (articlesData || [])
-  .slice()
-  .sort((a, b) => (b.date || '').localeCompare(a.date || '')) // 新しい順
-  .map(item => ({
-    title: item.title,
-    link: item.url,       // note等へのリンク
-    pubDate: item.date,
-    thumb: item.thumb,    // JSONのthumbをそのまま
-    summary: item.summary || '',
-    tags: item.tags || [],
-  }));
+    .slice()
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+    .map(item => ({
+      title: item.title,
+      link: item.url,
+      pubDate: item.date,
+      thumb: item.thumb,
+      summary: item.summary || customSummaries[item.url] || '',
+      tags: item.tags || [],
+    }));
+
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>コンテンツ</h1>
@@ -60,83 +56,87 @@ export default async function Content({ searchParams }) {
         })}
       </div>
 
-      {/* 本体：記事 */}
+      {/* ===== 本体：記事 ===== */}
       {tab === 'articles' && (
         <div>
           <h2 style={{ marginTop:0 }}>記事</h2>
           <p style={{ color:'#666' }}>
-            noteの最新記事を自動で一覧表示します（クリックでnoteに移動）。
+            テーマ別に整理した記事の一覧です（クリックで note に移動）。
           </p>
 
-              <div
-              style={{
-                display:'grid',
-                gap:'1rem',
-                gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))',
-                marginTop:'1rem'
-              }}
-            >
-              {articles.map(a => (
-                <article
-                  key={a.link}
-                  style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, overflow:'hidden' }}
+          <div
+            style={{
+              display:'grid',
+              gap:'1rem',
+              gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))',
+              marginTop:'1rem'
+            }}
+          >
+            {articles.map(a => (
+              <article
+                key={a.link}
+                style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, overflow:'hidden' }}
+              >
+                {/* サムネ（16:9） */}
+                <div
+                  style={{
+                    position:'relative',
+                    width:'100%',
+                    height:0,
+                    paddingBottom:'56.25%', // 16:9
+                    background:'#f4f2ed'
+                  }}
                 >
-                 {/* サムネ（16:9） */}
-<div
-  style={{
-    position:'relative',
-    width:'100%',
-    height:0,
-    paddingBottom:'56.25%', // 16:9
-    background:'#f4f2ed'
-  }}
->
-  {a.thumb && (
-    <Image
-      src={a.thumb}
-      alt=""
-      fill
-      sizes="(max-width: 768px) 100vw, 33vw"
-      style={{ objectFit:'cover' }}
-      loading="lazy"
-    />
-  )}
-</div>
+                  {a.thumb && (
+                    <Image
+                      src={a.thumb}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ objectFit:'cover' }}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
 
+                {/* テキスト */}
+                <div style={{ padding:'1rem' }}>
+                  <h3 style={{ margin:'0 0 0.25rem' }}>
+                    <a href={a.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none', color:'#222' }}>
+                      {a.title}
+                    </a>
+                  </h3>
 
-                  {/* テキスト */}
-                 <div style={{ padding:'1rem' }}>
-  <h3 style={{ margin:'0 0 0.25rem' }}>
-    <a href={a.link} target="_blank" style={{ textDecoration:'none', color:'#222' }}>
-      {a.title}
-    </a>
-  </h3>
+                  {a.pubDate && (
+                    <p style={{ color:'#999', fontSize:12, margin:'0 0 0.5rem' }}>
+                      {new Date(a.pubDate).toLocaleDateString('ja-JP')}
+                    </p>
+                  )}
 
-  {a.pubDate && (
-    <p style={{ color:'#999', fontSize:12, margin:'0 0 0.5rem' }}>
-      {new Date(a.pubDate).toLocaleDateString()}
-    </p>
-  )}
+                  {a.summary && (
+                    <p style={{ color:'#555', margin:'0 0 0.75rem' }}>{a.summary}</p>
+                  )}
 
-  {/* サマリーがあれば表示、なければ何も出さない */}
-  {a.summary && (
-    <p style={{ color:'#555', margin:'0 0 0.75rem' }}>{a.summary}</p>
-  )}
-
-  <a href={a.link} target="_blank" rel="noopener"
-    style={{
-      display:'inline-block', padding:'0.4rem 0.8rem',
-      borderRadius:8, background:'#222', color:'#fff',
-      fontSize:14, textDecoration:'none'
-    }}>
-    noteで読む →
-  </a>
-</div>
-
-                </article>
-              ))}
-            </div>
-          )}
+                  <a
+                    href={a.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display:'inline-block',
+                      padding:'0.4rem 0.8rem',
+                      borderRadius:8,
+                      background:'#222',
+                      color:'#fff',
+                      fontSize:14,
+                      textDecoration:'none'
+                    }}
+                  >
+                    noteで読む →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
 
           <p style={{ color:'#777', fontSize:13, marginTop:'0.75rem' }}>
             すべての記事：{' '}
@@ -147,7 +147,7 @@ export default async function Content({ searchParams }) {
         </div>
       )}
 
-      {/* 本体：音声 */}
+      {/* ===== 本体：音声 ===== */}
       {tab === 'audio' && (
         <div>
           <h2>音声</h2>
@@ -156,7 +156,7 @@ export default async function Content({ searchParams }) {
         </div>
       )}
 
-      {/* 本体：カード */}
+      {/* ===== 本体：カード ===== */}
       {tab === 'cards' && (
         <div>
           <h2>カード（一言メモ）</h2>
