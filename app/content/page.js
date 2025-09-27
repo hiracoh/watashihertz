@@ -38,6 +38,7 @@ export default async function Content({ searchParams }) {
         link: item.link,
         excerpt: (item.contentSnippet || '').slice(0, 100),
         pubDate: item.pubDate,
+        thumb: pickThumbnail(item), 
       }));
     } catch (e) {
       rssError = 'RSSの取得に失敗しました。時間をおいて再度お試しください。';
@@ -91,37 +92,62 @@ export default async function Content({ searchParams }) {
       )}
 
       {tab === 'articles' && (
-        <div>
-          <h2 style={{ marginTop:0 }}>記事</h2>
-          <p style={{ color:'#666' }}>
-            noteの最新記事を自動で一覧表示します（クリックでnoteに移動）。
-          </p>
+  <div>
+    <h2 style={{ marginTop:0 }}>記事</h2>
+    <p style={{ color:'#666' }}>
+      noteの最新記事を自動で一覧表示します（クリックでnoteに移動）。
+    </p>
 
-          {rssError ? (
-            <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem', color:'#a00' }}>
-              {rssError} <a href="https://note.com/hiracoh" target="_blank" rel="noopener noreferrer">noteを直接開く →</a>
+    {rssError ? (
+      <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem', color:'#a00' }}>
+        {rssError} <a href="https://note.com/hiracoh" target="_blank" rel="noopener noreferrer">noteを直接開く →</a>
+      </div>
+    ) : (
+      <div style={{ display:'grid', gap:'1rem', gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))', marginTop:'1rem' }}>
+        {articles.map(a => (
+          <article key={a.link} style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, overflow:'hidden' }}>
+            {/* サムネイル（16:9） */}
+            <div style={{ position:'relative', width:'100%', height:0, paddingBottom:'56.25%', background:'#f4f2ed' }}>
+              {a.thumb && (
+                <img
+                  src={a.thumb}
+                  alt=""
+                  style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover' }}
+                  loading="lazy"
+                />
+              )}
             </div>
-          ) : (
-            <div style={{ display:'grid', gap:'1rem', gridTemplateColumns:'repeat(auto-fit, minmax(280px,1fr))', marginTop:'1rem' }}>
-              {articles.map(a => (
-                <article key={a.link} style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
-                  <h3 style={{ margin:'0 0 .25rem', fontSize:'1.05rem', lineHeight:1.35 }}>{a.title}</h3>
-                  <p style={{ color:'#666', margin:0 }}>{a.excerpt}…</p>
-                  <a href={a.link} target="_blank" rel="noopener noreferrer"
-                     style={{ display:'inline-block', marginTop:'.75rem', padding:'.5rem .9rem',
-                              borderRadius:8, background:'#222', color:'#fff', textDecoration:'none' }}>
-                    noteで読む
-                  </a>
-                </article>
-              ))}
-            </div>
-          )}
 
-          <p style={{ color:'#777', fontSize:13, marginTop:'0.75rem' }}>
-            すべての記事：<a href="https://note.com/hiracoh" target="_blank" rel="noopener noreferrer">noteプロフィール</a>
-          </p>
-        </div>
-      )}
-    </section>
-  );
-}
+            {/* テキストエリア */}
+            <div style={{ padding:'1rem' }}>
+              <h3 style={{ margin:'0 0 .25rem', fontSize:'1.05rem', lineHeight:1.35 }}>
+                {a.title}
+              </h3>
+              {a.pubDate && (
+                <div style={{ color:'#888', fontSize:12, marginBottom:'.35rem' }}>
+                  {new Date(a.pubDate).toLocaleDateString('ja-JP')}
+                </div>
+              )}
+              <p style={{ color:'#666', margin:0 }}>{a.excerpt}…</p>
+              <a
+                href={a.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display:'inline-block', marginTop:'.75rem', padding:'.5rem .9rem',
+                  borderRadius:8, background:'#222', color:'#fff', textDecoration:'none'
+                }}
+              >
+                noteで読む
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+
+    <p style={{ color:'#777', fontSize:13, marginTop:'0.75rem' }}>
+      すべての記事：<a href="https://note.com/hiracoh" target="_blank" rel="noopener noreferrer">noteプロフィール</a>
+    </p>
+  </div>
+)}
