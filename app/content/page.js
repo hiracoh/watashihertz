@@ -34,7 +34,20 @@ export default async function Content({ searchParams }) {
   let rssError = null;
   if (tab === 'articles') {
     try {
-      const parser = new Parser();
+      const parser = new Parser({
+  timeout: 10000,
+  headers: { 'User-Agent': 'watashihertz-site/1.0 (+https://watashihertz.vercel.app)' },
+  customFields: {
+    item: [
+      ['media:thumbnail', 'media:thumbnail', { keepArray: true }],
+      ['media:content', 'media:content', { keepArray: true }],
+      ['content:encoded', 'content:encoded'],
+      ['description', 'description'],
+      ['enclosure', 'enclosure']
+    ]
+  }
+});
+
       const feed = await parser.parseURL(FEED_URL);
       articles = (feed.items || []).slice(0, 12).map(item => ({
         title: item.title,
