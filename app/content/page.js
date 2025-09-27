@@ -2,7 +2,7 @@ import Parser from 'rss-parser';
 import Image from 'next/image'; // ← これを追加
 const customSummaries = {
   // "noteの記事URL": "ここにあなたの要約",
-  // "https://note.com/hiracoh/n/xxxxxxxx": "“違いを受け入れる/受け入れない”の分岐を解剖。",
+  // "https://note.com/hiracoh/n/n30bdf42b4dee": "“SNSの炎上に見る、現代を生きる人間とは。",
 };
 
 
