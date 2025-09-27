@@ -6,7 +6,7 @@ export default function Plans() {
 
       <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>とりあえず一杯</h2>
-  <p>運営者を<strong>「まあ一杯どうぞ」</strong>とねぎらえるプラン</p>
+  <p>運営者を<strong>「まあ一杯」</strong>とねぎらえるプラン</p>
   <p style={{ margin:'0.25rem 0', color:'#666' }}>¥700 / 月</p>
 
   <div style={{
