@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <section style={{ display:'grid', gap:'1.25rem' }}>
       <div style={{ position:'relative', width:'100%', height: 260, borderRadius:16, overflow:'hidden', border:'1px solid #eee' }}>
-        <Image src="/map.jpeg" alt="ワタシヘルツ" fill style={{ objectFit:'cover' }} priority />
+        <Image src="/map.jpg" alt="ワタシヘルツ" fill style={{ objectFit:'cover' }} priority />
       </div>
 
       <h1 style={{ fontSize:'1.9rem', margin:0 }}>life atlas</h1>
