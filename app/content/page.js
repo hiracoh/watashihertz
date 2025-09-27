@@ -1,6 +1,20 @@
 // サーバーコンポーネント版（useSearchParams不要）
 import Parser from 'rss-parser';
+function pickThumbnail(item) {
+  if (item.enclosure && item.enclosure.url) return item.enclosure.url;
 
+  const mediaThumb = item['media:thumbnail'];
+  if (mediaThumb) {
+    const url = mediaThumb.url || (mediaThumb.$ && mediaThumb.$.url);
+    if (url) return url;
+  }
+
+  const html = item['content:encoded'] || item.content || '';
+  const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+  if (match && match[1]) return match[1];
+
+  return '/map.jpg'; // プレースホルダー（public/map.jpg など）
+}
 const FEED_URL = 'https://note.com/hiracoh/rss';
 
 export default async function Content({ searchParams }) {
