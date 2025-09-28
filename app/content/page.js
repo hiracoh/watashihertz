@@ -29,9 +29,9 @@ export default function Content({ searchParams }) {
   // ===== 記事：JSONから作成（新しい順） =====
  // JSON → 並び替え
 const all = (articlesData || [])
-  .slice()
-  .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-
+   .filter(a => !a.featured)                // ← ガイドを除外
+   .slice()
+   .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 // 検索＆タグでフィルタリング
 let items = all;
 
