@@ -1,16 +1,19 @@
 [
   {
     "id": "2025-09-28-life-map-guide",
-    "title": "地図の使い方",
+    "title": "このサイト（地図）の歩き方",
     "url": "/guide",
     "date": "2025-09-28",
     "thumb": "/map.jpg",
-    "tags": ["地図の使い方"],
-    "summary": "地図のコンセプトと使い方",
+    "tags": ["使い方", "ガイド", "地図"],
+    "summary": "「記事 → タグ検索 → カード」で現在地に合う視点を見つける最短ルート。2行目にしたい場合は\\nを使います。",
     "plan": "700",
     "type": "article",
     "featured": true
   }
+]
+
+ [ 
 {
     "id": "jealousy-structure-001",
     "title": "自分などいない世界で",
