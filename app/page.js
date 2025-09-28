@@ -1,5 +1,5 @@
 import Image from "next/image";
-import articles from "../data/articles.json"; // 相対パスで安全
+import articles from "../data/articles.json";
 
 // ボタンスタイル
 const btnPrimary = {
@@ -20,7 +20,7 @@ const btnGhost = {
   background: "#fff",
 };
 
-// ガイド用の最小カード
+// 最小カード
 function ArticleCardInline({ a }) {
   return (
     <article style={{ border: "1px solid #eee", borderRadius: 16, padding: 16, background: "#fff" }}>
@@ -33,16 +33,7 @@ function ArticleCardInline({ a }) {
           />
         )}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <h3
-            style={{
-              margin: "0 0 4px",
-              fontSize: 16,
-              fontWeight: 600,
-              whiteSpace: "nowrap",
-              textOverflow: "ellipsis",
-              overflow: "hidden",
-            }}
-          >
+          <h3 style={{ margin: "0 0 4px", fontSize: 16, fontWeight: 600, whiteSpace: "nowrap", textOverflow: "ellipsis", overflow: "hidden" }}>
             {a.title}
             {a.featured && (
               <span
@@ -61,21 +52,12 @@ function ArticleCardInline({ a }) {
           </h3>
           {a.summary && <p style={{ margin: 0, opacity: 0.7, fontSize: 14 }}>{a.summary}</p>}
           <div style={{ marginTop: 8, display: "flex", gap: 8, fontSize: 12, opacity: 0.7 }}>
-            {a.date && <time>{a.date}</time>}
-            {a.date && <span>·</span>}
+            <time>{a.date}</time>
+            <span>·</span>
             <span>{(a.tags || []).join(" / ")}</span>
           </div>
           <div style={{ marginTop: 12 }}>
-            <a
-              href={a.url}
-              style={{
-                padding: "8px 12px",
-                border: "1px solid #333",
-                borderRadius: 12,
-                fontSize: 14,
-                textDecoration: "none",
-              }}
-            >
+            <a href={a.url} style={{ padding: "8px 12px", border: "1px solid #333", borderRadius: 12, fontSize: 14, textDecoration: "none" }}>
               記事を読む
             </a>
           </div>
@@ -102,7 +84,17 @@ export default function Home() {
             border: "1px solid #eee",
           }}
         >
+          {/* 画像 */}
           <Image src="/map.jpg" alt="ワタシヘルツ" fill style={{ objectFit: "cover" }} priority />
+
+          {/* オーバーレイ（やわらかグラデーション） */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.7))",
+            }}
+          />
         </div>
 
         <h1 style={{ fontSize: "1.9rem", margin: 0, textAlign: "center" }}>life atlas</h1>
@@ -120,19 +112,11 @@ export default function Home() {
           自分を生きる上での、地図のような場所を。
         </p>
 
-        <p
-          style={{
-            margin: "0.25rem 0 0.75rem",
-            color: "#555",
-            whiteSpace: "pre-line",
-            textAlign: "center",
-          }}
-        >
+        <p style={{ margin: "0.25rem 0 0.75rem", color: "#555", whiteSpace: "pre-line", textAlign: "center" }}>
           {`ここには地図があります。生きている地図です。
 過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
         </p>
 
-        {/* ボタン：中央寄せ、プラン＋コンテンツ両方復活 */}
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="/plans" style={btnPrimary}>
             プランを見る
@@ -143,10 +127,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- ガイド固定表示（リンクは削除済み） --- */}
+      {/* --- ガイド固定表示（featuredのみ） --- */}
       {featured && (
         <section style={{ marginTop: 24 }}>
-          <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
+          <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
           <div style={{ marginTop: 12 }}>
             <ArticleCardInline a={featured} />
           </div>
