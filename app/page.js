@@ -10,6 +10,15 @@ const btnPrimary = {
   color: "#fff",
   textDecoration: "none",
 };
+const btnGhost = {
+  display: "inline-block",
+  padding: "0.6rem 1rem",
+  borderRadius: 12,
+  border: "1px solid #222",
+  textDecoration: "none",
+  color: "#222",
+  background: "#fff",
+};
 
 // ガイド用の最小カード
 function ArticleCardInline({ a }) {
@@ -123,15 +132,18 @@ export default function Home() {
 過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
         </p>
 
-        {/* ボタンは中央寄せ／「コンテンツへ」は削除 */}
+        {/* ボタン：中央寄せ、プラン＋コンテンツ両方復活 */}
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="/plans" style={btnPrimary}>
             プランを見る
           </a>
+          <a href="/content" style={btnGhost}>
+            コンテンツへ
+          </a>
         </div>
       </section>
 
-      {/* --- ガイド固定表示（featuredのみ、横リンク削除） --- */}
+      {/* --- ガイド固定表示（リンクは削除済み） --- */}
       {featured && (
         <section style={{ marginTop: 24 }}>
           <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
