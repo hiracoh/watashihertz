@@ -1,5 +1,21 @@
 [
   {
+    "id": "2025-09-28-life-map-guide",
+    "title": "地図の使い方",
+    "url": "/guide",
+    "date": "2025-09-28",
+    "thumb": "/map.jpg",
+    "tags": ["],
+    "summary": "地図のコンセプトと使い方",
+    "plan": "700",
+    "type": "article",
+    "featured": true
+  }
+  // ...他の記事があれば続けてOK
+]
+[
+  
+  {
     "id": "jealousy-structure-001",
     "title": "自分などいない世界で",
     "summary": "人間って実は…AIだった!?",
