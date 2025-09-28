@@ -1,33 +1,104 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-export default function Home() {
+export const runtime = "nodejs"; // fsを使うためNodeランタイムで実行
+
+import { promises as fs } from "fs";
+import path from "path";
+
+// このファイル内に最小のカードUIを内蔵（外部コンポーネント不要）
+function ArticleCardInline({ a }) {
   return (
-    <section style={{ display:'grid', gap:'1.25rem' }}>
-      <div style={{ position:'relative', width:'100%', height: 260, borderRadius:16, overflow:'hidden', border:'1px solid #eee' }}>
-        <Image src="/map.jpg" alt="ワタシヘルツ" fill style={{ objectFit:'cover' }} priority />
+    <article style={{ border:"1px solid #eee", borderRadius:16, padding:16, background:"#fff" }}>
+      <div style={{ display:"flex", gap:12 }}>
+        {a.thumb && (
+          <img
+            src={a.thumb}
+            alt=""
+            style={{ width:96, height:96, objectFit:"cover", borderRadius:12, border:"1px solid #eee" }}
+          />
+        )}
+        <div style={{ flex:1, minWidth:0 }}>
+          <h3 style={{ margin:"0 0 4px", fontSize:16, fontWeight:600, whiteSpace:"nowrap", textOverflow:"ellipsis", overflow:"hidden" }}>
+            {a.title}
+            {a.featured && (
+              <span style={{ marginLeft:8, fontSize:11, padding:"2px 8px", border:"1px solid #ddd", borderRadius:999, verticalAlign:"middle" }}>
+                ガイド
+              </span>
+            )}
+          </h3>
+          {a.summary && <p style={{ margin:0, opacity:0.7, fontSize:14 }}>{a.summary}</p>}
+          <div style={{ marginTop:8, display:"flex", gap:8, fontSize:12, opacity:0.7 }}>
+            <time>{a.date}</time>
+            <span>·</span>
+            <span>{(a.tags || []).join(" / ")}</span>
+          </div>
+          <div style={{ marginTop:12 }}>
+            <a href={a.url} style={{ padding:"8px 12px", border:"1px solid #333", borderRadius:12, fontSize:14, textDecoration:"none" }}>
+              記事を読む
+            </a>
+          </div>
+        </div>
       </div>
-
-      <h1 style={{ fontSize:'1.9rem', margin:0 }}>life atlas</h1>
-      <p style={{ margin:'0.25rem 0 0.75rem', color:'#555', whiteSpace:'pre-line' }}>
-  {`自分を生きる上での、地図のような場所を。
-
-ここには地図があります。生きている地図です。
-過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
-</p>
-
-      <div style={{ display:'flex', gap:'0.75rem', flexWrap:'wrap' }}>
-        <a href="/plans" style={btnPrimary}>プランを見る</a>
-        <a href="/content" style={btnGhost}>コンテンツへ</a>
-      </div>
-    </section>
+    </article>
   );
 }
 
+// ボタンスタイル（あなたの既存のまま）
 const btnPrimary = {
-  display:'inline-block', padding:'0.6rem 1rem', borderRadius:12,
-  background:'#222', color:'#fff', textDecoration:'none'
+  display:"inline-block", padding:"0.6rem 1rem", borderRadius:12,
+  background:"#222", color:"#fff", textDecoration:"none"
 };
 const btnGhost = {
-  display:'inline-block', padding:'0.6rem 1rem', borderRadius:12,
-  border:'1px solid #222', textDecoration:'none', color:'#222', background:'#fff'
+  display:"inline-block", padding:"0.6rem 1rem", borderRadius:12,
+  border:"1px solid #222", textDecoration:"none", color:"#222", background:"#fff"
 };
+
+// /data/articles.json から記事を取得（新しい順）
+async function getArticles() {
+  const file = path.join(process.cwd(), "data", "articles.json");
+  const json = await fs.readFile(file, "utf-8");
+  const list = JSON.parse(json);
+  return list.sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export default async function Home() {
+  const articles = await getArticles();
+  const featured = articles.find(a => a.featured); // ★ トップ固定表示のガイド
+
+  return (
+    <main style={{ maxWidth:768, margin:"0 auto", padding:"40px 16px" }}>
+      {/* ヒーロー（既存セクション） */}
+      <section style={{ display:"grid", gap:"1.25rem" }}>
+        <div style={{ position:"relative", width:"100%", height:260, borderRadius:16, overflow:"hidden", border:"1px solid #eee" }}>
+          <Image src="/map.jpg" alt="ワタシヘルツ" fill style={{ objectFit:"cover" }} priority />
+        </div>
+
+        <h1 style={{ fontSize:"1.9rem", margin:0 }}>life atlas</h1>
+        <p style={{ margin:"0.25rem 0 0.75rem", color:"#555", whiteSpace:"pre-line" }}>
+{`自分を生きる上での、地図のような場所を。
+
+ここには地図があります。生きている地図です。
+過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
+        </p>
+
+        <div style={{ display:"flex", gap:"0.75rem", flexWrap:"wrap" }}>
+          <a href="/plans" style={btnPrimary}>プランを見る</a>
+          <a href="/content" style={btnGhost}>コンテンツへ</a>
+        </div>
+      </section>
+
+      {/* ★ 常設ガイドのみ（最新記事セクションは完全に削除） */}
+      {featured && (
+        <section style={{ marginTop:24 }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"baseline" }}>
+            <h2 style={{ margin:0, fontSize:20, fontWeight:600 }}>まずはここから</h2>
+            <a href="/content" style={{ fontSize:13, textDecoration:"underline", opacity:0.8 }}>コンテンツ一覧へ</a>
+          </div>
+          <div style={{ marginTop:12 }}>
+            <ArticleCardInline a={featured} />
+          </div>
+        </section>
+      )}
+    </main>
+  );
+}
