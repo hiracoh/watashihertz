@@ -134,28 +134,7 @@ export default function Home() {
       height="140"
       viewBox="0 0 1200 140"
       preserveAspectRatio="none"
-      style={{
-        position: "absolute",
-        left: 0,
-        right: 0,
-        bottom: 0,
-        opacity: 0.2,              // 0.12〜0.25で調整
-        pointerEvents: "none",
-        zIndex: 2,                 // ← これで見えるようになる
-      }}
-    >
-      <defs>
-        <linearGradient id="contourStroke" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#8f8573" />
-          <stop offset="100%" stopColor="#bfb6a3" />
-        </linearGradient>
-      </defs>
-      <path d="M0,95 C220,80 380,125 600,110 C820,95 980,125 1200,110" fill="none" stroke="url(#contourStroke)" strokeWidth="2" />
-      <path d="M0,115 C200,105 400,140 600,125 C800,110 1000,140 1200,125" fill="none" stroke="url(#contourStroke)" strokeWidth="1.5" />
-      <path d="M0,75 C260,65 420,105 600,90 C780,75 960,105 1200,90" fill="none" stroke="url(#contourStroke)" strokeWidth="1" />
-    </svg>
-
-    {/* タイトル（文字のみ／テキストシャドウで読みやすさ確保） */}
+     {/* タイトル（life atlas） */}
     <h1
       style={{
         position: "absolute",
@@ -167,8 +146,7 @@ export default function Home() {
         fontWeight: 700,
         letterSpacing: "0.02em",
         color: "#222",
-        zIndex: 3, // 等高線のさらに上
-        // 薄い縁取り効果：PCでも浮きすぎない程度
+        zIndex: 3,
         textShadow: "0 1px 2px rgba(255,255,255,0.6)",
       }}
     >
@@ -176,50 +154,51 @@ export default function Home() {
     </h1>
   </div>
 
-  {/* 画像の下：サブタイトル／本文／ボタン（中央寄せ） */}
-  <div style={{ marginTop: "1.1rem", textAlign: "center" }}>
+  {/* 画像の下：サブタイトル／説明文／ボタン */}
+  <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
+    {/* サブタイトル */}
     <p
       style={{
         fontSize: "1.25rem",
         fontWeight: 600,
-        letterSpacing: "0.05em",
+        letterSpacing: "0.06em",
         color: "#222",
-        margin: "0.75rem 0",
+        margin: "0 0 1.5rem",
       }}
     >
       自分を生きる上での、地図のような場所を。
     </p>
 
+    {/* 説明文 */}
     <p
       style={{
-        margin: "0.25rem 0 0.75rem",
+        margin: "0 0 2rem",
         color: "#555",
         whiteSpace: "pre-line",
+        fontWeight: 400,
+        lineHeight: 1.7,
       }}
     >
       {`ここには地図があります。生きている地図です。
 過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
     </p>
 
-    <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center", marginTop: "0.75rem" }}>
-      <a href="/plans" style={{
-        display:"inline-block", padding:"0.6rem 1rem", borderRadius:12,
-        background:"#222", color:"#fff", textDecoration:"none"
-      }}>
+    {/* ボタン */}
+    <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
+      <a href="/plans" style={btnPrimary}>
         プランを見る
       </a>
-      <a href="/content" style={{
-        display:"inline-block", padding:"0.6rem 1rem", borderRadius:12,
-        border:"1px solid #222", textDecoration:"none", color:"#222", background:"#fff"
-      }}>
+      <a href="/content" style={btnGhost}>
         コンテンツへ
       </a>
     </div>
   </div>
+
 </section>
 
-      {/* --- ガイド固定表示（featured のみ。リンク無し） --- */}
-      {featured && (
+{/* --- ガイド固定表示（featured のみ） --- */}
+{featured && (
+
         <section style={{ marginTop: 24 }}>
           <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
           <div style={{ marginTop: 12 }}>
