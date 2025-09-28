@@ -115,7 +115,7 @@ export default function Home() {
       }}
     />
 
-    {/* 柔らかグラデ（上:透明 → 下:白寄り）※最背面より一段上 */}
+     {/* 柔らかグラデ（上:透明 → 下:白寄り）※最背面より一段上 */}
     <div
       style={{
         position: "absolute",
@@ -134,7 +134,28 @@ export default function Home() {
       height="140"
       viewBox="0 0 1200 140"
       preserveAspectRatio="none"
-     {/* タイトル（life atlas） */}
+      style={{
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: 0.2,
+        pointerEvents: "none",
+        zIndex: 2,
+      }}
+    >
+      <defs>
+        <linearGradient id="contourStroke" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stopColor="#8f8573" />
+          <stop offset="100%" stopColor="#bfb6a3" />
+        </linearGradient>
+      </defs>
+      <path d="M0,95 C220,80 380,125 600,110 C820,95 980,125 1200,110" fill="none" stroke="url(#contourStroke)" strokeWidth="2" />
+      <path d="M0,115 C200,105 400,140 600,125 C800,110 1000,140 1200,125" fill="none" stroke="url(#contourStroke)" strokeWidth="1.5" />
+      <path d="M0,75  C260,65 420,105 600,90  C780,75 960,105 1200,90"   fill="none" stroke="url(#contourStroke)" strokeWidth="1" />
+    </svg>
+
+    {/* タイトル（life atlas） */}
     <h1
       style={{
         position: "absolute",
@@ -156,6 +177,7 @@ export default function Home() {
 
   {/* 画像の下：サブタイトル／説明文／ボタン */}
   <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
+
     {/* サブタイトル */}
     <p
       style={{
