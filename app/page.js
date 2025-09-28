@@ -98,13 +98,25 @@ export default function Home() {
           <Image src="/map.jpg" alt="ワタシヘルツ" fill style={{ objectFit: "cover" }} priority />
         </div>
 
-        <h1 style={{ fontSize: "1.9rem", margin: 0 }}>life atlas</h1>
-        <p style={{ margin: "0.25rem 0 0.75rem", color: "#555", whiteSpace: "pre-line" }}>
-          {`自分を生きる上での、地図のような場所を。
+      <h1 style={{ fontSize: "1.9rem", margin: 0, textAlign: "center" }}>life atlas</h1>
 
-ここには地図があります。生きている地図です。
+<p
+  style={{
+    fontSize: "1.3rem",
+    fontWeight: 600,
+    letterSpacing: "0.05em",
+    textAlign: "center",
+    color: "#222",
+    margin: "1.5rem 0"
+  }}
+>
+  自分を生きる上での、地図のような場所を。
+</p>
+
+<p style={{ margin: "0.25rem 0 0.75rem", color: "#555", whiteSpace: "pre-line", textAlign: "center" }}>
+  {`ここには地図があります。生きている地図です。
 過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
-        </p>
+</p>
 
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
           <a href="/plans" style={btnPrimary}>
