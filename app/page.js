@@ -155,7 +155,7 @@ export default function Home() {
       <path d="M0,75  C260,65 420,105 600,90  C780,75 960,105 1200,90"   fill="none" stroke="url(#contourStroke)" strokeWidth="1" />
     </svg>
 
-    {/* タイトル（life atlas） */}
+    {/* タイトル（life atlas） — レタープレス風 */}
     <h1
       style={{
         position: "absolute",
@@ -166,9 +166,16 @@ export default function Home() {
         fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
         fontWeight: 700,
         letterSpacing: "0.02em",
-        color: "#222",
-        zIndex: 3,
-        textShadow: "0 1px 2px rgba(255,255,255,0.6)",
+        // ベースはやや濃いグレーにして背景となじませる
+        color: "#2a2a2a",
+        // 地図の色と混ざるように
+        mixBlendMode: "multiply",
+        // レタープレス（押し込み）っぽい陰影
+        textShadow: `
+          0 1px 0 rgba(255,255,255,0.55),   /* 上面のハイライト（浮き出し反転で凹に見える） */
+          0 -1px 0 rgba(0,0,0,0.20),        /* 下面の薄い影 */
+          0 2px 6px rgba(0,0,0,0.10)` ,     /* わずかな落ち影で地図となじませる */
+        zIndex: 3
       }}
     >
       life atlas
@@ -177,6 +184,7 @@ export default function Home() {
 
   {/* 画像の下：サブタイトル／説明文／ボタン */}
   <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
+
 
     {/* サブタイトル */}
     <p
