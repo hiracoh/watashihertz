@@ -1,6 +1,6 @@
 import Image from "next/image";
 // ★ ここがポイント：JSONを直接import（fs不要）
-import articles from "@/data/articles.json";
+import articles from "../data/articles.json";
 
 // ボタンスタイル（あなたの既存のまま）
 const btnPrimary = {
