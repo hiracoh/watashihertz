@@ -7,7 +7,7 @@ export const metadata = {
   title: 'ワタシヘルツ',
   description: '人間として生きる上での地図',
   icons: {
-    icon: "/favicon3.png",
+    icon: "/favicon2.png",
   },
 };
 
