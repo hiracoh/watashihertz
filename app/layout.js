@@ -6,6 +6,9 @@ const zenMaru = Zen_Maru_Gothic({ subsets: ['latin'], weight: ['400','500','700'
 export const metadata = {
   title: 'ワタシヘルツ',
   description: '人間として生きる上での地図',
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
