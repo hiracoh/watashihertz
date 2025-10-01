@@ -1,5 +1,4 @@
-import Image from "next/image";
-import articles from "../data/articles.json"; // 相対パスで安全
+import articles from "../data/articles.json"; // 相対パスで安全（Imageは使わないのでimport不要）
 
 // ボタンスタイル
 const btnPrimary = {
@@ -89,130 +88,130 @@ export default function Home() {
   const featured = Array.isArray(articles) ? articles.find((a) => a.featured) : null;
 
   return (
-    <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
-     {/* --- ヒーロー：下に行くほど白くなる＋等高線＋文字だけタイトル --- */}
-<section style={{ position: "relative", marginBottom: "1.75rem" }}>
- <div
-  style={{
-    position: "relative",
-    width: "100%",
-    height: "100vh", // 画角いっぱい
-    borderRadius: 16,
-    overflow: "hidden",
-    border: "1px solid #eee",
-    backgroundImage: "url('/washitsu.jpg')", // ← /public/washitsu.jpg に保存
-    backgroundSize: "cover",   // 画角いっぱいに広げる
-    backgroundPosition: "center 60%", // 中央寄せ、少し下に
-    filter: "saturate(0.88) contrast(1.06)",
-  }}
->
+    <>
+      {/* ======================= フルブリード・ヒーロー（画面いっぱい） ======================= */}
+      <section
+        style={{
+          position: "relative",
+          width: "100vw",
+          height: "100vh",             // 画角いっぱい
+          marginLeft: "calc(50% - 50vw)", // コンテナ幅に関係なく左右ぴったりに
+          marginRight: "calc(50% - 50vw)",
+          overflow: "hidden",
+          // 角丸や白フチはいったん外す（本当に全画面にしたいならこの方が自然）
+          border: "none",
+          borderRadius: 0,
+          // 背景：和室写真
+          backgroundImage: "url('/washitsu.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 60%", // 見せたい位置に合わせて調整
+          // 雰囲気調整
+          filter: "saturate(0.88) contrast(1.06)",
+        }}
+      >
+        {/* 薄ノイズ（繰り返しタイル） */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/paper-noise.png')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "256px 256px",
+            opacity: 0.05,
+            mixBlendMode: "soft-light",
+            pointerEvents: "none",
+            zIndex: 1,
+          }}
+        />
 
+        {/* 下にいくほど白っぽくなる柔らかグラデーション（可読性アップ） */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.28) 75%, rgba(255,255,255,0.45) 100%)",
+            pointerEvents: "none",
+            zIndex: 2,
+          }}
+        />
 
-  {/* 薄ノイズ */}
-  <div
-    style={{
-     position: "absolute",
-      inset: 0,
-      backgroundImage: "url('/paper-noise.png')",
-      backgroundRepeat: "repeat",
-      backgroundSize: "256px 256px",
-      opacity: 0.05,              // まずは濃くして確認
-      mixBlendMode: "soft-light", // overlay より視認しやすい
-      pointerEvents: "none",
-      zIndex: 1,
-    }}
-  />
+        {/* タイトル：レタープレス風（文字だけ） */}
+        <h1
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: "clamp(14px, 5vh, 40px)",
+            transform: "translateX(-50%)",
+            margin: 0,
+            fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
+            fontWeight: 700,
+            letterSpacing: "0.02em",
+            color: "#2a2a2a",
+            mixBlendMode: "multiply",
+            textShadow: `
+              0 1px 0 rgba(255,255,255,0.55),
+              0 -1px 0 rgba(0,0,0,0.20),
+              0 2px 6px rgba(0,0,0,0.10)`,
+            zIndex: 3,
+          }}
+        >
+          life atlas
+        </h1>
+      </section>
 
-  {/* 下にいくほど白っぽくなる柔らかグラデーション */}
-  <div
-    style={{
-      position: "absolute",
-      inset: 0,
-      background:
-        "linear-gradient(to bottom, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.28) 75%, rgba(255,255,255,0.45) 100%)",
-      pointerEvents: "none",
-      zIndex: 2,
-    }}
-  />
+      {/* ======================= 本文（中央 768px コンテナ） ======================= */}
+      <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
+        {/* 画像の下：サブタイトル／説明文／ボタン */}
+        <section style={{ textAlign: "center" }}>
+          {/* サブタイトル */}
+          <p
+            style={{
+              fontSize: "1.25rem",
+              fontWeight: 600,
+              letterSpacing: "0.06em",
+              color: "#222",
+              margin: "0 0 1.5rem",
+            }}
+          >
+            自分を生きる上での、地図のような場所を。
+          </p>
 
-  {/* タイトル */}
-  <h1
-    style={{
-      position: "absolute",
-      left: "50%",
-      bottom: "clamp(14px, 5vh, 40px)",
-      transform: "translateX(-50%)",
-      margin: 0,
-      fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
-      fontWeight: 700,
-      letterSpacing: "0.02em",
-      color: "#2a2a2a",
-      mixBlendMode: "multiply",
-      textShadow: `
-        0 1px 0 rgba(255,255,255,0.55),
-        0 -1px 0 rgba(0,0,0,0.20),
-        0 2px 6px rgba(0,0,0,0.10)`,
-      zIndex: 3,
-    }}
-  >
-    life atlas
-  </h1>
-</div>
-
-  {/* 画像の下：サブタイトル／説明文／ボタン */}
-  <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
-
-
-    {/* サブタイトル */}
-    <p
-      style={{
-        fontSize: "1.25rem",
-        fontWeight: 600,
-        letterSpacing: "0.06em",
-        color: "#222",
-        margin: "0 0 1.5rem",
-      }}
-    >
-      自分を生きる上での、地図のような場所を。
-    </p>
-
-    {/* 説明文 */}
-    <p
-      style={{
-        margin: "0 0 2rem",
-        color: "#555",
-        whiteSpace: "pre-line",
-        fontWeight: 400,
-        lineHeight: 1.7,
-      }}
-    >
-      {`ここには地図があります。生きている地図です。
+          {/* 説明文 */}
+          <p
+            style={{
+              margin: "0 0 2rem",
+              color: "#555",
+              whiteSpace: "pre-line",
+              fontWeight: 400,
+              lineHeight: 1.7,
+            }}
+          >
+            {`ここには地図があります。生きている地図です。
 過去のものも書き変わる、日々新しいものが加わる、そしてあなたの現在地に合わせて形を変えます。`}
-    </p>
+          </p>
 
-    {/* ボタン */}
-    <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
-      <a href="/plans" style={btnPrimary}>
-        プランを見る
-      </a>
-      <a href="/content" style={btnGhost}>
-        コンテンツへ
-      </a>
-    </div>
-  </div>
-
-</section>
-
-{/* --- ガイド固定表示（featured のみ） --- */}
-{featured && (
-
-        <section style={{ marginTop: 24 }}>
-          <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
-          <div style={{ marginTop: 12 }}>
-            <ArticleCardInline a={featured} />
+          {/* ボタン */}
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
+            <a href="/plans" style={btnPrimary}>
+              プランを見る
+            </a>
+            <a href="/content" style={btnGhost}>
+              コンテンツへ
+            </a>
           </div>
         </section>
-      )}
-    </main>
+
+        {/* ガイド固定表示（featured のみ） */}
+        {featured && (
+          <section style={{ marginTop: 24 }}>
+            <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
+            <div style={{ marginTop: 12 }}>
+              <ArticleCardInline a={featured} />
+            </div>
+          </section>
+        )}
+      </main>
+    </>
   );
 }
