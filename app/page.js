@@ -100,30 +100,24 @@ export default function Home() {
     borderRadius: 16,
     overflow: "hidden",
     border: "1px solid #eee",
+    backgroundImage: "url('/washitsu.jpg')", // ← /public/washitsu.jpg に保存
+    backgroundSize: "cover",   // 画角いっぱいに広げる
+    backgroundPosition: "center 60%", // 中央寄せ、少し下に
+    filter: "saturate(0.88) contrast(1.06)",
   }}
 >
-  {/* 背景画像：畳の写真 */}
-  <Image
-    src="/washitsu.jpg" // ← /public/room.jpg に保存して使う
-    alt="ワタシヘルツ"
-    fill
-    priority
-    sizes="100vw"
-    style={{
-      objectFit: "cover",
-      objectPosition: "50% 60%",
-      filter: "saturate(0.88) contrast(1.06)",
-    }}
-  />
+
 
   {/* 薄ノイズ */}
   <div
     style={{
-      position: "absolute",
+     position: "absolute",
       inset: 0,
-      backgroundImage: "url('/paper-noise.png')", // 下で渡すノイズ素材を配置
-      opacity: 0.045,
-      mixBlendMode: "overlay",
+      backgroundImage: "url('/paper-noise.png')",
+      backgroundRepeat: "repeat",
+      backgroundSize: "256px 256px",
+      opacity: 0.05,              // まずは濃くして確認
+      mixBlendMode: "soft-light", // overlay より視認しやすい
       pointerEvents: "none",
       zIndex: 1,
     }}
