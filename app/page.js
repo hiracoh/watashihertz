@@ -92,95 +92,78 @@ export default function Home() {
     <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
      {/* --- ヒーロー：下に行くほど白くなる＋等高線＋文字だけタイトル --- */}
 <section style={{ position: "relative", marginBottom: "1.75rem" }}>
+ <div
+  style={{
+    position: "relative",
+    width: "100%",
+    height: "100vh", // 画角いっぱい
+    borderRadius: 16,
+    overflow: "hidden",
+    border: "1px solid #eee",
+  }}
+>
+  {/* 背景画像：畳の写真 */}
+  <Image
+    src="/washitsu.jpg" // ← /public/room.jpg に保存して使う
+    alt="ワタシヘルツ"
+    fill
+    priority
+    sizes="100vw"
+    style={{
+      objectFit: "cover",
+      objectPosition: "50% 60%",
+      filter: "saturate(0.88) contrast(1.06)",
+    }}
+  />
+
+  {/* 薄ノイズ */}
   <div
     style={{
-      position: "relative",
-      width: "100%",
-      height: "clamp(360px, 48vh, 600px)",
-      borderRadius: 16,
-      overflow: "hidden",
-      border: "1px solid #eee",
+      position: "absolute",
+      inset: 0,
+      backgroundImage: "url('/paper-noise.png')", // 下で渡すノイズ素材を配置
+      opacity: 0.045,
+      mixBlendMode: "overlay",
+      pointerEvents: "none",
+      zIndex: 1,
+    }}
+  />
+
+  {/* 下にいくほど白っぽくなる柔らかグラデーション */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      background:
+        "linear-gradient(to bottom, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.28) 75%, rgba(255,255,255,0.45) 100%)",
+      pointerEvents: "none",
+      zIndex: 2,
+    }}
+  />
+
+  {/* タイトル */}
+  <h1
+    style={{
+      position: "absolute",
+      left: "50%",
+      bottom: "clamp(14px, 5vh, 40px)",
+      transform: "translateX(-50%)",
+      margin: 0,
+      fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
+      fontWeight: 700,
+      letterSpacing: "0.02em",
+      color: "#2a2a2a",
+      mixBlendMode: "multiply",
+      textShadow: `
+        0 1px 0 rgba(255,255,255,0.55),
+        0 -1px 0 rgba(0,0,0,0.20),
+        0 2px 6px rgba(0,0,0,0.10)`,
+      zIndex: 3,
     }}
   >
-    {/* 背景画像 */}
-    <Image
-      src="/map.jpg"
-      alt="ワタシヘルツ"
-      fill
-      priority
-      sizes="(max-width: 768px) 100vw, 768px"
-      style={{
-        objectFit: "cover",
-        objectPosition: "50% 45%",
-      }}
-    />
-
-     {/* 柔らかグラデ（上:透明 → 下:白寄り）※最背面より一段上 */}
-    <div
-      style={{
-        position: "absolute",
-        inset: 0,
-        background:
-          "linear-gradient(to bottom, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.12) 55%, rgba(255,255,255,0.28) 75%, rgba(255,255,255,0.45) 100%)",
-        pointerEvents: "none",
-        zIndex: 1,
-      }}
-    />
-
-    {/* 等高線SVG（グラデの上に来るよう zIndex:2） */}
-    <svg
-      aria-hidden="true"
-      width="100%"
-      height="140"
-      viewBox="0 0 1200 140"
-      preserveAspectRatio="none"
-      style={{
-        position: "absolute",
-        left: 0,
-        right: 0,
-        bottom: 0,
-        opacity: 0.2,
-        pointerEvents: "none",
-        zIndex: 2,
-      }}
-    >
-      <defs>
-        <linearGradient id="contourStroke" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0%" stopColor="#8f8573" />
-          <stop offset="100%" stopColor="#bfb6a3" />
-        </linearGradient>
-      </defs>
-      <path d="M0,95 C220,80 380,125 600,110 C820,95 980,125 1200,110" fill="none" stroke="url(#contourStroke)" strokeWidth="2" />
-      <path d="M0,115 C200,105 400,140 600,125 C800,110 1000,140 1200,125" fill="none" stroke="url(#contourStroke)" strokeWidth="1.5" />
-      <path d="M0,75  C260,65 420,105 600,90  C780,75 960,105 1200,90"   fill="none" stroke="url(#contourStroke)" strokeWidth="1" />
-    </svg>
-
-    {/* タイトル（life atlas） — レタープレス風 */}
-    <h1
-      style={{
-        position: "absolute",
-        left: "50%",
-        bottom: "clamp(14px, 5vh, 40px)",
-        transform: "translateX(-50%)",
-        margin: 0,
-        fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
-        fontWeight: 700,
-        letterSpacing: "0.02em",
-        // ベースはやや濃いグレーにして背景となじませる
-        color: "#2a2a2a",
-        // 地図の色と混ざるように
-        mixBlendMode: "multiply",
-        // レタープレス（押し込み）っぽい陰影
-        textShadow: `
-          0 1px 0 rgba(255,255,255,0.55),   /* 上面のハイライト（浮き出し反転で凹に見える） */
-          0 -1px 0 rgba(0,0,0,0.20),        /* 下面の薄い影 */
-          0 2px 6px rgba(0,0,0,0.10)` ,     /* わずかな落ち影で地図となじませる */
-        zIndex: 3
-      }}
-    >
-      life atlas
-    </h1>
-  </div>
+    life atlas
+  </h1>
+</div>
 
   {/* 画像の下：サブタイトル／説明文／ボタン */}
   <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
