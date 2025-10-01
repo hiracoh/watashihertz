@@ -117,7 +117,7 @@ export default function Home() {
             backgroundImage: "url('/paper-noise.png')",
             backgroundRepeat: "repeat",
             backgroundSize: "256px 256px",
-            opacity: 0.05,
+            opacity: 0.02,
             mixBlendMode: "soft-light",
             pointerEvents: "none",
             zIndex: 1,
