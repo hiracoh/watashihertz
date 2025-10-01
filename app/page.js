@@ -102,7 +102,7 @@ export default function Home() {
           border: "none",
           borderRadius: 0,
           // 背景：和室写真
-          backgroundImage: "url('/washitsu.jpg')",
+          backgroundImage: "url('/washitsu2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center 60%", // 見せたい位置に合わせて調整
           // 雰囲気調整
@@ -117,7 +117,7 @@ export default function Home() {
             backgroundImage: "url('/paper-noise.png')",
             backgroundRepeat: "repeat",
             backgroundSize: "256px 256px",
-            opacity: 0.02,
+            opacity: 0.09,
             mixBlendMode: "soft-light",
             pointerEvents: "none",
             zIndex: 1,
