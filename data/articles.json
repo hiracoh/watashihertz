@@ -1,12 +1,24 @@
 [
   {
-    "id": "2025-09-28-life-map-guide",
+    "id": "2025-09-28-guide1",
     "title": "地図の使い方",
     "url": "/guide",
     "date": "2025-09-28",
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "地図のコンセプトを3つに分けてご案内",
+    "plan": "700",
+    "type": "article",
+    "featured": true
+  },
+    {
+    "id": "2025-10-03-guide2",
+    "title": "心の準備",
+    "url": "/guide2",
+    "date": "2025-10-03",
+    "thumb": "/map.jpg",
+    "tags": [],
+    "summary": "こちらの場所に向いている人について",
     "plan": "700",
     "type": "article",
     "featured": true
