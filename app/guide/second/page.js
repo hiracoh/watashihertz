@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function GuidePage() {
   return (
     <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px", lineHeight: 1.8 }}>
