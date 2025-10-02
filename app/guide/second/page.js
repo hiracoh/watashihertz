@@ -1,15 +1,7 @@
 export default function GuidePage() {
   return (
     <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px", lineHeight: 1.8 }}>
-      
-      {/* メインビジュアル（任意） */}
-      <div style={{ marginBottom: "2rem" }}>
-        <img
-          src="/images/map.jpg"
-          alt="ガイドイメージ"
-          style={{ width: "100%", borderRadius: 12 }}
-        />
-      </div>
+
 
       <h1 style={{ fontSize: "1.6rem", fontWeight: "700", marginBottom: "1rem" }}>
         心の準備を始める
