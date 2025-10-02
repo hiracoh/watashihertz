@@ -136,28 +136,30 @@ export default function Home() {
           }}
         />
 
-        {/* タイトル：レタープレス風（文字だけ） */}
-        <h1
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: "clamp(14px, 5vh, 40px)",
-            transform: "translateX(-50%)",
-            margin: 0,
-            fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
-            fontWeight: 700,
-            letterSpacing: "0.02em",
-            color: "#2a2a2a",
-            mixBlendMode: "multiply",
-            textShadow: `
-              0 1px 0 rgba(255,255,255,0.55),
-              0 -1px 0 rgba(0,0,0,0.20),
-              0 2px 6px rgba(0,0,0,0.10)`,
-            zIndex: 3,
-          }}
-        >
-          life atlas
-        </h1>
+       {/* タイトルは一旦非表示 */}
+{/*
+<h1
+  style={{
+    position: "absolute",
+    left: "50%",
+    bottom: "clamp(14px, 5vh, 40px)",
+    transform: "translateX(-50%)",
+    margin: 0,
+    fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
+    fontWeight: 700,
+    letterSpacing: "0.02em",
+    color: "#2a2a2a",
+    mixBlendMode: "multiply",
+    textShadow: `
+      0 1px 0 rgba(255,255,255,0.55),
+      0 -1px 0 rgba(0,0,0,0.20),
+      0 2px 6px rgba(0,0,0,0.10)`,
+    zIndex: 3,
+  }}
+>
+  life atlas
+</h1>
+*/}
       </section>
 
       {/* ======================= 本文（中央 768px コンテナ） ======================= */}
