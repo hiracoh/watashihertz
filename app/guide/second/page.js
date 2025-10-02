@@ -5,14 +5,14 @@ export default function GuidePage() {
       {/* メインビジュアル（任意） */}
       <div style={{ marginBottom: "2rem" }}>
         <img
-          src="/images/guide-image.jpg"
+          src="/images/map.jpg"
           alt="ガイドイメージ"
           style={{ width: "100%", borderRadius: 12 }}
         />
       </div>
 
       <h1 style={{ fontSize: "1.6rem", fontWeight: "700", marginBottom: "1rem" }}>
-        このサイト（地図）の歩き方ガイド
+        心の準備を始める
       </h1>
 
       <p>
@@ -104,7 +104,7 @@ export default function GuidePage() {
     {/* 画像ブロック */}
       <figure style={{ margin: "2rem 0", textAlign: "center" }}>
         <Image
-          src="/相性合わない.jpeg"  // ← public フォルダに保存したファイル名
+          src="/aisho.jpeg"  // ← public フォルダに保存したファイル名
           alt="野球ボールが散らばった場所にサッカー選手がいる様子"
           width={600}   // 表示サイズ
           height={400}  // アスペクト比を維持するために大きめに指定
