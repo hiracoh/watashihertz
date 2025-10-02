@@ -85,7 +85,7 @@ function ArticleCardInline({ a }) {
 }
 
 export default function Home() {
-  const featured = Array.isArray(articles) ? articles.find((a) => a.featured) : null;
+ const featured = Array.isArray(articles) ? articles.filter((a) => a.featured) : [];
 
   return (
     <>
@@ -204,15 +204,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ガイド固定表示（featured のみ） */}
-        {featured && (
-          <section style={{ marginTop: 24 }}>
-            <h2 style={{ margin: "0 0 12px", fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
-            <div style={{ marginTop: 12 }}>
-              <ArticleCardInline a={featured} />
-            </div>
-          </section>
-        )}
+      {/* --- ガイド固定表示（featured 全部） --- */}
+{featured.length > 0 && (
+  <section style={{ marginTop: 24 }}>
+    <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
+    <div style={{ marginTop: 12, display: "grid", gap: 16 }}>
+      {featured.map(a => (
+        <ArticleCardInline key={a.id} a={a} />
+      ))}
+    </div>
+  </section>
+)}
       </main>
     </>
   );
