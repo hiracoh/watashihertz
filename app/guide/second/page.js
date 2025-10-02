@@ -101,9 +101,19 @@ export default function GuidePage() {
         この場所は「素材集め」と「地図づくり」のための情報が散りばめられています。ただし、他責思考や被害者意識が強い場合、決して相性が良いとは言えません。ええ、あの…、壊滅的に悪いです。
       </p>
 
-      <blockquote style={{ margin: "1rem 0", paddingLeft: "1rem", borderLeft: "3px solid #ccc" }}>
-        野球ボール（情報）を散りばめた場所に、サッカー選手が来た感じ。（…例え合ってる？）
-      </blockquote>
+    {/* 画像ブロック */}
+      <figure style={{ margin: "2rem 0", textAlign: "center" }}>
+        <Image
+          src="/相性合わない.jpeg"  // ← public フォルダに保存したファイル名
+          alt="野球ボールが散らばった場所にサッカー選手がいる様子"
+          width={600}   // 表示サイズ
+          height={400}  // アスペクト比を維持するために大きめに指定
+          style={{ borderRadius: 8 }}
+        />
+        <figcaption style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#555" }}>
+          野球ボール（情報）を散りばめた場所に、サッカー選手が来た感じ。（…例え合ってる？）
+        </figcaption>
+      </figure>
 
       <p>
         その点をご了承の上、自由に素材を拾って、自分なりの地図を描いてください。
