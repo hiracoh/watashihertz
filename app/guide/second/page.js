@@ -94,21 +94,28 @@ export default function GuidePage() {
       <p>
         この場所は「素材集め」と「地図づくり」のための情報が散りばめられています。ただし、他責思考や被害者意識が強い場合、決して相性が良いとは言えません。ええ、あの…、壊滅的に悪いです。
       </p>
-
-    {/* 画像ブロック */}
-      <figure style={{ margin: "2rem 0", textAlign: "center" }}>
-        <Image
-          src="/aisho.jpeg"  // ← public フォルダに保存したファイル名
-          alt="野球ボールが散らばった場所にサッカー選手がいる様子"
-          width={600}   // 表示サイズ
-          height={400}  // アスペクト比を維持するために大きめに指定
-          style={{ borderRadius: 8 }}
-        />
-        <figcaption style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#555" }}>
-          野球ボール（情報）を散りばめた場所に、サッカー選手が来た感じ。（…例え合ってる？）
-        </figcaption>
-      </figure>
-
+{/* 画像ブロック */}
+<figure style={{ margin: "2rem 0", textAlign: "center" }}>
+  <Image
+    src="/aisho.jpeg"  // 画像パス
+    alt="野球ボールが散らばった場所にサッカー選手がいる様子"
+    width={600}       // 適当な元サイズ（目安）
+    height={400}      // ↑比率を維持するために必要
+    style={{
+      width: "100%",       // ← 本文幅いっぱいにフィット！
+      height: "auto",      // ← 比率を保ったまま高さ自動
+      borderRadius: 12,    // 角丸を維持したい場合
+      margin: "1.5rem 0",  // テキストとの余白
+      objectFit: "cover",  // トリミングをなめらかに
+    }}
+    sizes="(max-width: 768px) 100vw, 768px"
+  /> {/* ← ここが重要！ちゃんと閉じる */}
+  
+  <figcaption style={{ marginTop: "0.5rem", fontSize: "0.9rem", color: "#555" }}>
+    野球ボール（情報）を散りばめた場所に、サッカー選手が来た感じ。（…例え合ってる？）
+  </figcaption>
+</figure>
+        
       <p>
         その点をご了承の上、自由に素材を拾って、自分なりの地図を描いてください。
       </p>
