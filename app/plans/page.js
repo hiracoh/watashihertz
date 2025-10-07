@@ -5,7 +5,7 @@ export default function Plans() {
       <p style={{ color:'#555' }}>まずは読み物から。必要なら深い層へ。</p>
 
    <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
-  <h2 style={{ marginTop:0 }}>おはようございます</h2>
+  <h2 style={{ marginTop:0 }}>こんにちは</h2>
   <p>まずはご挨拶から始めるプラン</p>
   <p style={{ margin:'0.25rem 0', color:'#666' }}>無料</p>
 
