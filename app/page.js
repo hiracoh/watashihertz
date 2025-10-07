@@ -60,10 +60,10 @@ function ArticleCardInline({ a }) {
           </h3>
           {a.summary && <p style={{ margin: 0, opacity: 0.7, fontSize: 14 }}>{a.summary}</p>}
           <div style={{ marginTop: 8, display: "flex", gap: 8, fontSize: 12, opacity: 0.7 }}>
-            {a.date && <time>{a.date}</time>}
-            {a.date && <span>·</span>}
-            <span>{(a.tags || []).join(" / ")}</span>
-          </div>
+  {a.charCount && <span>{a.charCount.toLocaleString()}字</span>}
+  <span>{(a.tags || []).join(" / ")}</span>
+</div>
+
           <div style={{ marginTop: 12 }}>
             <a
               href={a.url}
