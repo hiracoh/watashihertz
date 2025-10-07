@@ -111,7 +111,7 @@ export default function GuidePage() {
     sizes="(max-width: 768px) 100vw, 768px"
   /> {/* ← ここが重要！ちゃんと閉じる */}
   
-  <figcaption style={{ marginTop: "0.3rem", fontSize: "0.7rem", color: "#555" }}>
+  <figcaption style={{ marginTop: "0.1rem", fontSize: "0.9rem", color: "#555" }}>
     野球ボール（情報）を散りばめた場所に、サッカー選手が来た感じ。（…例え合ってる？）
   </figcaption>
 </figure>
