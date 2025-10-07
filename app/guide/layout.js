@@ -1,3 +1,5 @@
+"use client";
+
 import "../globals.css";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 
