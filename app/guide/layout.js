@@ -14,11 +14,6 @@ const notoSerif = Noto_Serif_JP({
   display: "swap",
 });
 
-export const metadata = {
-  title: "Life Atlas ガイド",
-  description: "読むためのページ",
-};
-
 export default function GuideLayout({ children }) {
   return (
     <div className={notoSans.className}>
@@ -30,6 +25,7 @@ export default function GuideLayout({ children }) {
           color: #333;
           font-size: 16.5px;
         }
+
         h1, h2, h3 {
           font-family: "Noto Serif JP", serif;
           letter-spacing: 0.03em;
