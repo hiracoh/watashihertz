@@ -26,6 +26,7 @@ export default function GuideLayout({ children }) {
           line-height: 1.9;
           color: #333;
           font-size: 16.5px;
+          white-space: pre-wrap;
           font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI",
             Roboto, Helvetica, Arial, sans-serif;
           font-weight: 400;
