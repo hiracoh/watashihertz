@@ -3,7 +3,7 @@
     "id": "2025-09-28-guide1",
     "title": "地図の使い方",
     "url": "/guide",
-  　"charCount": 3428,
+    "charCount": 3428,
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "地図のコンセプトを3つに分けてご案内",
@@ -11,7 +11,7 @@
     "type": "article",
     "featured": true
   },
-    {
+  {
     "id": "2025-10-03-guide2",
     "title": "心の準備",
     "url": "/guide/second",
@@ -38,7 +38,7 @@
     "id": "article-002",
     "title": "SNSに滲み出る現代の人間",
     "summary": "SNSの炎上に見る、現代を生きる人間とは。",
-    "tags": ["人間の実態","人間の行動", "人間の感情"],
+    "tags": ["人間の実態", "人間の行動", "人間の感情"],
     "charCount": 3428,
     "url": "https://note.com/hiracoh/n/n30bdf42b4dee",
     "thumb": "https://assets.st-note.com/production/uploads/images/217145318/rectangle_large_type_2_f891101224d0bad28bc868513dd2b6b9.png?width=1200",
