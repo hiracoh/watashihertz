@@ -1,5 +1,4 @@
 import Image from "next/image";
-const nbsp = '\u00A0'; // 半角スペース1個分
 
 export default function GuideSecond() {
   return (
