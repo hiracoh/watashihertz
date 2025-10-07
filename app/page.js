@@ -22,13 +22,26 @@ const btnGhost = {
 // ガイド用の最小カード
 function ArticleCardInline({ a }) {
   return (
-    <article style={{ border: "1px solid #eee", borderRadius: 16, padding: 16, background: "#fff" }}>
+    <article
+      style={{
+        border: "1px solid #eee",
+        borderRadius: 16,
+        padding: 16,
+        background: "#fff",
+      }}
+    >
       <div style={{ display: "flex", gap: 12 }}>
         {a.thumb && (
           <img
             src={a.thumb}
             alt=""
-            style={{ width: 96, height: 96, objectFit: "cover", borderRadius: 12, border: "1px solid #eee" }}
+            style={{
+              width: 96,
+              height: 96,
+              objectFit: "cover",
+              borderRadius: 12,
+              border: "1px solid #eee",
+            }}
           />
         )}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -58,12 +71,26 @@ function ArticleCardInline({ a }) {
               </span>
             )}
           </h3>
-          {a.summary && <p style={{ margin: 0, opacity: 0.7, fontSize: 14 }}>{a.summary}</p>}
-          <div style={{ marginTop: 8, display: "flex", gap: 8, fontSize: 12, opacity: 0.7 }}>
-  {a.charCount && <span>{a.charCount.toLocaleString()}字</span>}
-  <span>{(a.tags || []).join(" / ")}</span>
-</div>
 
+          {/* 要約文 */}
+          {a.summary && (
+            <p style={{ margin: 0, opacity: 0.7, fontSize: 14 }}>{a.summary}</p>
+          )}
+
+          {/* ★ charCount（文字数）と date（日付）は削除済み */}
+          <div
+            style={{
+              marginTop: 8,
+              display: "flex",
+              gap: 8,
+              fontSize: 12,
+              opacity: 0.7,
+            }}
+          >
+            {(a.tags || []).length > 0 && <span>{a.tags.join(" / ")}</span>}
+          </div>
+
+          {/* 記事リンク */}
           <div style={{ marginTop: 12 }}>
             <a
               href={a.url}
@@ -73,6 +100,7 @@ function ArticleCardInline({ a }) {
                 borderRadius: 12,
                 fontSize: 14,
                 textDecoration: "none",
+                color: "#222",
               }}
             >
               記事を読む
@@ -85,7 +113,9 @@ function ArticleCardInline({ a }) {
 }
 
 export default function Home() {
- const featured = Array.isArray(articles) ? articles.filter((a) => a.featured) : [];
+  const featured = Array.isArray(articles)
+    ? articles.filter((a) => a.featured)
+    : [];
 
   return (
     <>
@@ -94,22 +124,19 @@ export default function Home() {
         style={{
           position: "relative",
           width: "100vw",
-          height: "100vh",             // 画角いっぱい
-          marginLeft: "calc(50% - 50vw)", // コンテナ幅に関係なく左右ぴったりに
+          height: "100vh",
+          marginLeft: "calc(50% - 50vw)",
           marginRight: "calc(50% - 50vw)",
           overflow: "hidden",
-          // 角丸や白フチはいったん外す（本当に全画面にしたいならこの方が自然）
           border: "none",
           borderRadius: 0,
-          // 背景：和室写真
           backgroundImage: "url('/washitsu2.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center 60%", // 見せたい位置に合わせて調整
-          // 雰囲気調整
+          backgroundPosition: "center 60%",
           filter: "saturate(0.88) contrast(1.06)",
         }}
       >
-        {/* 薄ノイズ（繰り返しタイル） */}
+        {/* 薄ノイズ */}
         <div
           style={{
             position: "absolute",
@@ -124,7 +151,7 @@ export default function Home() {
           }}
         />
 
-        {/* 下にいくほど白っぽくなる柔らかグラデーション（可読性アップ） */}
+        {/* グラデーション */}
         <div
           style={{
             position: "absolute",
@@ -135,38 +162,12 @@ export default function Home() {
             zIndex: 2,
           }}
         />
-
-       {/* タイトルは一旦非表示 */}
-{/*
-<h1
-  style={{
-    position: "absolute",
-    left: "50%",
-    bottom: "clamp(14px, 5vh, 40px)",
-    transform: "translateX(-50%)",
-    margin: 0,
-    fontSize: "clamp(1.6rem, 2.6vw, 2.3rem)",
-    fontWeight: 700,
-    letterSpacing: "0.02em",
-    color: "#2a2a2a",
-    mixBlendMode: "multiply",
-    textShadow: `
-      0 1px 0 rgba(255,255,255,0.55),
-      0 -1px 0 rgba(0,0,0,0.20),
-      0 2px 6px rgba(0,0,0,0.10)`,
-    zIndex: 3,
-  }}
->
-  life atlas
-</h1>
-*/}
       </section>
 
       {/* ======================= 本文（中央 768px コンテナ） ======================= */}
       <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
-        {/* 画像の下：サブタイトル／説明文／ボタン */}
+        {/* サブタイトル・説明文 */}
         <section style={{ textAlign: "center" }}>
-          {/* サブタイトル */}
           <p
             style={{
               fontSize: "1.25rem",
@@ -179,7 +180,6 @@ export default function Home() {
             自分を生きる地図を描く。
           </p>
 
-          {/* 説明文 */}
           <p
             style={{
               margin: "0 0 2rem",
@@ -193,8 +193,14 @@ export default function Home() {
 気になる情報に触れて、少し座って自分に問い、たゆたう次を描く場所。`}
           </p>
 
-          {/* ボタン */}
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "0.75rem",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             <a href="/plans" style={btnPrimary}>
               プランを見る
             </a>
@@ -204,17 +210,19 @@ export default function Home() {
           </div>
         </section>
 
-      {/* --- ガイド固定表示（featured 全部） --- */}
-{featured.length > 0 && (
-  <section style={{ marginTop: 24 }}>
-    <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>まずはここから</h2>
-    <div style={{ marginTop: 12, display: "grid", gap: 16 }}>
-      {featured.map(a => (
-        <ArticleCardInline key={a.id} a={a} />
-      ))}
-    </div>
-  </section>
-)}
+        {/* --- ガイド固定表示（featured 全部） --- */}
+        {featured.length > 0 && (
+          <section style={{ marginTop: 24 }}>
+            <h2 style={{ margin: 0, fontSize: 20, fontWeight: 600 }}>
+              まずはここから
+            </h2>
+            <div style={{ marginTop: 12, display: "grid", gap: 16 }}>
+              {featured.map((a) => (
+                <ArticleCardInline key={a.id} a={a} />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     </>
   );
