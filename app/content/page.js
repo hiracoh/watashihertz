@@ -50,11 +50,13 @@ if (q) {
 const articles = items.map(item => ({
   title: item.title,
   link: item.url,
-  pubDate: item.date,
+  pubDate: item.date,       // ← 日付を使わないならこの行は残してもOK（後で表示は消します）
   thumb: item.thumb,
   summary: item.summary || '',
   tags: item.tags || [],
+  charCount: item.charCount || null, // ★ 追加：JSONの charCount を通す
 }));
+
 
 // タグ一覧をまとめておく
 const allTags = collectTags(all);
@@ -187,11 +189,16 @@ const allTags = collectTags(all);
                     </a>
                   </h3>
 
-                  {a.pubDate && (
-                    <p style={{ color:'#999', fontSize:12, margin:'0 0 0.5rem' }}>
-                      {new Date(a.pubDate).toLocaleDateString('ja-JP')}
-                    </p>
-                  )}
+                  <div style={{ color:'#777', fontSize:12, margin:'0 0 0.5rem', display:'flex', gap:8, alignItems:'center', flexWrap:'wrap' }}>
+  {a.charCount && <span>{a.charCount.toLocaleString()}字</span>}
+  {(a.tags && a.tags.length > 0) && (
+    <>
+      <span>·</span>
+      <span>{a.tags.join(' / ')}</span>
+    </>
+  )}
+</div>
+
 
                   {a.summary && (
                     <p style={{ color:'#555', margin:'0 0 0.75rem' }}>{a.summary}</p>
