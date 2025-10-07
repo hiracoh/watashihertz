@@ -1,4 +1,5 @@
 import Image from "next/image";
+const nbsp = '\u00A0'; // 半角スペース1個分
 
 export default function GuideSecond() {
   return (
@@ -19,7 +20,7 @@ export default function GuideSecond() {
         想像してみてください。嫌な出来事が起きたとき、あなたはどうしますか？
 
         ▶︎ 環境や他者のせいだと考える　
-          {'\\u00A0'}自分の責任を考える
+          nbspnbsp自分の責任を考える
 
         結論、どちらでも良い。これは癖であり、同時に趣味みたいなものだ。
 
