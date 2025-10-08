@@ -6,7 +6,7 @@ export default function Plans() {
 
    <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>こんにちは</h2>
-  <p>まずはご挨拶から始めるプラン</p>
+  <p>運営者と<strong>ご挨拶を</strong>交わすプラン</p>
   <p style={{ margin:'0.25rem 0', color:'#666' }}>無料</p>
 
   <div style={{
@@ -80,7 +80,7 @@ export default function Plans() {
   </div>
 
   <ul style={{ paddingLeft:'1.2rem', marginTop:'0.5rem' }}>
-    <li>上記に加え + <strong>解説音声</strong>へのアクセス</li>
+    <li>上記に加え + <strong>朗読音声</strong>へのアクセス</li>
     <li>自分の現在地と照らし合わせるロードマップへのアクセス</li>
   </ul>
 
