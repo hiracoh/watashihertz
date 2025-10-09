@@ -2,7 +2,7 @@ export default function Plans() {
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>プラン</h1>
-      <p style={{ color:'#555' }}>まずは読み物から。必要なら深い層へ。</p>
+      <p style={{ color:'#555' }}>お好きな関わり方で地図を描いてください。</p>
 
    <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>こんにちは</h2>
@@ -24,16 +24,16 @@ export default function Plans() {
 
   <ul style={{ paddingLeft:'1.2rem', marginTop:'0.5rem' }}>
     <li>すべての<strong>無料記事</strong>へのアクセス</li>
-   <li>すべての<strong>カード</strong>へのアクセス</li>
+   <li>本日のカードおみくじ</li>
   </ul>
 
 </div>
-      <p style={{ color:'#555' }}>運営者を応援してくださるなら。</p>
+      <p style={{ color:'#555' }}>運営者を応援してくださる方はこちら。</p>
 
       
       <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>とりあえず一杯</h2>
-  <p>運営者に<strong>「まあ一杯どうぞ」</strong>とできるプラン</p>
+  <p>運営者に<strong>「まあ一杯どうぞ」</strong>とするプラン</p>
   <p style={{ margin:'0.25rem 0', color:'#666' }}>¥700 / 月</p>
 
   <div style={{
@@ -50,7 +50,7 @@ export default function Plans() {
   </div>
 
   <ul style={{ paddingLeft:'1.2rem', marginTop:'0.5rem' }}>
-    <li>すべての<strong>記事</strong>へのアクセス</li>
+    <li>上記に加え + <strong>有料記事</strong>へのアクセス</li>
     <li>すべての<strong>カード</strong>へのアクセス</li>
   </ul>
 
@@ -65,7 +65,7 @@ export default function Plans() {
 
         <div style={{ background:'#fff', border:'2px solid #222', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>チキン南蛮定食</h2>
-  <p>運営者に<strong>チキン南蛮定食</strong>をご馳走できるプラン</p>
+  <p>運営者に<strong>チキン南蛮定食</strong>をご馳走するプラン</p>
   <p style={{ margin:'0.25rem 0', color:'#666' }}>¥1,500 / 月</p>
 
   <div style={{
