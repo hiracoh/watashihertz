@@ -28,6 +28,8 @@ export default function Plans() {
   </ul>
 
 </div>
+      <p style={{ color:'#555' }}>運営者を応援してくださるなら。</p>
+
       
       <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>とりあえず一杯</h2>
