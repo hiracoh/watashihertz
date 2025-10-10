@@ -66,7 +66,7 @@ export default function Plans() {
         <div style={{ background:'#fff', border:'2px solid #222', borderRadius:12, padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>チキン南蛮定食</h2>
   <p>運営者に<strong>チキン南蛮定食</strong>をご馳走するプラン</p>
-  <p style={{ margin:'0.25rem 0', color:'#666' }}>¥1,500 / 月</p>
+  <p style={{ margin:'0.25rem 0', color:'#666' }}>¥1,200 / 月</p>
 
   <div style={{
     display:'inline-block',
