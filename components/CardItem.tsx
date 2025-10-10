@@ -147,32 +147,35 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 600px) {
-          .card {
-            grid-template-rows: 12% 46% 42%; /* スマホの比率 */
-          }
-          .imgWrap {
-            margin: 8px;
-            border-width: 1.5px;
-          }
-          .tags .chip {
-            font-size: 11px;
-            padding: 1px 6px;
-          }
-          .bottom {
-            gap: 6px;
-            padding: 8px 10px 10px;
-          }
-          .desc {
-            display: block;
-            overflow: visible;
-            -webkit-line-clamp: unset; /* ← スマホは全文表示 */
-            font-size: 13px;
-            line-height: 1.7;
-          }
-        }
-      `}</style>
+     <style jsx>{`
+  @media (max-width: 600px) {
+    .card {
+      grid-template-rows: 12% 46% 42%;
+    }
+    .imgWrap {
+      margin: 8px;
+      border-width: 1.5px;
+    }
+    .tags .chip {
+      font-size: 11px;
+      padding: 1px 6px;
+    }
+    .bottom {
+      gap: 6px;
+      padding: 8px 10px 10px;
+    }
+    .desc {
+      display: block;
+      overflow: visible !important;
+      -webkit-line-clamp: unset !important;
+      line-clamp: unset !important;
+      font-size: 13px;
+      line-height: 1.7;
+      max-height: none !important;
+      white-space: normal;
+    }
+  }
+`}</style>
     </article>
   );
 }
