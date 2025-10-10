@@ -23,9 +23,9 @@ export default function CardItem({ card }: { card: Card }) {
       <div
         style={{
           position: 'relative',
-          aspectRatio: '4 / 3',
+          aspectRatio: '16 / 9',
           // 互換性フォールバック（旧ブラウザ用）
-          minHeight: 280,
+          minHeight: 320,
         }}
       >
         <Image
