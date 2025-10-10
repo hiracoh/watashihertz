@@ -19,13 +19,13 @@ export default function CardItem({ card }: { card: Card }) {
         background: '#fff',
       }}
     >
-      {/* 画像ラッパ：アスペクト比を固定（4:5） */}
+      {/* 画像ラッパ：横長 16:9 に固定 */}
       <div
         style={{
           position: 'relative',
-          aspectRatio: '16 / 9',
-          // 互換性フォールバック（旧ブラウザ用）
-          minHeight: 320,
+          width: '100%',
+          aspectRatio: '16 / 9', // ← 横長
+          /* minHeight: 200,  ← 不要。縦長化の原因になりがちなので外す */
         }}
       >
         <Image
@@ -33,12 +33,10 @@ export default function CardItem({ card }: { card: Card }) {
           alt={card.message}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
-          }}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           priority={false}
         />
+
         {/* 下部グラデ＋本文 */}
         <div
           style={{
