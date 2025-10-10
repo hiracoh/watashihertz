@@ -6,13 +6,15 @@ type Card = {
   image: string;
   name?: string;
   description?: string;
-  message?: string;
+  message?: string;     // 後方互換
   tags?: string[];
 };
 
+// === 色分け（前回のルールそのまま） ===
 function paletteFromTags(tags: string[] = []) {
   const Ts = tags.map(t => String(t).trim().toLowerCase());
   const has = (needle: string) => Ts.some(t => t.includes(needle));
+
   const isRed   = has('人間の傾向');
   const isBlue  = has('人間・人生とは');
   const isGreen = has('よりよく生きる');
@@ -40,7 +42,8 @@ export default function CardItem({ card }: { card: Card }) {
         background: '#fff',
         aspectRatio: '63 / 88',
         display: 'grid',
-        gridTemplateRows: '12% 60% 28%', // PCデフォルト: 下段を広げる
+        // PCデフォルト：上12% / 画像52% / 下36%（下を広げる）
+        gridTemplateRows: '12% 52% 36%',
       }}
     >
       {/* 上：名前バー */}
@@ -72,7 +75,7 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像エリア（額装、比率維持） */}
+      {/* 中：画像（額装・トリミング無し） */}
       <div
         className="imgWrap"
         style={{
@@ -110,7 +113,7 @@ export default function CardItem({ card }: { card: Card }) {
             'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)',
         }}
       >
-        <div className="tags" style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <div className="tags" style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
           {tags.map((t) => (
             <span
               key={t}
@@ -134,10 +137,10 @@ export default function CardItem({ card }: { card: Card }) {
           style={{
             margin: 0,
             fontSize: 13.5,
-            lineHeight: 1.55,
+            lineHeight: 1.6,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 5,           // PC/タブレット: 5行まで
+            WebkitLineClamp: 6,        // PCは最大6行まで見せる
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -146,25 +149,33 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* レスポンシブ上書き */}
+      {/* レスポンシブ上書き（タブレット＆スマホ） */}
       <style jsx>{`
-        /* タブレット */
+        /* タブレット（600〜1024px）: 下をさらに広げ、5行まで */
         @media (max-width: 1024px) and (min-width: 601px) {
           .card {
-            grid-template-rows: 12% 54% 34%;
+            grid-template-rows: 12% 48% 40%;
           }
           .desc {
             -webkit-line-clamp: 5;
           }
+          .tags .chip {
+            font-size: 11.5px;
+            padding: 2px 7px;
+          }
         }
-        /* スマホ */
+
+        /* スマホ（〜600px）: 画像をさらに小さく、説明は全文表示 */
         @media (max-width: 600px) {
           .card {
-            grid-template-rows: 12% 46% 42%;
+            grid-template-rows: 12% 40% 48%;
           }
           .imgWrap {
             margin: 8px;
             border-width: 1.5px;
+          }
+          .tags {
+            gap: 6px;
           }
           .tags .chip {
             font-size: 11px;
@@ -175,11 +186,11 @@ export default function CardItem({ card }: { card: Card }) {
             padding: 8px 10px 10px;
           }
           .desc {
-            display: block;              /* 全文表示 */
+            display: block;              /* ← 行数制限を解除して全文表示 */
             overflow: visible;
             -webkit-line-clamp: unset;
             font-size: 13px;
-            line-height: 1.6;
+            line-height: 1.7;
           }
         }
       `}</style>
