@@ -41,10 +41,10 @@ export default function CardItem({ card }: { card: Card }) {
         background: '#fff',
         aspectRatio: '63 / 88',
         display: 'grid',
-        gridTemplateRows: '12% 68% 20%', // ← PC用の当初の比率
+        gridTemplateRows: '12% 68% 20%', // PCは以前の比率
       }}
     >
-      {/* 上：名前バー */}
+      {/* タイトル */}
       <div
         style={{
           background: color.nameBar,
@@ -73,7 +73,7 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像エリア */}
+      {/* 画像 */}
       <div
         className="imgWrap"
         style={{
@@ -93,13 +93,13 @@ export default function CardItem({ card }: { card: Card }) {
           src={card.image}
           alt={title}
           fill
-          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+          sizes="(min-width:1024px) 50vw, 100vw" // 2枚表示用
           style={{ objectFit: 'contain' }}
           priority={false}
         />
       </div>
 
-      {/* 下：タグ＋説明 */}
+      {/* タグと説明 */}
       <div
         className="bottom"
         style={{
@@ -138,7 +138,7 @@ export default function CardItem({ card }: { card: Card }) {
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,   // PCは4行固定（元の状態）
+            WebkitLineClamp: 4,  // ← PCでは当初の4行固定
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -147,11 +147,10 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* 📱 スマホのときだけレイアウト調整 */}
       <style jsx>{`
         @media (max-width: 600px) {
           .card {
-            grid-template-rows: 12% 46% 42%; /* ← スマホは調整した比率 */
+            grid-template-rows: 12% 46% 42%; /* スマホの比率 */
           }
           .imgWrap {
             margin: 8px;
@@ -166,9 +165,9 @@ export default function CardItem({ card }: { card: Card }) {
             padding: 8px 10px 10px;
           }
           .desc {
-            display: block;              /* ← スマホでは全文表示 */
+            display: block;
             overflow: visible;
-            -webkit-line-clamp: unset;
+            -webkit-line-clamp: unset; /* ← スマホは全文表示 */
             font-size: 13px;
             line-height: 1.7;
           }
