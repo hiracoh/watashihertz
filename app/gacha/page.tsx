@@ -1,8 +1,9 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import cards from '@/data/cards.json';
-import CardItem from '@/components/CardItem'; // 👈 これを追加！
+import CardItem from '@/components/CardItem';
 
+// ---- 抽選用ユーティリティ ----
 const hash32 = (s: string) => {
   let h = 2166136261 >>> 0;
   for (let i = 0; i < s.length; i++) {
@@ -13,32 +14,34 @@ const hash32 = (s: string) => {
 };
 
 const todayInJST = () => {
-  const f = new Intl.DateTimeFormat('ja-JP', {
+  const parts = new Intl.DateTimeFormat('ja-JP', {
     timeZone: 'Asia/Tokyo',
     year: 'numeric',
     month: '2-digit',
     day: '2-digit',
   }).formatToParts(new Date());
-  const y = f.find((p) => p.type === 'year')?.value;
-  const m = f.find((p) => p.type === 'month')?.value;
-  const d = f.find((p) => p.type === 'day')?.value;
+  const y = parts.find(p => p.type === 'year')?.value;
+  const m = parts.find(p => p.type === 'month')?.value;
+  const d = parts.find(p => p.type === 'day')?.value;
   return `${y}-${m}-${d}`;
 };
 
 const getOrCreateUserKey = () => {
   if (typeof window === 'undefined') return 'guest';
-  const key = localStorage.getItem('userKey');
-  if (key) return key;
+  const k = localStorage.getItem('userKey');
+  if (k) return k;
   const nk = crypto?.randomUUID?.() ?? String(Math.random());
   localStorage.setItem('userKey', nk);
   return nk;
 };
 
+// ---- ページ本体 ----
 export default function GachaPage() {
   const [userKey, setUserKey] = useState('guest');
   useEffect(() => setUserKey(getOrCreateUserKey()), []);
 
-  const pool = useMemo(() => cards as any[], []); // 全カードから引く
+  // 抽選対象：全カード
+  const pool = useMemo(() => cards as any[], []);
   const today = useMemo(() => todayInJST(), []);
 
   const card = useMemo(() => {
@@ -56,11 +59,11 @@ export default function GachaPage() {
         <p style={{ opacity: 0.7, fontSize: 12, marginTop: 4 }}>{today}</p>
       </header>
 
-      {/* ここがCardItemに置き換わった */}
+      {/* 共通のカードUI（上3/5 画像・下2/5 本文/タグ） */}
       <CardItem card={card as any} />
 
       <p style={{ fontSize: 12, opacity: 0.6, marginTop: 8 }}>
-        ※ 日替わりは端末ごとのキー＋JST基準です。
+        ※ 端末ごとのキー＋JST基準で日替わり固定です。
       </p>
     </main>
   );
