@@ -42,7 +42,7 @@ export default function GachaPage() {
   useEffect(() => setUserKey(getOrCreateUserKey()), []);
 
   // 有料のカードだけがプール
-  const pool = useMemo(() => cards.filter(isPaid), []);
+  const pool = useMemo(() => cards, []);
   const today = useMemo(() => todayInJST(), []);
 
   const card = useMemo(() => {
