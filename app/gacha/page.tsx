@@ -1,10 +1,8 @@
 'use client';
-
 import { useEffect, useMemo, useState } from 'react';
 import cards from '@/data/cards.json';
-import { isPaid } from '../../lib/plan';
+import CardItem from '@/components/CardItem'; // 👈 これを追加！
 
-// FNV-1a 32bit 簡易ハッシュ
 const hash32 = (s: string) => {
   let h = 2166136261 >>> 0;
   for (let i = 0; i < s.length; i++) {
@@ -14,7 +12,6 @@ const hash32 = (s: string) => {
   return h >>> 0;
 };
 
-// アジア/東京の“日付文字列”をつくる（ユーザーのPCが海外でも固定）
 const todayInJST = () => {
   const f = new Intl.DateTimeFormat('ja-JP', {
     timeZone: 'Asia/Tokyo',
@@ -22,9 +19,9 @@ const todayInJST = () => {
     month: '2-digit',
     day: '2-digit',
   }).formatToParts(new Date());
-  const y = f.find(p=>p.type==='year')?.value;
-  const m = f.find(p=>p.type==='month')?.value;
-  const d = f.find(p=>p.type==='day')?.value;
+  const y = f.find((p) => p.type === 'year')?.value;
+  const m = f.find((p) => p.type === 'month')?.value;
+  const d = f.find((p) => p.type === 'day')?.value;
   return `${y}-${m}-${d}`;
 };
 
@@ -41,8 +38,7 @@ export default function GachaPage() {
   const [userKey, setUserKey] = useState('guest');
   useEffect(() => setUserKey(getOrCreateUserKey()), []);
 
-  // 有料のカードだけがプール
-  const pool = useMemo(() => cards, []);
+  const pool = useMemo(() => cards as any[], []); // 全カードから引く
   const today = useMemo(() => todayInJST(), []);
 
   const card = useMemo(() => {
@@ -51,32 +47,20 @@ export default function GachaPage() {
     return pool[idx];
   }, [pool, today, userKey]);
 
-  if (!card) return <main className="p-6">カード準備中です。</main>;
+  if (!card) return <main style={{ padding: 24 }}>カード準備中です。</main>;
 
   return (
-    <main className="p-6 max-w-2xl mx-auto flex flex-col gap-4">
-      <header>
-        <h1 className="text-2xl font-bold">今日の1枚</h1>
-        <p className="text-sm opacity-70">{today}</p>
+    <main style={{ maxWidth: 720, margin: '0 auto', padding: 16 }}>
+      <header style={{ marginBottom: 12 }}>
+        <h1 style={{ fontSize: 24, fontWeight: 800, margin: 0 }}>今日の1枚</h1>
+        <p style={{ opacity: 0.7, fontSize: 12, marginTop: 4 }}>{today}</p>
       </header>
 
-      <article className="rounded-2xl overflow-hidden shadow">
-        <div className="relative">
-          {/* next/image を使っているなら置換 */}
-          <img src={card.image} alt={card.message} className="w-full h-72 object-cover" />
-          <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/70 to-transparent text-white">
-            <p className="text-lg leading-relaxed">{card.message}</p>
-          </div>
-        </div>
-        <div className="p-4 flex gap-2 flex-wrap">
-          {(card.tags ?? []).map((t: string) => (
-            <span key={t} className="text-xs border rounded px-2 py-0.5">{t}</span>
-          ))}
-        </div>
-      </article>
+      {/* ここがCardItemに置き換わった */}
+      <CardItem card={card as any} />
 
-      <p className="text-xs opacity-60">
-        ※ 試験運用：端末ごとに日替わり固定。のちほどサーバ時刻＆有料検証に切り替え予定。
+      <p style={{ fontSize: 12, opacity: 0.6, marginTop: 8 }}>
+        ※ 日替わりは端末ごとのキー＋JST基準です。
       </p>
     </main>
   );
