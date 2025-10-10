@@ -100,8 +100,8 @@ export default function CardItem({ card }: { card: Card }) {
             fontSize: 20,                // ← 大きく
             fontWeight: 900,
             letterSpacing: 1,            // ← 角ばった印象を強調
-            color: '#2a1d15',
-            textShadow: '0 1px 0 rgba(255,255,255,0.45)',
+            color: '#5A3C0D',
+            textShadow: '0 3px 0 rgba(255,255,255,0.45)',
             fontFamily: `'BIZ UDPGothic', 'Noto Sans JP', system-ui, sans-serif`, // ← 角ばったゴシック系
             whiteSpace: 'nowrap',
             overflow: 'hidden',
