@@ -5,62 +5,28 @@ type Card = {
   id: string;
   image: string;
   name?: string;
-  description?: string; // 1〜3文想定
-  message?: string;     // 旧フィールド（後方互換）
+  description?: string;
+  message?: string;
   tags?: string[];
 };
 
 function paletteFromTags(tags: string[] = []) {
   const Ts = tags.map(t => String(t).trim().toLowerCase());
   const has = (needle: string) => Ts.some(t => t.includes(needle));
-
   const isRed   = has('人間の傾向');
   const isBlue  = has('人間・人生とは');
   const isGreen = has('よりよく生きる');
 
-  if (isRed) {
-    return {
-      frame: '#C86848',
-      nameBar: 'linear-gradient(180deg,#E8A08A 0%, #B65A43 100%)',
-      chip: '#F7E3DE',
-      chipBorder: '#E4B7AA',
-      shadow: 'rgba(182,90,67,0.35)',
-    };
-  }
-  if (isBlue) {
-    return {
-      frame: '#5C7EA6',
-      nameBar: 'linear-gradient(180deg,#B0C7E2 0%, #5C7EA6 100%)',
-      chip: '#E4EEF7',
-      chipBorder: '#B8CCE2',
-      shadow: 'rgba(92,126,166,0.35)',
-    };
-  }
-  if (isGreen) {
-    return {
-      frame: '#5E9A6C',
-      nameBar: 'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)',
-      chip: '#E3F3E9',
-      chipBorder: '#B6D9C1',
-      shadow: 'rgba(94,154,108,0.35)',
-    };
-  }
-
-  return {
-    frame: '#A09A92',
-    nameBar: 'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)',
-    chip: '#F1EEE8',
-    chipBorder: '#D4CEC6',
-    shadow: 'rgba(128,120,110,0.35)',
-  };
+  if (isRed)   return { frame:'#C86848', nameBar:'linear-gradient(180deg,#E8A08A 0%, #B65A43 100%)', chip:'#F7E3DE', chipBorder:'#E4B7AA', shadow:'rgba(182,90,67,0.35)' };
+  if (isBlue)  return { frame:'#5C7EA6', nameBar:'linear-gradient(180deg,#B0C7E2 0%, #5C7EA6 100%)', chip:'#E4EEF7', chipBorder:'#B8CCE2', shadow:'rgba(92,126,166,0.35)' };
+  if (isGreen) return { frame:'#5E9A6C', nameBar:'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)', chip:'#E3F3E9', chipBorder:'#B6D9C1', shadow:'rgba(94,154,108,0.35)' };
+  return { frame:'#A09A92', nameBar:'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)', chip:'#F1EEE8', chipBorder:'#D4CEC6', shadow:'rgba(128,120,110,0.35)' };
 }
 
 export default function CardItem({ card }: { card: Card }) {
-  const title =
-    card.name ||
-    (card.message ? String(card.message).slice(0, 18) : 'カード');
-  const desc = card.description || card.message || '';
-  const tags = card.tags || [];
+  const title = card.name || (card.message ? String(card.message).slice(0, 18) : 'カード');
+  const desc  = card.description || card.message || '';
+  const tags  = card.tags || [];
   const color = paletteFromTags(tags);
 
   return (
@@ -74,7 +40,7 @@ export default function CardItem({ card }: { card: Card }) {
         background: '#fff',
         aspectRatio: '63 / 88',
         display: 'grid',
-        gridTemplateRows: '12% 68% 20%', // PC時の比率
+        gridTemplateRows: '12% 60% 28%', // PCデフォルト: 下段を広げる
       }}
     >
       {/* 上：名前バー */}
@@ -106,8 +72,9 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像エリア */}
+      {/* 中：画像エリア（額装、比率維持） */}
       <div
+        className="imgWrap"
         style={{
           position: 'relative',
           margin: 10,
@@ -133,6 +100,7 @@ export default function CardItem({ card }: { card: Card }) {
 
       {/* 下：タグ＋説明 */}
       <div
+        className="bottom"
         style={{
           padding: '10px 12px 12px',
           display: 'grid',
@@ -142,10 +110,11 @@ export default function CardItem({ card }: { card: Card }) {
             'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)',
         }}
       >
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <div className="tags" style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {tags.map((t) => (
             <span
               key={t}
+              className="chip"
               style={{
                 fontSize: 12,
                 border: `1px solid ${color.chipBorder}`,
@@ -161,13 +130,14 @@ export default function CardItem({ card }: { card: Card }) {
         </div>
 
         <p
+          className="desc"
           style={{
             margin: 0,
             fontSize: 13.5,
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,
+            WebkitLineClamp: 5,           // PC/タブレット: 5行まで
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -176,11 +146,40 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* 📱 スマホ用のレイアウト調整 */}
+      {/* レスポンシブ上書き */}
       <style jsx>{`
+        /* タブレット */
+        @media (max-width: 1024px) and (min-width: 601px) {
+          .card {
+            grid-template-rows: 12% 54% 34%;
+          }
+          .desc {
+            -webkit-line-clamp: 5;
+          }
+        }
+        /* スマホ */
         @media (max-width: 600px) {
           .card {
-            grid-template-rows: 12% 50% 38%; /* ← 画像を縮めて説明エリアを広げる */
+            grid-template-rows: 12% 46% 42%;
+          }
+          .imgWrap {
+            margin: 8px;
+            border-width: 1.5px;
+          }
+          .tags .chip {
+            font-size: 11px;
+            padding: 1px 6px;
+          }
+          .bottom {
+            gap: 6px;
+            padding: 8px 10px 10px;
+          }
+          .desc {
+            display: block;              /* 全文表示 */
+            overflow: visible;
+            -webkit-line-clamp: unset;
+            font-size: 13px;
+            line-height: 1.6;
           }
         }
       `}</style>
