@@ -6,14 +6,13 @@ type Card = {
   image: string;
   name?: string;
   description?: string;
-  message?: string;
+  message?: string;     // 後方互換
   tags?: string[];
 };
 
 function paletteFromTags(tags: string[] = []) {
   const Ts = tags.map(t => String(t).trim().toLowerCase());
   const has = (needle: string) => Ts.some(t => t.includes(needle));
-
   const isRed   = has('人間の傾向');
   const isBlue  = has('人間・人生とは');
   const isGreen = has('よりよく生きる');
@@ -35,16 +34,16 @@ export default function CardItem({ card }: { card: Card }) {
       className="card"
       style={{
         borderRadius: 18,
-        overflow: 'hidden',
+        overflow: 'hidden',                     // 角丸キープ
         boxShadow: `0 10px 26px ${color.shadow}`,
         border: `2px solid ${color.frame}`,
         background: '#fff',
-        aspectRatio: '63 / 88',
+        aspectRatio: '63 / 88',                 // PCは比率固定
         display: 'grid',
-        gridTemplateRows: '12% 68% 20%', // PCは以前の比率
+        gridTemplateRows: '12% 68% 20%',        // PC: 上12 / 中68 / 下20
       }}
     >
-      {/* タイトル */}
+      {/* 上：名前バー */}
       <div
         style={{
           background: color.nameBar,
@@ -73,7 +72,7 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 画像 */}
+      {/* 中：画像（額装・トリミング無し） */}
       <div
         className="imgWrap"
         style={{
@@ -93,13 +92,13 @@ export default function CardItem({ card }: { card: Card }) {
           src={card.image}
           alt={title}
           fill
-          sizes="(min-width:1024px) 50vw, 100vw" // 2枚表示用
+          sizes="(min-width:1024px) 50vw, 100vw"
           style={{ objectFit: 'contain' }}
           priority={false}
         />
       </div>
 
-      {/* タグと説明 */}
+      {/* 下：タグ＋説明 */}
       <div
         className="bottom"
         style={{
@@ -111,6 +110,7 @@ export default function CardItem({ card }: { card: Card }) {
             'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)',
         }}
       >
+        {/* タグ */}
         <div className="tags" style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {tags.map((t) => (
             <span
@@ -130,15 +130,16 @@ export default function CardItem({ card }: { card: Card }) {
           ))}
         </div>
 
+        {/* 説明 */}
         <p
           className="desc"
           style={{
             margin: 0,
             fontSize: 13.5,
-            lineHeight: 1.55,
+            lineHeight: 1.6,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,  // ← PCでは当初の4行固定
+            WebkitLineClamp: 4,              // PCは4行で整える
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -147,35 +148,39 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-     <style jsx>{`
-  @media (max-width: 600px) {
-    .card {
-      grid-template-rows: 12% 46% 42%;
-    }
-    .imgWrap {
-      margin: 8px;
-      border-width: 1.5px;
-    }
-    .tags .chip {
-      font-size: 11px;
-      padding: 1px 6px;
-    }
-    .bottom {
-      gap: 6px;
-      padding: 8px 10px 10px;
-    }
-    .desc {
-      display: block;
-      overflow: visible !important;
-      -webkit-line-clamp: unset !important;
-      line-clamp: unset !important;
-      font-size: 13px;
-      line-height: 1.7;
-      max-height: none !important;
-      white-space: normal;
-    }
-  }
-`}</style>
+      {/* ★ スマホでは aspect-ratio を解除して高さを可変に */}
+      <style jsx>{`
+        @media (max-width: 600px) {
+          .card {
+            aspect-ratio: auto;              /* ← これが一番大事：高さ制限を外す */
+            display: grid;
+            grid-template-rows: auto auto auto; /* 各段は内容に合わせて伸縮 */
+          }
+          .imgWrap {
+            margin: 8px;
+            border-width: 1.5px;
+            aspect-ratio: 4 / 3;            /* 画像ブロックに比率を付与して高さ確保 */
+          }
+          .tags .chip {
+            font-size: 11px;
+            padding: 1px 6px;
+          }
+          .bottom {
+            gap: 6px;
+            padding: 8px 10px 10px;
+          }
+          .desc {
+            display: block;
+            overflow: visible !important;
+            -webkit-line-clamp: unset !important; /* 全文表示 */
+            line-clamp: unset !important;
+            font-size: 13px;
+            line-height: 1.7;
+            max-height: none !important;
+            white-space: normal;
+          }
+        }
+      `}</style>
     </article>
   );
 }
