@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import cards from '../data/cards.json';
+import cards from '../../data/cards.json';
 import { isPaid } from '../../lib/plan';
 
 // FNV-1a 32bit 簡易ハッシュ
