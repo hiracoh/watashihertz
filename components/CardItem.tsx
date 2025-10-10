@@ -81,7 +81,7 @@ export default function CardItem({ card }: { card: Card }) {
         // カードの縦横比（遊戯王 ≒ 63×88mm）
         aspectRatio: '63 / 88',
         display: 'grid',
-        gridTemplateRows: '10% 70% 20%', // 上1/10, 中7/10, 下2/10
+        gridTemplateRows: '12% 68% 20%', // ← 上のバーを少し高く
       }}
     >
       {/* 上：名前バー */}
@@ -97,11 +97,12 @@ export default function CardItem({ card }: { card: Card }) {
         <h3
           style={{
             margin: 0,
-            fontSize: 16,
-            fontWeight: 800,
-            letterSpacing: 0.5,
+            fontSize: 20,                // ← 大きく
+            fontWeight: 900,
+            letterSpacing: 1,            // ← 角ばった印象を強調
             color: '#2a1d15',
             textShadow: '0 1px 0 rgba(255,255,255,0.45)',
+            fontFamily: `'BIZ UDPGothic', 'Noto Sans JP', system-ui, sans-serif`, // ← 角ばったゴシック系
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
