@@ -11,15 +11,16 @@ type Card = {
 };
 
 function paletteFromTags(tags: string[] = []) {
-  const t = (tags[0] || '').toLowerCase();
+  // 正規化（全角・半角や大小のズレを吸収）
+  const Ts = tags.map(t => String(t).trim().toLowerCase());
 
-  // ゆるい分類（必要に応じて増やしてOK）
-  const isRed =
-    /怒|喧嘩|葛藤|対立|苛立ち|不安|恐れ|焦り|被害/.test(t);
-  const isGreen =
-    /関係|つながり|共感|家族|友情|人間関係/.test(t);
-  const isBlue =
-    /静けさ|観察|洞察|内省|人間の傾向|落ち着き/.test(t);
+  // マッチ関数（部分一致OK）
+  const has = (needle: string) => Ts.some(t => t.includes(needle));
+
+  // カテゴリ判定（優先度：赤 > 青 > 緑）
+  const isRed   = has('人間の傾向');       // ← 赤系
+  const isBlue  = has('人間・人生とは');   // ← 青系
+  const isGreen = has('よりよく生きる');   // ← 緑系
 
   if (isRed) {
     return {
@@ -28,15 +29,6 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#F7E3DE',
       chipBorder: '#E4B7AA',
       shadow: 'rgba(182,90,67,0.35)',
-    };
-  }
-  if (isGreen) {
-    return {
-      frame: '#5E9A6C',
-      nameBar: 'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)',
-      chip: '#E3F3E9',
-      chipBorder: '#B6D9C1',
-      shadow: 'rgba(94,154,108,0.35)',
     };
   }
   if (isBlue) {
@@ -48,7 +40,17 @@ function paletteFromTags(tags: string[] = []) {
       shadow: 'rgba(92,126,166,0.35)',
     };
   }
-  // default neutral
+  if (isGreen) {
+    return {
+      frame: '#5E9A6C',
+      nameBar: 'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)',
+      chip: '#E3F3E9',
+      chipBorder: '#B6D9C1',
+      shadow: 'rgba(94,154,108,0.35)',
+    };
+  }
+
+  // どれにも該当しない場合のニュートラル
   return {
     frame: '#A09A92',
     nameBar: 'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)',
@@ -57,6 +59,7 @@ function paletteFromTags(tags: string[] = []) {
     shadow: 'rgba(128,120,110,0.35)',
   };
 }
+
 
 export default function CardItem({ card }: { card: Card }) {
   const title =
