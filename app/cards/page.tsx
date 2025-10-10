@@ -13,7 +13,11 @@ export default function CardsPage() {
     const needle = q.trim().toLowerCase();
     if (!needle) return paidCards;
     return paidCards.filter((c) => {
-      const hay = [c.message, ...(c.tags ?? [])].join(' ').toLowerCase();
+      const hay = [
+       c.name ?? '',
+       c.description ?? c.message ?? '',
+       ...(c.tags ?? [])
+     ].join(' ').toLowerCase();
       return hay.includes(needle);
     });
   }, [q, paidCards]);
