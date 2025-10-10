@@ -11,16 +11,12 @@ type Card = {
 };
 
 function paletteFromTags(tags: string[] = []) {
-  // 正規化（全角・半角や大小のズレを吸収）
   const Ts = tags.map(t => String(t).trim().toLowerCase());
-
-  // マッチ関数（部分一致OK）
   const has = (needle: string) => Ts.some(t => t.includes(needle));
 
-  // カテゴリ判定（優先度：赤 > 青 > 緑）
-  const isRed   = has('人間の傾向');       // ← 赤系
-  const isBlue  = has('人間・人生とは');   // ← 青系
-  const isGreen = has('よりよく生きる');   // ← 緑系
+  const isRed   = has('人間の傾向');
+  const isBlue  = has('人間・人生とは');
+  const isGreen = has('よりよく生きる');
 
   if (isRed) {
     return {
@@ -50,7 +46,6 @@ function paletteFromTags(tags: string[] = []) {
     };
   }
 
-  // どれにも該当しない場合のニュートラル
   return {
     frame: '#A09A92',
     nameBar: 'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)',
@@ -59,7 +54,6 @@ function paletteFromTags(tags: string[] = []) {
     shadow: 'rgba(128,120,110,0.35)',
   };
 }
-
 
 export default function CardItem({ card }: { card: Card }) {
   const title =
@@ -71,17 +65,16 @@ export default function CardItem({ card }: { card: Card }) {
 
   return (
     <article
+      className="card"
       style={{
-        // 外枠（遊戯王っぽい額縁）
         borderRadius: 18,
         overflow: 'hidden',
         boxShadow: `0 10px 26px ${color.shadow}`,
         border: `2px solid ${color.frame}`,
         background: '#fff',
-        // カードの縦横比（遊戯王 ≒ 63×88mm）
         aspectRatio: '63 / 88',
         display: 'grid',
-        gridTemplateRows: '12% 68% 20%', // ← 上のバーを少し高く
+        gridTemplateRows: '12% 68% 20%', // PC時の比率
       }}
     >
       {/* 上：名前バー */}
@@ -97,12 +90,12 @@ export default function CardItem({ card }: { card: Card }) {
         <h3
           style={{
             margin: 0,
-            fontSize: 20,                // ← 大きく
+            fontSize: 20,
             fontWeight: 900,
-            letterSpacing: 2,            // ← 角ばった印象を強調
+            letterSpacing: 2,
             color: '#5A3C0D',
             textShadow: '0 1.5px 0 rgba(255,255,255,0.45)',
-            fontFamily: `'BIZ UDPGothic', 'Noto Sans JP', system-ui, sans-serif`, // ← 角ばったゴシック系
+            fontFamily: `'BIZ UDPGothic', 'Noto Sans JP', system-ui, sans-serif`,
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
@@ -113,7 +106,7 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像エリア（額装、画像は比率維持でcontain） */}
+      {/* 中：画像エリア */}
       <div
         style={{
           position: 'relative',
@@ -133,7 +126,7 @@ export default function CardItem({ card }: { card: Card }) {
           alt={title}
           fill
           sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-          style={{ objectFit: 'contain' }} // トリミングせず収める
+          style={{ objectFit: 'contain' }}
           priority={false}
         />
       </div>
@@ -149,7 +142,6 @@ export default function CardItem({ card }: { card: Card }) {
             'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)',
         }}
       >
-        {/* タグ */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {tags.map((t) => (
             <span
@@ -168,7 +160,6 @@ export default function CardItem({ card }: { card: Card }) {
           ))}
         </div>
 
-        {/* 説明（1〜3文想定） */}
         <p
           style={{
             margin: 0,
@@ -176,7 +167,7 @@ export default function CardItem({ card }: { card: Card }) {
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,      // 入りすぎたら折り返し・省略
+            WebkitLineClamp: 4,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -184,6 +175,15 @@ export default function CardItem({ card }: { card: Card }) {
           {desc}
         </p>
       </div>
+
+      {/* 📱 スマホ用のレイアウト調整 */}
+      <style jsx>{`
+        @media (max-width: 600px) {
+          .card {
+            grid-template-rows: 12% 50% 38%; /* ← 画像を縮めて説明エリアを広げる */
+          }
+        }
+      `}</style>
     </article>
   );
 }
