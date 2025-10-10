@@ -41,7 +41,7 @@ export default function CardsPage() {
         style={{
           display: 'grid',
           gap: '16px',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           alignItems: 'start',
         }}
       >
