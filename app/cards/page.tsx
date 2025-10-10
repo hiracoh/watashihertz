@@ -43,7 +43,7 @@ export default function CardsPage() {
         style={{
           display: 'grid',
           gap: 16,
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // 横長カードでも潰れない幅
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
           alignItems: 'start',
         }}
       >
