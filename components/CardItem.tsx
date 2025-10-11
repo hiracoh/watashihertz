@@ -152,36 +152,37 @@ export default function CardItem({ card }: { card: Card }) {
 
       {/* ▼ スマホのみ縦比率を可変にして説明欄を広げる */}
       <style jsx>{`
-        @media (max-width: 600px) {
-          .card {
-            aspect-ratio: auto;                 /* 縦固定を解除 */
-            grid-template-rows: 12% auto auto;  /* 自然に伸びる */
-          }
-          .imgWrap {
-            margin: 8px;
-            border-width: 1.5px;
-            aspect-ratio: 4 / 3;                /* 画像の縦を小さく */
-          }
-          .tags .chip {
-            font-size: 11px;
-            padding: 1px 6px;
-          }
-          .bottom {
-            gap: 6px;
-            padding: 8px 10px 12px;
-          }
-          .desc {
-            display: block;
-            overflow: visible !important;
-            -webkit-line-clamp: unset !important;
-            line-clamp: unset !important;
-            font-size: 13px;
-            line-height: 1.7;
-            max-height: none !important;
-            white-space: normal;
-          }
-        }
-      `}</style>
+  @media (max-width: 600px) {
+    .card {
+      aspect-ratio: auto;                 /* 縦固定解除 */
+      grid-template-rows: 12% auto 1fr;   /* 下段を広く確保 */
+    }
+    .imgWrap {
+      margin: 6px;                        /* 余白を少し詰める */
+      border-width: 1.5px;
+      aspect-ratio: 16 / 10;              /* ← 画像の“縦”をさらに低く（4/3 から変更） */
+    }
+    .bottom {
+      gap: 6px;
+      padding: 6px 10px 10px;             /* 上の余白を減らす＝タグ/本文を上へ */
+    }
+    .tags .chip {
+      font-size: 11px;
+      padding: 1px 6px;
+    }
+    .desc {
+      display: block;
+      overflow: visible !important;
+      -webkit-line-clamp: unset !important;
+      line-clamp: unset !important;
+      font-size: 13px;
+      line-height: 1.7;
+      max-height: none !important;
+      white-space: normal;
+    }
+  }
+`}</style>
+
     </article>
   );
 }
