@@ -1,19 +1,21 @@
 'use client';
+
 import { useEffect, useMemo, useState } from 'react';
 import cards from '@/data/cards.json';
 import CardItem from '@/components/CardItem';
 
-// ---- 抽選用ユーティリティ ----
-const hash32 = (s: string) => {
-  let h = 2166136261 >>> 0;
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-};
+// 端末ごとのキー（初回のみ保存）
+function getOrCreateUserKey() {
+  if (typeof window === 'undefined') return 'guest';
+  const k = localStorage.getItem('userKey');
+  if (k) return k;
+  const nk = crypto?.randomUUID?.() ?? String(Math.random());
+  localStorage.setItem('userKey', nk);
+  return nk;
+}
 
-const todayInJST = () => {
+// JSTの日付（YYYY-MM-DD）
+function todayJST() {
   const parts = new Intl.DateTimeFormat('ja-JP', {
     timeZone: 'Asia/Tokyo',
     year: 'numeric',
@@ -24,26 +26,24 @@ const todayInJST = () => {
   const m = parts.find(p => p.type === 'month')?.value;
   const d = parts.find(p => p.type === 'day')?.value;
   return `${y}-${m}-${d}`;
-};
+}
 
-const getOrCreateUserKey = () => {
-  if (typeof window === 'undefined') return 'guest';
-  const k = localStorage.getItem('userKey');
-  if (k) return k;
-  const nk = crypto?.randomUUID?.() ?? String(Math.random());
-  localStorage.setItem('userKey', nk);
-  return nk;
-};
+// FNV風ハッシュ（手軽な32bit）
+function hash32(s: string) {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
 
-// ---- ページ本体 ----
 export default function GachaPage() {
   const [userKey, setUserKey] = useState('guest');
   useEffect(() => setUserKey(getOrCreateUserKey()), []);
 
-  // 抽選対象：全カード
   const pool = useMemo(() => cards as any[], []);
-  const today = useMemo(() => todayInJST(), []);
-
+  const today = useMemo(() => todayJST(), []);
   const card = useMemo(() => {
     if (!pool.length) return null;
     const idx = hash32(`${today}-${userKey}`) % pool.length;
@@ -59,7 +59,7 @@ export default function GachaPage() {
         <p style={{ opacity: 0.7, fontSize: 12, marginTop: 4 }}>{today}</p>
       </header>
 
-      {/* 共通のカードUI（上3/5 画像・下2/5 本文/タグ） */}
+      {/* ← ここでCardItemを使うので、/cards と同じ見た目・挙動になります */}
       <CardItem card={card as any} />
 
       <p style={{ fontSize: 12, opacity: 0.6, marginTop: 8 }}>
