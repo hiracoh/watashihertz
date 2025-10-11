@@ -243,7 +243,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
       <style jsx>{`
         /* PC/タブレット：当初どおりの比率固定 */
         @media (min-width: 601px) {
-          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 54% 34%; }
+          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 65% 23%; }
           .imgWrap {
 +    margin: 10px;
 +    height: 50%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
