@@ -1,5 +1,4 @@
 'use client';
-
 import Image from 'next/image';
 
 type Card = {
@@ -7,14 +6,13 @@ type Card = {
   image: string;
   name?: string;
   description?: string; // 1〜3文想定
-  message?: string;     // 旧フィールド（後方互換）
+  message?: string;     // 後方互換
   tags?: string[];
 };
 
 function paletteFromTags(tags: string[] = []) {
   const Ts = tags.map(t => String(t).trim().toLowerCase());
   const has = (needle: string) => Ts.some(t => t.includes(needle));
-
   const isRed   = has('人間の傾向');
   const isBlue  = has('人間・人生とは');
   const isGreen = has('よりよく生きる');
@@ -26,11 +24,9 @@ function paletteFromTags(tags: string[] = []) {
 }
 
 export default function CardItem({ card }: { card: Card }) {
-  const title =
-    card.name ||
-    (card.message ? String(card.message).slice(0, 18) : 'カード');
-  const desc = card.description || card.message || '';
-  const tags = card.tags || [];
+  const title = card.name || (card.message ? String(card.message).slice(0, 18) : 'カード');
+  const desc  = card.description || card.message || '';
+  const tags  = card.tags || [];
   const color = paletteFromTags(tags);
 
   return (
@@ -42,9 +38,7 @@ export default function CardItem({ card }: { card: Card }) {
         boxShadow: `0 10px 26px ${color.shadow}`,
         border: `2px solid ${color.frame}`,
         background: '#fff',
-        aspectRatio: '63 / 88',           // PCは固定
-        display: 'grid',
-        gridTemplateRows: '12% 68% 20%',  // PCの当初配分
+        display: 'grid',                         // ← レイアウトはCSSに任せる
       }}
     >
       {/* 上：名前バー */}
@@ -76,9 +70,8 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像 */}
-      <div
-        className="imgWrap"
+      {/* 中：画像枠（画像自体は contain） */}
+      <div className="imgWrap"
         style={{
           position: 'relative',
           margin: 10,
@@ -86,10 +79,10 @@ export default function CardItem({ card }: { card: Card }) {
           borderRadius: 10,
           background:
             'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          overflow: 'hidden',
         }}
       >
         <Image
@@ -103,8 +96,7 @@ export default function CardItem({ card }: { card: Card }) {
       </div>
 
       {/* 下：タグ＋説明 */}
-      <div
-        className="bottom"
+      <div className="bottom"
         style={{
           padding: '10px 12px 12px',
           display: 'grid',
@@ -133,15 +125,14 @@ export default function CardItem({ card }: { card: Card }) {
           ))}
         </div>
 
-        <p
-          className="desc"
+        <p className="desc"
           style={{
             margin: 0,
             fontSize: 13.5,
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,  // PCは4行
+            WebkitLineClamp: 4,                  // PC時：4行
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -150,48 +141,37 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* ▼ スマホのみ縦比率を可変にして説明欄を広げる */}
+      {/* ====== レイアウトはCSSで切り替え（inlineをやめる） ====== */}
       <style jsx>{`
-  @media (max-width: 600px) {
-    .card {
-      aspect-ratio: auto;            /* 縦固定を解除して自然な高さに */
-      grid-template-rows: auto auto auto;
-    }
-    /* 画像の“枠”高さだけを抑える → 画像とタグの間の白余白を消す */
-    .imgWrap {
-      margin: 8px;
-      border-width: 1.5px;
-      height: 44vw;                  /* ← ここで縦だけコントロール（例: 44〜52vwで微調整） */
-      max-height: 260px;             /* 端末の大きさによっては上限を設けておくと安定 */
-    }
-    /* next/image の実画像はそのまま収める（横幅は維持、縦は入るだけ） */
-    .imgWrap :global(img) {
-      object-fit: contain;
-      width: 100%;
-      height: 100%;
-    }
+        /* PC/タブレット：当初どおり */
+        @media (min-width: 601px) {
+          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 68% 20%; }
+        }
 
-    .bottom {
-      gap: 6px;
-      padding: 8px 10px 12px;        /* 余白も少しだけ詰める */
-    }
-    .tags .chip {
-      font-size: 11px;
-      padding: 1px 6px;
-    }
-    /* 説明は全文表示 */
-    .desc {
-      display: block;
-      overflow: visible !important;
-      -webkit-line-clamp: unset !important;
-      line-clamp: unset !important;
-      font-size: 13px;
-      line-height: 1.7;
-      white-space: normal;
-    }
-  }
-`}</style>
+        /* スマホ：余白をなくしてタグ＋本文を上げる */
+        @media (max-width: 600px) {
+          .card { aspect-ratio: auto; grid-template-rows: auto auto auto; }
 
+          /* 画像“枠”の高さだけを適度に確保（横幅はそのまま） */
+          .imgWrap { margin: 8px; border-width: 1.5px; height: 44vw; max-height: 260px; }
+          .imgWrap :global(img) { width: 100%; height: 100%; object-fit: contain; }
+
+          .bottom { gap: 6px; padding: 8px 10px 12px; }
+          .tags .chip { font-size: 11px; padding: 1px 6px; }
+
+          /* 説明は全文表示（縛りを完全解除） */
+          .desc {
+            display: block;
+            overflow: visible !important;
+            -webkit-line-clamp: unset !important;
+            line-clamp: unset !important;
+            max-height: none !important;
+            white-space: normal;
+            font-size: 13px;
+            line-height: 1.7;
+          }
+        }
+      `}</style>
     </article>
   );
 }
