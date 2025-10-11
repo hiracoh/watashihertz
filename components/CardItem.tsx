@@ -192,7 +192,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
     position: 'relative',
     zIndex: 2,                       // 背景テクスチャより手前
     margin: '0 0px 2px',           // 画像枠と同じ内側余白ラインに合わせる
-    padding: '10px 12px 8px',
+    padding: '12px',
     borderRadius: 12,
     background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
     border: '1px solid rgba(0,0,0,0.06)',
@@ -203,7 +203,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
     gap: 4,
   }}
 >
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
     {tags.map((t) => (
       <span
         key={t}
