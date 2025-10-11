@@ -1,4 +1,5 @@
 'use client';
+
 import Image from 'next/image';
 
 type Card = {
@@ -6,27 +7,85 @@ type Card = {
   image: string;
   name?: string;
   description?: string; // 1〜3文想定
-  message?: string;     // 後方互換
+  message?: string;     // 旧フィールド（後方互換）
   tags?: string[];
 };
 
 function paletteFromTags(tags: string[] = []) {
   const Ts = tags.map(t => String(t).trim().toLowerCase());
   const has = (needle: string) => Ts.some(t => t.includes(needle));
-  const isRed   = has('人間の傾向');
-  const isBlue  = has('人間・人生とは');
-  const isGreen = has('よりよく生きる');
 
-  if (isRed)   return { frame:'#C86848', nameBar:'linear-gradient(180deg,#E8A08A 0%, #B65A43 100%)', chip:'#F7E3DE', chipBorder:'#E4B7AA', shadow:'rgba(182,90,67,0.35)' };
-  if (isBlue)  return { frame:'#5C7EA6', nameBar:'linear-gradient(180deg,#B0C7E2 0%, #5C7EA6 100%)', chip:'#E4EEF7', chipBorder:'#B8CCE2', shadow:'rgba(92,126,166,0.35)' };
-  if (isGreen) return { frame:'#5E9A6C', nameBar:'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)', chip:'#E3F3E9', chipBorder:'#B6D9C1', shadow:'rgba(94,154,108,0.35)' };
-  return { frame:'#A09A92', nameBar:'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)', chip:'#F1EEE8', chipBorder:'#D4CEC6', shadow:'rgba(128,120,110,0.35)' };
+  const isRed   = has('人間の傾向');       // 赤
+  const isBlue  = has('人間・人生とは');   // 青
+  const isGreen = has('よりよく生きる');   // 緑
+
+  if (isRed) {
+    return {
+      frame: '#C86848',
+      nameBar: 'linear-gradient(180deg,#E8A08A 0%, #B65A43 100%)',
+      chip: '#F7E3DE',
+      chipBorder: '#E4B7AA',
+      shadow: 'rgba(182,90,67,0.35)',
+      // 余白（表面加工入り）
+      surfaceBase: '#F9F4F1',
+      surfaceTint: 'rgba(230, 176, 160, 0.35)', // 赤系の薄い色
+    };
+  }
+  if (isBlue) {
+    return {
+      frame: '#5C7EA6',
+      nameBar: 'linear-gradient(180deg,#B0C7E2 0%, #5C7EA6 100%)',
+      chip: '#E4EEF7',
+      chipBorder: '#B8CCE2',
+      shadow: 'rgba(92,126,166,0.35)',
+      surfaceBase: '#F4F7FB',
+      surfaceTint: 'rgba(146, 176, 210, 0.35)',
+    };
+  }
+  if (isGreen) {
+    return {
+      frame: '#5E9A6C',
+      nameBar: 'linear-gradient(180deg,#A9D7B3 0%, #5E9A6C 100%)',
+      chip: '#E3F3E9',
+      chipBorder: '#B6D9C1',
+      shadow: 'rgba(94,154,108,0.35)',
+      surfaceBase: '#F4FAF6',
+      surfaceTint: 'rgba(120, 180, 140, 0.35)',
+    };
+  }
+  // ニュートラル
+  return {
+    frame: '#A09A92',
+    nameBar: 'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)',
+    chip: '#F1EEE8',
+    chipBorder: '#D4CEC6',
+    shadow: 'rgba(128,120,110,0.35)',
+    surfaceBase: '#F6F2EC',
+    surfaceTint: 'rgba(170, 160, 150, 0.35)',
+  };
 }
 
+/**
+ * CSSだけで軽い「表面加工」：
+ * - 広域グラデ（柔らかいムラ）: radial-gradient
+ * - 斜めの微細ライン: repeating-linear-gradient（超薄い）
+ * - ノイズ（極薄）: 8x8 SVG を dataURI でマスク的に重ねる
+ */
+const NOISE_SVG_DATAURI =
+  "url(\"data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'>\
+<rect width='8' height='8' fill='rgba(0,0,0,0)'/>\
+<circle cx='1' cy='1' r='0.5' fill='rgba(0,0,0,0.03)'/>\
+<circle cx='4' cy='3' r='0.5' fill='rgba(0,0,0,0.03)'/>\
+<circle cx='6' cy='6' r='0.5' fill='rgba(0,0,0,0.03)'/>\
+</svg>\")";
+
 export default function CardItem({ card }: { card: Card }) {
-  const title = card.name || (card.message ? String(card.message).slice(0, 18) : 'カード');
-  const desc  = card.description || card.message || '';
-  const tags  = card.tags || [];
+  const title =
+    card.name ||
+    (card.message ? String(card.message).slice(0, 18) : 'カード');
+  const desc = card.description || card.message || '';
+  const tags = card.tags || [];
   const color = paletteFromTags(tags);
 
   return (
@@ -35,12 +94,36 @@ export default function CardItem({ card }: { card: Card }) {
       style={{
         borderRadius: 18,
         overflow: 'hidden',
-        boxShadow: `0 10px 26px ${color.shadow}`,
         border: `2px solid ${color.frame}`,
-        background: '#fff',
-        display: 'grid',                         // ← レイアウトはCSSに任せる
+        boxShadow: `0 10px 26px ${color.shadow}`,
+        // ★ 余白（表面加工）…複数レイヤーの合成
+        background: [
+          // 1) 広域の柔らかいムラ（中心ハイライト→周辺へ）
+          `radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%)`,
+          // 2) ごく薄い斜めライン
+          `repeating-linear-gradient( -25deg, rgba(255,255,255,0.12) 0 2px, rgba(0,0,0,0.03) 2px 3px)`,
+          // 3) ティント（カテゴリ色をほんのり）
+          `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
+          // 4) ベース色
+          color.surfaceBase,
+        ].join(', '),
+        display: 'grid', // レイアウトはCSSで切替
+        position: 'relative',
       }}
     >
+      {/* 薄いノイズを全体に（超軽量SVG） */}
+      <div
+        aria-hidden
+        style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: NOISE_SVG_DATAURI,
+          backgroundSize: '8px 8px',
+          opacity: 0.6,
+          pointerEvents: 'none',
+        }}
+      />
+
       {/* 上：名前バー */}
       <div
         style={{
@@ -49,6 +132,8 @@ export default function CardItem({ card }: { card: Card }) {
           alignItems: 'center',
           padding: '0 12px',
           borderBottom: `1px solid ${color.frame}`,
+          position: 'relative',
+          zIndex: 1,
         }}
       >
         <h3
@@ -70,8 +155,9 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 中：画像枠（画像自体は contain） */}
-      <div className="imgWrap"
+      {/* 中：画像枠（額装） */}
+      <div
+        className="imgWrap"
         style={{
           position: 'relative',
           margin: 10,
@@ -83,6 +169,7 @@ export default function CardItem({ card }: { card: Card }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          zIndex: 1,
         }}
       >
         <Image
@@ -96,21 +183,24 @@ export default function CardItem({ card }: { card: Card }) {
       </div>
 
       {/* 下：タグ＋説明 */}
-      <div className="bottom"
+      <div
+        className="bottom"
         style={{
           padding: '10px 12px 12px',
           display: 'grid',
           gridTemplateRows: 'auto 1fr',
           gap: 8,
+          // 下段にもほんのりグロス感
           background:
-            'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.05) 100%)',
+            'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 30%)',
+          position: 'relative',
+          zIndex: 1,
         }}
       >
-        <div className="tags" style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {tags.map((t) => (
             <span
               key={t}
-              className="chip"
               style={{
                 fontSize: 12,
                 border: `1px solid ${color.chipBorder}`,
@@ -125,14 +215,15 @@ export default function CardItem({ card }: { card: Card }) {
           ))}
         </div>
 
-        <p className="desc"
+        <p
+          className="desc"
           style={{
             margin: 0,
             fontSize: 13.5,
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 4,                  // PC時：4行
+            WebkitLineClamp: 4, // PC時：4行
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -141,25 +232,19 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* ====== レイアウトはCSSで切り替え（inlineをやめる） ====== */}
+      {/* ===== レイアウトはCSSで切替（PC/スマホ） ===== */}
       <style jsx>{`
-        /* PC/タブレット：当初どおり */
+        /* PC/タブレット：当初どおりの比率固定 */
         @media (min-width: 601px) {
           .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 68% 20%; }
         }
 
-        /* スマホ：余白をなくしてタグ＋本文を上げる */
+        /* スマホ：可変＋画像枠は控えめ、高さは内容に合わせる */
         @media (max-width: 600px) {
           .card { aspect-ratio: auto; grid-template-rows: auto auto auto; }
-
-          /* 画像“枠”の高さだけを適度に確保（横幅はそのまま） */
           .imgWrap { margin: 8px; border-width: 1.5px; height: 44vw; max-height: 260px; }
           .imgWrap :global(img) { width: 100%; height: 100%; object-fit: contain; }
-
           .bottom { gap: 6px; padding: 8px 10px 12px; }
-          .tags .chip { font-size: 11px; padding: 1px 6px; }
-
-          /* 説明は全文表示（縛りを完全解除） */
           .desc {
             display: block;
             overflow: visible !important;
