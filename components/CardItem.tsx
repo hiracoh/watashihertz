@@ -183,54 +183,60 @@ export default function CardItem({ card }: { card: Card }) {
       </div>
 
       {/* 下：タグ＋説明 */}
-      <div
-        className="bottom"
+      {/* 下：タグ＋説明 */}
+<div
+  className="bottom"
+  style={{
+    // ✨ 浮き出すボックス
+    position: 'relative',
+    zIndex: 2,                       // 背景テクスチャより手前
+    margin: '0 10px 10px',           // 画像枠と同じ内側余白ラインに合わせる
+    padding: '12px',
+    borderRadius: 12,
+    background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
+    border: '1px solid rgba(0,0,0,0.06)',
+    boxShadow: '0 6px 14px rgba(0,0,0,0.06)',
+
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr',
+    gap: 8,
+  }}
+>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+    {tags.map((t) => (
+      <span
+        key={t}
         style={{
-          padding: '10px 12px 12px',
-          display: 'grid',
-          gridTemplateRows: 'auto 1fr',
-          gap: 8,
-          // 下段にもほんのりグロス感
-          background:
-            'linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 30%)',
-          position: 'relative',
-          zIndex: 1,
+          fontSize: 12,
+          border: '1px solid rgba(0,0,0,0.08)',
+          background: '#fff',        // ← チップ自体も透けさせない
+          color: '#333',
+          borderRadius: 999,
+          padding: '2px 8px',
+          boxShadow: '0 1px 0 rgba(0,0,0,0.04)',
         }}
       >
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-          {tags.map((t) => (
-            <span
-              key={t}
-              style={{
-                fontSize: 12,
-                border: `1px solid ${color.chipBorder}`,
-                background: color.chip,
-                color: '#333',
-                borderRadius: 999,
-                padding: '2px 8px',
-              }}
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        {t}
+      </span>
+    ))}
+  </div>
 
-        <p
-          className="desc"
-          style={{
-            margin: 0,
-            fontSize: 13.5,
-            lineHeight: 1.55,
-            color: '#1d1d1d',
-            display: '-webkit-box',
-            WebkitLineClamp: 4, // PC時：4行
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {desc}
-        </p>
-      </div>
+  <p
+    className="desc"
+    style={{
+      margin: 0,
+      fontSize: 13.5,
+      lineHeight: 1.55,
+      color: '#1d1d1d',
+      display: '-webkit-box',
+      WebkitLineClamp: 4,          // PC時：4行（スマホは既存のメディアクエリで全文表示）
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden',
+    }}
+  >
+    {desc}
+  </p>
+</div>
 
       {/* ===== レイアウトはCSSで切替（PC/スマホ） ===== */}
       <style jsx>{`
