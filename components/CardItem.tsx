@@ -191,7 +191,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
     // ✨ 浮き出すボックス
     position: 'relative',
     zIndex: 2,                       // 背景テクスチャより手前
-    margin: '0 0px 3px',           // 画像枠と同じ内側余白ラインに合わせる
+    margin: '0 0px 2px',           // 画像枠と同じ内側余白ラインに合わせる
     padding: '12px',
     borderRadius: 12,
     background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
@@ -246,7 +246,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
           .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 68% 20%; }
           .imgWrap {
 +    margin: 10px;
-+    height: 52%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
++    height: 50%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
 +    max-height: none;
 +  }
         }
@@ -259,7 +259,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
           .bottom {
     gap: 6px;
     padding: 10px 12px 14px;
-    margin: 0 0 3px;   /* タイトルバーと同じ幅に */
+    margin: 0 0 2px;   /* タイトルバーと同じ幅に */
     border-radius: 0;
           .desc {
             display: block;
