@@ -154,27 +154,36 @@ export default function CardItem({ card }: { card: Card }) {
       <style jsx>{`
   @media (max-width: 600px) {
     .card {
-      aspect-ratio: auto;           /* 縦固定を解除して内容ぶんだけの高さに */
-      display: grid;
-      grid-template-rows: auto auto auto; /* ← ％や1frをやめて“空き”をなくす */
+      aspect-ratio: auto;            /* 縦固定を解除して自然な高さに */
+      grid-template-rows: auto auto auto;
     }
+    /* 画像の“枠”高さだけを抑える → 画像とタグの間の白余白を消す */
     .imgWrap {
       margin: 8px;
       border-width: 1.5px;
-      aspect-ratio: 16 / 9;         /* 画像は横幅そのまま、縦だけ浅く（必要なら 4/3→16/9） */
+      height: 44vw;                  /* ← ここで縦だけコントロール（例: 44〜52vwで微調整） */
+      max-height: 260px;             /* 端末の大きさによっては上限を設けておくと安定 */
     }
+    /* next/image の実画像はそのまま収める（横幅は維持、縦は入るだけ） */
+    .imgWrap :global(img) {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+
     .bottom {
       gap: 6px;
-      padding: 8px 10px 12px;       /* 余白を少し詰めて上に寄せる */
+      padding: 8px 10px 12px;        /* 余白も少しだけ詰める */
     }
     .tags .chip {
       font-size: 11px;
       padding: 1px 6px;
     }
+    /* 説明は全文表示 */
     .desc {
       display: block;
       overflow: visible !important;
-      -webkit-line-clamp: unset !important; /* 全文表示 */
+      -webkit-line-clamp: unset !important;
       line-clamp: unset !important;
       font-size: 13px;
       line-height: 1.7;
