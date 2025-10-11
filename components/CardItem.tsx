@@ -97,15 +97,17 @@ export default function CardItem({ card }: { card: Card }) {
         border: `2px solid ${color.frame}`,
         boxShadow: `0 10px 26px ${color.shadow}`,
         // ★ 余白（表面加工）…複数レイヤーの合成
-        background: [
-          // 1) 広域の柔らかいムラ（中心ハイライト→周辺へ）
-          `radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%)`,
-          // 2) ごく薄い斜めライン
-          `repeating-linear-gradient( -25deg, rgba(255,255,255,0.12) 0 2px, rgba(0,0,0,0.03) 2px 3px)`,
-          // 3) ティント（カテゴリ色をほんのり）
-          `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
-          // 4) ベース色
-          color.surfaceBase,
+        // ★ 余白（迷彩＋粒子ノイズ）
+background: [
+  `radial-gradient(circle at 22% 28%, rgba(255,255,255,0.12) 0 42%, transparent 62%)`,
+  `radial-gradient(circle at 78% 48%, rgba(255,255,255,0.12) 0 42%, transparent 62%)`,
+  `radial-gradient(circle at 50% 78%, rgba(0,0,0,0.04) 0 50%, transparent 70%)`,
+  NOISE_SVG_DATAURI,
+  color.surfaceBase
+].join(', '),
+backgroundBlendMode: 'overlay, overlay, overlay, normal, normal',
+backgroundSize: 'auto, auto, auto, 8px 8px, auto',
+
         ].join(', '),
         display: 'grid', // レイアウトはCSSで切替
         position: 'relative',
