@@ -246,7 +246,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
           .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 68% 20%; }
           .imgWrap {
 +    margin: 10px;
-+    height: 50%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
++    height: 45%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
 +    max-height: none;
 +  }
         }
