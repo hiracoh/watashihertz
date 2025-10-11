@@ -192,7 +192,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
     position: 'relative',
     zIndex: 2,                       // 背景テクスチャより手前
     margin: '0 0px 2px',           // 画像枠と同じ内側余白ラインに合わせる
-    padding: '12px',
+    padding: '10px 12px 8px',
     borderRadius: 12,
     background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
     border: '1px solid rgba(0,0,0,0.06)',
@@ -200,10 +200,10 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
 
     display: 'grid',
     gridTemplateRows: 'auto 1fr',
-    gap: 8,
+    gap: 4,
   }}
 >
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
     {tags.map((t) => (
       <span
         key={t}
@@ -230,7 +230,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
       lineHeight: 1.55,
       color: '#1d1d1d',
       display: '-webkit-box',
-      WebkitLineClamp: 4,          // PC時：4行（スマホは既存のメディアクエリで全文表示）
+      WebkitLineClamp: 3,          // PC時：4行（スマホは既存のメディアクエリで全文表示）
       WebkitBoxOrient: 'vertical',
       overflow: 'hidden',
     }}
@@ -243,10 +243,10 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
       <style jsx>{`
         /* PC/タブレット：当初どおりの比率固定 */
         @media (min-width: 601px) {
-          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 68% 20%; }
+          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 54% 34%; }
           .imgWrap {
 +    margin: 10px;
-+    height: 45%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
++    height: 50%;         /* ←ここで画像の縦幅を調整。デフォルトより1行分短く */
 +    max-height: none;
 +  }
         }
