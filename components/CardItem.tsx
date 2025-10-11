@@ -191,7 +191,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
     // ✨ 浮き出すボックス
     position: 'relative',
     zIndex: 2,                       // 背景テクスチャより手前
-    margin: '0 0px 10px',           // 画像枠と同じ内側余白ラインに合わせる
+    margin: '0 0px 3px',           // 画像枠と同じ内側余白ラインに合わせる
     padding: '12px',
     borderRadius: 12,
     background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
@@ -259,7 +259,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
           .bottom {
     gap: 6px;
     padding: 10px 12px 14px;
-    margin: 0 0 10px;   /* タイトルバーと同じ幅に */
+    margin: 0 0 3px;   /* タイトルバーと同じ幅に */
     border-radius: 0;
           .desc {
             display: block;
