@@ -108,7 +108,6 @@ background: [
 backgroundBlendMode: 'overlay, overlay, overlay, normal, normal',
 backgroundSize: 'auto, auto, auto, 8px 8px, auto',
 
-        ].join(', '),
         display: 'grid', // レイアウトはCSSで切替
         position: 'relative',
       }}
