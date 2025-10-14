@@ -95,23 +95,21 @@ export default function CardItem({ card }: { card: Card }) {
         borderRadius: 18,
         overflow: 'hidden',
         border: '8px solid transparent',
-    backgroundImage: `
-      linear-gradient(white, white),
-      linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`,
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'padding-box, border-box',
-        boxShadow: `0 10px 26px ${color.shadow}`,
-        // ★ 余白（表面加工）…複数レイヤーの合成
-        // ★ 余白（迷彩＋粒子ノイズ）
-background: [
-  `radial-gradient(circle at 22% 28%, rgba(255,255,255,0.12) 0 42%, transparent 62%)`,
-  `radial-gradient(circle at 78% 48%, rgba(255,255,255,0.12) 0 42%, transparent 62%)`,
-  `radial-gradient(circle at 50% 78%, rgba(0,0,0,0.04) 0 50%, transparent 70%)`,
-  NOISE_SVG_DATAURI,
-  color.surfaceBase
-].join(', '),
-backgroundBlendMode: 'overlay, overlay, overlay, normal, normal',
-backgroundSize: 'auto, auto, auto, 8px 8px, auto',
+　 boxShadow: `0 10px 26px ${color.shadow}`,
+　 /* シルバー枠(下2レイヤ) + 紙質(上4レイヤ) をまとめる */
+　 background: [
+　   /* 紙質・テクスチャ（padding-box） */
+　   `radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%)`,
+　   `repeating-linear-gradient(-25deg, rgba(255,255,255,0.12) 0 2px, rgba(0,0,0,0.03) 2px 3px)`,
+　   `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
+　   color.surfaceBase,
+　   /* パディング面を白で確保（padding-box）*/
+　   `linear-gradient(white, white)`,
+　   /* シルバー枠（border-box） */
+　   `linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`
+　 ].join(', '),
+　 backgroundOrigin: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
+　 backgroundClip:   'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
 
         display: 'grid', // レイアウトはCSSで切替
         position: 'relative',
@@ -168,14 +166,16 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
           position: 'relative',
           margin: 10,
           border: '4px solid transparent',
-    backgroundImage: `
-      linear-gradient(white, white),
-      linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`,
-    backgroundOrigin: 'border-box',
-    backgroundClip: 'padding-box, border-box',
-          borderRadius: 10,
-          background:
-            'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))',
+　 background: [
+　   /* 中のハイライト（padding-box） */
+　   `radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))`,
+　   /* パディング面の白（padding-box） */
+　   `linear-gradient(white, white)`,
+　   /* シルバー枠（border-box） */
+　   `linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`
+　 ].join(', '),
+　 backgroundOrigin: 'padding-box, padding-box, border-box',
+　 backgroundClip:   'padding-box, padding-box, border-box',
           overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
