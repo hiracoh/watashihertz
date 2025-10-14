@@ -94,7 +94,7 @@ export default function CardItem({ card }: { card: Card }) {
       style={{
         borderRadius: 18,
         overflow: 'hidden',
-        border: `8px solid #8C6B4F`,  // ← 太く＆統一色
+        border: `8px solid #A57C57`,  // ← 太く＆統一色
         boxShadow: `0 10px 26px ${color.shadow}`,
         // ★ 余白（表面加工）…複数レイヤーの合成
         // ★ 余白（迷彩＋粒子ノイズ）
@@ -162,7 +162,7 @@ backgroundSize: 'auto, auto, auto, 8px 8px, auto',
         style={{
           position: 'relative',
           margin: 10,
-          border: `4px solid #8C6B4F`,
+          border: `4px solid #A57C57`,
           borderRadius: 10,
           background:
             'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))',
