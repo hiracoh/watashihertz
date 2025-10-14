@@ -233,7 +233,7 @@ export default function CardItem({ card }: { card: Card }) {
       <style jsx>{`
         @media (min-width: 601px) {
           .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 65% 23%; }
-          .imgWrap { margin: 10px; height: 50%; max-height: none; }
+          .imgWrap { margin: 10px; height: 100%; max-height: none; }
         }
         @media (max-width: 600px) {
           .card { aspect-ratio: auto; grid-template-rows: auto auto auto; }
