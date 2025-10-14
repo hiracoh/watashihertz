@@ -26,6 +26,8 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#F7E3DE',
       chipBorder: '#E4B7AA',
       shadow: 'rgba(182,90,67,0.35)',
+      surfaceBase: '#F9F4F1',
+      surfaceTint: 'rgba(230, 176, 160, 0.35)',
     };
   }
   if (isBlue) {
@@ -35,6 +37,8 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#E4EEF7',
       chipBorder: '#B8CCE2',
       shadow: 'rgba(92,126,166,0.35)',
+      surfaceBase: '#F4F7FB',
+      surfaceTint: 'rgba(146, 176, 210, 0.35)',
     };
   }
   if (isGreen) {
@@ -44,19 +48,22 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#E3F3E9',
       chipBorder: '#B6D9C1',
       shadow: 'rgba(94,154,108,0.35)',
+      surfaceBase: '#F4FAF6',
+      surfaceTint: 'rgba(120, 180, 140, 0.35)',
     };
   }
-  // ニュートラル
   return {
     frame: '#A09A92',
     nameBar: 'linear-gradient(180deg,#E6DED1 0%, #A09A92 100%)',
     chip: '#F1EEE8',
     chipBorder: '#D4CEC6',
     shadow: 'rgba(128,120,110,0.35)',
+    surfaceBase: '#F6F2EC',
+    surfaceTint: 'rgba(170, 160, 150, 0.35)',
   };
 }
 
-/* 細かい粒子ノイズ（超軽量SVG） */
+/* ノイズSVG */
 const NOISE_SVG_DATAURI =
   "url(\"data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'>\
@@ -68,13 +75,9 @@ const NOISE_SVG_DATAURI =
 
 export default function CardItem({ card }: { card: Card }) {
   const title = card.name || (card.message ? String(card.message).slice(0, 18) : 'カード');
-  const desc  = card.description || card.message || '';
-  const tags  = card.tags || [];
+  const desc = card.description || card.message || '';
+  const tags = card.tags || [];
   const color = paletteFromTags(tags);
-
-  // 渋め＆ギラっと強めのメタル（外縁は少しコントラスト強め）
-  const METAL_INNER = 'linear-gradient(180deg, #C8C8C8 0%, #8E8E8E 100%)';
-  const METAL_FRAME = 'linear-gradient(180deg, #D0D0D0 0%, #808080 100%)';
 
   return (
     <article
@@ -84,22 +87,22 @@ export default function CardItem({ card }: { card: Card }) {
         overflow: 'hidden',
         border: '8px solid transparent',
         boxShadow: `0 10px 26px ${color.shadow}`,
-        // 一体化メタル：内側も外枠もシルバー、上にうっすらヘアライン＆グレア
         background: [
-          // 内側のグレア＆ヘアライン（padding-box）
-          'radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.85), rgba(255,255,255,0) 60%)',
-          'repeating-linear-gradient(-25deg, rgba(255,255,255,0.10) 0 2px, rgba(0,0,0,0.04) 2px 3px)',
-          METAL_INNER,              // 内側メタル
-          'linear-gradient(white, white)', // パディング面の確保
-          METAL_FRAME               // 枠用メタル（border-box）
+          // 紙質・テクスチャ
+          `radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%)`,
+          `repeating-linear-gradient(-25deg, rgba(255,255,255,0.12) 0 2px, rgba(0,0,0,0.03) 2px 3px)`,
+          `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
+          color.surfaceBase,
+          `linear-gradient(white, white)`,
+          `linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`
         ].join(', '),
-        backgroundOrigin: 'padding-box, padding-box, padding-box, padding-box, border-box',
-        backgroundClip:   'padding-box, padding-box, padding-box, padding-box, border-box',
+        backgroundOrigin: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
+        backgroundClip: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
         display: 'grid',
         position: 'relative',
       }}
     >
-      {/* 細粒ノイズ（軽量） */}
+      {/* ノイズ */}
       <div
         aria-hidden
         style={{
@@ -107,19 +110,19 @@ export default function CardItem({ card }: { card: Card }) {
           inset: 0,
           backgroundImage: NOISE_SVG_DATAURI,
           backgroundSize: '8px 8px',
-          opacity: 0.5,
+          opacity: 0.6,
           pointerEvents: 'none',
         }}
       />
 
-      {/* タイトルバー */}
+      {/* 名前バー */}
       <div
         style={{
           background: color.nameBar,
           display: 'flex',
           alignItems: 'center',
           padding: '0 12px',
-          borderBottom: `1px solid rgba(0,0,0,0.08)`,
+          borderBottom: `1px solid ${color.frame}`,
           position: 'relative',
           zIndex: 1,
         }}
@@ -143,7 +146,7 @@ export default function CardItem({ card }: { card: Card }) {
         </h3>
       </div>
 
-      {/* 画像枠（内側もシルバーで一体化） */}
+      {/* 画像枠 */}
       <div
         className="imgWrap"
         style={{
@@ -151,13 +154,12 @@ export default function CardItem({ card }: { card: Card }) {
           margin: 10,
           border: '4px solid transparent',
           background: [
-            // ほんのり内側ハイライト
-            'radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.08))',
-            'linear-gradient(white, white)', // パディング面
-            METAL_FRAME                       // 外枠メタル
+            `radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))`,
+            `linear-gradient(white, white)`,
+            `linear-gradient(180deg, #ECECEC 0%, #C0C0C0 100%)`
           ].join(', '),
           backgroundOrigin: 'padding-box, padding-box, border-box',
-          backgroundClip:   'padding-box, padding-box, border-box',
+          backgroundClip: 'padding-box, padding-box, border-box',
           overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
@@ -175,13 +177,13 @@ export default function CardItem({ card }: { card: Card }) {
         />
       </div>
 
-      {/* タグ＋説明（浮き出しボックス） */}
+      {/* タグ＋説明 */}
       <div
         className="bottom"
         style={{
           position: 'relative',
           zIndex: 2,
-          margin: '0 0 2px',
+          margin: '0 0px 2px',
           padding: '12px',
           borderRadius: 12,
           background: 'linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96))',
@@ -219,7 +221,7 @@ export default function CardItem({ card }: { card: Card }) {
             lineHeight: 1.55,
             color: '#1d1d1d',
             display: '-webkit-box',
-            WebkitLineClamp: 3, // PCは3行。スマホは下のメディアクエリで全文表示
+            WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden',
           }}
@@ -228,13 +230,11 @@ export default function CardItem({ card }: { card: Card }) {
         </p>
       </div>
 
-      {/* レスポンシブ調整 */}
       <style jsx>{`
         @media (min-width: 601px) {
           .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 65% 23%; }
           .imgWrap { margin: 10px; height: 50%; max-height: none; }
         }
-
         @media (max-width: 600px) {
           .card { aspect-ratio: auto; grid-template-rows: auto auto auto; }
           .imgWrap { margin: 8px; border-width: 1.5px; height: 44vw; max-height: 260px; }
