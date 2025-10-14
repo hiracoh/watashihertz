@@ -232,25 +232,58 @@ export default function CardItem({ card }: { card: Card }) {
 
       <style jsx>{`
         @media (min-width: 601px) {
-          .card { aspect-ratio: 63 / 88; grid-template-rows: 12% 65% 23%; }
-          .imgWrap { margin: 10px; height: 100%; max-height: none; }
-        }
-        @media (max-width: 600px) {
-          .card { aspect-ratio: auto; grid-template-rows: auto auto auto; }
-          .imgWrap { margin: 8px; border-width: 1.5px; height: 44vw; max-height: 260px; }
-          .imgWrap :global(img) { width: 100%; height: 100%; object-fit: contain; }
-          .bottom { gap: 6px; padding: 10px 12px 14px; margin: 0 0 2px; border-radius: 0; }
-          .desc {
-            display: block;
-            overflow: visible !important;
-            -webkit-line-clamp: unset !important;
-            line-clamp: unset !important;
-            max-height: none !important;
-            white-space: normal;
-            font-size: 13px;
-            line-height: 1.7;
-          }
-        }
+  .card {
+    aspect-ratio: 63 / 88;
+    grid-template-rows: 12% 64% 24%;
+  }
+  .imgWrap {
+    margin: 10px;
+    height: 100%;
+    /* 画像枠が下のボトムに食い込まないように少しだけ余裕を確保 */
+    max-height: calc(100% - 12px);
+    box-sizing: border-box;
+  }
+  .imgWrap :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    aspect-ratio: auto;
+    grid-template-rows: auto auto auto;
+  }
+  .imgWrap {
+    margin: 8px;
+    border-width: 1.5px;
+    height: 44vw;
+    max-height: 260px;
+  }
+  .imgWrap :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .bottom {
+    gap: 6px;
+    padding: 10px 12px 14px;
+    margin: 0 0 2px; /* タイトルと同幅に */
+    border-radius: 0;
+  }
+  .desc {
+    display: block;
+    overflow: visible !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    max-height: none !important;
+    white-space: normal;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
       `}</style>
     </article>
   );
