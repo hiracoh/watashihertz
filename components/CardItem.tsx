@@ -94,9 +94,12 @@ export default function CardItem({ card }: { card: Card }) {
       `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
       color.surfaceBase,
       // 内側ベース（白）
-      `linear-gradient(white, white)`,
-      // 🪨 グレイッシュメタルの縁
-      `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
+    // カテゴリごとの淡い色（surfaceTint）
++   `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
++   // 内側ベース（白）
++   `linear-gradient(white, white)`,
++   // 🪨 グレイッシュメタルの縁
++   `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
         ].join(', '),
         backgroundOrigin: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
         backgroundClip: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
@@ -157,9 +160,12 @@ export default function CardItem({ card }: { card: Card }) {
           border: '4px solid transparent',
           background: [
             `radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))`,
-      `linear-gradient(white, white)`,
-      // 🪨 グレイッシュメタルの縁（カードと統一）
-      `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
+     // カテゴリごとの淡い色（surfaceTint）
++   `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
++   // 内側ベース（白）
++   `linear-gradient(white, white)`,
++   // 🪨 グレイッシュメタルの縁
++   `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
           ].join(', '),
           backgroundOrigin: 'padding-box, padding-box, border-box',
           backgroundClip: 'padding-box, padding-box, border-box',
