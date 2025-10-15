@@ -26,7 +26,6 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#F7E3DE',
       chipBorder: '#E4B7AA',
       shadow: 'rgba(182,90,67,0.35)',
-      surfaceBase: '#F9F4F1',
       surfaceTint: 'rgba(230, 176, 160, 0.35)',
     };
   }
@@ -37,7 +36,6 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#E4EEF7',
       chipBorder: '#B8CCE2',
       shadow: 'rgba(92,126,166,0.35)',
-      surfaceBase: '#F4F7FB',
       surfaceTint: 'rgba(146, 176, 210, 0.35)',
     };
   }
@@ -48,7 +46,6 @@ function paletteFromTags(tags: string[] = []) {
       chip: '#E3F3E9',
       chipBorder: '#B6D9C1',
       shadow: 'rgba(94,154,108,0.35)',
-      surfaceBase: '#F4FAF6',
       surfaceTint: 'rgba(120, 180, 140, 0.35)',
     };
   }
@@ -58,7 +55,6 @@ function paletteFromTags(tags: string[] = []) {
     chip: '#F1EEE8',
     chipBorder: '#D4CEC6',
     shadow: 'rgba(128,120,110,0.35)',
-    surfaceBase: '#F6F2EC',
     surfaceTint: 'rgba(170, 160, 150, 0.35)',
   };
 }
@@ -88,21 +84,15 @@ export default function CardItem({ card }: { card: Card }) {
         border: '8px solid transparent',
         boxShadow: `0 10px 26px ${color.shadow}`,
         background: [
-          // 紙質・テクスチャ
-      `radial-gradient(120% 80% at 50% 20%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%)`,
-      `repeating-linear-gradient(-25deg, rgba(255,255,255,0.12) 0 2px, rgba(0,0,0,0.03) 2px 3px)`,
-      `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0) 85%)`,
-      color.surfaceBase,
-      // 内側ベース（白）
-    // カテゴリごとの淡い色（surfaceTint）
-+   `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
-+   // 内側ベース（白）
-+   `linear-gradient(white, white)`,
-+   // 🪨 グレイッシュメタルの縁
-+   `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
+          // 淡い色
+          `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
+          // 白
+          `linear-gradient(white, white)`,
+          // シルバーの縁
+          `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
         ].join(', '),
-        backgroundOrigin: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
-        backgroundClip: 'padding-box, padding-box, padding-box, padding-box, padding-box, border-box',
+        backgroundOrigin: 'padding-box, padding-box, border-box',
+        backgroundClip:   'padding-box, padding-box, border-box',
         display: 'grid',
         position: 'relative',
       }}
@@ -115,7 +105,7 @@ export default function CardItem({ card }: { card: Card }) {
           inset: 0,
           backgroundImage: NOISE_SVG_DATAURI,
           backgroundSize: '8px 8px',
-          opacity: 0.6,
+          opacity: 0.2,
           pointerEvents: 'none',
         }}
       />
@@ -159,16 +149,12 @@ export default function CardItem({ card }: { card: Card }) {
           margin: 10,
           border: '4px solid transparent',
           background: [
-            `radial-gradient(circle at 50% 40%, rgba(255,255,255,0.6), rgba(255,255,255,0.1))`,
-     // カテゴリごとの淡い色（surfaceTint）
-+   `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
-+   // 内側ベース（白）
-+   `linear-gradient(white, white)`,
-+   // 🪨 グレイッシュメタルの縁
-+   `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
+            `linear-gradient(180deg, ${color.surfaceTint} 0%, rgba(255,255,255,0.8) 100%)`,
+            `linear-gradient(white, white)`,
+            `linear-gradient(180deg, #E1E1E1 0%, #B8B8B8 40%, #999999 100%)`
           ].join(', '),
           backgroundOrigin: 'padding-box, padding-box, border-box',
-          backgroundClip: 'padding-box, padding-box, border-box',
+          backgroundClip:   'padding-box, padding-box, border-box',
           overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
@@ -241,58 +227,56 @@ export default function CardItem({ card }: { card: Card }) {
 
       <style jsx>{`
         @media (min-width: 601px) {
-  .card {
-    aspect-ratio: 63 / 88;
-    grid-template-rows: 12% 64% 24%;
-  }
-  .imgWrap {
-    margin: 10px;
-    height: 100%;
-    /* 画像枠が下のボトムに食い込まないように少しだけ余裕を確保 */
-    max-height: calc(100% - 12px);
-    box-sizing: border-box;
-  }
-  .imgWrap :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
+          .card {
+            aspect-ratio: 63 / 88;
+            grid-template-rows: 12% 64% 24%;
+          }
+          .imgWrap {
+            margin: 10px;
+            height: 100%;
+            max-height: calc(100% - 12px);
+            box-sizing: border-box;
+          }
+          .imgWrap :global(img) {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
 
-@media (max-width: 600px) {
-  .card {
-    aspect-ratio: auto;
-    grid-template-rows: auto auto auto;
-  }
-  .imgWrap {
-    margin: 8px;
-    border-width: 1.5px;
-    height: 44vw;
-    max-height: 260px;
-  }
-  .imgWrap :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-  .bottom {
-    gap: 6px;
-    padding: 10px 12px 14px;
-    margin: 0 0 2px; /* タイトルと同幅に */
-    border-radius: 0;
-  }
-  .desc {
-    display: block;
-    overflow: visible !important;
-    -webkit-line-clamp: unset !important;
-    line-clamp: unset !important;
-    max-height: none !important;
-    white-space: normal;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-}
-
+        @media (max-width: 600px) {
+          .card {
+            aspect-ratio: auto;
+            grid-template-rows: auto auto auto;
+          }
+          .imgWrap {
+            margin: 8px;
+            border-width: 1.5px;
+            height: 44vw;
+            max-height: 260px;
+          }
+          .imgWrap :global(img) {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+          .bottom {
+            gap: 6px;
+            padding: 10px 12px 14px;
+            margin: 0 0 2px;
+            border-radius: 0;
+          }
+          .desc {
+            display: block;
+            overflow: visible !important;
+            -webkit-line-clamp: unset !important;
+            line-clamp: unset !important;
+            max-height: none !important;
+            white-space: normal;
+            font-size: 13px;
+            line-height: 1.7;
+          }
+        }
       `}</style>
     </article>
   );
