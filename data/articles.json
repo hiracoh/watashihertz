@@ -22,6 +22,50 @@
     "featured": true
   },
   {
+    "id": "article-007",
+    "title": "「〇〇したら叶う」界隈に落ちる影",
+    "summary": "人間の成功物語に付きまとうバグについて",
+    "tags": ["人間の傾向"],
+    "charCount": 5468,
+    "url": "https://note.com/hiracoh/n/n16864b9e5b6f",
+    "thumb": "https://assets.st-note.com/production/uploads/images/222590030/rectangle_large_type_2_dcb5b64097923ca2108c2afc5d4e295a.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0, // 0=無料, 7=Standard, 12=Premium
+  },
+  {
+    "id": "article-004",
+    "title": "【漫画から人生】呪術廻戦①",
+    "summary": "呪術廻戦を人間理解の観点から深掘る…！",
+    "tags": ["漫画から人生", "人間の傾向"],
+    "charCount": 2507,
+    "url": "https://note.com/hiracoh/n/n9ab9913713b9",
+    "thumb": "https://assets.st-note.com/production/uploads/images/222409033/rectangle_large_type_2_863f1882b36a6c467f57592b5de00b57.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0, // 0=無料, 7=Standard, 12=Premium
+  },
+  {
+    "id": "article-005",
+    "title": "【漫画から人生】呪術廻戦②",
+    "summary": "呪術廻戦を人間理解の観点から深掘る…！",
+    "tags": ["漫画から人生", "人間の傾向"],
+    "charCount": 2521,
+    "url": "https://note.com/hiracoh/n/n3062263ce6c8",
+    "thumb": "https://assets.st-note.com/production/uploads/images/222409062/rectangle_large_type_2_c3930d72e8b0b4dfcec6df14a42cca31.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0, // 0=無料, 7=Standard, 12=Premium
+  },
+  {
+    "id": "article-006",
+    "title": "漫画から人生】呪術廻戦③",
+    "summary": "呪術廻戦を人間理解の観点から深掘る…！",
+    "tags": ["漫画から人生", "人間の傾向"],
+    "charCount": 3326,
+    "url": "https://note.com/hiracoh/n/nd119ac15f7ab",
+    "thumb": "https://assets.st-note.com/production/uploads/images/222409085/rectangle_large_type_2_285e38738a8998982463c9dd92dd89e7.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0, // 0=無料, 7=Standard, 12=Premium
+  },
+  {
     "id": "article-001",
     "title": "自分などいない世界で",
     "summary": "人間って実は…AIだった!?",
@@ -30,7 +74,7 @@
     "url": "https://note.com/hiracoh/n/n4d32a54331e6",
     "thumb": "https://assets.st-note.com/production/uploads/images/168914585/rectangle_large_type_2_ea5c5e92d88e4186ec6563f1f3feeec7.jpeg?width=2000&height=2000&fit=bounds&quality=85",
     "type": "article",
-    "plan": "700"
+    "planRequired": 7, // 0=無料, 7=Standard, 12=Premium
   },
   {
     "id": "article-002",
@@ -41,7 +85,7 @@
     "url": "https://note.com/hiracoh/n/n30bdf42b4dee",
     "thumb": "https://assets.st-note.com/production/uploads/images/217145318/rectangle_large_type_2_f891101224d0bad28bc868513dd2b6b9.png?width=1200",
     "type": "article",
-    "plan": "700"
+    "planRequired": 7, // 0=無料, 7=Standard, 12=Premium
   },
   {
     "id": "article-003",
@@ -52,6 +96,6 @@
     "url": "https://note.com/hiracoh/n/n94df7771eb3b",
     "thumb": "https://assets.st-note.com/production/uploads/images/220393136/rectangle_large_type_2_48bf2dc15801365765edef6e26041f6b.jpeg?width=2000&height=2000&fit=bounds&quality=85",
     "type": "article",
-    "plan": "700"
+    "planRequired": 0, // 0=無料, 7=Standard, 12=Premium
   }
 ]
