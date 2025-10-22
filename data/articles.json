@@ -6,7 +6,7 @@
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "地図のコンセプトを3つに分けてご案内",
-    "planRequired": 0 
+    "planRequired": 0, 
     "type": "article",
     "featured": true
   },
@@ -17,7 +17,7 @@
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "こちらの場所に向いている人について",
-    "planRequired": 0 
+    "planRequired": 0, 
     "type": "article",
     "featured": true
   },
