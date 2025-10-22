@@ -6,7 +6,7 @@
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "地図のコンセプトを3つに分けてご案内",
-    "plan": "700",
+    "planRequired": 0 
     "type": "article",
     "featured": true
   },
@@ -17,9 +17,20 @@
     "thumb": "/map.jpg",
     "tags": [],
     "summary": "こちらの場所に向いている人について",
-    "plan": "700",
+    "planRequired": 0 
     "type": "article",
     "featured": true
+  },
+  {
+    "id": "article-008",
+    "title": "生まれる前に起こっていること",
+    "summary": "人間の誕生の神秘に迫る",
+    "tags": ["人間・人生とは"],
+    "charCount": 5300,
+    "url": "https://note.com/hiracoh/n/n3d518b3d5604",
+    "thumb": "https://assets.st-note.com/production/uploads/images/223495968/rectangle_large_type_2_5c3b1f484b0b7e60d3cb259d4c1ac44c.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0 
   },
   {
     "id": "article-007",
