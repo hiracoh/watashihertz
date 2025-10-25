@@ -22,6 +22,17 @@
     "featured": true
   },
   {
+    "id": "article-009",
+    "title": "始まりの重たさの始まり",
+    "summary": "人間の抱える全ての痛みの根源とは",
+    "tags": ["人間・人生とは"],
+    "charCount": 5800,
+    "url": "https://note.com/hiracoh/n/n5f8abe3bd4f3",
+    "thumb": "https://assets.st-note.com/production/uploads/images/223495968/rectangle_large_type_2_5c3b1f484b0b7e60d3cb259d4c1ac44c.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 7 
+  },
+  {
     "id": "article-008",
     "title": "生まれる前に起こっていること",
     "summary": "人間の誕生の神秘に迫る",
