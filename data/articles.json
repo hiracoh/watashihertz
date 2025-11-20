@@ -22,7 +22,7 @@
     "featured": true
   },
   {
-    "id": "article-010",
+    "id": "article-016",
     "title": "始まりの重たさの始まり",
     "summary": "人間の抱える全ての痛みの根源とは",
     "tags": ["人間・人生とは"],
@@ -31,6 +31,17 @@
     "thumb": "https://assets.st-note.com/img/1761351131-VcMK4Y1UsxgJLTbOe2oECZzB.jpg?width=2000&height=2000&fit=bounds&quality=85",
     "type": "article",
     "planRequired": 7 
+  },
+  {
+    "id": "article-010",
+    "title": "【漫画から人生】進撃の巨人②",
+    "summary": "人間はいかに「恐れ」を超えるのか",
+    "tags": ["漫画から人生", "人間の傾向", "人間・人生とは"],
+    "charCount": 5100,
+    "url": "https://note.com/hiracoh/n/n3799c9508455",
+    "thumb": "https://assets.st-note.com/production/uploads/images/230662384/rectangle_large_type_2_15db9ee9b53fd6cc03c0b0b52e5b09ad.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
   },
   {
     "id": "article-009",
