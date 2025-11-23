@@ -33,6 +33,17 @@
     "planRequired": 7 
   },
   {
+    "id": "article-012",
+    "title": "【漫画から人生】進撃の巨人④",
+    "summary": "僕らは日々何を見せられているのか",
+    "tags": ["漫画から人生", "人間の傾向", "人間・人生とは"],
+    "charCount": 3300,
+    "url": "https://note.com/hiracoh/n/na193567f779a",
+    "thumb": "https://assets.st-note.com/production/uploads/images/227590477/rectangle_large_type_2_5158fb68df632de6e3b9c5f741a93882.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-011",
     "title": "【漫画から人生】進撃の巨人③",
     "summary": "人からふとこぼれる言葉の正体",
