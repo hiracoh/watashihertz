@@ -33,6 +33,17 @@
     "planRequired": 7 
   },
   {
+    "id": "article-014",
+    "title": "【漫画から人生】進撃の巨人⑥",
+    "summary": "この世のすべてが交わる座標とは",
+    "tags": ["漫画から人生", "人間の傾向", "人間・人生とは"],
+    "charCount": 4400,
+    "url": "https://note.com/hiracoh/n/n3f52be04fd83",
+    "thumb": "https://assets.st-note.com/production/uploads/images/230268989/rectangle_large_type_2_5e7fb095076c8ed05e4347e6081fe598.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-013",
     "title": "【漫画から人生】進撃の巨人⑤",
     "summary": "その名から読者に伝えていることとは",
