@@ -33,6 +33,17 @@
     "planRequired": 7 
   },
   {
+    "id": "article-015",
+    "title": "【漫画から人生】進撃の巨人⑦",
+    "summary": "僕らはどこへ向かって生きるのか",
+    "tags": ["漫画から人生", "人間の傾向", "人間・人生とは"],
+    "charCount": 6900,
+    "url": "https://note.com/hiracoh/n/n0e2e1a194a07",
+    "thumb": "https://assets.st-note.com/production/uploads/images/230440375/rectangle_large_type_2_b69bfa5cf65039bf703c73aca01f176b.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-014",
     "title": "【漫画から人生】進撃の巨人⑥",
     "summary": "この世のすべてが交わる座標とは",
