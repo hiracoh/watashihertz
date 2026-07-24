@@ -22,6 +22,17 @@
     "featured": true
   },
   {
+    "id": "article-019",
+    "title": "人間は脳と踊る",
+    "summary": "人間は脳に酔わされている…？",
+    "tags": ["人間の傾向"],
+    "charCount": 4900,
+    "url": "https://note.com/hiracoh/n/n7ec4f8d75c20",
+    "thumb": "https://assets.st-note.com/production/uploads/images/296513937/rectangle_large_type_2_6649f017eb7e35af7fffb6ace1a73d04.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-018",
     "title": "【漫画から人生】この音とまれ!②",
     "summary": "負のスパイラルとは",
