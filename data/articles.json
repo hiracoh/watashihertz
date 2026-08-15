@@ -22,13 +22,68 @@
     "featured": true
   },
   {
+    "id": "article-024",
+    "title": "生前記憶のシンプルな考察",
+    "summary": "それは何ら不思議なことではない",
+    "tags": ["人間・人生とは"],
+    "charCount": 5100,
+    "url": "https://note.com/hiracoh/n/ndc209a6c3f24",
+    "thumb": "https://assets.st-note.com/production/uploads/images/303594510/rectangle_large_type_2_0eb21000d35d37f4021bdf27acba0d89.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
+    "id": "article-023",
+    "title": "AIが生まれたからには【人間編】",
+    "summary": "AIがもたらし得る少し先の革命",
+    "tags": ["人間の傾向", "人間・人生とは"],
+    "charCount": 18000,
+    "url": "https://note.com/hiracoh/n/n4ddcde42d5f1",
+    "thumb": "https://assets.st-note.com/production/uploads/images/301870650/rectangle_large_type_2_1b6ec1fbcdd6f0a7f8e8181ea75f01f8.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 7
+  },
+  {
+    "id": "article-022",
+    "title": "AIが生まれたからには【社会編】",
+    "summary": "AIがもたらし得る少し先の革命",
+    "tags": ["人間・人生とは"],
+    "charCount": 5200,
+    "url": "https://note.com/hiracoh/n/nbb38cbfba314",
+    "thumb": "https://assets.st-note.com/production/uploads/images/299343215/rectangle_large_type_2_91e8700a6b6f830abffe7a2da0f91df0.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
+    "id": "article-021",
+    "title": "手垢のついた言葉たち",
+    "summary": "歪曲された大事な言葉を紐解く",
+    "tags": ["人間の傾向"],
+    "charCount": 3800,
+    "url": "https://note.com/hiracoh/n/n95ae03d26843",
+    "thumb": "https://assets.st-note.com/production/uploads/images/298740026/rectangle_large_type_2_29796c77afb0c1beafabeeb04f9bcd90.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
+    "id": "article-020",
+    "title": "痛みのトリセツ",
+    "summary": "人間が感じる痛みの全体像",
+    "tags": ["人間の傾向", "人間・人生とは"],
+    "charCount": 5300,
+    "url": "https://note.com/hiracoh/n/n224440d96054",
+    "thumb": "https://assets.st-note.com/production/uploads/images/298737145/rectangle_large_type_2_edd00af46d7bbc0d66ea9e3ee1bf6097.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-019",
     "title": "人間は脳と踊る",
     "summary": "人間は脳に酔わされている…？",
     "tags": ["人間の傾向"],
     "charCount": 4900,
     "url": "https://note.com/hiracoh/n/n7ec4f8d75c20",
-    "thumb": "https://assets.st-note.com/production/uploads/images/296513937/rectangle_large_type_2_6649f017eb7e35af7fffb6ace1a73d04.jpeg?width=2000&height=2000&fit=bounds&quality=85",
+    "thumb": "https://assets.st-note.com/production/uploads/images/299114530/rectangle_large_type_2_47012e7aaff0ebc39f6a2a6466342a68.jpeg?width=2000&height=2000&fit=bounds&quality=85",
     "type": "article",
     "planRequired": 0
   },
