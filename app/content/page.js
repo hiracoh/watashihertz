@@ -20,10 +20,10 @@ export default function Content({ searchParams }) {
   const tag = (searchParams?.tag || '').trim();
 
   const tabs = [
-    { key: 'articles', label: '記事' },
-    { key: 'audio', label: '音声' },
-    { key: 'cards', label: 'カード' },
-  ];
+  { key: 'articles', label: '記事', href: '/content' },
+  { key: 'encyclopedias', label: '図鑑', href: '/encyclopedias' },
+    { key: 'cards', label: 'カード', href: '/cards' },
+];
 
   // ===== 記事：JSONから作成（新しい順） =====
   const all = (articlesData || [])
@@ -63,8 +63,8 @@ export default function Content({ searchParams }) {
           return (
             <a
               key={t.key}
-              href={`/content?tab=${t.key}`}
-              style={{
+href={t.href}
+style={{
                 textDecoration: 'none',
                 padding: '0.4rem 0.75rem',
                 borderRadius: 999,
