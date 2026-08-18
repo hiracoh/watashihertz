@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import encyclopedias from '@/data/encyclopedias.json';
+import styles from './page.module.css';
 
 export default function EncyclopediaPage({
   params,
@@ -38,7 +39,8 @@ export default function EncyclopediaPage({
 
       {/* ===== あらすじページ ===== */}
       <article
-        style={{
+  className={styles.introPage}
+  style={{
           position: 'relative',
           overflow: 'hidden',
           minHeight: 600,
@@ -90,7 +92,8 @@ export default function EncyclopediaPage({
           </div>
 
           <h1
-            style={{
+  className={styles.introTitle}
+  style={{
               margin: 0,
               fontSize: 32,
               lineHeight: 1.5,
@@ -104,7 +107,8 @@ export default function EncyclopediaPage({
 
         {/* あらすじ本文 */}
         <p
-          style={{
+  className={styles.introText}
+  style={{
             position: 'relative',
             zIndex: 1,
             maxWidth: 620,
