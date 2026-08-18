@@ -38,8 +38,7 @@ export default function EncyclopediaPage({
 
       {/* ===== あらすじページ ===== */}
       <article
-  className="introPage"
-  style={{
+        style={{
           position: 'relative',
           overflow: 'hidden',
           minHeight: 600,
@@ -53,7 +52,7 @@ export default function EncyclopediaPage({
 
           boxShadow: '0 12px 35px rgba(70, 55, 35, 0.12)',
         }}
-            >
+      >
         {/* 背景マーク */}
         {book.intro.design?.backgroundMark && (
           <Image
@@ -72,12 +71,12 @@ export default function EncyclopediaPage({
 
         {/* 図鑑名 */}
         <div
-         style={{
-  position: 'relative',
-  zIndex: 1,
-  marginBottom: 40,
-  textAlign: 'center',
-}}
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            marginBottom: 40,
+            textAlign: 'center',
+          }}
         >
           <div
             style={{
@@ -91,8 +90,7 @@ export default function EncyclopediaPage({
           </div>
 
           <h1
-  className="introTitle"
-  style={{
+            style={{
               margin: 0,
               fontSize: 32,
               lineHeight: 1.5,
@@ -105,21 +103,20 @@ export default function EncyclopediaPage({
         </div>
 
         {/* あらすじ本文 */}
-    
-<p
-  className="introText"
-  style={{
-  position: 'relative',
-  zIndex: 1,
-  maxWidth: 620,
-  margin: '0 auto',
-  fontSize: 16,
-  lineHeight: 2.2,
-  color: '#514a41',
-}}
+        <p
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            maxWidth: 620,
+            margin: '0 auto',
+            fontSize: 16,
+            lineHeight: 2.2,
+            color: '#514a41',
+          }}
         >
           {book.intro.text}
         </p>
+
         {/* あらすじイラスト */}
         {book.intro.image && (
           <div
@@ -146,13 +143,13 @@ export default function EncyclopediaPage({
 
         {/* 本編への入口 */}
         <div
-  style={{
-    position: 'relative',
-    zIndex: 1,
-    marginTop: 64,
-    textAlign: 'center',
-  }}
->
+          style={{
+            position: 'relative',
+            zIndex: 1,
+            marginTop: 64,
+            textAlign: 'center',
+          }}
+        >
           <a
             href="#encyclopedia-items"
             style={{
@@ -237,26 +234,7 @@ export default function EncyclopediaPage({
             </article>
           ))}
         </div>
-            </section>
-
-      <style jsx>{`
-        @media (max-width: 600px) {
-          .introPage {
-            padding: 40px 22px !important;
-          }
-
-          .introTitle {
-            font-size: 28px !important;
-            line-height: 1.45 !important;
-          }
-
-          .introText {
-            font-size: 15px !important;
-            line-height: 1.85 !important;
-          }
-        }
-      `}</style>
-
+      </section>
     </main>
   );
 }
