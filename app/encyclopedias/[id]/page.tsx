@@ -71,10 +71,12 @@ export default function EncyclopediaPage({
 
         {/* 図鑑名 */}
         <div
-          style={{
-            marginBottom: 40,
-            textAlign: 'center',
-          }}
+         style={{
+  position: 'relative',
+  zIndex: 1,
+  marginBottom: 40,
+  textAlign: 'center',
+}}
         >
           <div
             style={{
@@ -102,13 +104,15 @@ export default function EncyclopediaPage({
 
         {/* あらすじ本文 */}
         <p
-          style={{
-            maxWidth: 620,
-            margin: '0 auto',
-            fontSize: 16,
-            lineHeight: 2.2,
-            color: '#514a41',
-          }}
+         style={{
+  position: 'relative',
+  zIndex: 1,
+  maxWidth: 620,
+  margin: '0 auto',
+  fontSize: 16,
+  lineHeight: 2.2,
+  color: '#514a41',
+}}
         >
           {book.intro.text}
         </p>
@@ -138,11 +142,13 @@ export default function EncyclopediaPage({
 
         {/* 本編への入口 */}
         <div
-          style={{
-            marginTop: 64,
-            textAlign: 'center',
-          }}
-        >
+  style={{
+    position: 'relative',
+    zIndex: 1,
+    marginTop: 64,
+    textAlign: 'center',
+  }}
+>
           <a
             href="#encyclopedia-items"
             style={{
