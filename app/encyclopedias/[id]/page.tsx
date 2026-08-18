@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import encyclopedias from '@/data/encyclopedias.json';
@@ -51,7 +52,23 @@ export default function EncyclopediaPage({
 
           boxShadow: '0 12px 35px rgba(70, 55, 35, 0.12)',
         }}
-      >
+            >
+        {/* 背景マーク */}
+        {book.intro.design?.backgroundMark && (
+          <Image
+            src={book.intro.design.backgroundMark}
+            alt=""
+            fill
+            sizes="900px"
+            style={{
+              objectFit: 'contain',
+              opacity: book.intro.design.backgroundOpacity ?? 0.08,
+              pointerEvents: 'none',
+              zIndex: 0,
+            }}
+          />
+        )}
+
         {/* 図鑑名 */}
         <div
           style={{
@@ -95,15 +112,29 @@ export default function EncyclopediaPage({
         >
           {book.intro.text}
         </p>
-
-        {/* 
-          後ほどここに
-          ・あらすじイラスト
-          ・背景マーク
-          ・紙質
-          ・外枠
-          などを追加します
-        */}
+        {/* あらすじイラスト */}
+        {book.intro.image && (
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              width: '100%',
+              maxWidth: 620,
+              aspectRatio: '3 / 2',
+              margin: '48px auto 0',
+            }}
+          >
+            <Image
+              src={book.intro.image}
+              alt={book.intro.title}
+              fill
+              sizes="(max-width: 900px) 100vw, 620px"
+              style={{
+                objectFit: 'contain',
+              }}
+            />
+          </div>
+        )}
 
         {/* 本編への入口 */}
         <div
