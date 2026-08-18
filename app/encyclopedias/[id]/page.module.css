@@ -1,0 +1,15 @@
+@media (max-width: 600px) {
+  .introPage {
+    padding: 40px 22px !important;
+  }
+
+  .introTitle {
+    font-size: 28px !important;
+    line-height: 1.45 !important;
+  }
+
+  .introText {
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+  }
+}
