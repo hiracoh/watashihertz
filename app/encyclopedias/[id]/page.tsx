@@ -49,8 +49,21 @@ export default function EncyclopediaPage({
           borderRadius: 8,
 
           /* 仮の紙 */
-          background:
-            'linear-gradient(135deg, #faf6ed 0%, #f1e8d8 100%)',
+          background: `
+  radial-gradient(circle at 20% 18%, rgba(120,90,55,0.025) 0 1px, transparent 1.6px),
+  radial-gradient(circle at 72% 34%, rgba(120,90,55,0.02) 0 1px, transparent 1.5px),
+  repeating-linear-gradient(
+    8deg,
+    rgba(120,95,65,0.018) 0 1px,
+    transparent 1px 7px
+  ),
+  radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0) 68%,
+    rgba(133,92,48,0.055) 100%
+  ),
+  linear-gradient(135deg, #faf7ef 0%, #f2eadc 100%)
+`,
 
           boxShadow: '0 12px 35px rgba(70, 55, 35, 0.12)',
         }}
