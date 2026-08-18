@@ -12,7 +12,7 @@
         "paper": "parchment",
         "frame": "antique",
         "backgroundMark": "/encyclopedias/guilt/back.webp",
-        "backgroundOpacity": 0.08
+        "backgroundOpacity": 0.05
       }
     },
     "items": [
