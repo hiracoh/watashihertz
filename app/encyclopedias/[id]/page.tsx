@@ -38,7 +38,8 @@ export default function EncyclopediaPage({
 
       {/* ===== あらすじページ ===== */}
       <article
-        style={{
+  className="introPage"
+  style={{
           position: 'relative',
           overflow: 'hidden',
           minHeight: 600,
@@ -90,7 +91,8 @@ export default function EncyclopediaPage({
           </div>
 
           <h1
-            style={{
+  className="introTitle"
+  style={{
               margin: 0,
               fontSize: 32,
               lineHeight: 1.5,
@@ -103,8 +105,10 @@ export default function EncyclopediaPage({
         </div>
 
         {/* あらすじ本文 */}
-        <p
-         style={{
+    
+<p
+  className="introText"
+  style={{
   position: 'relative',
   zIndex: 1,
   maxWidth: 620,
@@ -233,7 +237,26 @@ export default function EncyclopediaPage({
             </article>
           ))}
         </div>
-      </section>
+            </section>
+
+      <style jsx>{`
+        @media (max-width: 600px) {
+          .introPage {
+            padding: 40px 22px !important;
+          }
+
+          .introTitle {
+            font-size: 28px !important;
+            line-height: 1.45 !important;
+          }
+
+          .introText {
+            font-size: 15px !important;
+            line-height: 1.85 !important;
+          }
+        }
+      `}</style>
+
     </main>
   );
 }
