@@ -97,7 +97,6 @@ export default function EncyclopediaPage({
           <div
             style={{
               marginBottom: 12,
-              fontSize: 12,
               letterSpacing: '0.2em',
               color: '#968875',
             }}
@@ -177,7 +176,6 @@ export default function EncyclopediaPage({
               borderRadius: 999,
               color: '#514a41',
               textDecoration: 'none',
-              fontSize: 14,
               letterSpacing: '0.08em',
               background: 'rgba(255,255,255,0.35)',
             }}
@@ -255,7 +253,6 @@ export default function EncyclopediaPage({
   className={styles.encyclopediaTitle}
   style={{
                   margin: '0 0 10px',
-                  fontSize: 20,
                   color: '#403a32',
                 }}
               >
