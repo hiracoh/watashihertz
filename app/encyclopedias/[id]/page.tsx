@@ -119,21 +119,30 @@ export default function EncyclopediaPage({
         </div>
 
         {/* あらすじ本文 */}
-        <p
+       {/* あらすじ本文 */}
+<div
   className={styles.introText}
   style={{
-            position: 'relative',
-            zIndex: 1,
-            maxWidth: 620,
-            margin: '0 auto',
-            fontSize: 16,
-            lineHeight: 2.2,
-            color: '#514a41',
-          }}
-        >
-          {book.intro.text}
-        </p>
-
+    position: 'relative',
+    zIndex: 1,
+    maxWidth: 620,
+    margin: '0 auto',
+    fontSize: 16,
+    lineHeight: 2.2,
+    color: '#514a41',
+  }}
+>
+  {book.intro.text.map((paragraph, index) => (
+    <p
+      key={index}
+      style={{
+        margin: index === 0 ? 0 : '16px 0 0',
+      }}
+    >
+      {paragraph}
+    </p>
+  ))}
+</div>
         {/* あらすじイラスト */}
         {book.intro.image && (
           <div
