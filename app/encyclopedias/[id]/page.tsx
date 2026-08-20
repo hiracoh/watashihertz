@@ -251,7 +251,7 @@ export default function EncyclopediaPage({
               <h3
   className={styles.encyclopediaTitle}
   style={{
-                  margin: '0 0 10px',
+                  margin: '0 0 4px',
                   color: '#403a32',
                 }}
               >
