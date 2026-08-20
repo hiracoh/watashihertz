@@ -60,6 +60,12 @@
     auto,
     auto;
 }@media (max-width: 600px) {
+  .encyclopediaDescription {
+  width: calc(100% + 24px);
+  margin-left: -12px !important;
+  font-size: 17px;
+  line-height: 1.65 !important;
+}
   .introPage {
     padding: 40px 22px !important;
   }
