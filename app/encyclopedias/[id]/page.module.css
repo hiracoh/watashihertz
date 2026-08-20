@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Yuji+Syuku&display=swap');
 .encyclopediaNumber {
   font-family: 'Yuji Syuku', serif;
+  font-size: 18px;
 }
 
 .encyclopediaTitle {
   font-family: 'Yuji Syuku', serif;
   font-weight: 400;
+  font-size: 28px;
 }
 
 .encyclopediaDescription {
   font-family: 'Klee One', serif;
   font-weight: 400;
+  font-size: 17px;
 }
 .paperPage {
   background-color: #faf7ef;
