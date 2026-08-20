@@ -26,7 +26,7 @@
       {
         "id": "guilt-002",
         "number": "02",
-        "title": "「ない」を押し付け合う",
+        "title": "不足を責め合う",
         "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
         "image": "/encyclopedias/guilt/fusoku03.webp"
       },
@@ -34,56 +34,56 @@
         "id": "guilt-003",
         "number": "03",
         "title": "容姿の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "description": "容姿の気に食わないポイントばかりが目につく。",
         "image": "/encyclopedias/guilt/fusoku02.webp"
       },
       {
         "id": "guilt-004",
         "number": "04",
-        "title": "会計の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "title": "SNS・承認の不足",
+        "description": "SNSの反応が「ある」ところは軽視して、「ない」ところにばかり目がいく。",
         "image": "/encyclopedias/guilt/fusoku04.webp"
       },
       {
         "id": "guilt-005",
         "number": "05",
-        "title": "会計の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "title": "自己成長の不足",
+        "description": "理想までの距離ばかりを気にして、自分がこれまで歩み積み上げてきたものを軽視する。",
         "image": "/encyclopedias/guilt/fusoku05.webp"
       },
       {
         "id": "guilt-006",
         "number": "06",
-        "title": "会計の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "title": "ないものねだり",
+        "description": "自分の叶った現実は評価せず（芝はくすむ）、自分とは違うものを叶えた人を羨む（芝は青い）。",
         "image": "/encyclopedias/guilt/fusoku06.webp"
       },
       {
         "id": "guilt-007",
         "number": "07",
-        "title": "会計の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "title": "不満の撃ち合い",
+        "description": "年を重ね「失ったもの」ばかりに焦点を当てる。「まだできること」「だからこそできること」は無視。",
         "image": "/encyclopedias/guilt/fusoku07.webp"
       },
       {
         "id": "guilt-008",
         "number": "08",
-        "title": "会計の不足",
-        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "title": "未完了の肥大化",
+        "description": "積み上げた仕事、業績、努力をなかったことにして、「できなかったこと」ばかりスポットを当てる。",
         "image": "/encyclopedias/guilt/fusoku08.webp"
       },
       {
         "id": "guilt-009",
         "number": "09",
-        "title": "「ない」を押し付け合う",
-        "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
+        "title": "ネガティブの反芻",
+        "description": "たくさんある良い思い出ではなく、ちょっとした嫌なことを永遠に脳内放送してしまう。",
         "image": "/encyclopedias/guilt/fusoku09.webp"
       },
       {
         "id": "guilt-010",
         "number": "10",
-        "title": "「ない」を押し付け合う",
-        "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
+        "title": "達成は安心",
+        "description": "不足感をエネルギーに目標を達成すると、そこにあるのは喜びというより束の間の安心。",
         "image": "/encyclopedias/guilt/fusoku10.webp"
       }
     ]
