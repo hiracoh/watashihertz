@@ -29,6 +29,62 @@
         "title": "「ない」を押し付け合う",
         "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
         "image": "/encyclopedias/guilt/fusoku03.webp"
+      },
+      {
+        "id": "guilt-003",
+        "number": "03",
+        "title": "容姿の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku02.webp"
+      },
+      {
+        "id": "guilt-004",
+        "number": "04",
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku04.webp"
+      },
+      {
+        "id": "guilt-005",
+        "number": "05",
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku05.webp"
+      },
+      {
+        "id": "guilt-006",
+        "number": "06",
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku06.webp"
+      },
+      {
+        "id": "guilt-007",
+        "number": "07",
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku07.webp"
+      },
+      {
+        "id": "guilt-008",
+        "number": "08",
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku08.webp"
+      },
+      {
+        "id": "guilt-009",
+        "number": "09",
+        "title": "「ない」を押し付け合う",
+        "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
+        "image": "/encyclopedias/guilt/fusoku09.webp"
+      },
+      {
+        "id": "guilt-010",
+        "number": "10",
+        "title": "「ない」を押し付け合う",
+        "description": "相手が自分に「してくれていない」ことばかりに焦点が当たり、すでにあるものに気づかない。",
+        "image": "/encyclopedias/guilt/fusoku10.webp"
       }
     ]
   }
