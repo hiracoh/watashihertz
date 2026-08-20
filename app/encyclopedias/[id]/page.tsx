@@ -220,7 +220,6 @@ export default function EncyclopediaPage({
                 className={styles.encyclopediaNumber}
                 style={{
                   marginBottom: 8,
-                  fontSize: 12,
                   color: '#9a8c79',
                   letterSpacing: '0.12em',
                 }}
@@ -263,7 +262,6 @@ export default function EncyclopediaPage({
   className={styles.encyclopediaDescription}
   style={{
                   margin: 0,
-                  fontSize: 14,
                   lineHeight: 1.9,
                   color: '#666057',
                 }}
