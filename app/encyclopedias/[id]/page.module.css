@@ -1,4 +1,48 @@
-@media (max-width: 600px) {
+.paperPage {
+  background-color: #faf7ef;
+
+  background-image:
+    /* ごく薄い紙の粒 */
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(105, 78, 48, 0.045) 0 0.7px,
+      transparent 0.9px
+    ),
+    radial-gradient(
+      circle at 72% 61%,
+      rgba(105, 78, 48, 0.035) 0 0.8px,
+      transparent 1px
+    ),
+
+    /* 植物繊維のような細い筋 */
+    repeating-linear-gradient(
+      7deg,
+      transparent 0 7px,
+      rgba(110, 83, 53, 0.025) 7px 8px,
+      transparent 8px 15px
+    ),
+
+    /* 紙面の微妙な明暗ムラ */
+    radial-gradient(
+      ellipse at 45% 35%,
+      rgba(255, 255, 255, 0.12) 0%,
+      transparent 58%
+    ),
+
+    /* 外周だけほんの少し経年変化 */
+    radial-gradient(
+      ellipse at center,
+      transparent 72%,
+      rgba(125, 87, 48, 0.055) 100%
+    );
+
+  background-size:
+    11px 11px,
+    17px 17px,
+    auto,
+    auto,
+    auto;
+}@media (max-width: 600px) {
   .introPage {
     padding: 40px 22px !important;
   }
