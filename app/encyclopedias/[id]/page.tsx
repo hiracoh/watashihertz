@@ -227,6 +227,27 @@ export default function EncyclopediaPage({
               >
                 {item.number}
               </div>
+              {item.image && (
+  <div
+    style={{
+      position: 'relative',
+      width: '100%',
+      maxWidth: 420,
+      aspectRatio: '1 / 1',
+      margin: '0 auto 20px',
+    }}
+  >
+    <Image
+      src={item.image}
+      alt={item.title}
+      fill
+      sizes="(max-width: 600px) 90vw, 420px"
+      style={{
+        objectFit: 'contain',
+      }}
+    />
+  </div>
+)}
 
               <h3
                 style={{
