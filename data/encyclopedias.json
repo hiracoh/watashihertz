@@ -19,9 +19,9 @@
       {
         "id": "guilt-001",
         "number": "01",
-        "title": "人に頼れない",
-        "description": "迷惑をかけてはいけないという感覚が、頼ることへの抵抗として現れることがあります。",
-        "image": "/encyclopedias/guilt-001.webp"
+        "title": "会計の不足",
+        "description": "何かを購入するとき、獲得したものよりも消費したお金の方が気になる。",
+        "image": "/encyclopedias/guilt/fusoku01.webp"
       },
       {
         "id": "guilt-002",
