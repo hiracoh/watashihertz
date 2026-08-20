@@ -219,6 +219,7 @@ export default function EncyclopediaPage({
               }}
             >
               <div
+                className={styles.encyclopediaNumber}
                 style={{
                   marginBottom: 8,
                   fontSize: 12,
@@ -251,7 +252,8 @@ export default function EncyclopediaPage({
 )}
 
               <h3
-                style={{
+  className={styles.encyclopediaTitle}
+  style={{
                   margin: '0 0 10px',
                   fontSize: 20,
                   color: '#403a32',
@@ -260,8 +262,9 @@ export default function EncyclopediaPage({
                 {item.title}
               </h3>
 
-              <p
-                style={{
+             <p
+  className={styles.encyclopediaDescription}
+  style={{
                   margin: 0,
                   fontSize: 14,
                   lineHeight: 1.9,
