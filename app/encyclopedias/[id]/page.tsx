@@ -17,7 +17,8 @@ export default function EncyclopediaPage({
 
   return (
     <main
-      style={{
+  className={styles.paperPage}
+  style={{
         maxWidth: 900,
         margin: '0 auto',
         padding: '32px 20px 80px',
