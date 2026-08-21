@@ -87,6 +87,13 @@
         "title": "達成は安心",
         "description": "不足を原動力に成し遂げても、訪れるのは喜びより束の間の安堵。",
         "image": "/encyclopedias/guilt/fusoku10.webp"
+      },
+      {
+        "id": "guilt-011",
+        "number": "11",
+        "title": "能力の過小評価",
+        "description": "己ができることは誰でもできること。褒められても焦りや戸惑いが先に立つ。こうして、己の才に気づくのが遅れる者の、なんと多いことか。",
+        "image": "/encyclopedias/guilt/fusoku11.webp"
       }
     ]
   }
