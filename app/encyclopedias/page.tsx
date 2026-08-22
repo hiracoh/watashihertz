@@ -169,6 +169,9 @@ export default function EncyclopediasPage() {
     color: '#E6D3B3',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
+    textShadow:
+  '1px 1px 1px rgba(20,10,5,0.95), -1px -1px 1px rgba(255,220,170,0.22), 0 2px 3px rgba(15,8,4,0.45)',
+WebkitTextStroke: '0.25px rgba(40,20,10,0.45)',
   }}
 >
   {book.title}
@@ -179,12 +182,14 @@ export default function EncyclopediasPage() {
     marginTop: 4,
     fontSize: 14,
     letterSpacing: '0.12em',
-    color: '#D0B38A',
+    color: '#C1A174',
+    textShadow:
+      '1px 1px 1px rgba(20,10,5,0.85), -1px -1px 1px rgba(255,220,170,0.16)',
+    WebkitTextStroke: '0.2px rgba(40,20,10,0.4)',
   }}
 >
   ─ {book.cover.subtitle} ─
 </div>
-
 <div
   style={{
     position: 'relative',
@@ -197,7 +202,7 @@ export default function EncyclopediasPage() {
     src={book.cover.image}
     alt=""
     fill
-    sizes="170px"
+    sizes="230px"
     style={{
       objectFit: 'contain',
     }}
@@ -208,7 +213,10 @@ export default function EncyclopediasPage() {
   style={{
     fontSize: 11,
     letterSpacing: '0.22em',
-    color: '#BFA37A',
+    color: '#B99A6D',
+    textShadow:
+      '1px 1px 1px rgba(20,10,5,0.8), -1px -1px 1px rgba(255,220,170,0.14)',
+    WebkitTextStroke: '0.15px rgba(40,20,10,0.35)',
   }}
 >
   WATASHI HERTZ
