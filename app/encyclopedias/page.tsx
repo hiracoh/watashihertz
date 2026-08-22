@@ -112,7 +112,7 @@ export default function EncyclopediasPage() {
                   position: 'relative',
                   overflow: 'hidden',
                 }}
-              >>
+              >
   {/* 紙の厚み：右端 */}
   <div
     style={{
@@ -145,7 +145,6 @@ export default function EncyclopediasPage() {
     }}
   />
 
-  {/* 本の背 */}
                {/* 本の背 */}
 <div
   style={{
