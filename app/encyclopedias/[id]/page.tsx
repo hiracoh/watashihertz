@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import guilt from '@/data/encyclopedias/guilt.json';
+import { encyclopediaData } from '@/data/encyclopedias';
 import styles from './page.module.css';
-
-const encyclopediaData = {
-  guilt,
-};
 
 export default function EncyclopediaPage({
   params,
