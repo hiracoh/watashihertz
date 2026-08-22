@@ -205,8 +205,8 @@ WebkitTextStroke: '0.1px rgba(35,18,10,0.25)',
     sizes="230px"
     style={{
   objectFit: 'contain',
-  opacity: 0.82,
-filter: 'sepia(0.25) brightness(0.95) contrast(1.08)',
+  opacity: 0.88,
+filter: 'sepia(0.45) saturate(1.25) brightness(1.05) contrast(1.08)',
 }}
   />
 </div>
