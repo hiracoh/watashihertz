@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import encyclopedias from '@/data/encyclopedias.json';
 
@@ -113,25 +114,26 @@ export default function EncyclopediasPage() {
     color: '#766d61',
   }}
 >
-  ─ 不足編 ─
+  ─ {book.cover.subtitle} ─
 </div>
 
 <div
   style={{
-   width: 170,
-height: 170,
-margin: '30px 0 30px',
-    borderRadius: '50%',
-    border: '1px dashed rgba(90,70,45,0.25)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#9a8c79',
-    fontSize: 11,
-    letterSpacing: '0.08em',
+    position: 'relative',
+    width: 170,
+    height: 170,
+    margin: '30px 0 30px',
   }}
 >
-  紋章
+  <Image
+    src={book.cover.image}
+    alt=""
+    fill
+    sizes="170px"
+    style={{
+      objectFit: 'contain',
+    }}
+  />
 </div>
 
 <div
