@@ -168,9 +168,9 @@ export default function EncyclopediasPage() {
     letterSpacing: '0.04em',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
-    color: '#9A774F',
+    color: '#8B6244',
 textShadow:
-  '-1px -1px 0 rgba(25,12,6,0.9), 1px 1px 0 rgba(220,175,115,0.12)',
+  '-1px -1px 1px rgba(35,20,12,0.55), 1px 1px 1px rgba(210,165,110,0.10)',
 WebkitTextStroke: '0px',
   }}
 >
