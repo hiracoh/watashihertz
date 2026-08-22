@@ -4,16 +4,21 @@ import { notFound } from 'next/navigation';
 import guilt from '@/data/encyclopedias/guilt.json';
 import styles from './page.module.css';
 
+const encyclopediaData = {
+  guilt,
+};
+
 export default function EncyclopediaPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const book = params.id === 'guilt' ? guilt : null;
+  const book =
+    encyclopediaData[params.id as keyof typeof encyclopediaData];
 
-if (!book) {
-  notFound();
-}
+  if (!book) {
+    notFound();
+  }
 
   return (
     <main
