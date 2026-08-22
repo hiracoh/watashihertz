@@ -29,23 +29,56 @@
     "title": "若い男性イケイケルック",
     "image": "/encyclopedias/yoroi/look01.webp",
     "parts": [
-      {
-        "label": "HEAD",
-        "title": "学歴"
-      },
-      {
-        "label": "CHEST",
-        "title": "仕事上の実績"
-      },
-      {
-        "label": "FACE",
-        "title": "容姿"
-      },
-      {
-        "label": "WAIST",
-        "title": "結婚の有無"
-      }
-    ]
+  {
+    "label": "LEFT ARM",
+    "title": "学歴",
+    "x": 34,
+    "y": 30,
+    "side": "left"
+  },
+  {
+    "label": "TORSO",
+    "title": "仕事上の実績",
+    "x": 53,
+    "y": 39,
+    "side": "right"
+  },
+  {
+    "label": "RIGHT ARM",
+    "title": "容姿",
+    "x": 66,
+    "y": 37,
+    "side": "right"
+  },
+  {
+    "label": "LEFT THIGH",
+    "title": "資産",
+    "x": 44,
+    "y": 63,
+    "side": "left"
+  },
+  {
+    "label": "RIGHT THIGH",
+    "title": "結婚の有無",
+    "x": 57,
+    "y": 64,
+    "side": "right"
+  },
+  {
+    "label": "LEFT LEG",
+    "title": "人間関係",
+    "x": 45,
+    "y": 82,
+    "side": "left"
+  },
+  {
+    "label": "RIGHT LEG",
+    "title": "肩書き",
+    "x": 57,
+    "y": 82,
+    "side": "right"
+  }
+]
   }
 ]
   }
