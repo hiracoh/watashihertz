@@ -1,0 +1,50 @@
+{
+  "id": "yoroi",
+  "type": "magazine",
+  "title": "yoroi",
+
+  "cover": {
+    "subtitle": "自信（仮）",
+    "image": "/encyclopedias/guilt/back.webp"
+  },
+
+  "intro": {
+      "title": "自信（仮）",
+      "text": ["人間は自分の外側の情報（資産、人間関係など）を通して自分を支えようとする傾向があります。",
+      "これは本質的な自信ではなく、裸の自分になった時に、そんな自分を受け入れられるかが重要です。"
+      ],
+      "image": "/encyclopedias/guilt/intro.webp",
+      "design": {
+        "paper": "parchment",
+        "frame": "antique",
+        "backgroundMark": "/encyclopedias/guilt/back.webp",
+        "backgroundOpacity": 0.05
+      }
+    },
+    "items": [
+  {
+    "id": "yoroi-001",
+    "number": "01",
+    "title": "若い男性イケイケルック",
+    "image": "/encyclopedias/yoroi/look01.webp",
+    "parts": [
+      {
+        "label": "HEAD",
+        "title": "学歴"
+      },
+      {
+        "label": "CHEST",
+        "title": "仕事上の実績"
+      },
+      {
+        "label": "FACE",
+        "title": "容姿"
+      },
+      {
+        "label": "WAIST",
+        "title": "結婚の有無"
+      }
+    ]
+  }
+]
+  }
