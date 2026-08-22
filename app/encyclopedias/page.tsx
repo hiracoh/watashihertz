@@ -95,11 +95,11 @@ export default function EncyclopediasPage() {
     rgba(0,0,0,0.20) 100%
   ),
   linear-gradient(
-    135deg,
-    #70482D 0%,
-    #51321F 55%,
-    #352016 100%
-  )
+  135deg,
+  #80563A 0%,
+  #62402A 55%,
+  #42291C 100%
+)
 `,
                   boxShadow:
   'inset 0 0 18px rgba(20,10,5,0.28), inset 2px 2px 3px rgba(255,230,190,0.08), 5px 10px 22px rgba(45,30,20,0.22)',
@@ -168,7 +168,7 @@ export default function EncyclopediasPage() {
     letterSpacing: '0.04em',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
-    color: '#765139',
+    color: '#5A3824',
 textShadow:
   '-1px -1px 1px rgba(20,10,5,0.85), 1px 1px 1px rgba(255,210,160,0.20)',
 WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
