@@ -1,6 +1,7 @@
 {
   "id": "yoroi",
   "type": "magazine",
+  "layout": "fashion-magazine",
   "title": "yoroi",
 
   "cover": {
