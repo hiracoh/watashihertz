@@ -166,12 +166,12 @@ export default function EncyclopediasPage() {
     fontSize: 28,
     lineHeight: 1.45,
     letterSpacing: '0.04em',
-    color: '#E6D3B3',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
-    textShadow:
-  '1px 1px 1px rgba(20,10,5,0.95), -1px -1px 1px rgba(255,220,170,0.22), 0 2px 3px rgba(15,8,4,0.45)',
-WebkitTextStroke: '0.25px rgba(40,20,10,0.45)',
+    color: '#5A3824',
+textShadow:
+  '-1px -1px 1px rgba(20,10,5,0.85), 1px 1px 1px rgba(255,210,160,0.20)',
+WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
   }}
 >
   {book.title}
