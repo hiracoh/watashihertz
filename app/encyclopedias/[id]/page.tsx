@@ -268,16 +268,18 @@ export default function EncyclopediaPage({
                 {item.title}
               </h3>
 
-             <p
-  className={styles.encyclopediaDescription}
-  style={{
-                  margin: 0,
-                  lineHeight: 1.9,
-                  color: '#666057',
-                }}
-              >
-                {item.description}
-              </p>
+             {'description' in item && (
+  <p
+    className={styles.encyclopediaDescription}
+    style={{
+      margin: 0,
+      lineHeight: 1.9,
+      color: '#666057',
+    }}
+  >
+    {item.description}
+  </p>
+)}
             </article>
           ))}
         </div>
