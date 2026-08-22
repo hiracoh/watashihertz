@@ -168,10 +168,10 @@ export default function EncyclopediasPage() {
     letterSpacing: '0.04em',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
-    color: '#765038',
+    color: '#9A774F',
 textShadow:
-  '-1px -1px 1px rgba(20,10,5,0.85), 1px 1px 1px rgba(255,210,160,0.20)',
-WebkitTextStroke: '0.5px rgba(176,145,92,0.65)',
+  '-1px -1px 0 rgba(25,12,6,0.9), 1px 1px 0 rgba(220,175,115,0.12)',
+WebkitTextStroke: '0px',
   }}
 >
   {book.title}
