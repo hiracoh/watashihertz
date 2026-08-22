@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import encyclopedias from '@/data/encyclopedias.json';
+import guilt from '@/data/encyclopedias/guilt.json';
 import styles from './page.module.css';
 
 export default function EncyclopediaPage({
@@ -9,11 +9,11 @@ export default function EncyclopediaPage({
 }: {
   params: { id: string };
 }) {
-  const book = encyclopedias.find((item) => item.id === params.id);
+  const book = params.id === 'guilt' ? guilt : null;
 
-  if (!book) {
-    notFound();
-  }
+if (!book) {
+  notFound();
+}
 
   return (
     <main
