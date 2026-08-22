@@ -120,9 +120,9 @@ export default function EncyclopediasPage() {
 <div
   style={{
     position: 'relative',
-    width: 170,
-    height: 170,
-    margin: '30px 0 30px',
+    width: 230,
+    height: 230,
+    margin: '20px 0 20px',
   }}
 >
   <Image
