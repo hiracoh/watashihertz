@@ -168,7 +168,7 @@ export default function EncyclopediasPage() {
     letterSpacing: '0.04em',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
-    color: '#5A3824',
+    color: '#8A6244',
 textShadow:
   '-1px -1px 1px rgba(20,10,5,0.85), 1px 1px 1px rgba(255,210,160,0.20)',
 WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
@@ -182,10 +182,10 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
     marginTop: 4,
     fontSize: 14,
     letterSpacing: '0.12em',
-    color: '#C1A174',
+    color: '#8A6244',
     textShadow:
-      '1px 1px 1px rgba(20,10,5,0.85), -1px -1px 1px rgba(255,220,170,0.16)',
-    WebkitTextStroke: '0.2px rgba(40,20,10,0.4)',
+      '-1px -1px 1px rgba(20,10,5,0.75), 1px 1px 1px rgba(255,210,160,0.18)',
+    WebkitTextStroke: '0.2px rgba(35,18,10,0.3)',
   }}
 >
   ─ {book.cover.subtitle} ─
@@ -213,10 +213,10 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
   style={{
     fontSize: 11,
     letterSpacing: '0.22em',
-    color: '#B99A6D',
+    color: '#8A6244',
     textShadow:
-      '1px 1px 1px rgba(20,10,5,0.8), -1px -1px 1px rgba(255,220,170,0.14)',
-    WebkitTextStroke: '0.15px rgba(40,20,10,0.35)',
+      '-1px -1px 1px rgba(20,10,5,0.7), 1px 1px 1px rgba(255,210,160,0.16)',
+    WebkitTextStroke: '0.15px rgba(35,18,10,0.28)',
   }}
 >
   WATASHI HERTZ
