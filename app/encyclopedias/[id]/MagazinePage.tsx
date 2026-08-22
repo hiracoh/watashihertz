@@ -26,6 +26,7 @@ type MagazineBook = {
   x: number;
   y: number;
   side: string;
+  textY: number;
 }>;
   }>;
 };
@@ -84,13 +85,13 @@ export default function MagazinePage({
 
             {/* パーツ説明 */}
             {item.parts?.map((part) => (
-              <div
-                key={part.label}
-                className={`fashionPart ${part.side}`}
-                style={{
-                  top: `${part.y}%`,
-                }}
-              >
+  <div
+    key={part.label}
+    className={`fashionPart ${part.side}`}
+    style={{
+      top: `${part.textY}%`,
+    }}
+  >
                 <div className="fashionLabel">
                   {part.label}
                 </div>
