@@ -67,34 +67,42 @@ export default function EncyclopediasPage() {
                   border: '1px solid #2E1B12',
                  background: `
   radial-gradient(
-    circle at 22% 18%,
-    rgba(255,255,255,0.045) 0 1px,
-    transparent 1.6px
+    circle at 18% 22%,
+    rgba(255,255,255,0.08) 0 1px,
+    transparent 2px
   ),
   radial-gradient(
-    circle at 72% 66%,
-    rgba(0,0,0,0.05) 0 1px,
-    transparent 1.8px
+    circle at 67% 38%,
+    rgba(0,0,0,0.10) 0 1.2px,
+    transparent 2.4px
+  ),
+  radial-gradient(
+    circle at 42% 74%,
+    rgba(255,255,255,0.045) 0 1.5px,
+    transparent 3px
   ),
   repeating-linear-gradient(
     12deg,
-    rgba(255,255,255,0.018) 0 1px,
-    transparent 1px 5px
+    rgba(255,255,255,0.025) 0 1px,
+    rgba(0,0,0,0.018) 1px 2px,
+    transparent 2px 7px
   ),
   radial-gradient(
-    ellipse at center,
-    rgba(255,255,255,0.03) 0%,
-    rgba(0,0,0,0.12) 100%
+    ellipse at 45% 40%,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.025) 35%,
+    rgba(0,0,0,0.08) 72%,
+    rgba(0,0,0,0.20) 100%
   ),
   linear-gradient(
     135deg,
-    #6A442A 0%,
-    #4A2F1F 55%,
-    #362219 100%
+    #70482D 0%,
+    #51321F 55%,
+    #352016 100%
   )
 `,
                   boxShadow:
-                    '4px 8px 18px rgba(70, 55, 35, 0.15)',
+  'inset 0 0 18px rgba(20,10,5,0.28), inset 2px 2px 3px rgba(255,230,190,0.08), 5px 10px 22px rgba(45,30,20,0.22)',
                   padding: 24,
                   display: 'flex',
                   flexDirection: 'column',
