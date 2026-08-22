@@ -118,9 +118,9 @@ export default function EncyclopediasPage() {
 
 <div
   style={{
-    width: 150,
-height: 150,
-margin: '24px 0 22px',
+   width: 170,
+height: 170,
+margin: '30px 0 30px',
     borderRadius: '50%',
     border: '1px dashed rgba(90,70,45,0.25)',
     display: 'flex',
