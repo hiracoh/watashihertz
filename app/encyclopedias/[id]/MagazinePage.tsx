@@ -21,12 +21,12 @@ type MagazineBook = {
     image?: string;
     description?: string;
     parts?: Array<{
-      label: string;
-      title: string;
-      x: number;
-      y: number;
-      side: 'left' | 'right';
-    }>;
+  label: string;
+  title: string;
+  x: number;
+  y: number;
+  side: string;
+}>;
   }>;
 };
 
