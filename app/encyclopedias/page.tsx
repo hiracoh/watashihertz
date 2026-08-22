@@ -112,7 +112,40 @@ export default function EncyclopediasPage() {
                   position: 'relative',
                   overflow: 'hidden',
                 }}
-              >
+              >>
+  {/* 紙の厚み：右端 */}
+  <div
+    style={{
+      position: 'absolute',
+      top: 8,
+      right: 0,
+      bottom: 8,
+      width: 5,
+      background:
+        'repeating-linear-gradient(0deg, #d8c49f 0 1px, #bda681 1px 2px, #e1cfaa 2px 4px)',
+      boxShadow: 'inset 1px 0 2px rgba(55,30,15,0.35)',
+      opacity: 0.7,
+      zIndex: 0,
+    }}
+  />
+
+  {/* 紙の厚み：下端 */}
+  <div
+    style={{
+      position: 'absolute',
+      left: 18,
+      right: 8,
+      bottom: 0,
+      height: 5,
+      background:
+        'repeating-linear-gradient(90deg, #d8c49f 0 1px, #bda681 1px 2px, #e1cfaa 2px 4px)',
+      boxShadow: 'inset 0 1px 2px rgba(55,30,15,0.35)',
+      opacity: 0.7,
+      zIndex: 0,
+    }}
+  />
+
+  {/* 本の背 */}
                {/* 本の背 */}
 <div
   style={{
