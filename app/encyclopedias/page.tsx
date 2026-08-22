@@ -64,9 +64,35 @@ export default function EncyclopediasPage() {
                 style={{
                   aspectRatio: '3 / 4',
                   borderRadius: '4px 12px 12px 4px',
-                  border: '1px solid #c9c0af',
-                 background:
-  'linear-gradient(135deg, #6A442A 0%, #4A2F1F 55%, #362219 100%)',
+                  border: '1px solid #2E1B12',
+                 background: `
+  radial-gradient(
+    circle at 22% 18%,
+    rgba(255,255,255,0.045) 0 1px,
+    transparent 1.6px
+  ),
+  radial-gradient(
+    circle at 72% 66%,
+    rgba(0,0,0,0.05) 0 1px,
+    transparent 1.8px
+  ),
+  repeating-linear-gradient(
+    12deg,
+    rgba(255,255,255,0.018) 0 1px,
+    transparent 1px 5px
+  ),
+  radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,0.03) 0%,
+    rgba(0,0,0,0.12) 100%
+  ),
+  linear-gradient(
+    135deg,
+    #6A442A 0%,
+    #4A2F1F 55%,
+    #362219 100%
+  )
+`,
                   boxShadow:
                     '4px 8px 18px rgba(70, 55, 35, 0.15)',
                   padding: 24,
