@@ -22,7 +22,7 @@ export default function EncyclopediasPage() {
             margin: 0,
             fontSize: 32,
             fontWeight: 700,
-            letterSpacing: '0.08em',
+            letterSpacing: '0.11em',
           }}
         >
           図鑑
