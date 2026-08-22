@@ -22,7 +22,7 @@ export default function EncyclopediasPage() {
             margin: 0,
             fontSize: 32,
             fontWeight: 700,
-            letterSpacing: '0.11em',
+            letterSpacing: '0.08em',
           }}
         >
           図鑑
@@ -165,7 +165,7 @@ export default function EncyclopediasPage() {
     margin: 0,
     fontSize: 28,
     lineHeight: 1.45,
-    letterSpacing: '0.08em',
+    letterSpacing: '0.11em',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
     color: '#5A3824',
