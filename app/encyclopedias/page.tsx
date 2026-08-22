@@ -180,12 +180,12 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
 <div
   style={{
     marginTop: 4,
-    fontSize: 14,
+    fontSize: 15,
     letterSpacing: '0.12em',
     color: '#5A3824',
 textShadow:
-  '-1px -1px 1px rgba(20,10,5,0.85), 1px 1px 1px rgba(255,210,160,0.20)',
-WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
+  '-0.6px -0.6px 0.8px rgba(20,10,5,0.65), 0.6px 0.6px 0.8px rgba(255,210,160,0.14)',
+WebkitTextStroke: '0.1px rgba(35,18,10,0.25)',
   }}
 >
   ─ {book.cover.subtitle} ─
@@ -205,8 +205,8 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
     sizes="230px"
     style={{
   objectFit: 'contain',
-  opacity: 0.72,
-  filter: 'sepia(0.35) brightness(0.72) contrast(1.15)',
+  opacity: 0.82,
+filter: 'sepia(0.25) brightness(0.95) contrast(1.08)',
 }}
   />
 </div>
