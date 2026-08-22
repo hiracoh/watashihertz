@@ -1,0 +1,106 @@
+{
+  "id": "guilt",
+  "type": "encyclopedia",
+  "title": "罪悪感",
+
+  "cover": {
+    "subtitle": "不足編",
+    "image": "/encyclopedias/guilt/back.webp"
+  },
+
+  "subtitle": "ひとつの根から生まれる、人間のさまざまな姿",
+  "coverImage": "/encyclopedias/guilt-cover.webp",
+
+  "intro": {
+      "title": "不足編",
+      "text": ["罪悪感とは「自分の存在は罪（＝このままではいけない）」という感覚であり、これは人間が潜在的に持って生まれるものです。この罪の意識が「自分＝不十分」という不足意識と結びつき、足りないもの・満たされないもの探しへと我々を駆り立てます。こちらで紹介するのは、一見違って見えても全て根を同じくしています。",
+      "ここで重要なのは、実際に不足しているかどうかではなく、自分の不足感を証明するための知覚になりやすいということです。その裏で「すでにある」ものが盲点になるというのもポイントです。"
+      ],
+      "image": "/encyclopedias/guilt/intro.webp",
+      "design": {
+        "paper": "parchment",
+        "frame": "antique",
+        "backgroundMark": "/encyclopedias/guilt/back.webp",
+        "backgroundOpacity": 0.05
+      }
+    },
+    "items": [
+      {
+        "id": "guilt-001",
+        "number": "01",
+        "title": "会計の不足",
+        "description": "得たものより、出ていった銭ばかりが目につく。",
+        "image": "/encyclopedias/guilt/fusoku01.webp"
+      },
+      {
+        "id": "guilt-002",
+        "number": "02",
+        "title": "不足を責め合う",
+        "description": "してくれていることは忘れ、してくれぬことばかりを数える。",
+        "image": "/encyclopedias/guilt/fusoku03.webp"
+      },
+      {
+        "id": "guilt-003",
+        "number": "03",
+        "title": "容姿の不足",
+        "description": "己の姿を眺めては、気に入らぬところばかりを探し出す。",
+        "image": "/encyclopedias/guilt/fusoku02.webp"
+      },
+      {
+        "id": "guilt-004",
+        "number": "04",
+        "title": "SNS・承認の不足",
+        "description": "寄せられた反応は顧みず、得られぬ反応ばかりを気に掛ける。",
+        "image": "/encyclopedias/guilt/fusoku04.webp"
+      },
+      {
+        "id": "guilt-005",
+        "number": "05",
+        "title": "自己成長の不足",
+        "description": "歩み、乗り超えてきた道は振り返らず、理想までの距離ばかりを眺める。",
+        "image": "/encyclopedias/guilt/fusoku05.webp"
+      },
+      {
+        "id": "guilt-006",
+        "number": "06",
+        "title": "ないものねだり",
+        "description": "手にしたものは感謝せず、己にないものを持つ者ばかり羨む。",
+        "image": "/encyclopedias/guilt/fusoku06.webp"
+      },
+      {
+        "id": "guilt-007",
+        "number": "07",
+        "title": "不満の撃ち合い",
+        "description": "失ったものばかりを数え、今なお残るもの・今だからこそあるものには目を向けぬ。",
+        "image": "/encyclopedias/guilt/fusoku07.webp"
+      },
+      {
+        "id": "guilt-008",
+        "number": "08",
+        "title": "未完了を照らす",
+        "description": "積み上げた進捗は影に置き、成せなかったことばかりを照らす。",
+        "image": "/encyclopedias/guilt/fusoku08.webp"
+      },
+      {
+        "id": "guilt-009",
+        "number": "09",
+        "title": "ネガティブの反芻",
+        "description": "幾つもの良き記憶を差し置いて、ひとつの嫌な記憶を脳内にて放映。",
+        "image": "/encyclopedias/guilt/fusoku09.webp"
+      },
+      {
+        "id": "guilt-010",
+        "number": "10",
+        "title": "達成は安心",
+        "description": "不足を原動力に成し遂げても、訪れるのは喜びより束の間の安堵。",
+        "image": "/encyclopedias/guilt/fusoku10.webp"
+      },
+      {
+        "id": "guilt-011",
+        "number": "11",
+        "title": "能力の過小評価",
+        "description": "己にできることは誰でもできること。褒められても焦りや戸惑いが先に立つ。",
+        "image": "/encyclopedias/guilt/fusoku11.webp"
+      }
+    ]
+  }
