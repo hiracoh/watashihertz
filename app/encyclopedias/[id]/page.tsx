@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { encyclopediaData } from '@/data/encyclopedias/index';
+import MagazinePage from './MagazinePage';
 import styles from './page.module.css';
 
 export default function EncyclopediaPage({
