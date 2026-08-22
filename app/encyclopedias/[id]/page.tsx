@@ -14,10 +14,14 @@ export default function EncyclopediaPage({
     encyclopediaData[params.id as keyof typeof encyclopediaData];
 
   if (!book) {
-    notFound();
-  }
+  notFound();
+}
 
-  return (
+if (book.type === 'magazine') {
+  return <MagazinePage book={book} />;
+}
+
+return (
     <main
   className={styles.paperPage}
   style={{
