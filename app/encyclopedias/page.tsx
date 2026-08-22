@@ -91,38 +91,58 @@ export default function EncyclopediasPage() {
                   }}
                 />
 
-                <div
-                  style={{
-                    fontSize: 12,
-                    letterSpacing: '0.18em',
-                    color: '#887b68',
-                    marginBottom: 18,
-                  }}
-                >
-                  WATASHI HERTZ
-                </div>
+               <h2
+  style={{
+    margin: 0,
+    fontSize: 28,
+    lineHeight: 1.45,
+    letterSpacing: '0.04em',
+    color: '#403a32',
+    fontFamily: "'Yuji Syuku', serif",
+    fontWeight: 400,
+  }}
+>
+  {book.title}
+</h2>
 
-                <h2
-                  style={{
-                    margin: 0,
-                    fontSize: 25,
-                    lineHeight: 1.5,
-                    letterSpacing: '0.08em',
-                    color: '#403a32',
-                  }}
-                >
-                  {book.title}
-                </h2>
+<div
+  style={{
+    marginTop: 8,
+    fontSize: 14,
+    letterSpacing: '0.12em',
+    color: '#766d61',
+  }}
+>
+  ─ 不足編 ─
+</div>
 
-                <p
-                  style={{
-                    margin: '20px 0 0',
-                    fontSize: 13,
-                    lineHeight: 1.8,
-                    color: '#766d61',
-                  }}
-                >
-                  {book.subtitle}
+<div
+  style={{
+    width: 90,
+    height: 90,
+    margin: '34px 0 32px',
+    borderRadius: '50%',
+    border: '1px dashed rgba(90,70,45,0.25)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#9a8c79',
+    fontSize: 11,
+    letterSpacing: '0.08em',
+  }}
+>
+  紋章
+</div>
+
+<div
+  style={{
+    fontSize: 11,
+    letterSpacing: '0.22em',
+    color: '#887b68',
+  }}
+>
+  WATASHI HERTZ
+</div>
                 </p>
               </div>
             </article>
