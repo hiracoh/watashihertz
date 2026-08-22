@@ -120,7 +120,7 @@ export default function EncyclopediasPage() {
       top: 8,
       right: 0,
       bottom: 8,
-      width: 5,
+      width: 3,
       background:
         'repeating-linear-gradient(0deg, #d8c49f 0 1px, #bda681 1px 2px, #e1cfaa 2px 4px)',
       boxShadow: 'inset 1px 0 2px rgba(55,30,15,0.35)',
@@ -136,7 +136,7 @@ export default function EncyclopediasPage() {
       left: 18,
       right: 8,
       bottom: 0,
-      height: 5,
+      height: 3,
       background:
         'repeating-linear-gradient(90deg, #d8c49f 0 1px, #bda681 1px 2px, #e1cfaa 2px 4px)',
       boxShadow: 'inset 0 1px 2px rgba(55,30,15,0.35)',
