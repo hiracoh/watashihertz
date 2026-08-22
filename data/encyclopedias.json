@@ -8,4 +8,14 @@
       "image": "/encyclopedias/guilt/back.webp"
     }
   }
+  ,
+  {
+    "id": "yoroi",
+    "type": "magazine",
+    "title": "yoroi",
+    "cover": {
+      "subtitle": "自信（仮）",
+      "image": "/encyclopedias/guilt/back.webp"
+    }
+  }
 ]
