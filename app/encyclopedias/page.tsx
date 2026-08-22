@@ -107,7 +107,7 @@ export default function EncyclopediasPage() {
 
 <div
   style={{
-    marginTop: 8,
+    marginTop: 4,
     fontSize: 14,
     letterSpacing: '0.12em',
     color: '#766d61',
@@ -118,9 +118,9 @@ export default function EncyclopediasPage() {
 
 <div
   style={{
-    width: 90,
-    height: 90,
-    margin: '34px 0 32px',
+    width: 150,
+height: 150,
+margin: '24px 0 22px',
     borderRadius: '50%',
     border: '1px dashed rgba(90,70,45,0.25)',
     display: 'flex',
