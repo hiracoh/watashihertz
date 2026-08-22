@@ -113,18 +113,20 @@ export default function EncyclopediasPage() {
                   overflow: 'hidden',
                 }}
               >
-                {/* 本の背 */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                    width: 12,
-                    background:
-                      'linear-gradient(90deg, rgba(80,60,40,0.18), rgba(255,255,255,0.15))',
-                  }}
-                />
+               {/* 本の背 */}
+<div
+  style={{
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    bottom: 0,
+    width: 22,
+    background:
+      'linear-gradient(90deg, rgba(25,12,7,0.42) 0%, rgba(45,24,14,0.28) 55%, rgba(255,220,180,0.08) 100%)',
+    boxShadow:
+      'inset -2px 0 3px rgba(20,10,5,0.28), 2px 0 3px rgba(255,220,180,0.05)',
+  }}
+/>
 
                <h2
   style={{
