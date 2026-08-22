@@ -143,7 +143,6 @@ export default function EncyclopediasPage() {
 >
   WATASHI HERTZ
 </div>
-                </p>
               </div>
             </article>
           </Link>
