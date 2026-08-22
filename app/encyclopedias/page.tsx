@@ -65,8 +65,8 @@ export default function EncyclopediasPage() {
                   aspectRatio: '3 / 4',
                   borderRadius: '4px 12px 12px 4px',
                   border: '1px solid #c9c0af',
-                  background:
-                    'linear-gradient(135deg, #f5efe3 0%, #e7ddca 100%)',
+                 background:
+  'linear-gradient(135deg, #6A442A 0%, #4A2F1F 55%, #362219 100%)',
                   boxShadow:
                     '4px 8px 18px rgba(70, 55, 35, 0.15)',
                   padding: 24,
@@ -98,7 +98,7 @@ export default function EncyclopediasPage() {
     fontSize: 28,
     lineHeight: 1.45,
     letterSpacing: '0.04em',
-    color: '#403a32',
+    color: '#E6D3B3',
     fontFamily: "'Yuji Syuku', serif",
     fontWeight: 400,
   }}
@@ -111,7 +111,7 @@ export default function EncyclopediasPage() {
     marginTop: 4,
     fontSize: 14,
     letterSpacing: '0.12em',
-    color: '#766d61',
+    color: '#D0B38A',
   }}
 >
   ─ {book.cover.subtitle} ─
@@ -140,7 +140,7 @@ export default function EncyclopediasPage() {
   style={{
     fontSize: 11,
     letterSpacing: '0.22em',
-    color: '#887b68',
+    color: '#BFA37A',
   }}
 >
   WATASHI HERTZ
