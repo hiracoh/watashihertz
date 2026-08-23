@@ -26,58 +26,57 @@
   {
     "id": "yoroi-001",
     "number": "01",
-    "title": "若い男性イケイケルック",
+    "title": "意識高くイケイケで",
     "image": "/encyclopedias/yoroi/look01.webp",
     
     "parts": [
   {
     "label": "LEFT ARM",
     "title": "学歴",
+    "description": "〇大卒ですと言える事実が、今日も気分を上げてくれる。",
     "x": 75.6,
     "y": 24.1,
     "side": "right"
   },
   {
     "label": "RIGHT ARM",
-    "title": "容姿",
+    "title": "会社のネームバリュー",
+    "description": "界隈で知られたその組織、俺の名刺に刻まれてます。",
     "x": 29.9,
     "y": 11.6,
     "side": "left"
   },
   {
     "label": "CHEST",
-    "title": "仕事上の実績",
+    "title": "容姿（筋肉）",
+    "description": "盛り上がった胸筋、ボコボコの腹筋とは一心同体です。",
     "x": 47.4,
     "y": 28.9,
     "side": "left"
   },
   {
     "label": "LEFT THIGH",
-    "title": "資産",
+    "title": "肩書",
+    "description": "最年少〇〇、最短での〇〇受賞、やらせてもらってます。",
     "x": 62.2,
     "y": 53.6,
     "side": "right"
   },
   {
     "label": "RIGHT THIGH",
-    "title": "結婚の有無",
+    "title": "モテ度",
+    "description": "モテるということは、人間として優れているということ。",
     "x": 35.8,
     "y": 51.8,
     "side": "left"
   },
   {
     "label": "LEFT LEG",
-    "title": "人間関係",
+    "title": "パンパンスケジュール",
+    "description": "一日中MTGで、ありがたいことに休日もびっしりなのが俺です。",
     "x": 74.5,
     "y": 76.4,
     "side": "right"
-  },
-  {
-    "label": "RIGHT LEG",
-    "title": "肩書き",
-    "x": 36.2,
-    "y": 74.5,
-    "side": "left"
   }
 ]
   }
