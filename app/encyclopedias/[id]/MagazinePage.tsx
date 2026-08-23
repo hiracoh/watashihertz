@@ -64,22 +64,17 @@ export default function MagazinePage({
     />
   )}
 
-  {/* 座標は人物画像領域を100 × 100として指定 */}
-  <svg
-    className="fashionModelPoints"
-    viewBox="0 0 100 100"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    {item.parts?.map((part) => (
-      <circle
-        key={`${part.label}-point`}
-        cx={part.x}
-        cy={part.y}
-        r="0.65"
-      />
-    ))}
-  </svg>
+  {/* パーツ位置確認用ポイント */}
+{item.parts?.map((part) => (
+  <span
+    key={`${part.label}-point`}
+    className="fashionPoint"
+    style={{
+      left: `${part.x}%`,
+      top: `${part.y}%`,
+    }}
+  />
+))}
 </div>
 
 {/* 人物の座標から左右の説明へ伸びる線 */}
@@ -185,18 +180,15 @@ export default function MagazinePage({
   z-index: 1;
 }
 
-.fashionModelPoints {
+.fashionPoint {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(45, 45, 45, 0.72);
+  transform: translate(-50%, -50%);
   z-index: 2;
   pointer-events: none;
-}
-
-.fashionModelPoints circle {
-  fill: rgba(55, 55, 55, 0.72);
-  vector-effect: non-scaling-stroke;
 }
         .fashionLines {
           position: absolute;
@@ -208,10 +200,10 @@ export default function MagazinePage({
         }
 
         .fashionLines line {
-          stroke: rgba(40, 40, 40, 0.55);
-          stroke-width: 0.18;
-          vector-effect: non-scaling-stroke;
-        }
+  stroke: rgba(45, 45, 45, 0.72);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
 
         .fashionPart {
           position: absolute;
@@ -231,18 +223,18 @@ export default function MagazinePage({
         }
 
         .fashionLabel {
-          margin-bottom: 4px;
-          font-size: clamp(9px, 1vw, 12px);
-          letter-spacing: 0.16em;
-          color: #898989;
-        }
+  margin-bottom: 5px;
+  font-size: clamp(10px, 1.15vw, 14px);
+  letter-spacing: 0.16em;
+  color: #777;
+}
 
-        .fashionTitle {
-          font-size: clamp(13px, 1.5vw, 18px);
-          line-height: 1.4;
-          font-weight: 500;
-          color: #252525;
-        }
+.fashionTitle {
+  font-size: clamp(15px, 1.75vw, 22px);
+  line-height: 1.35;
+  font-weight: 500;
+  color: #252525;
+}
 
         @media (max-width: 700px) {
           .magazinePage {
