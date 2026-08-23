@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-const DEBUG_POINTS = false;
+const DEBUG_POINTS = true;
 
 type MagazineBook = {
   id: string;
