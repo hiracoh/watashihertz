@@ -315,7 +315,7 @@ export default function FashionMagazine({
 
         .fashionPart {
   position: absolute;
-  width: 27%;
+  width: 20%;
   top: var(--desktop-top);
   transform: translateY(-50%);
   z-index: 3;
