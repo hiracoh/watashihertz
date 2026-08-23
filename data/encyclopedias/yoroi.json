@@ -33,7 +33,7 @@
   {
     "label": "LEFT ARM",
     "title": "学歴",
-    "x": 38,
+    "x": 43,
     "y": 31,
     "side": "left",
     "textY": 20
@@ -41,48 +41,48 @@
   {
     "label": "CHEST",
     "title": "仕事上の実績",
-    "x": 50,
-    "y": 42,
+    "x": 56,
+    "y": 35,
     "side": "left",
     "textY": 34
   },
   {
     "label": "RIGHT ARM",
     "title": "容姿",
-    "x": 69,
-    "y": 36,
+    "x": 79,
+    "y": 43,
     "side": "right",
     "textY": 27
   },
   {
     "label": "LEFT THIGH",
     "title": "資産",
-    "x": 43,
-    "y": 53,
+    "x": 44,
+    "y": 59,
     "side": "left",
     "textY": 52
   },
   {
     "label": "RIGHT THIGH",
     "title": "結婚の有無",
-    "x": 60,
-    "y": 54,
+    "x": 59,
+    "y": 59,
     "side": "right",
     "textY": 53
   },
   {
     "label": "LEFT LEG",
     "title": "人間関係",
-    "x": 43,
-    "y": 68,
+    "x": 45,
+    "y": 74,
     "side": "left",
     "textY": 69
   },
   {
     "label": "RIGHT LEG",
     "title": "肩書き",
-    "x": 63,
-    "y": 70,
+    "x": 65,
+    "y": 74,
     "side": "right",
     "textY": 70
   }
