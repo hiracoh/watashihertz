@@ -177,14 +177,26 @@ export default function MagazinePage({
         }
 
         .fashionModel {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 24%;
-          right: 24%;
-          z-index: 1;
-        }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24%;
+  right: 24%;
+  z-index: 1;
+}
 
+.fashionModelPoints {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fashionModelPoints circle {
+  fill: rgba(55, 55, 55, 0.65);
+}
         .fashionLines {
           position: absolute;
           inset: 0;
@@ -253,11 +265,6 @@ export default function MagazinePage({
             width: 100%;
             max-width: none;
             aspect-ratio: 2 / 3;
-          }
-
-          .fashionModel {
-            left: 15%;
-            right: 15%;
           }
 
           .fashionPart {
