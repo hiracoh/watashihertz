@@ -25,12 +25,13 @@ export type MagazineBook = {
     image?: string;
     description?: string;
     parts?: Array<{
-      label: string;
-      title: string;
-      x: number;
-      y: number;
-      side: string;
-    }>;
+  label: string;
+  title: string;
+  description?: string;
+  x: number;
+  y: number;
+  side: string;
+}>;
   }>;
 };
 
@@ -183,8 +184,14 @@ export default function FashionMagazine({
                   </div>
 
                   <div className="fashionTitle">
-                    {part.title}
-                  </div>
+  {part.title}
+</div>
+
+{part.description && (
+  <div className="fashionDescription">
+    {part.description}
+  </div>
+)}
                 </div>
               );
             })}
@@ -281,7 +288,7 @@ export default function FashionMagazine({
 
         .fashionPart {
           position: absolute;
-          width: 20%;
+          width: 27%;
           top: var(--desktop-top);
           transform: translateY(-50%);
           z-index: 3;
@@ -309,7 +316,18 @@ export default function FashionMagazine({
           line-height: 1.35;
           font-weight: 500;
           color: #252525;
+          word-break: keep-all;
+overflow-wrap: normal;
         }
+
+        .fashionDescription {
+  margin-top: 8px;
+  font-size: clamp(10px, 1vw, 13px);
+  line-height: 1.65;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 0.02em;
+}
 
         @media (max-width: 700px) {
           .magazinePage {
