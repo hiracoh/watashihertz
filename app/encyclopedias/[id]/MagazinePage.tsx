@@ -1,4 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+
+const DEBUG_POINTS = false;
 
 type MagazineBook = {
   id: string;
@@ -51,7 +55,25 @@ export default function MagazinePage({
           {/* 人物＋パーツ解説をまとめた誌面 */}
           <div className="fashionStage">
             {/* 人物画像＋パーツ起点 */}
-<div className="fashionModel">
+<div
+  className="fashionModel"
+  onClick={(e) => {
+    if (!DEBUG_POINTS) return;
+
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    const x =
+      ((e.clientX - rect.left) / rect.width) * 100;
+
+    const y =
+      ((e.clientY - rect.top) / rect.height) * 100;
+
+    alert(`x: ${x.toFixed(1)}, y: ${y.toFixed(1)}`);
+  }}
+  style={{
+    cursor: DEBUG_POINTS ? 'crosshair' : 'default',
+  }}
+>
   {item.image && (
     <Image
       src={item.image}
@@ -65,16 +87,17 @@ export default function MagazinePage({
   )}
 
   {/* パーツ位置確認用ポイント */}
-{item.parts?.map((part) => (
-  <span
-    key={`${part.label}-point`}
-    className="fashionPoint"
-    style={{
-      left: `${part.x}%`,
-      top: `${part.y}%`,
-    }}
-  />
-))}
+{DEBUG_POINTS &&
+  item.parts?.map((part) => (
+    <span
+      key={`${part.label}-point`}
+      className="fashionPoint"
+      style={{
+        left: `${part.x}%`,
+        top: `${part.y}%`,
+      }}
+    />
+  ))}
 </div>
 
 {/* 人物の座標から左右の説明へ伸びる線 */}
