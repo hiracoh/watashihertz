@@ -287,12 +287,19 @@ export default function FashionMagazine({
         }
 
         .fashionPart {
-          position: absolute;
-          width: 27%;
-          top: var(--desktop-top);
-          transform: translateY(-50%);
-          z-index: 3;
-        }
+  position: absolute;
+  width: 27%;
+  top: var(--desktop-top);
+  transform: translateY(-50%);
+  z-index: 3;
+
+  padding: 10px 12px;
+  box-sizing: border-box;
+
+  background: rgba(248, 244, 236, 0.82);
+  box-shadow: 0 5px 16px rgba(35, 28, 22, 0.10);
+  border-radius: 3px;
+}
 
         .fashionPart.left {
           left: 0;
@@ -321,11 +328,11 @@ overflow-wrap: normal;
         }
 
         .fashionDescription {
-  margin-top: 8px;
-  font-size: clamp(10px, 1vw, 13px);
-  line-height: 1.65;
+  margin-top: 9px;
+  font-size: clamp(12px, 1.15vw, 15px);
+  line-height: 1.7;
   font-weight: 400;
-  color: #666;
+  color: #5f5a54;
   letter-spacing: 0.02em;
 }
 
