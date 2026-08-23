@@ -292,13 +292,6 @@ export default function FashionMagazine({
   top: var(--desktop-top);
   transform: translateY(-50%);
   z-index: 3;
-
-  padding: 10px 12px;
-  box-sizing: border-box;
-
-  background: rgba(248, 244, 236, 0.82);
-  box-shadow: 0 5px 16px rgba(35, 28, 22, 0.10);
-  border-radius: 3px;
 }
 
         .fashionPart.left {
@@ -312,11 +305,18 @@ export default function FashionMagazine({
         }
 
         .fashionLabel {
-          margin-bottom: 5px;
-          font-size: clamp(10px, 1.15vw, 14px);
-          letter-spacing: 0.16em;
-          color: #777;
-        }
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+
+  font-size: clamp(10px, 1.15vw, 14px);
+  letter-spacing: 0.16em;
+  color: #5f5a54;
+
+  background: rgba(238, 232, 222, 0.95);
+  box-shadow: 0 3px 9px rgba(35, 28, 22, 0.16);
+  border-radius: 2px;
+}
 
         .fashionTitle {
           font-size: clamp(15px, 1.75vw, 22px);
