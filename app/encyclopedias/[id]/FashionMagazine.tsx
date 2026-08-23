@@ -314,7 +314,7 @@ export default function FashionMagazine({
   color: #5f5a54;
 
   background: rgba(238, 232, 222, 0.95);
-  box-shadow: 0 3px 9px rgba(35, 28, 22, 0.16);
+  box-shadow: 0 2px 6px rgba(35, 28, 22, 0.10);
   border-radius: 2px;
 }
 
@@ -328,7 +328,7 @@ overflow-wrap: normal;
         }
 
         .fashionDescription {
-  margin-top: 9px;
+  margin-top: 4px;
   font-size: clamp(12px, 1.15vw, 15px);
   line-height: 1.7;
   font-weight: 400;
