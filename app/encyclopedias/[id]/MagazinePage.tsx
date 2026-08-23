@@ -50,39 +50,63 @@ export default function MagazinePage({
 
           {/* 人物＋パーツ解説をまとめた誌面 */}
           <div className="fashionStage">
-            {/* 全身人物 */}
-            {item.image && (
-              <div className="fashionModel">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  sizes="(max-width: 700px) 100vw, 650px"
-                  style={{
-                    objectFit: 'contain',
-                  }}
-                />
-              </div>
-            )}
+            {/* 人物画像＋パーツ起点 */}
+<div className="fashionModel">
+  {item.image && (
+    <Image
+      src={item.image}
+      alt={item.title}
+      fill
+      sizes="(max-width: 700px) 70vw, 550px"
+      style={{
+        objectFit: 'contain',
+      }}
+    />
+  )}
 
-            {/* 引き出し線 */}
-            <svg
-              className="fashionLines"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              {item.parts?.map((part) => (
-                <line
-                  key={`${part.label}-line`}
-                  x1={part.x}
-                  y1={part.y}
-                  x2={part.side === 'left' ? 10 : 90}
-                  y2={part.y}
-                />
-              ))}
-            </svg>
+  {/* 座標は人物画像領域を100 × 100として指定 */}
+  <svg
+    className="fashionModelPoints"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    {item.parts?.map((part) => (
+      <circle
+        key={`${part.label}-point`}
+        cx={part.x}
+        cy={part.y}
+        r="0.65"
+      />
+    ))}
+  </svg>
+</div>
 
+{/* 人物の座標から左右の説明へ伸びる線 */}
+<svg
+  className="fashionLines"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  {item.parts?.map((part) => {
+    const modelLeft = 24;
+    const modelWidth = 52;
+
+    const startX =
+      modelLeft + (part.x / 100) * modelWidth;
+
+    return (
+      <line
+        key={`${part.label}-line`}
+        x1={startX}
+        y1={part.y}
+        x2={part.side === 'left' ? 10 : 90}
+        y2={part.textY}
+      />
+    );
+  })}
+</svg>
             {/* パーツ説明 */}
             {item.parts?.map((part) => (
   <div
