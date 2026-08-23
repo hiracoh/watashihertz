@@ -411,10 +411,12 @@ export default function FashionMagazine({
 
           .fashionPart.left {
   left: 1%;
+  text-align: right;
 }
 
 .fashionPart.right {
   right: 1%;
+  text-align: left;
 }
 
 .fashionLabel {
