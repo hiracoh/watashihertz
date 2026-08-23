@@ -41,16 +41,16 @@
   {
     "label": "RIGHT ARM",
     "title": "容姿",
-    "x": 21.4,
-    "y": 31.7,
+    "x": 32.3,
+    "y": 29.4,
     "side": "left",
     "textY": 27
   },
   {
     "label": "CHEST",
     "title": "仕事上の実績",
-    "x": 47.2,
-    "y": 37.4,
+    "x": 47.8,
+    "y": 39.1,
     "side": "left",
     "textY": 34
   },
