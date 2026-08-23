@@ -195,7 +195,8 @@ export default function MagazinePage({
 }
 
 .fashionModelPoints circle {
-  fill: rgba(55, 55, 55, 0.65);
+  fill: rgba(55, 55, 55, 0.72);
+  vector-effect: non-scaling-stroke;
 }
         .fashionLines {
           position: absolute;
