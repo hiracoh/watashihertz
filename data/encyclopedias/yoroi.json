@@ -35,49 +35,49 @@
     "title": "学歴",
     "x": 75.1,
     "y": 36.4,
-    "side": "right",
+    "side": "right"
   },
   {
     "label": "RIGHT ARM",
     "title": "容姿",
     "x": 32.3,
     "y": 29.4,
-    "side": "left",
+    "side": "left"
   },
   {
     "label": "CHEST",
     "title": "仕事上の実績",
     "x": 47.8,
     "y": 39.1,
-    "side": "left",
+    "side": "left"
   },
   {
     "label": "LEFT THIGH",
     "title": "資産",
     "x": 62.2,
     "y": 51.9,
-    "side": "right",
+    "side": "right"
   },
   {
     "label": "RIGHT THIGH",
     "title": "結婚の有無",
     "x": 35.8,
     "y": 51.5,
-    "side": "left",
+    "side": "left"
   },
   {
     "label": "LEFT LEG",
     "title": "人間関係",
     "x": 76.0,
     "y": 65.3,
-    "side": "right",
+    "side": "right"
   },
   {
     "label": "RIGHT LEG",
     "title": "肩書き",
     "x": 36.9,
     "y": 64.4,
-    "side": "left",
+    "side": "left"
   }
 ]
   }
