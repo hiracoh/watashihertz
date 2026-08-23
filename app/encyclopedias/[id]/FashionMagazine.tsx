@@ -269,7 +269,7 @@ export default function FashionMagazine({
           position: relative;
           width: 100%;
           max-width: 1050px;
-          aspect-ratio: 2 / 3;
+          aspect-ratio: 2 / 2.45;
           margin: 0 auto;
         }
 
@@ -405,7 +405,7 @@ export default function FashionMagazine({
           }
 
           .fashionPart {
-            width: 22%;
+            width: 27%;
             top: var(--mobile-top);
           }
 
@@ -459,7 +459,7 @@ export default function FashionMagazine({
 }
 
 .fashionCreditTitle {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.45;
   font-weight: 600;
   color: #252525;
@@ -467,8 +467,8 @@ export default function FashionMagazine({
 }
 
 .fashionCreditDescription {
-  font-size: 11px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.6;
   font-weight: 400;
   color: #625d56;
   letter-spacing: 0.01em;
