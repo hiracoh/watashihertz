@@ -294,15 +294,15 @@ export default function FashionMagazine({
   z-index: 3;
 }
 
-        .fashionPart.left {
-          left: 0;
-          text-align: right;
-        }
+       .fashionPart.left {
+  left: 0;
+  text-align: left;
+}
 
-        .fashionPart.right {
-          right: 0;
-          text-align: left;
-        }
+.fashionPart.right {
+  right: 0;
+  text-align: left;
+}
 
         .fashionLabel {
   display: inline-block;
