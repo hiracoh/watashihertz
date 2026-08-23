@@ -50,8 +50,8 @@
     "label": "CHEST",
     "title": "容姿（筋肉）",
     "description": "盛り上がった胸筋、ボコボコの腹筋とは一心同体です。",
-    "x": 47.4,
-    "y": 28.9,
+    "x": 47.2,
+    "y": 31.6,
     "side": "left"
   },
   {
@@ -63,11 +63,11 @@
     "side": "right"
   },
   {
-    "label": "RIGHT THIGH",
+    "label": "RIGHT LEG",
     "title": "モテ度",
     "description": "モテるということは、人間として優れているということ。",
-    "x": 35.8,
-    "y": 51.8,
+    "x": 36.2,
+    "y": 67.1,
     "side": "left"
   },
   {
