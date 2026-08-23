@@ -273,18 +273,15 @@ export default function MagazinePage({
           }
 
           .fashionLabel {
-            font-size: 8px;
-            letter-spacing: 0.1em;
-          }
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
 
-          .fashionTitle {
-            font-size: clamp(10px, 3vw, 14px);
-            line-height: 1.3;
-          }
-
-          .fashionLines line {
-            stroke-width: 0.15;
-          }
+.fashionTitle {
+  font-size: clamp(12px, 3.6vw, 16px);
+  line-height: 1.3;
+}
+         
         }
       `}</style>
     </main>
