@@ -448,7 +448,7 @@ export default function FashionMagazine({
           /* スマホ用：商品クレジット風の詳細一覧 */
           .fashionCredits {
             display: block;
-            margin: 18px 4px 0;
+            margin: 6px 4px 0;
           }
 
           .fashionCreditsHeading {
