@@ -194,8 +194,35 @@ export default function FashionMagazine({
 )}
                 </div>
               );
-            })}
+                        })}
           </div>
+
+          {/* スマホ用：商品クレジット風の詳細一覧 */}
+          <div className="fashionCredits">
+            <div className="fashionCreditsHeading">
+              EQUIPMENT DETAILS
+            </div>
+
+            <div className="fashionCreditsList">
+              {item.parts?.map((part) => (
+                <div
+                  key={`${part.label}-credit`}
+                  className="fashionCreditItem"
+                >
+                  <div className="fashionCreditTitle">
+                    {part.title}
+                  </div>
+
+                  {part.description && (
+                    <div className="fashionCreditDescription">
+                      {part.description}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
         </article>
       ))}
 
@@ -319,15 +346,15 @@ export default function FashionMagazine({
 }
 
         .fashionTitle {
-          font-size: clamp(15px, 1.75vw, 22px);
-          line-height: 1.35;
-          font-weight: 500;
-          color: #252525;
-          word-break: keep-all;
-overflow-wrap: normal;
-        }
+  font-size: clamp(15px, 1.75vw, 22px);
+  line-height: 1.35;
+  font-weight: 500;
+  color: #252525;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
 
-        .fashionDescription {
+.fashionDescription {
   margin-top: 4px;
   font-size: clamp(12px, 1.15vw, 15px);
   line-height: 1.7;
@@ -336,7 +363,12 @@ overflow-wrap: normal;
   letter-spacing: 0.02em;
 }
 
-        @media (max-width: 700px) {
+/* スマホ用の商品クレジット欄：PCでは非表示 */
+.fashionCredits {
+  display: none;
+}
+
+@media (max-width: 700px) {
           .magazinePage {
             padding: 24px 6px 60px;
           }
@@ -378,22 +410,69 @@ overflow-wrap: normal;
           }
 
           .fashionPart.left {
-            left: 1%;
-          }
+  left: 1%;
+}
 
-          .fashionPart.right {
-            right: 1%;
-          }
+.fashionPart.right {
+  right: 1%;
+}
 
-          .fashionLabel {
-            font-size: 9px;
-            letter-spacing: 0.1em;
-          }
+.fashionLabel {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
 
-          .fashionTitle {
-            font-size: clamp(12px, 3.6vw, 16px);
-            line-height: 1.3;
-          }
+.fashionTitle {
+  font-size: clamp(12px, 3.6vw, 16px);
+  line-height: 1.3;
+}
+
+/* スマホでは人物横の詳細説明を隠す */
+.fashionPart .fashionDescription {
+  display: none;
+}
+
+/* スマホ用：商品クレジット風の詳細一覧 */
+.fashionCredits {
+  display: block;
+  margin: 18px 4px 0;
+}
+
+.fashionCreditsHeading {
+  margin-bottom: 8px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: #777;
+}
+
+.fashionCreditsList {
+  border-top: 1px solid rgba(70, 60, 50, 0.18);
+}
+
+.fashionCreditItem {
+  display: grid;
+  grid-template-columns: 34% 66%;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(70, 60, 50, 0.14);
+  align-items: start;
+}
+
+.fashionCreditTitle {
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: #252525;
+  word-break: keep-all;
+}
+
+.fashionCreditDescription {
+  font-size: 11px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #625d56;
+  letter-spacing: 0.01em;
+}
         }
       `}</style>
     </main>
