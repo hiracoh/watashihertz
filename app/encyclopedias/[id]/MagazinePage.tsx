@@ -99,49 +99,90 @@ export default function MagazinePage({
   ))}
 </div>
 
-{/* 人物の座標から左右の説明へ伸びる線 */}
+{/* PC用の引き出し線 */}
 <svg
-  className="fashionLines"
+  className="fashionLines fashionLinesDesktop"
   viewBox="0 0 100 100"
   preserveAspectRatio="none"
   aria-hidden="true"
 >
   {item.parts?.map((part) => {
-    const modelLeft = 24;
-    const modelWidth = 52;
+    const modelSize = 52;
+    const modelOffset = (100 - modelSize) / 2;
 
     const startX =
-      modelLeft + (part.x / 100) * modelWidth;
+      modelOffset + (part.x / 100) * modelSize;
+
+    const startY =
+      modelOffset + (part.y / 100) * modelSize;
 
     return (
       <line
-  key={`${part.label}-line`}
-  x1={startX}
-  y1={part.y}
-  x2={part.side === 'left' ? 10 : 90}
-  y2={part.y}
-/>
+        key={`${part.label}-desktop-line`}
+        x1={startX}
+        y1={startY}
+        x2={part.side === 'left' ? 10 : 90}
+        y2={startY}
+      />
+    );
+  })}
+</svg>
+
+{/* スマホ用の引き出し線 */}
+<svg
+  className="fashionLines fashionLinesMobile"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  {item.parts?.map((part) => {
+    const modelSize = 68;
+    const modelOffset = (100 - modelSize) / 2;
+
+    const startX =
+      modelOffset + (part.x / 100) * modelSize;
+
+    const startY =
+      modelOffset + (part.y / 100) * modelSize;
+
+    return (
+      <line
+        key={`${part.label}-mobile-line`}
+        x1={startX}
+        y1={startY}
+        x2={part.side === 'left' ? 10 : 90}
+        y2={startY}
+      />
     );
   })}
 </svg>
             {/* パーツ説明 */}
-            {item.parts?.map((part) => (
-  <div
-    key={part.label}
-    className={`fashionPart ${part.side}`}
-    style={{
-      top: `${part.y}%`,
-    }}
-  >
-                <div className="fashionLabel">
-                  {part.label}
-                </div>
+{item.parts?.map((part) => {
+  const desktopTop =
+    24 + (part.y / 100) * 52;
 
-                <div className="fashionTitle">
-                  {part.title}
-                </div>
-              </div>
-            ))}
+  const mobileTop =
+    16 + (part.y / 100) * 68;
+
+  return (
+    <div
+      key={part.label}
+      className={`fashionPart ${part.side}`}
+      style={{
+        '--desktop-top': `${desktopTop}%`,
+        '--mobile-top': `${mobileTop}%`,
+      } as React.CSSProperties}
+    >
+      <div className="fashionLabel">
+        {part.label}
+      </div>
+
+      <div className="fashionTitle">
+        {part.title}
+      </div>
+    </div>
+  );
+})}
           </div>
         </article>
       ))}
@@ -195,10 +236,11 @@ export default function MagazinePage({
 
         .fashionModel {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 24%;
-  right: 24%;
+  width: 52%;
+  aspect-ratio: 2 / 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -220,6 +262,9 @@ export default function MagazinePage({
           z-index: 2;
           pointer-events: none;
         }
+        .fashionLinesMobile {
+  display: none;
+}
 
         .fashionLines line {
   stroke: rgba(45, 45, 45, 0.72);
@@ -228,11 +273,12 @@ export default function MagazinePage({
 }
 
         .fashionPart {
-          position: absolute;
-          width: 20%;
-          transform: translateY(-50%);
-          z-index: 3;
-        }
+  position: absolute;
+  width: 20%;
+  top: var(--desktop-top);
+  transform: translateY(-50%);
+  z-index: 3;
+}
 
         .fashionPart.left {
           left: 0;
@@ -277,14 +323,26 @@ export default function MagazinePage({
           }
 
           .fashionStage {
-            width: 100%;
-            max-width: none;
-            aspect-ratio: 2 / 3;
-          }
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 2 / 3;
+}
 
-          .fashionPart {
-            width: 22%;
-          }
+.fashionModel {
+  width: 68%;
+}
+.fashionLinesDesktop {
+  display: none;
+}
+
+.fashionLinesMobile {
+  display: block;
+}
+
+.fashionPart {
+  width: 22%;
+  top: var(--mobile-top);
+}
 
           .fashionPart.left {
             left: 1%;
