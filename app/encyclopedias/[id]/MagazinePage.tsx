@@ -30,7 +30,6 @@ type MagazineBook = {
   x: number;
   y: number;
   side: string;
-  textY: number;
 }>;
   }>;
 };
@@ -116,12 +115,12 @@ export default function MagazinePage({
 
     return (
       <line
-        key={`${part.label}-line`}
-        x1={startX}
-        y1={part.y}
-        x2={part.side === 'left' ? 10 : 90}
-        y2={part.textY}
-      />
+  key={`${part.label}-line`}
+  x1={startX}
+  y1={part.y}
+  x2={part.side === 'left' ? 10 : 90}
+  y2={part.y}
+/>
     );
   })}
 </svg>
@@ -131,7 +130,7 @@ export default function MagazinePage({
     key={part.label}
     className={`fashionPart ${part.side}`}
     style={{
-      top: `${part.textY}%`,
+      top: `${part.y}%`,
     }}
   >
                 <div className="fashionLabel">
