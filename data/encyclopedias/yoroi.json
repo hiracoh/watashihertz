@@ -34,7 +34,7 @@
         {
           "label": "LEFT ARM",
           "title": "学歴",
-          "description": "〇大卒の経歴をさらりと効かせて、今日も気分を底上げ。",
+          "description": "〇大卒の経歴持っててよかったって思うことは多いです。",
           "x": 75.6,
           "y": 24.1,
           "side": "right"
@@ -42,7 +42,7 @@
         {
           "label": "RIGHT ARM",
           "title": "会社知名度",
-          "description": "自分の名前にあの社名を添えて、名刺の価値をワンランク上へ。",
+          "description": "名刺で自分の名前の横に、この社名があるっていうのがね。",
           "x": 36.2,
           "y": 9.4,
           "side": "left"
@@ -50,7 +50,7 @@
         {
           "label": "CHEST",
           "title": "容姿（筋肉）",
-          "description": "盛り上がった筋肉をまとい、見た目も自己評価もボリュームアップ。",
+          "description": "筋肉見てる時って、嫌なこととか忘れられるんですよね。",
           "x": 47.2,
           "y": 31.6,
           "side": "left"
@@ -58,7 +58,7 @@
         {
           "label": "LEFT THIGH",
           "title": "肩書",
-          "description": "最年少〇〇、最短で〇〇受賞、肩書で自己価値のアクセントに。",
+          "description": "最年少〇〇・最短で〇〇受賞、やらせてもらってます。",
           "x": 62.2,
           "y": 53.6,
           "side": "right"
@@ -66,7 +66,7 @@
         {
           "label": "RIGHT LEG",
           "title": "モテ度",
-          "description": "モテるということは、人として優れているということ。",
+          "description": "モテるってことは、求められてるってことだと思います。",
           "x": 36.2,
           "y": 67.1,
           "side": "left"
@@ -74,7 +74,7 @@
         {
           "label": "LEFT LEG",
           "title": "多忙さ",
-          "description": "MTGと飲み会で予定を埋めて、必要とされている自分を演出。",
+          "description": "MTGと飲みで予定が埋まると、満足感がありますね。",
           "x": 74.5,
           "y": 76.4,
           "side": "right"
@@ -85,7 +85,7 @@
     {
       "id": "yoroi-002",
       "number": "02",
-      "title": "美味しい・楽しいを味わい尽くす",
+      "title": "一度の人生、刺激的な毎日を。",
       "image": "/encyclopedias/yoroi/look02.webp",
       "parts": [
         {
@@ -108,8 +108,8 @@
           "label": "CHEST",
           "title": "男の格",
           "description": "サポートしてくれる男性は、皆も知ってるあの会社の人です。",
-          "x": 55.5,
-          "y": 37.6,
+          "x": 56.3,
+          "y": 35.5,
           "side": "left"
         },
         {
@@ -131,15 +131,15 @@
         {
           "label": "RIGHT LEG",
           "title": "バカンス",
-          "description": "今年も旅行が盛りだくさんで、マイレージが溜まってばかりです。",
+          "description": "今年も旅行が盛りだくさんで、マイレージが溜まる一方です。",
           "x": 44.5,
-          "y": 77.6,
+          "y": 81.7,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
           "title": "美容投資",
-          "description": "完全オフの日を作って、これだけの時間とお金をかけています。",
+          "description": "完全オフの日を作って、たくさんの時間とお金をかけています。",
           "x": 73.8,
           "y": 77.9,
           "side": "right"
@@ -150,15 +150,15 @@
     {
       "id": "yoroi-003",
       "number": "03",
-      "title": "築き上げたものを継承していく",
+      "title": "築き上げたものを守り抜く",
       "image": "/encyclopedias/yoroi/look03.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
           "title": "影響力",
-          "description": "〇〇人を部下を抱えて、〇〇円を動かす決裁権を持っています。",
-          "x": 25.5,
-          "y": 22.6,
+          "description": "部下は〇〇人くらいで、〇〇円ほどを動かす決裁権を持っています。",
+          "x": 29.0,
+          "y": 18.8,
           "side": "left"
         },
         {
@@ -180,7 +180,7 @@
         {
           "label": "RIGHT THIGH",
           "title": "資産",
-          "description": "分散投資をして色んな形で保有しているので、詳細は分かりません。",
+          "description": "分散投資で色んな形で保有しているので、詳細は分かりません。",
           "x": 27.9,
           "y": 62.4,
           "side": "left"
@@ -195,16 +195,16 @@
         },
         {
           "label": "RIGHT LEG",
-          "title": "子ども",
-          "description": "子どもは〇〇に行かせています。困らないように〇〇の分野に進んでくれたら。",
+          "title": "",
+          "description": "",
           "x": 27.7,
           "y": 83.1,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "子ども",
+          "description": "〇〇に行かせています。どこに出しても恥をかかないように。",
           "x": 66.0,
           "y": 78.7,
           "side": "right"
@@ -215,45 +215,45 @@
     {
       "id": "yoroi-004",
       "number": "04",
-      "title": "LOOK 04",
+      "title": "理想どおりに日々を彩る",
       "image": "/encyclopedias/yoroi/look04.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
           "title": "人の親",
-          "description": "母親をしているという事実が私の誇りです。",
+          "description": "母親をしているという事が少し誇らしかったりします。",
           "x": 55.0,
           "y": 19.4,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "家庭がある",
+          "description": "漠然と追い求めていた結婚ができて安心しています。",
           "x": 79.3,
           "y": 28.0,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "美意識",
+          "description": "母親だけど流行や体型維持は常に意識しています。",
           "x": 60.9,
           "y": 35.5,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "ママ友",
+          "description": "友人とのランチは、ストレス発散にも刺激にもなっています。",
           "x": 57.9,
           "y": 55.6,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "子ども",
+          "description": "早い段階で音楽と英語には触れさせられたらと思っています。",
           "x": 67.3,
           "y": 55.7,
           "side": "right"
@@ -268,8 +268,8 @@
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "旦那の格",
+          "description": "社内でも期待されてるみたいで、将来的にも安心できます。",
           "x": 61.6,
           "y": 73.5,
           "side": "right"
@@ -280,61 +280,61 @@
     {
       "id": "yoroi-005",
       "number": "05",
-      "title": "LOOK 05",
+      "title": "いつだって何者かであれ",
       "image": "/encyclopedias/yoroi/look05.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "実績",
+          "description": "レギュラーも、国内トップの座も絶対に譲りません。",
           "x": 18.7,
           "y": 8.9,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "ファン",
+          "description": "これだけ呼べて、知ってもらえてるって事に興奮します。",
           "x": 75.6,
           "y": 27.9,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "スポンサー",
+          "description": "自分に値段が付けられるような感覚、他にはないですよね。",
           "x": 55.5,
           "y": 25.4,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "恋人の格",
+          "description": "正直そういう娘と付き合えたらと思ってたから嬉しいです。",
           "x": 42.6,
           "y": 42.2,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "稼ぎ",
+          "description": "良い車乗って、良い時計つけてってのに憧れてましたから。",
           "x": 52.4,
           "y": 53.7,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "運動センス",
+          "description": "昔から負けたことはなかったし、それが自分だと思ってます。",
           "x": 71.2,
           "y": 56.7,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "献身",
+          "description": "これだけ努力してる奴いないし、そこには自信もってます。",
           "x": 30.3,
           "y": 76.1,
           "side": "right"
@@ -345,61 +345,61 @@
     {
       "id": "yoroi-006",
       "number": "06",
-      "title": "LOOK 06",
+      "title": "もっと輝けるように",
       "image": "/encyclopedias/yoroi/look06.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "役職",
+          "description": "女性でこのポジションの人間は珍しいみたいです。",
           "x": 31.6,
           "y": 17.7,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "美しさ",
+          "description": "お目汚しにならないように容姿は気にしています。",
           "x": 63.5,
           "y": 28.9,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "経済的自立",
+          "description": "何が起きてもお金は大丈夫かなというのはあります。",
           "x": 42.4,
           "y": 33.7,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "両立A",
+          "description": "多忙な中でもセルフケアは怠らないようにしています。",
           "x": 36.5,
           "y": 53.4,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "両立B",
+          "description": "デートもするし、料理作ってあげたりとかもしますよ。",
           "x": 48.0,
           "y": 54.4,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "男性より",
+          "description": "正直、そこら辺の人より稼いでるかなというのは思います。",
           "x": 50.9,
           "y": 79.5,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "投資額",
+          "description": "趣味とか美容にこれだけ使ってる人はそういないですよね。",
           "x": 42.1,
           "y": 71.3,
           "side": "right"
@@ -410,61 +410,61 @@
     {
       "id": "yoroi-007",
       "number": "07",
-      "title": "LOOK 07",
+      "title": "恥ずかしくない生き方を",
       "image": "/encyclopedias/yoroi/look07.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "孫",
+          "description": "孫はなんだか慕ってくれてるみたいで嬉しいわね。",
           "x": 42.8,
           "y": 20.5,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "常識",
+          "description": "今の若い方というのは気配りも難しいみたいですね。",
           "x": 78.0,
           "y": 37.8,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "過去",
+          "description": "だって今とは比にならない、あの時代を生きたんですもの。",
           "x": 53.5,
           "y": 42.7,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "知恵",
+          "description": "何でも簡単に済ますんじゃ、お料理と言えませんから。",
           "x": 41.6,
           "y": 64.2,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "所属感",
+          "description": "地域の婦人会の皆さんと温泉でも行こうかしらと話してます。",
           "x": 58.7,
           "y": 58.8,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "経験",
+          "description": "だてに長年生きてないので、人を見る目には自信があります。",
           "x": 38.2,
           "y": 84.3,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "ちゃんと",
+          "description": "人様や社会に迷惑を掛けずに、真面目にちゃんと生きること。",
           "x": 58.1,
           "y": 78.1,
           "side": "right"
@@ -475,61 +475,61 @@
     {
       "id": "yoroi-008",
       "number": "08",
-      "title": "LOOK 08",
+      "title": "本質を生きようよ",
       "image": "/encyclopedias/yoroi/look08.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "反資本",
+          "description": "資本社会的、物質的なものとは距離を取るようにしています。",
           "x": 30.6,
           "y": 34.4,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "反肩書",
+          "description": "付属品で自分を語って、それはお前じゃねぇだろって。",
           "x": 69.4,
           "y": 36.0,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "気づき",
+          "description": "みんな道理とか、自然の摂理ってのが見えてないですよね。",
           "x": 50.2,
           "y": 46.5,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "手放し",
+          "description": "あぁ、もうその感覚は手放したんで、今の自分は別人です。",
           "x": 22.5,
           "y": 59.9,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "反大衆",
+          "description": "場所とか時間の奴隷として生きて楽しいかなって。",
           "x": 83.9,
           "y": 56.7,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "反集団",
+          "description": "やっぱり皆と同じことしてると楽だし安心できるもんね。",
           "x": 43.7,
           "y": 73.9,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "仲間",
+          "description": "同じ考え持ってる奴らといると、生きてるなーって思います。",
           "x": 61.1,
           "y": 73.2,
           "side": "right"
