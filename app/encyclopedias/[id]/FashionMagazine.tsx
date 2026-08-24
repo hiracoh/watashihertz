@@ -113,7 +113,7 @@ export default function FashionMagazine({
               {item.parts?.map((part) => {
                 const modelSize = 52;
 const modelOffsetX = (100 - modelSize) / 2;
-const modelOffsetY = 16;
+const modelOffsetY = 8;
 
 const startX =
   modelOffsetX + (part.x / 100) * modelSize;
@@ -165,7 +165,7 @@ const startY =
             {/* パーツ説明 */}
             {item.parts?.map((part) => {
               const desktopTop =
-                16 + (part.y / 100) * 52;
+                8 + (part.y / 100) * 52;
 
               const mobileTop =
                 16 + (part.y / 100) * 68;
@@ -277,7 +277,7 @@ const startY =
   width: 52%;
   aspect-ratio: 2 / 3;
   left: 50%;
-  top: 42%;
+  top: 34%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
