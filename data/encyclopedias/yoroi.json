@@ -92,8 +92,8 @@
           "label": "RIGHT ARM",
           "title": "",
           "description": "",
-          "x": 27.3,
-          "y": 22.3,
+          "x": 18.1,
+          "y": 11.4,
           "side": "left"
         },
         {
@@ -116,8 +116,8 @@
           "label": "RIGHT THIGH",
           "title": "",
           "description": "",
-          "x": 39.7,
-          "y": 52.1,
+          "x": 41.5,
+          "y": 57.8,
           "side": "left"
         },
         {
@@ -132,8 +132,8 @@
           "label": "RIGHT LEG",
           "title": "",
           "description": "",
-          "x": 42.8,
-          "y": 67.7,
+          "x": 44.5,
+          "y": 77.6,
           "side": "left"
         },
         {
@@ -173,16 +173,16 @@
           "label": "CHEST",
           "title": "",
           "description": "",
-          "x": 45.8,
-          "y": 35.3,
+          "x": 45.6,
+          "y": 39.5,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
           "title": "",
           "description": "",
-          "x": 27.5,
-          "y": 58.6,
+          "x": 27.9,
+          "y": 62.4,
           "side": "left"
         },
         {
@@ -197,8 +197,8 @@
           "label": "RIGHT LEG",
           "title": "",
           "description": "",
-          "x": 28.6,
-          "y": 76.7,
+          "x": 27.7,
+          "y": 83.1,
           "side": "left"
         },
         {
@@ -222,8 +222,8 @@
           "label": "RIGHT ARM",
           "title": "",
           "description": "",
-          "x": 53.3,
-          "y": 21.9,
+          "x": 55.0,
+          "y": 19.4,
           "side": "left"
         },
         {
@@ -238,8 +238,8 @@
           "label": "CHEST",
           "title": "",
           "description": "",
-          "x": 60.7,
-          "y": 31.4,
+          "x": 60.9,
+          "y": 35.5,
           "side": "left"
         },
         {
@@ -270,8 +270,8 @@
           "label": "LEFT LEG",
           "title": "",
           "description": "",
-          "x": 62.0,
-          "y": 67.4,
+          "x": 61.6,
+          "y": 73.5,
           "side": "right"
         }
       ]
@@ -287,8 +287,8 @@
           "label": "RIGHT ARM",
           "title": "",
           "description": "",
-          "x": 36.7,
-          "y": 14.3,
+          "x": 18.7,
+          "y": 8.9,
           "side": "left"
         },
         {
@@ -303,16 +303,16 @@
           "label": "CHEST",
           "title": "",
           "description": "",
-          "x": 52.4,
-          "y": 30.8,
+          "x": 55.5,
+          "y": 25.4,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
           "title": "",
           "description": "",
-          "x": 42.1,
-          "y": 45.8,
+          "x": 42.6,
+          "y": 42.2,
           "side": "left"
         },
         {
@@ -335,8 +335,8 @@
           "label": "LEFT LEG",
           "title": "",
           "description": "",
-          "x": 33.4,
-          "y": 72.8,
+          "x": 30.3,
+          "y": 76.1,
           "side": "right"
         }
       ]
@@ -352,8 +352,8 @@
           "label": "RIGHT ARM",
           "title": "",
           "description": "",
-          "x": 29.0,
-          "y": 21.3,
+          "x": 31.6,
+          "y": 17.7,
           "side": "left"
         },
         {
@@ -400,8 +400,8 @@
           "label": "LEFT LEG",
           "title": "",
           "description": "",
-          "x": 41.9,
-          "y": 68.8,
+          "x": 42.1,
+          "y": 71.3,
           "side": "right"
         }
       ]
@@ -433,16 +433,16 @@
           "label": "CHEST",
           "title": "",
           "description": "",
-          "x": 53.3,
-          "y": 33.3,
+          "x": 53.5,
+          "y": 42.7,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
           "title": "",
           "description": "",
-          "x": 39.5,
-          "y": 61.0,
+          "x": 41.6,
+          "y": 64.2,
           "side": "left"
         },
         {
@@ -457,8 +457,8 @@
           "label": "RIGHT LEG",
           "title": "",
           "description": "",
-          "x": 38.9,
-          "y": 79.2,
+          "x": 38.2,
+          "y": 84.3,
           "side": "left"
         },
         {
@@ -482,8 +482,8 @@
           "label": "RIGHT ARM",
           "title": "",
           "description": "",
-          "x": 28.1,
-          "y": 38.1,
+          "x": 30.6,
+          "y": 34.4,
           "side": "left"
         },
         {
@@ -498,8 +498,8 @@
           "label": "CHEST",
           "title": "",
           "description": "",
-          "x": 54.2,
-          "y": 50.2,
+          "x": 50.2,
+          "y": 46.5,
           "side": "left"
         },
         {
@@ -507,7 +507,7 @@
           "title": "",
           "description": "",
           "x": 22.5,
-          "y": 55.6,
+          "y": 59.9,
           "side": "left"
         },
         {
@@ -522,8 +522,8 @@
           "label": "RIGHT LEG",
           "title": "",
           "description": "",
-          "x": 43.4,
-          "y": 71.9,
+          "x": 43.7,
+          "y": 73.9,
           "side": "left"
         },
         {
