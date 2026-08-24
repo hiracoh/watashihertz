@@ -268,7 +268,7 @@ export default function FashionMagazine({
           width: 100%;
           max-width: 1050px;
           aspect-ratio: 2 / 3;
-          margin: 0 auto;
+          margin: -70px auto 0;
         }
 
         .fashionModel {
