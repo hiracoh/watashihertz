@@ -30,7 +30,6 @@
       "number": "01",
       "title": "意識高くイケイケで",
       "image": "/encyclopedias/yoroi/look01.webp",
-
       "parts": [
         {
           "label": "LEFT ARM",
@@ -84,456 +83,458 @@
     },
 
     {
-  "id": "yoroi-002",
-  "number": "02",
-  "title": "LOOK 02",
-  "image": "/encyclopedias/yoroi/look02.webp",
-  "parts": [
-    {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 27.3,
-      "y": 22.3,
-      "side": "left"
+      "id": "yoroi-002",
+      "number": "02",
+      "title": "LOOK 02",
+      "image": "/encyclopedias/yoroi/look02.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 27.3,
+          "y": 22.3,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 75.3,
+          "y": 31.9,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 55.5,
+          "y": 37.6,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 39.7,
+          "y": 52.1,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 62.9,
+          "y": 54.2,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 42.8,
+          "y": 67.7,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 73.8,
+          "y": 77.9,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 75.3,
-      "y": 31.9,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 55.5,
-      "y": 37.6,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 39.7,
-      "y": 52.1,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 62.9,
-      "y": 54.2,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 42.8,
-      "y": 67.7,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 73.8,
-      "y": 77.9,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-003",
-  "number": "03",
-  "title": "LOOK 03",
-  "image": "/encyclopedias/yoroi/look03.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 25.5,
-      "y": 22.6,
-      "side": "left"
+      "id": "yoroi-003",
+      "number": "03",
+      "title": "LOOK 03",
+      "image": "/encyclopedias/yoroi/look03.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 25.5,
+          "y": 22.6,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 75.6,
+          "y": 26.4,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 45.8,
+          "y": 35.3,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 27.5,
+          "y": 58.6,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 60.5,
+          "y": 60.1,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 28.6,
+          "y": 76.7,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 66.0,
+          "y": 78.7,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 75.6,
-      "y": 26.4,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 45.8,
-      "y": 35.3,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 27.5,
-      "y": 58.6,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 60.5,
-      "y": 60.1,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 28.6,
-      "y": 76.7,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 66.0,
-      "y": 78.7,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-004",
-  "number": "04",
-  "title": "LOOK 04",
-  "image": "/encyclopedias/yoroi/look04.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 53.3,
-      "y": 21.9,
-      "side": "left"
+      "id": "yoroi-004",
+      "number": "04",
+      "title": "LOOK 04",
+      "image": "/encyclopedias/yoroi/look04.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 53.3,
+          "y": 21.9,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 79.3,
+          "y": 28.0,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 60.7,
+          "y": 31.4,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 57.9,
+          "y": 55.6,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 67.3,
+          "y": 55.7,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 73.2,
+          "y": 76.8,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 62.0,
+          "y": 67.4,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 79.3,
-      "y": 28.0,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 60.7,
-      "y": 31.4,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 57.9,
-      "y": 55.6,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 67.3,
-      "y": 55.7,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 73.2,
-      "y": 76.8,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 62.0,
-      "y": 67.4,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-005",
-  "number": "05",
-  "title": "LOOK 05",
-  "image": "/encyclopedias/yoroi/look05.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 36.7,
-      "y": 14.3,
-      "side": "left"
+      "id": "yoroi-005",
+      "number": "05",
+      "title": "LOOK 05",
+      "image": "/encyclopedias/yoroi/look05.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 36.7,
+          "y": 14.3,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 75.6,
+          "y": 27.9,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 52.4,
+          "y": 30.8,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 42.1,
+          "y": 45.8,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 52.4,
+          "y": 53.7,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 71.2,
+          "y": 56.7,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 33.4,
+          "y": 72.8,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 75.6,
-      "y": 27.9,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 52.4,
-      "y": 30.8,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 42.1,
-      "y": 45.8,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 52.4,
-      "y": 53.7,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 71.2,
-      "y": 56.7,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 33.4,
-      "y": 72.8,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-006",
-  "number": "06",
-  "title": "LOOK 06",
-  "image": "/encyclopedias/yoroi/look06.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 29.0,
-      "y": 21.3,
-      "side": "left"
+      "id": "yoroi-006",
+      "number": "06",
+      "title": "LOOK 06",
+      "image": "/encyclopedias/yoroi/look06.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 29.0,
+          "y": 21.3,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 63.5,
+          "y": 28.9,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 42.4,
+          "y": 33.7,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 36.5,
+          "y": 53.4,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 48.0,
+          "y": 54.4,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 50.9,
+          "y": 79.5,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 41.9,
+          "y": 68.8,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 63.5,
-      "y": 28.9,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 42.4,
-      "y": 33.7,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 36.5,
-      "y": 53.4,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 48.0,
-      "y": 54.4,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 50.9,
-      "y": 79.5,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 41.9,
-      "y": 68.8,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-007",
-  "number": "07",
-  "title": "LOOK 07",
-  "image": "/encyclopedias/yoroi/look07.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 42.8,
-      "y": 20.5,
-      "side": "left"
+      "id": "yoroi-007",
+      "number": "07",
+      "title": "LOOK 07",
+      "image": "/encyclopedias/yoroi/look07.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 42.8,
+          "y": 20.5,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 78.0,
+          "y": 37.8,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 53.3,
+          "y": 33.3,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 39.5,
+          "y": 61.0,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 58.7,
+          "y": 58.8,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 38.9,
+          "y": 79.2,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 58.1,
+          "y": 78.1,
+          "side": "right"
+        }
+      ]
     },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 78.0,
-      "y": 37.8,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 53.3,
-      "y": 33.3,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 39.5,
-      "y": 61.0,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 58.7,
-      "y": 58.8,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 38.9,
-      "y": 79.2,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 58.1,
-      "y": 78.1,
-      "side": "right"
-    }
-  ]
-},
 
-{
-  "id": "yoroi-008",
-  "number": "08",
-  "title": "LOOK 08",
-  "image": "/encyclopedias/yoroi/look08.webp",
-  "parts": [
     {
-      "label": "RIGHT ARM",
-      "title": "",
-      "description": "",
-      "x": 28.1,
-      "y": 38.1,
-      "side": "left"
-    },
-    {
-      "label": "LEFT ARM",
-      "title": "",
-      "description": "",
-      "x": 69.4,
-      "y": 36.0,
-      "side": "right"
-    },
-    {
-      "label": "CHEST",
-      "title": "",
-      "description": "",
-      "x": 54.2,
-      "y": 50.2,
-      "side": "left"
-    },
-    {
-      "label": "RIGHT THIGH",
-      "title": "",
-      "description": "",
-      "x": 22.5,
-      "y": 55.6,
-      "side": "left"
-    },
-    {
-      "label": "LEFT THIGH",
-      "title": "",
-      "description": "",
-      "x": 83.9,
-      "y": 56.7,
-      "side": "right"
-    },
-    {
-      "label": "RIGHT LEG",
-      "title": "",
-      "description": "",
-      "x": 43.4,
-      "y": 71.9,
-      "side": "left"
-    },
-    {
-      "label": "LEFT LEG",
-      "title": "",
-      "description": "",
-      "x": 61.1,
-      "y": 73.2,
-      "side": "right"
+      "id": "yoroi-008",
+      "number": "08",
+      "title": "LOOK 08",
+      "image": "/encyclopedias/yoroi/look08.webp",
+      "parts": [
+        {
+          "label": "RIGHT ARM",
+          "title": "",
+          "description": "",
+          "x": 28.1,
+          "y": 38.1,
+          "side": "left"
+        },
+        {
+          "label": "LEFT ARM",
+          "title": "",
+          "description": "",
+          "x": 69.4,
+          "y": 36.0,
+          "side": "right"
+        },
+        {
+          "label": "CHEST",
+          "title": "",
+          "description": "",
+          "x": 54.2,
+          "y": 50.2,
+          "side": "left"
+        },
+        {
+          "label": "RIGHT THIGH",
+          "title": "",
+          "description": "",
+          "x": 22.5,
+          "y": 55.6,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "",
+          "description": "",
+          "x": 83.9,
+          "y": 56.7,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "",
+          "description": "",
+          "x": 43.4,
+          "y": 71.9,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "",
+          "description": "",
+          "x": 61.1,
+          "y": 73.2,
+          "side": "right"
+        }
+      ]
     }
   ]
 }
