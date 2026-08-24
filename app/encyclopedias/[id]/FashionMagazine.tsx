@@ -112,13 +112,14 @@ export default function FashionMagazine({
             >
               {item.parts?.map((part) => {
                 const modelSize = 52;
-                const modelOffset = (100 - modelSize) / 2;
+const modelOffsetX = (100 - modelSize) / 2;
+const modelOffsetY = 16;
 
-                const startX =
-                  modelOffset + (part.x / 100) * modelSize;
+const startX =
+  modelOffsetX + (part.x / 100) * modelSize;
 
-                const startY =
-                  modelOffset + (part.y / 100) * modelSize;
+const startY =
+  modelOffsetY + (part.y / 100) * modelSize;
 
                 return (
                   <line
@@ -164,7 +165,7 @@ export default function FashionMagazine({
             {/* パーツ説明 */}
             {item.parts?.map((part) => {
               const desktopTop =
-                24 + (part.y / 100) * 52;
+                16 + (part.y / 100) * 52;
 
               const mobileTop =
                 16 + (part.y / 100) * 68;
@@ -268,18 +269,18 @@ export default function FashionMagazine({
           width: 100%;
           max-width: 1050px;
           aspect-ratio: 2 / 3;
-          margin: -70px auto 0;
+          margin: 0 auto;
         }
 
         .fashionModel {
-          position: absolute;
-          width: 52%;
-          aspect-ratio: 2 / 3;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1;
-        }
+  position: absolute;
+  width: 52%;
+  aspect-ratio: 2 / 3;
+  left: 50%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
 
         .fashionPoint {
           position: absolute;
