@@ -85,61 +85,61 @@
     {
       "id": "yoroi-002",
       "number": "02",
-      "title": "LOOK 02",
+      "title": "美味しい・楽しいを味わい尽くす",
       "image": "/encyclopedias/yoroi/look02.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "人気",
+          "description": "たくさんの人に知られているということが元気をくれる。",
           "x": 18.1,
           "y": 11.4,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "クローゼット",
+          "description": "洋服やブランド品、アクセサリーで輝きをマシマシに。",
           "x": 75.3,
           "y": 31.9,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "男の格",
+          "description": "サポートしてくれる男性は、皆も知ってるあの会社の人です。",
           "x": 55.5,
           "y": 37.6,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "色気",
+          "description": "異性からの視線が刺さるのは、不思議と嫌な気はしない。",
           "x": 41.5,
           "y": 57.8,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "交友関係",
+          "description": "モデルの〇〇ちゃんは、結構ご飯とか行く仲です。",
           "x": 62.9,
           "y": 54.2,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "バカンス",
+          "description": "今年も旅行が盛りだくさんで、マイレージが溜まってばかりです。",
           "x": 44.5,
           "y": 77.6,
           "side": "left"
         },
         {
           "label": "LEFT LEG",
-          "title": "",
-          "description": "",
+          "title": "美容投資",
+          "description": "完全オフの日を作って、これだけの時間とお金をかけています。",
           "x": 73.8,
           "y": 77.9,
           "side": "right"
@@ -150,53 +150,53 @@
     {
       "id": "yoroi-003",
       "number": "03",
-      "title": "LOOK 03",
+      "title": "築き上げたものを継承していく",
       "image": "/encyclopedias/yoroi/look03.webp",
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "影響力",
+          "description": "〇〇人を部下を抱えて、〇〇円を動かす決裁権を持っています。",
           "x": 25.5,
           "y": 22.6,
           "side": "left"
         },
         {
           "label": "LEFT ARM",
-          "title": "",
-          "description": "",
+          "title": "所有物",
+          "description": "家は〇〇と〇〇にあって、車はその日の気分で乗り変えています。",
           "x": 75.6,
           "y": 26.4,
           "side": "right"
         },
         {
           "label": "CHEST",
-          "title": "",
-          "description": "",
+          "title": "過去",
+          "description": "あそこで挫けなかったから、今の自分があると思っています。",
           "x": 45.6,
           "y": 39.5,
           "side": "left"
         },
         {
           "label": "RIGHT THIGH",
-          "title": "",
-          "description": "",
+          "title": "資産",
+          "description": "分散投資をして色んな形で保有しているので、詳細は分かりません。",
           "x": 27.9,
           "y": 62.4,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
-          "title": "",
-          "description": "",
+          "title": "専門性",
+          "description": "〇〇の分野に関して、自分の右に出るものはいないでしょう。",
           "x": 60.5,
           "y": 60.1,
           "side": "right"
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "子ども",
+          "description": "子どもは〇〇に行かせています。困らないように〇〇の分野に進んでくれたら。",
           "x": 27.7,
           "y": 83.1,
           "side": "left"
@@ -220,8 +220,8 @@
       "parts": [
         {
           "label": "RIGHT ARM",
-          "title": "",
-          "description": "",
+          "title": "人の親",
+          "description": "母親をしているという事実が私の誇りです。",
           "x": 55.0,
           "y": 19.4,
           "side": "left"
