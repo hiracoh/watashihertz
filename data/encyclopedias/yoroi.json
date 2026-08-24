@@ -10,75 +10,133 @@
   },
 
   "intro": {
-      "title": "自信（仮）",
-      "text": ["人間は自分の外側の情報（資産、人間関係など）を通して自分を支えようとする傾向があります。",
+    "title": "自信（仮）",
+    "text": [
+      "人間は自分の外側の情報（資産、人間関係など）を通して自分を支えようとする傾向があります。",
       "これは本質的な自信ではなく、裸の自分になった時に、そんな自分を受け入れられるかが重要です。"
-      ],
-      "image": "/encyclopedias/guilt/intro.webp",
-      "design": {
-        "paper": "parchment",
-        "frame": "antique",
-        "backgroundMark": "/encyclopedias/guilt/back.webp",
-        "backgroundOpacity": 0.05
-      }
+    ],
+    "image": "/encyclopedias/guilt/intro.webp",
+    "design": {
+      "paper": "parchment",
+      "frame": "antique",
+      "backgroundMark": "/encyclopedias/guilt/back.webp",
+      "backgroundOpacity": 0.05
+    }
+  },
+
+  "items": [
+    {
+      "id": "yoroi-001",
+      "number": "01",
+      "title": "意識高くイケイケで",
+      "image": "/encyclopedias/yoroi/look01.webp",
+
+      "parts": [
+        {
+          "label": "LEFT ARM",
+          "title": "学歴",
+          "description": "〇大卒の経歴をさらりと効かせて、今日も気分を底上げ。",
+          "x": 75.6,
+          "y": 24.1,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT ARM",
+          "title": "会社知名度",
+          "description": "自分の名前にあの社名を添えて、名刺の価値をワンランク上へ。",
+          "x": 36.2,
+          "y": 9.4,
+          "side": "left"
+        },
+        {
+          "label": "CHEST",
+          "title": "容姿（筋肉）",
+          "description": "盛り上がった筋肉をまとい、見た目も自己評価もボリュームアップ。",
+          "x": 47.2,
+          "y": 31.6,
+          "side": "left"
+        },
+        {
+          "label": "LEFT THIGH",
+          "title": "肩書",
+          "description": "最年少〇〇、最短で〇〇受賞、肩書で自己価値のアクセントに。",
+          "x": 62.2,
+          "y": 53.6,
+          "side": "right"
+        },
+        {
+          "label": "RIGHT LEG",
+          "title": "モテ度",
+          "description": "モテるということは、人として優れているということ。",
+          "x": 36.2,
+          "y": 67.1,
+          "side": "left"
+        },
+        {
+          "label": "LEFT LEG",
+          "title": "多忙さ",
+          "description": "MTGと飲み会で予定を埋めて、必要とされている自分を演出。",
+          "x": 74.5,
+          "y": 76.4,
+          "side": "right"
+        }
+      ]
     },
-    "items": [
-  {
-    "id": "yoroi-001",
-    "number": "01",
-    "title": "意識高くイケイケで",
-    "image": "/encyclopedias/yoroi/look01.webp",
-    
-    "parts": [
-  {
-    "label": "LEFT ARM",
-    "title": "学歴",
-    "description": "〇大卒の経歴をさらりと効かせて、今日も気分を底上げ。",
-    "x": 75.6,
-    "y": 24.1,
-    "side": "right"
-  },
-  {
-    "label": "RIGHT ARM",
-    "title": "会社知名度",
-    "description": "自分の名前にあの社名を添えて、名刺の価値をワンランク上へ。",
-    "x": 36.2,
-    "y": 9.4,
-    "side": "left"
-  },
-  {
-    "label": "CHEST",
-    "title": "容姿（筋肉）",
-    "description": "盛り上がった筋肉をまとい、見た目も自己評価もボリュームアップ。",
-    "x": 47.2,
-    "y": 31.6,
-    "side": "left"
-  },
-  {
-    "label": "LEFT THIGH",
-    "title": "肩書",
-    "description": "最年少〇〇、最短で〇〇受賞、肩書で自己価値のアクセントに。",
-    "x": 62.2,
-    "y": 53.6,
-    "side": "right"
-  },
-  {
-    "label": "RIGHT LEG",
-    "title": "モテ度",
-    "description": "モテるということは、人として優れているということ。",
-    "x": 36.2,
-    "y": 67.1,
-    "side": "left"
-  },
-  {
-    "label": "LEFT LEG",
-    "title": "多忙さ",
-    "description": "MTGと飲み会で予定を埋めて、必要とされている自分を演出。",
-    "x": 74.5,
-    "y": 76.4,
-    "side": "right"
-  }
-]
-  }
-]
-  }
+
+    {
+      "id": "yoroi-002",
+      "number": "02",
+      "title": "LOOK 02",
+      "image": "/encyclopedias/yoroi/look02.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-003",
+      "number": "03",
+      "title": "LOOK 03",
+      "image": "/encyclopedias/yoroi/look03.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-004",
+      "number": "04",
+      "title": "LOOK 04",
+      "image": "/encyclopedias/yoroi/look04.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-005",
+      "number": "05",
+      "title": "LOOK 05",
+      "image": "/encyclopedias/yoroi/look05.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-006",
+      "number": "06",
+      "title": "LOOK 06",
+      "image": "/encyclopedias/yoroi/look06.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-007",
+      "number": "07",
+      "title": "LOOK 07",
+      "image": "/encyclopedias/yoroi/look07.webp",
+      "parts": []
+    },
+
+    {
+      "id": "yoroi-008",
+      "number": "08",
+      "title": "LOOK 08",
+      "image": "/encyclopedias/yoroi/look08.webp",
+      "parts": []
+    }
+  ]
+}
