@@ -392,8 +392,9 @@ const startY =
           }
 
           .fashionModel {
-            width: 68%;
-          }
+  width: 68%;
+  top: 50%;
+}
 
           .fashionLinesDesktop {
             display: none;
