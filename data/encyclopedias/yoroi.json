@@ -503,7 +503,7 @@
           "x": 50.2,
           "y": 46.5,
           "side": "right",
-          "lineY": 27
+          "lineY": 40
         },
         {
           "label": "RIGHT THIGH",
@@ -517,8 +517,8 @@
           "label": "LEFT THIGH",
           "title": "反大衆",
           "description": "場所とか時間の奴隷として生きて楽しいかなって。",
-          "x": 86.1,
-          "y": 57.4,
+          "x": 85.8,
+          "y": 54.4,
           "side": "right"
         },
         {
