@@ -126,7 +126,9 @@ export default function FashionMagazine({
       part.side === 'left' ? 10 : 96;
 
     const targetY =
-      part.lineY ?? startY;
+  part.lineY !== undefined
+    ? modelOffsetY + (part.lineY / 100) * modelSize
+    : startY;
 
     // lineYがない場合は従来どおり水平線
     if (part.lineY === undefined) {
@@ -178,8 +180,10 @@ export default function FashionMagazine({
       part.side === 'left' ? 10 : 94;
 
     const targetY =
-      part.lineY ?? startY;
-
+  part.lineY !== undefined
+    ? modelOffset + (part.lineY / 100) * modelSize
+    : startY;
+  
     // lineYがない場合は従来どおり水平線
     if (part.lineY === undefined) {
       return (
