@@ -488,10 +488,30 @@ export default function FashionMagazine({
             font-size: 26px;
           }
 
-          .fashionArticle h2 {
-            margin-bottom: 14px;
-            font-size: 18px;
-          }
+          .fashionHeading {
+  margin-bottom: 14px;
+}
+
+.fashionHeadingMeta {
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+.fashionHeadingNumber {
+  font-size: 11px;
+}
+
+.fashionHeadingEn {
+  font-size: 11px;
+  letter-spacing: 0.34em;
+}
+
+.fashionArticle h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
+}
 
           .fashionStage {
             width: 100%;
