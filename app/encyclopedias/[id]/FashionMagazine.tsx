@@ -479,6 +479,9 @@ export default function FashionMagazine({
           .magazinePage {
             padding: 24px 6px 60px;
           }
+          .fashionArticle {
+  margin-bottom: 120px;
+}
 
           .magazineHeader {
             margin-bottom: 28px;
@@ -508,7 +511,7 @@ export default function FashionMagazine({
 
 .fashionArticle h2 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.4;
   letter-spacing: 0.07em;
 }
