@@ -37,7 +37,7 @@ export type MagazineBook = {
   description?: string;
   x: number;
   y: number;
-  side: 'left' | 'right';
+  side: string;
   lineY?: number;
 }>;
   }>;
