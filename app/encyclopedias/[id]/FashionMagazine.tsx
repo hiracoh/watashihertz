@@ -16,6 +16,11 @@ export type MagazineBook = {
   type: string;
   layout?: string;
   title: string;
+magazineIntro?: {
+  label?: string;
+  title?: string;
+  text: string[];
+};
   cover?: {
     subtitle?: string;
     image?: string;
@@ -55,9 +60,30 @@ export default function FashionMagazine({
         <div className="magazineBrand">WATASHI HERTZ</div>
         <h1>{book.title}</h1>
       </header>
+{book.magazineIntro && (
+  <section className="magazineIntro">
+    {book.magazineIntro.label && (
+      <div className="magazineIntroLabel">
+        {book.magazineIntro.label}
+      </div>
+    )}
 
-      {book.items.map((item) => (
-        <article key={item.id} className="fashionArticle">
+    {book.magazineIntro.title && (
+      <h2 className="magazineIntroTitle">
+        {book.magazineIntro.title}
+      </h2>
+    )}
+
+    <div className="magazineIntroText">
+      {book.magazineIntro.text.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
+    </div>
+  </section>
+)}
+
+{book.items.map((item) => ( 
+  <article key={item.id} className="fashionArticle">
           <div className="fashionHeading">
   <div className="fashionHeadingMeta">
     <span className="fashionHeadingNumber">
@@ -329,6 +355,49 @@ export default function FashionMagazine({
           letter-spacing: 0.08em;
         }
 
+.magazineIntro {
+  max-width: 680px;
+  margin: 100px auto 180px;
+  padding: 0 32px;
+  text-align: center;
+}
+
+.magazineIntroLabel {
+  margin-bottom: 24px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  color: #77716a;
+}
+
+.magazineIntroTitle {
+  margin: 0 0 44px;
+  font-family: ${zenOldMincho.style.fontFamily};
+  font-size: 34px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #252525;
+}
+
+.magazineIntroText {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 15px;
+  line-height: 2.25;
+  letter-spacing: 0.04em;
+  color: #5f5a54;
+}
+
+.magazineIntroText p {
+  margin: 0 0 22px;
+}
+
+.magazineIntroText p:last-child {
+  margin-bottom: 0;
+}
+
         .fashionArticle {
           margin-bottom: 80px;
         }
@@ -483,6 +552,31 @@ export default function FashionMagazine({
         }
 
         @media (max-width: 700px) {
+
+        .magazineIntro {
+  margin: 70px auto 120px;
+  padding: 0 22px;
+}
+
+.magazineIntroLabel {
+  margin-bottom: 18px;
+  font-size: 10px;
+}
+
+.magazineIntroTitle {
+  margin-bottom: 30px;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.magazineIntroText {
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.magazineIntroText p {
+  margin-bottom: 18px;
+}
           .magazinePage {
             padding: 24px 6px 60px;
           }
