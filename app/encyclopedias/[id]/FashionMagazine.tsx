@@ -126,7 +126,7 @@ const startY =
                     key={`${part.label}-desktop-line`}
                     x1={startX}
                     y1={startY}
-                    x2={part.side === 'left' ? 10 : 90}
+                    x2={part.side === 'left' ? 10 : 96}
                     y2={startY}
                   />
                 );
@@ -155,7 +155,7 @@ const startY =
                     key={`${part.label}-mobile-line`}
                     x1={startX}
                     y1={startY}
-                    x2={part.side === 'left' ? 10 : 90}
+                    x2={part.side === 'left' ? 10 : 94}
                     y2={startY}
                   />
                 );
@@ -326,9 +326,9 @@ const startY =
         }
 
         .fashionPart.right {
-          right: 0;
-          text-align: left;
-        }
+  right: -6%;
+  text-align: left;
+}
 
         .fashionLabel {
           display: inline-block;
@@ -428,14 +428,15 @@ const startY =
            * 学歴・肩書・多忙さなど
            */
           .fashionPart.right {
-            right: 1%;
+            right: -4%;
             text-align: left;
           }
 
           .fashionLabel {
-            font-size: 9px;
-            letter-spacing: 0.1em;
-          }
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
 
           .fashionTitle {
             font-size: clamp(12px, 3.6vw, 16px);
