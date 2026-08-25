@@ -195,8 +195,8 @@
         },
         {
           "label": "RIGHT LEG",
-          "title": "",
-          "description": "",
+          "title": "成功者",
+          "description": "資本社会である以上、この枠組みで成功を収めることが肝要かと。",
           "x": 27.7,
           "y": 83.1,
           "side": "left"
@@ -527,7 +527,7 @@
         },
         {
           "label": "RIGHT LEG",
-          "title": "反集団文化",
+          "title": "反集団",
           "description": "やっぱり皆と同じことしてると楽だし安心できるんだろうね。",
           "x": 43.7,
           "y": 73.9,
