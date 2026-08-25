@@ -347,7 +347,7 @@ export default function FashionMagazine({
 }
 
 .fashionHeadingNumber {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -355,7 +355,7 @@ export default function FashionMagazine({
 }
 
 .fashionHeadingEn {
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1;
   font-weight: 400;
   letter-spacing: 0.42em;
