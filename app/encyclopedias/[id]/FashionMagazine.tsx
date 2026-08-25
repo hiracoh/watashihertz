@@ -37,7 +37,7 @@ export type MagazineBook = {
   description?: string;
   x: number;
   y: number;
-  side: string;
+  side: 'left' | 'right';
   lineY?: number;
 }>;
   }>;
@@ -389,9 +389,11 @@ export default function FashionMagazine({
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+/* PC：縦長ステージ下部の空白を畳み、次のLOOKとの距離を調整 */
 @media (min-width: 701px) {
   .fashionStage {
-    margin-bottom: -32%;
+    margin-bottom: -24%;
   }
 }
 
@@ -540,29 +542,17 @@ export default function FashionMagazine({
             display: block;
           }
 
-          /*
-           * スマホ：
-           * 長タイトル対策で27%に広げていたものを22%へ戻す。
-           * 左右とも文字そのものは左揃え。
-           */
+/* スマホ：左右のパーツ表示幅 */
           .fashionPart {
             width: 22%;
             top: var(--mobile-top);
           }
 
-          /*
-           * 画面左側
-           * 会社知名度・容姿・モテ度など
-           */
           .fashionPart.left {
             left: 1%;
             text-align: left;
           }
 
-          /*
-           * 画面右側
-           * 学歴・肩書・多忙さなど
-           */
           .fashionPart.right {
             right: -4%;
             text-align: left;
