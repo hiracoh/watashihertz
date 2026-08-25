@@ -290,12 +290,13 @@
           "description": "レギュラーも、国内トップの座も絶対に譲りません。",
           "x": 18.7,
           "y": 8.9,
-          "side": "left"
+          "side": "left",
+          "lineY": 4
         },
         {
           "label": "LEFT ARM",
           "title": "ファン",
-          "description": "これだけ呼べて、知ってもらえてるって事に興奮します。",
+          "description": "これだけ人を呼べて、知ってもらえてるって事に興奮します。",
           "x": 75.6,
           "y": 27.9,
           "side": "right"
@@ -304,8 +305,8 @@
           "label": "CHEST",
           "title": "スポンサー",
           "description": "自分に値段が付けられるような感覚、他にはないですよね。",
-          "x": 55.7,
-          "y": 27.4,
+          "x": 55.9,
+          "y": 24.8,
           "side": "left"
         },
         {
@@ -328,9 +329,10 @@
           "label": "RIGHT LEG",
           "title": "運動センス",
           "description": "昔から負けたことはなかったし、それが自分だと思ってます。",
-          "x": 71.9,
-          "y": 64.2,
-          "side": "left"
+          "x": 67.3,
+          "y": 55.3,
+          "side": "left",
+          "lineY": 68
         },
         {
           "label": "LEFT LEG",
