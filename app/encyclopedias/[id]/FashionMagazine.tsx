@@ -480,7 +480,7 @@ export default function FashionMagazine({
             padding: 24px 6px 60px;
           }
           .fashionArticle {
-  margin-bottom: 120px;
+  margin-bottom: 150px;
 }
 
           .magazineHeader {
