@@ -492,7 +492,7 @@ export default function FashionMagazine({
           }
 
           .fashionHeading {
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
 .fashionHeadingMeta {
@@ -511,7 +511,7 @@ export default function FashionMagazine({
 
 .fashionArticle h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.4;
   letter-spacing: 0.07em;
 }
