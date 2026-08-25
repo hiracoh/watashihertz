@@ -389,6 +389,11 @@ export default function FashionMagazine({
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+@media (min-width: 701px) {
+  .fashionStage {
+    margin-bottom: -32%;
+  }
+}
 
         .fashionPoint {
           position: absolute;
