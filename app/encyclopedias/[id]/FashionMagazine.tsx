@@ -25,13 +25,14 @@ export type MagazineBook = {
     image?: string;
     description?: string;
     parts?: Array<{
-      label: string;
-      title: string;
-      description?: string;
-      x: number;
-      y: number;
-      side: string;
-    }>;
+  label: string;
+  title: string;
+  description?: string;
+  x: number;
+  y: number;
+  side: string;
+  lineY?: number;
+}>;
   }>;
 };
 
@@ -104,81 +105,132 @@ export default function FashionMagazine({
             </div>
 
             {/* PC用の引き出し線 */}
-            <svg
-              className="fashionLines fashionLinesDesktop"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              {item.parts?.map((part) => {
-                const modelSize = 52;
-const modelOffsetX = (100 - modelSize) / 2;
-const modelOffsetY = 8;
+<svg
+  className="fashionLines fashionLinesDesktop"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  {item.parts?.map((part) => {
+    const modelSize = 52;
+    const modelOffsetX = (100 - modelSize) / 2;
+    const modelOffsetY = 8;
 
-const startX =
-  modelOffsetX + (part.x / 100) * modelSize;
+    const startX =
+      modelOffsetX + (part.x / 100) * modelSize;
 
-const startY =
-  modelOffsetY + (part.y / 100) * modelSize;
+    const startY =
+      modelOffsetY + (part.y / 100) * modelSize;
 
-                return (
-                  <line
-                    key={`${part.label}-desktop-line`}
-                    x1={startX}
-                    y1={startY}
-                    x2={part.side === 'left' ? 10 : 96}
-                    y2={startY}
-                  />
-                );
-              })}
-            </svg>
+    const endX =
+      part.side === 'left' ? 10 : 96;
 
-            {/* スマホ用の引き出し線 */}
-            <svg
-              className="fashionLines fashionLinesMobile"
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              {item.parts?.map((part) => {
-                const modelSize = 68;
-                const modelOffset = (100 - modelSize) / 2;
+    const targetY =
+      part.lineY ?? startY;
 
-                const startX =
-                  modelOffset + (part.x / 100) * modelSize;
+    // lineYがない場合は従来どおり水平線
+    if (part.lineY === undefined) {
+      return (
+        <line
+          key={`${part.label}-desktop-line`}
+          x1={startX}
+          y1={startY}
+          x2={endX}
+          y2={startY}
+        />
+      );
+    }
 
-                const startY =
-                  modelOffset + (part.y / 100) * modelSize;
+    // lineYがある場合は「斜め → 水平」の折れ線
+    const bendX =
+      part.side === 'left'
+        ? startX - 6
+        : startX + 6;
 
-                return (
-                  <line
-                    key={`${part.label}-mobile-line`}
-                    x1={startX}
-                    y1={startY}
-                    x2={part.side === 'left' ? 10 : 94}
-                    y2={startY}
-                  />
-                );
-              })}
-            </svg>
+    return (
+      <polyline
+        key={`${part.label}-desktop-line`}
+        points={`${startX},${startY} ${bendX},${targetY} ${endX},${targetY}`}
+        fill="none"
+      />
+    );
+  })}
+</svg>
 
+{/* スマホ用の引き出し線 */}
+<svg
+  className="fashionLines fashionLinesMobile"
+  viewBox="0 0 100 100"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  {item.parts?.map((part) => {
+    const modelSize = 68;
+    const modelOffset = (100 - modelSize) / 2;
+
+    const startX =
+      modelOffset + (part.x / 100) * modelSize;
+
+    const startY =
+      modelOffset + (part.y / 100) * modelSize;
+
+    const endX =
+      part.side === 'left' ? 10 : 94;
+
+    const targetY =
+      part.lineY ?? startY;
+
+    // lineYがない場合は従来どおり水平線
+    if (part.lineY === undefined) {
+      return (
+        <line
+          key={`${part.label}-mobile-line`}
+          x1={startX}
+          y1={startY}
+          x2={endX}
+          y2={startY}
+        />
+      );
+    }
+
+    // lineYがある場合は「斜め → 水平」の折れ線
+    const bendX =
+      part.side === 'left'
+        ? startX - 6
+        : startX + 6;
+
+    return (
+      <polyline
+        key={`${part.label}-mobile-line`}
+        points={`${startX},${startY} ${bendX},${targetY} ${endX},${targetY}`}
+        fill="none"
+      />
+    );
+  })}
+</svg>
             {/* パーツ説明 */}
             {item.parts?.map((part) => {
-              const desktopTop =
-                8 + (part.y / 100) * 52;
+  const desktopPartY =
+    part.lineY ?? part.y;
 
-              const mobileTop =
-                16 + (part.y / 100) * 68;
+  const mobilePartY =
+    part.lineY ?? part.y;
 
-              return (
-                <div
-                  key={part.label}
-                  className={`fashionPart ${part.side}`}
-                  style={{
-                    '--desktop-top': `${desktopTop}%`,
-                    '--mobile-top': `${mobileTop}%`,
-                  } as React.CSSProperties}
-                >
+  const desktopTop =
+    8 + (desktopPartY / 100) * 52;
+
+  const mobileTop =
+    16 + (mobilePartY / 100) * 68;
+
+  return (
+    <div
+      key={part.label}
+      className={`fashionPart ${part.side}`}
+      style={{
+        '--desktop-top': `${desktopTop}%`,
+        '--mobile-top': `${mobileTop}%`,
+      } as React.CSSProperties}
+    >
                   <div className="fashionLabel">
                     {part.label}
                   </div>
@@ -306,12 +358,12 @@ const startY =
           display: none;
         }
 
-        .fashionLines line {
-          stroke: rgba(45, 45, 45, 0.72);
-          stroke-width: 0.8;
-          vector-effect: non-scaling-stroke;
-        }
-
+        .fashionLines line,
+.fashionLines polyline {
+  stroke: rgba(45, 45, 45, 0.72);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
         .fashionPart {
           position: absolute;
           width: 27%;
