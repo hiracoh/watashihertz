@@ -511,14 +511,15 @@
           "description": "あぁ、もうその感覚は手放したんで、今の自分は別人です。",
           "x": 22.7,
           "y": 55.5,
-          "side": "left"
+          "side": "left",
+          "lineY": 44
         },
         {
           "label": "LEFT THIGH",
           "title": "反大衆",
           "description": "場所とか時間の奴隷として生きて楽しいかなって。",
-          "x": 85.8,
-          "y": 54.4,
+          "x": 84.7,
+          "y": 56.2,
           "side": "right"
         },
         {
