@@ -1,6 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import { Zen_Old_Mincho } from 'next/font/google';
+
+const zenOldMincho = Zen_Old_Mincho({
+  weight: '600',
+  display: 'swap',
+  preload: false,
+});
 
 const DEBUG_POINTS = true;
 
@@ -51,7 +58,21 @@ export default function FashionMagazine({
 
       {book.items.map((item) => (
         <article key={item.id} className="fashionArticle">
-          <h2>{item.title}</h2>
+          <div className="fashionHeading">
+  <div className="fashionHeadingMeta">
+    <span className="fashionHeadingNumber">
+      {item.number}
+    </span>
+
+    <span className="fashionHeadingEn">
+      YOROI
+    </span>
+  </div>
+
+  <h2 className={zenOldMincho.className}>
+    {item.title}
+  </h2>
+</div>
 
           {/* 人物＋パーツ解説をまとめた誌面 */}
           <div className="fashionStage">
@@ -312,13 +333,44 @@ export default function FashionMagazine({
           margin-bottom: 80px;
         }
 
-        .fashionArticle h2 {
-          margin: 0 0 24px;
-          text-align: center;
-          font-size: 22px;
-          font-weight: 500;
-          letter-spacing: 0.05em;
-        }
+        .fashionHeading {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.fashionHeadingMeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.fashionHeadingNumber {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #5f5a54;
+}
+
+.fashionHeadingEn {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  color: #77716a;
+}
+
+.fashionArticle h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  color: #252525;
+}
 
         .fashionStage {
           position: relative;
