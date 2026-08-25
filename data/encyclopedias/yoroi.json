@@ -484,9 +484,8 @@
           "description": "資本社会的、物質的なものとは距離を取るようにしています。",
           "x": 30.6,
           "y": 34.4,
-          "side": "left"
+          "side": "left",
           "lineY": 14
-
         },
         {
           "label": "LEFT ARM",
@@ -494,7 +493,8 @@
           "description": "付属品で自分を語って、それはお前じゃねぇだろって。",
           "x": 69.4,
           "y": 36.0,
-          "side": "right"
+          "side": "right",
+          "lineY": 14
         },
         {
           "label": "CHEST",
@@ -502,22 +502,23 @@
           "description": "みんな道理とか、自然の摂理ってのが見えてないですよね。",
           "x": 50.2,
           "y": 46.5,
-          "side": "left"
+          "side": "left",
+          "lineY": 36
         },
         {
           "label": "RIGHT THIGH",
           "title": "手放し",
           "description": "あぁ、もうその感覚は手放したんで、今の自分は別人です。",
-          "x": 22.5,
-          "y": 59.9,
+          "x": 22.7,
+          "y": 55.5,
           "side": "left"
         },
         {
           "label": "LEFT THIGH",
           "title": "反大衆",
           "description": "場所とか時間の奴隷として生きて楽しいかなって。",
-          "x": 83.9,
-          "y": 56.7,
+          "x": 86.1,
+          "y": 53.7,
           "side": "right"
         },
         {
