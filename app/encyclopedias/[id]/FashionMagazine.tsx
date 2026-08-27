@@ -31,6 +31,10 @@ export type MagazineBook = {
     coreMessage?: string[];
   };
 
+  ending?: {
+  text: string[];
+};
+
   cover?: {
     subtitle?: string;
     image?: string;
@@ -365,6 +369,17 @@ export default function FashionMagazine({
       )}
   </Fragment>
 ))}
+      {book.ending && (
+  <section className="fashionEnding">
+    <div className="fashionInterludeText">
+      {book.ending.text.map((paragraph, index) => (
+        <p key={index}>
+          {paragraph}
+        </p>
+      ))}
+    </div>
+  </section>
+)}
       <style>{`
         .magazinePage {
           width: 100%;
@@ -634,6 +649,9 @@ export default function FashionMagazine({
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #3f3b37;
+}
+.fashionEnding {
+  margin: 140px auto 100px;
 }
 
 @media (max-width: 700px) {
