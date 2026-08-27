@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Fragment } from 'react';
 import { Zen_Old_Mincho } from 'next/font/google';
 
 const zenOldMincho = Zen_Old_Mincho({
@@ -16,11 +17,20 @@ export type MagazineBook = {
   type: string;
   layout?: string;
   title: string;
-magazineIntro?: {
-  label?: string;
-  title?: string;
-  text: string[];
-};
+
+  magazineIntro?: {
+    label?: string;
+    title?: string;
+    text: string[];
+  };
+
+  interlude?: {
+    after: number;
+    label?: string;
+    text: string[];
+    coreMessage?: string;
+  };
+
   cover?: {
     subtitle?: string;
     image?: string;
@@ -79,9 +89,10 @@ export default function FashionMagazine({
   </section>
 )}
 
-{book.items.map((item) => ( 
-  <article key={item.id} className="fashionArticle">
-          <div className="fashionHeading">
+{book.items.map((item, index) => (
+  <Fragment key={item.id}>
+    <article className="fashionArticle">
+      <div className="fashionHeading">
   <div className="fashionHeadingMeta">
     <span className="fashionHeadingNumber">
       {item.number}
@@ -322,9 +333,36 @@ export default function FashionMagazine({
               ))}
             </div>
           </div>
-        </article>
-      ))}
+    </article>
 
+    {book.interlude &&
+      book.interlude.after === index + 1 && (
+        <section className="fashionInterlude">
+          {book.interlude.label && (
+            <div className="fashionInterludeLabel">
+              {book.interlude.label}
+            </div>
+          )}
+
+          <div className="fashionInterludeText">
+            {book.interlude.text.map((paragraph, paragraphIndex) => (
+              <p key={paragraphIndex}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          {book.interlude.coreMessage && (
+            <div
+              className={`fashionInterludeCore ${zenOldMincho.className}`}
+            >
+              {book.interlude.coreMessage}
+            </div>
+          )}
+        </section>
+      )}
+  </Fragment>
+))}
       <style>{`
         .magazinePage {
           width: 100%;
@@ -355,7 +393,7 @@ export default function FashionMagazine({
 .magazineIntro {
   width: 100%;
   max-width: 1050px;
-  margin: 100px auto 180px;
+  margin: 100px auto 240px;
   padding: 0 32px;
   text-align: center;
   box-sizing: border-box;
@@ -547,14 +585,58 @@ export default function FashionMagazine({
         }
 
         /* スマホ用の商品クレジット欄：PCでは非表示 */
-        .fashionCredits {
-          display: none;
-        }
+.fashionCredits {
+  display: none;
+}
 
-        @media (max-width: 700px) {
+/* 4人目の後に入る中間メッセージ：PC基本デザイン */
+.fashionInterlude {
+  width: 100%;
+  max-width: 980px;
+  margin: 220px auto 260px;
+  padding: 0 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
+.fashionInterludeLabel {
+  margin-bottom: 42px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  color: #77716a;
+}
+
+.fashionInterludeText {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 2.6;
+  letter-spacing: 0.045em;
+  color: #5f5a54;
+}
+
+.fashionInterludeText p {
+  margin: 0 0 30px;
+}
+
+.fashionInterludeText p:last-child {
+  margin-bottom: 0;
+}
+
+.fashionInterludeCore {
+  max-width: 850px;
+  margin: 100px auto 0;
+  font-size: 38px;
+  line-height: 1.7;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #252525;
+}
+
+@media (max-width: 700px) {
         .magazineIntro {
-  margin: 70px auto 120px;
+  margin: 70px auto 160px;
   padding: 0 22px;
 }
 
@@ -579,6 +661,34 @@ export default function FashionMagazine({
 
 .magazineIntroText p {
   margin-bottom: 18px;
+}
+/* 4人目後の中間メッセージ：スマホ用 */
+.fashionInterlude {
+  margin: 170px auto 190px;
+  padding: 0 24px;
+}
+
+.fashionInterludeLabel {
+  margin-bottom: 32px;
+  font-size: 10px;
+}
+
+.fashionInterludeText {
+  font-size: 14px;
+  line-height: 2.2;
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+.fashionInterludeText p {
+  margin-bottom: 24px;
+}
+
+.fashionInterludeCore {
+  margin-top: 72px;
+  font-size: 27px;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
 }
           .magazinePage {
             padding: 24px 6px 60px;
