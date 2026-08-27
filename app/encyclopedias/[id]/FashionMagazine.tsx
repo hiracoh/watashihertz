@@ -28,7 +28,7 @@ export type MagazineBook = {
     after: number;
     label?: string;
     text: string[];
-    coreMessage?: string;
+    coreMessage?: string[];
   };
 
   cover?: {
