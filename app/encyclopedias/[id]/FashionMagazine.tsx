@@ -629,11 +629,11 @@ export default function FashionMagazine({
 .fashionInterludeCore {
   max-width: 850px;
   margin: 100px auto 0;
-  font-size: 38px;
-  line-height: 1.7;
+  font-size: 30px;
+  line-height: 2;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: #252525;
+  color: #3f3b37;
 }
 
 @media (max-width: 700px) {
