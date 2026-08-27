@@ -383,7 +383,7 @@ export default function FashionMagazine({
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   font-size: 18px;
   line-height: 2.6;
   letter-spacing: 0.045em;
