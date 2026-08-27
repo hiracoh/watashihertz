@@ -687,9 +687,9 @@ export default function FashionMagazine({
 }
 
 .fashionInterludeCore {
-  margin-top: 72px;
-  font-size: 27px;
-  line-height: 1.8;
+  margin-top: 62px;
+  font-size: 21px;
+  line-height: 2;
   letter-spacing: 0.06em;
 }
           .magazinePage {
