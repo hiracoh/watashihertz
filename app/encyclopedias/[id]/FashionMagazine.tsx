@@ -652,6 +652,7 @@ export default function FashionMagazine({
 }
 .fashionEnding {
   margin: 140px auto 100px;
+  text-align: center;
 }
 
 @media (max-width: 700px) {
