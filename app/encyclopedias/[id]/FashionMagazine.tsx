@@ -572,6 +572,9 @@ export default function FashionMagazine({
 .magazineIntroText {
   font-size: 14px;
   line-height: 2.1;
+  text-wrap: pretty;   
+  word-break: auto-phrase;
+
 }
 
 .magazineIntroText p {
