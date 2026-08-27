@@ -56,10 +56,7 @@ export default function FashionMagazine({
   return (
     <main className="magazinePage">
       {/* 雑誌上部 */}
-      <header className="magazineHeader">
-        <div className="magazineBrand">WATASHI HERTZ</div>
-        <h1>{book.title}</h1>
-      </header>
+     
 {book.magazineIntro && (
   <section className="magazineIntro">
     {book.magazineIntro.label && (
@@ -356,10 +353,12 @@ export default function FashionMagazine({
         }
 
 .magazineIntro {
-  max-width: 680px;
+  width: 100%;
+  max-width: 1050px;
   margin: 100px auto 180px;
   padding: 0 32px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .magazineIntroLabel {
@@ -381,17 +380,18 @@ export default function FashionMagazine({
 }
 
 .magazineIntroText {
-  max-width: 580px;
+  width: 100%;
+  max-width: 960px;
   margin: 0 auto;
   text-align: left;
-  font-size: 15px;
-  line-height: 2.25;
-  letter-spacing: 0.04em;
+  font-size: 18px;
+  line-height: 2.6;
+  letter-spacing: 0.045em;
   color: #5f5a54;
 }
 
 .magazineIntroText p {
-  margin: 0 0 22px;
+  margin: 0 0 30px;
 }
 
 .magazineIntroText p:last-child {
