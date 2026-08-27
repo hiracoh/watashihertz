@@ -667,7 +667,7 @@ export default function FashionMagazine({
 /* 4人目後の中間メッセージ：スマホ用 */
 .fashionInterlude {
   margin: 170px auto 190px;
-  padding: 0 24px;
+  padding: 0 12px;
 }
 
 .fashionInterludeLabel {
