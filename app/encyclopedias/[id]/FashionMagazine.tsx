@@ -356,7 +356,9 @@ export default function FashionMagazine({
             <div
               className={`fashionInterludeCore ${zenOldMincho.className}`}
             >
-              {book.interlude.coreMessage}
+              {book.interlude.coreMessage.map((line, lineIndex) => (
+  <div key={lineIndex}>{line}</div>
+))}
             </div>
           )}
         </section>
