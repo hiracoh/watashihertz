@@ -33,6 +33,7 @@ export type MagazineBook = {
 
   ending?: {
   text: string[];
+  coreMessage?: string[];
 };
 
   cover?: {
@@ -378,6 +379,14 @@ export default function FashionMagazine({
         </p>
       ))}
     </div>
+
+    {book.ending.coreMessage && (
+      <div className={`fashionInterludeCore ${zenOldMincho.className}`}>
+        {book.ending.coreMessage.map((line, lineIndex) => (
+          <div key={lineIndex}>{line}</div>
+        ))}
+      </div>
+    )}
   </section>
 )}
       <style>{`
