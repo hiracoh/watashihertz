@@ -22,6 +22,39 @@
     "featured": true
   },
   {
+    "id": "article-027",
+    "title": "承認欲求ノ解体新書",
+    "summary": "承認欲求を非難する日を終わらせたい",
+    "tags": ["人間の傾向", "人間・人生とは"],
+    "charCount": 7300,
+    "url": "https://note.com/hiracoh/n/nb83adc3ccbd7",
+    "thumb": "https://assets.st-note.com/production/uploads/images/321285298/rectangle_large_type_2_5346bf008c4b8b44beb45c9f39fe78a7.png?width=4000&height=4000&fit=bounds&format=jpg&quality=90",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
+    "id": "article-026",
+    "title": "人類はいつ結果論から卒業するのか",
+    "summary": "出来事の捉え方を根底から問い直す",
+    "tags": ["人間の傾向"],
+    "charCount": 8100,
+    "url": "https://note.com/hiracoh/n/n464c34042454",
+    "thumb": "https://assets.st-note.com/production/uploads/images/310056287/rectangle_large_type_2_ea6d6679732ef0c4e1b10a6388dad479.jpeg?width=4000&height=4000&fit=bounds&format=jpg&quality=90",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
+    "id": "article-025",
+    "title": "「ない」の正体と転用",
+    "summary": "どうして僕らは「ない」と思うのか",
+    "tags": ["人間の傾向"],
+    "charCount": 3400,
+    "url": "https://note.com/hiracoh/n/n1fdee1a209b1",
+    "thumb": "https://assets.st-note.com/production/uploads/images/307456460/rectangle_large_type_2_cbd8ed3231eac60ab96bc4e586c443b4.jpeg?width=4000&height=4000&fit=bounds&format=jpg&quality=90",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-024",
     "title": "生前記憶のシンプルな考察",
     "summary": "それは何ら不思議なことではない",
