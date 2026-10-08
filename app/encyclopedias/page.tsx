@@ -1,6 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import encyclopedias from '@/data/encyclopedias.json';
+import { Bodoni_Moda, Noto_Sans_JP } from 'next/font/google';
+
+const magazineTitleFont = Bodoni_Moda({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
+});
+
+const magazineCopyFont = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['500', '700', '800'],
+  display: 'swap',
+});
 
 export default function EncyclopediasPage() {
   return (
@@ -70,7 +83,7 @@ export default function EncyclopediasPage() {
       width: '100%',
       aspectRatio: '3 / 4',
       overflow: 'hidden',
-      background: '#e8e2d8',
+      background: '#E5E1DB',
       boxShadow: '5px 10px 22px rgba(45,30,20,0.22)',
     }}
   >
@@ -83,9 +96,10 @@ export default function EncyclopediasPage() {
         width: '100%',
         textAlign: 'center',
         fontSize: 'clamp(40px, 5vw, 74px)',
-        fontWeight: 900,
-        letterSpacing: '-0.06em',
-        lineHeight: 1,
+fontFamily: magazineTitleFont.style.fontFamily,
+fontWeight: 700,
+letterSpacing: '-0.075em',
+lineHeight: 1,
         color: '#28231f',
         zIndex: 1,
       }}
@@ -153,6 +167,7 @@ export default function EncyclopediasPage() {
 
     <div
       style={{
+        fontFamily: magazineCopyFont.style.fontFamily,
         position: 'absolute',
         bottom: 10,
         right: 12,
