@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import encyclopedias from '@/data/encyclopedias.json';
-import { Bodoni_Moda, Noto_Sans_JP } from 'next/font/google';
+import { Bodoni_Moda, Noto_Serif_JP } from 'next/font/google';
 
 const magazineTitleFont = Bodoni_Moda({
   subsets: ['latin'],
@@ -9,9 +9,9 @@ const magazineTitleFont = Bodoni_Moda({
   display: 'swap',
 });
 
-const magazineCopyFont = Noto_Sans_JP({
+const magazineCopyFont = Noto_Serif_JP({
   subsets: ['latin'],
-  weight: ['500', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 });
 
@@ -145,7 +145,7 @@ lineHeight: 1,
       <div
         style={{
           fontSize: 13,
-          fontWeight: 600,
+          fontWeight: 500,
           lineHeight: 1.5,
         }}
       >
@@ -156,7 +156,7 @@ lineHeight: 1,
         style={{
           marginTop: 4,
           fontSize: 'clamp(24px, 3vw, 38px)',
-          fontWeight: 800,
+          fontWeight: 600,
           lineHeight: 1.25,
           letterSpacing: '0.02em',
         }}
