@@ -143,31 +143,33 @@ lineHeight: 1,
       }}
     >
       <div
-        style={{
-          fontSize: 13,
-          fontWeight: 500,
-          lineHeight: 1.5,
-        }}
-      >
-        {book.cover.lead}
-      </div>
+  style={{
+    fontFamily: magazineCopyFont.style.fontFamily,
+    fontSize: 13,
+    fontWeight: 500,
+    lineHeight: 1.5,
+    letterSpacing: '0.04em',
+  }}
+>
+  {book.cover.lead}
+</div>
 
       <div
-        style={{
-          marginTop: 4,
-          fontSize: 'clamp(24px, 3vw, 38px)',
-          fontWeight: 600,
-          lineHeight: 1.25,
-          letterSpacing: '0.02em',
-        }}
-      >
-        {book.cover.subtitle}
-      </div>
+  style={{
+    marginTop: 4,
+    fontFamily: magazineCopyFont.style.fontFamily,
+    fontSize: 'clamp(24px, 3vw, 38px)',
+    fontWeight: 600,
+    lineHeight: 1.35,
+    letterSpacing: '0.04em',
+  }}
+>
+  {book.cover.subtitle}
+</div>
     </div>
 
     <div
       style={{
-        fontFamily: magazineCopyFont.style.fontFamily,
         position: 'absolute',
         bottom: 10,
         right: 12,
@@ -344,7 +346,6 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
   }}
 >
   WATASHI HERTZ
-WATASHI HERTZ
 </div>
               </div>
               )}
