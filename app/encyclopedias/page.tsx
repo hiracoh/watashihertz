@@ -63,9 +63,113 @@ export default function EncyclopediasPage() {
           >
             <article>
               {/* 本の表紙 */}
-              <div
-                style={{
-                  aspectRatio: '3 / 4',
+{book.type === 'magazine' ? (
+  <div
+    style={{
+      position: 'relative',
+      width: '100%',
+      aspectRatio: '3 / 4',
+      overflow: 'hidden',
+      background: '#e8e2d8',
+      boxShadow: '5px 10px 22px rgba(45,30,20,0.22)',
+    }}
+  >
+    {/* 雑誌タイトル：背面 */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '4%',
+        left: 0,
+        width: '100%',
+        textAlign: 'center',
+        fontSize: 'clamp(40px, 5vw, 74px)',
+        fontWeight: 900,
+        letterSpacing: '-0.06em',
+        lineHeight: 1,
+        color: '#28231f',
+        zIndex: 1,
+      }}
+    >
+      {book.cover.title}
+    </div>
+
+    {/* モデル：タイトルより前面 */}
+    <div
+      style={{
+        position: 'absolute',
+        top: '3%',
+        left: '-10%',
+        width: '120%',
+        height: '105%',
+        zIndex: 2,
+      }}
+    >
+      <Image
+        src={book.cover.image}
+        alt=""
+        fill
+        sizes="(max-width: 600px) 90vw, 360px"
+        style={{
+          objectFit: 'contain',
+        }}
+      />
+    </div>
+
+    {/* キャッチコピー：モデルより前面 */}
+    <div
+      style={{
+        position: 'absolute',
+        bottom: '9%',
+        left: '5%',
+        width: '90%',
+        zIndex: 3,
+        textAlign: 'center',
+        color: '#fff',
+        textShadow: '0 2px 8px rgba(0,0,0,0.65)',
+      }}
+    >
+      <div
+        style={{
+          fontSize: 13,
+          fontWeight: 600,
+          lineHeight: 1.5,
+        }}
+      >
+        {book.cover.lead}
+      </div>
+
+      <div
+        style={{
+          marginTop: 4,
+          fontSize: 'clamp(24px, 3vw, 38px)',
+          fontWeight: 800,
+          lineHeight: 1.25,
+          letterSpacing: '0.02em',
+        }}
+      >
+        {book.cover.subtitle}
+      </div>
+    </div>
+
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 10,
+        right: 12,
+        zIndex: 4,
+        fontSize: 9,
+        letterSpacing: '0.15em',
+        color: '#fff',
+        textShadow: '0 1px 4px rgba(0,0,0,0.5)',
+      }}
+    >
+      WATASHI HERTZ
+    </div>
+  </div>
+) : (
+<div
+  style={{
+    aspectRatio: '3 / 4',
                   borderRadius: '4px 12px 12px 4px',
                   border: '1px solid #2E1B12',
                  background: `
@@ -225,8 +329,10 @@ WebkitTextStroke: '0.3px rgba(35,18,10,0.35)',
   }}
 >
   WATASHI HERTZ
+WATASHI HERTZ
 </div>
               </div>
+              )}
             </article>
           </Link>
         ))}
