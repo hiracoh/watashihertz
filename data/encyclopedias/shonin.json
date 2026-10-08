@@ -20,7 +20,7 @@
       "design": {
         "paper": "parchment",
         "frame": "antique",
-        "backgroundMark": "/encyclopedias/guilt/back.webp",
+        "backgroundMark": "/encyclopedias/shonin/shoninback.webp",
         "backgroundOpacity": 0.05
       }
     },
