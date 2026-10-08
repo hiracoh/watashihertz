@@ -17,5 +17,14 @@
       "subtitle": "自信（仮）",
       "image": "/encyclopedias/guilt/back.webp"
     }
+    },
+  {
+    "id": "shonin",
+    "type": "encyclopedia",
+    "title": "承認欲求",
+    "cover": {
+      "subtitle": "承認欲求",
+      "image": "/encyclopedias/guilt/back.webp"
+    }
   }
 ]
