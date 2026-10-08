@@ -42,13 +42,16 @@ export default function EncyclopediasPage() {
       </div>
 
       {/* 図鑑一覧 */}
-      <section
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 280px))',
-          gap: 32,
-        }}
-      >
+     
+<section
+  style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gap: 32,
+    maxWidth: 904,
+  }}
+>
+
         {encyclopedias.map((book) => (
           <Link
             key={book.id}
