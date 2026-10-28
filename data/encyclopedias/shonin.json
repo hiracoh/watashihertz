@@ -27,59 +27,68 @@
       {
         "id": "shonin-001",
         "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
+        "category": "日常",
+        "title": "誘われ待ち",
+        "description": "自分から誘うのではなく、誘われるのを待つ。",
+        "image": "/encyclopedias/guilt/shonin01.webp"
+      },
+      {
+        "id": "shonin-002",
+        "number": "02",
+        "category": "日常",
+        "title": "相談される栄養",
+        "description": "相談されることが、自己価値の証明のようで嬉しい。",
+        "image": "/encyclopedias/guilt/shonin01.webp"
+      },
+      {
+        "id": "shonin-003",
+        "number": "03",
+        "category": "日常",
+        "title": "聞いて聞いて",
+        "description": "今日身に起こったことを逐一報告することで、存在を確かめる。",
+        "image": "/encyclopedias/guilt/shonin01.webp"
+      },
+      {
+        "id": "shonin-004",
+        "number": "04",
+        "category": "日常",
+        "title": "知ったかぶり",
+        "description": "ふとした瞬間に知ったかぶりをし、自己価値を守ろうとする。",
+        "image": "/encyclopedias/guilt/shonin01.webp"
+      },
+      {
+        "id": "shonin-005",
+        "number": "05",
+        "category": "日常",
+        "title": "見返してやる",
+        "description": "嫌な記憶を作った相手を、見返そうとする。",
         "image": "/encyclopedias/guilt/shonin01.webp"
       },
       {
         "id": "shonin-001",
         "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
+        "category": "日常",
+        "title": "誘われ待ち",
+        "description": "自分から誘うのではなく、誘われるのを待つ。",
         "image": "/encyclopedias/guilt/shonin01.webp"
       },
       {
         "id": "shonin-001",
         "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
+        "category": "日常",
+        "title": "誘われ待ち",
+        "description": "自分から誘うのではなく、誘われるのを待つ。",
         "image": "/encyclopedias/guilt/shonin01.webp"
       },
       {
         "id": "shonin-001",
         "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
+        "category": "日常",
+        "title": "誘われ待ち",
+        "description": "自分から誘うのではなく、誘われるのを待つ。",
         "image": "/encyclopedias/guilt/shonin01.webp"
       },
-      {
-        "id": "shonin-001",
-        "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
-      },
-      {
-        "id": "shonin-001",
-        "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
-      },
-      {
-        "id": "shonin-001",
-        "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
-      },
-      {
-        "id": "shonin-001",
-        "number": "01",
-        "title": "会計の不足",
-        "description": "得たものより、出ていった銭ばかりが目につく。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
-      }
+
       
           ]
   }
