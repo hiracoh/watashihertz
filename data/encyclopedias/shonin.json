@@ -61,7 +61,7 @@
         "number": "05",
         "category": "日常",
         "title": "見返してやる",
-        "description": "嫌な記憶を作った相手を、見返そうとする。",
+        "description": "傷つけられた相手を、価値の証明によって見返そうとする。",
         "image": "/encyclopedias/guilt/shonin01.webp"
       },
       {
@@ -87,8 +87,7 @@
         "title": "誘われ待ち",
         "description": "自分から誘うのではなく、誘われるのを待つ。",
         "image": "/encyclopedias/guilt/shonin01.webp"
-      },
-
+      }
       
           ]
   }
