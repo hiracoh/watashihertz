@@ -38,7 +38,7 @@
         "category": "日常",
         "title": "相談される栄養",
         "description": "相談されることが、自己価値の証明のようで嬉しい。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "image": "/encyclopedias/shonin/shonin02.webp"
       },
       {
         "id": "shonin-003",
@@ -46,7 +46,7 @@
         "category": "日常",
         "title": "聞いて聞いて",
         "description": "今日身に起こったことを逐一報告することで、存在を確かめる。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "image": "/encyclopedias/shonin/shonin03.webp"
       },
       {
         "id": "shonin-004",
@@ -54,7 +54,7 @@
         "category": "日常",
         "title": "知ったかぶり",
         "description": "ふとした瞬間に知ったかぶりをし、自己価値を守ろうとする。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "image": "/encyclopedias/shonin/shonin04.webp"
       },
       {
         "id": "shonin-005",
@@ -62,31 +62,39 @@
         "category": "日常",
         "title": "見返してやる",
         "description": "傷つけられた相手を、価値の証明によって見返そうとする。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "image": "/encyclopedias/shonin/shonin05.webp"
       },
       {
-        "id": "shonin-001",
-        "number": "01",
+        "id": "shonin-006",
+        "number": "06",
         "category": "日常",
-        "title": "誘われ待ち",
-        "description": "自分から誘うのではなく、誘われるのを待つ。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "title": "何者かに…！",
+        "description": "誰かの特別な存在（恋人や親）に、または皆に知られる存在に…！",
+        "image": "/encyclopedias/shonin/shonin06.webp"
       },
       {
-        "id": "shonin-001",
-        "number": "01",
+        "id": "shonin-007",
+        "number": "07",
         "category": "日常",
-        "title": "誘われ待ち",
-        "description": "自分から誘うのではなく、誘われるのを待つ。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "title": "こう見られたい",
+        "description": "自分の理想の見られ方に向けて外側を磨く（筋肉、美容、資格、服）",
+        "image": "/encyclopedias/shonin/shonin07.webp"
       },
       {
-        "id": "shonin-001",
-        "number": "01",
+        "id": "shonin-008",
+        "number": "08",
         "category": "日常",
-        "title": "誘われ待ち",
-        "description": "自分から誘うのではなく、誘われるのを待つ。",
-        "image": "/encyclopedias/guilt/shonin01.webp"
+        "title": "オススメ成仏",
+        "description": "自分のおすすめを本人が気にいると、褒められた気がして異常に嬉しい。",
+        "image": "/encyclopedias/shonin/shonin08.webp"
+      },
+      {
+        "id": "shonin-009",
+        "number": "09",
+        "category": "恋愛",
+        "title": "好きの補給",
+        "description": "私（俺）のこと好き？を定期確認。好意というより自己価値を確認している。",
+        "image": "/encyclopedias/shonin/shonin09.webp"
       }
       
           ]
