@@ -124,7 +124,7 @@
         "id": "shonin-013",
         "number": "13",
         "category": "恋愛",
-        "title": "タイプは自分を好きな人",
+        "title": "タイプは自分を…",
         "description": "自己承認が足りないからこそ他者からの想いに頼る。恋愛というより委託・依存。",
         "image": "/encyclopedias/shonin/shonin13.webp"
       },
@@ -132,17 +132,17 @@
         "id": "shonin-014",
         "number": "14",
         "category": "恋愛",
-        "title": "変化に気付け",
-        "description": "見た目の変化に気づかれない＝大切にされてない＝自己価値が危ういという構造。",
-        "image": "/encyclopedias/shonin/shonin14.webp"
+        "title": "仕事と自分",
+        "description": "「どっちが大事？」は「自分の存在や価値を認めて」という承認欲求の叫び。",
+        "image": "/encyclopedias/shonin/shonin15.webp"
       },
       {
         "id": "shonin-015",
         "number": "15",
         "category": "恋愛",
-        "title": "仕事と自分",
-        "description": "「どっちが大事？」は「自分の存在や価値を認めて」という承認欲求の叫び。",
-        "image": "/encyclopedias/shonin/shonin15.webp"
+        "title": "変化に気付け",
+        "description": "見た目の変化に気づかれない＝大切にされてない＝自己価値が危ういという構造。",
+        "image": "/encyclopedias/shonin/shonin14.webp"
       },
       {
         "id": "shonin-016",
@@ -155,50 +155,98 @@
       {
         "id": "shonin-017",
         "number": "17",
-        "category": "仕事・勉強",
+        "category": "仕事",
         "title": "成果のために",
-        "description": "とにかく成果（成績）を出すために全てを犠牲にする。本音かどうかは関係ない。",
+        "description": "とにかく価値を証明するために全てを犠牲にする。やりたいことかは関係ない。",
         "image": "/encyclopedias/shonin/shonin17.webp"
       },
       {
-        "id": "shonin-016",
-        "number": "16",
-        "category": "仕事・勉強",
-        "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
-        "image": "/encyclopedias/shonin/shonin16.webp"
+        "id": "shonin-018",
+        "number": "18",
+        "category": "仕事",
+        "title": "正解集め",
+        "description": "社会や大衆に良しとされるものをこなす。真っ当な存在・価値であると証明したい。",
+        "image": "/encyclopedias/shonin/shonin18.webp"
       },
       {
-        "id": "shonin-016",
-        "number": "16",
-        "category": "仕事・勉強",
-        "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
-        "image": "/encyclopedias/shonin/shonin16.webp"
+        "id": "shonin-019",
+        "number": "19",
+        "category": "仕事",
+        "title": "サラり自慢",
+        "description": "価値が承認された過去の実績を会話の中にさらりとねじ込む。",
+        "image": "/encyclopedias/shonin/shonin19.webp"
       },
       {
-        "id": "shonin-016",
-        "number": "16",
-        "category": "仕事・勉強",
-        "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
-        "image": "/encyclopedias/shonin/shonin16.webp"
+        "id": "shonin-020",
+        "number": "20",
+        "category": "仕事",
+        "title": "断れない",
+        "description": "依頼を断ると自分の価値がなくなる気がして、あれもこれもNoと言えない。",
+        "image": "/encyclopedias/shonin/shonin20.webp"
       },
       {
-        "id": "shonin-016",
-        "number": "16",
-        "category": "仕事・勉強",
-        "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
-        "image": "/encyclopedias/shonin/shonin16.webp"
+        "id": "shonin-021",
+        "number": "21",
+        "category": "仕事",
+        "title": "引き止めて",
+        "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
+        "image": "/encyclopedias/shonin/shonin21.webp"
       },
       {
-        "id": "shonin-016",
-        "number": "16",
-        "category": "仕事・勉強",
-        "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
-        "image": "/encyclopedias/shonin/shonin16.webp"
+        "id": "shonin-022",
+        "number": "22",
+        "category": "仕事",
+        "title": "どうせで棚上げ",
+        "description": "他者の成功を“運”や“容姿”などのお陰とすることで、自分の存在や価値を守ろうとする。",
+        "image": "/encyclopedias/shonin/shonin22.webp"
+      },
+      {
+        "id": "shonin-023",
+        "number": "23",
+        "category": "子ども・子育て",
+        "title": "存在を認めて",
+        "description": "子どもが叫ぶ・泣くなどする時、本質的には「自分を見て」という存在アピールだったりする。",
+        "image": "/encyclopedias/shonin/shonin23.webp"
+      },
+      {
+        "id": "shonin-024",
+        "number": "24",
+        "category": "子ども・子育て",
+        "title": "存在の否定",
+        "description": "不合格（受験・レギュラー・その他）は自分の“存在”が否定されたようでひどく落ち込む。",
+        "image": "/encyclopedias/shonin/shonin24.webp"
+      },
+      {
+        "id": "shonin-025",
+        "number": "25",
+        "category": "子ども・子育て",
+        "title": "自分がいないと",
+        "description": "親であること自体が承認欲求を満たす構図。自分なしでは生きられない存在からの栄養。",
+        "image": "/encyclopedias/shonin/shonin25.webp"
+      },
+      {
+        "id": "shonin-026",
+        "number": "26",
+        "category": "子ども・子育て",
+        "title": "自立の喪失感",
+        "description": "親の役割を通して自己価値を保っている場合、子離れができず喪失感に襲われる。",
+        "image": "/encyclopedias/shonin/shonin26.webp"
+      },
+      {
+        "id": "shonin-021",
+        "number": "21",
+        "category": "子ども・子育て",
+        "title": "引き止めて",
+        "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
+        "image": "/encyclopedias/shonin/shonin21.webp"
+      },
+      {
+        "id": "shonin-021",
+        "number": "21",
+        "category": "子ども・子育て",
+        "title": "引き止めて",
+        "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
+        "image": "/encyclopedias/shonin/shonin21.webp"
       }
       
           ]
