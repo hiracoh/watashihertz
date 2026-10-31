@@ -177,7 +177,7 @@ export default function Home() {
               margin: "0 0 1.5rem",
             }}
           >
-            自分を生きる地図を描く。
+            自分を生きる、地図を描く。
           </p>
 
           <p
