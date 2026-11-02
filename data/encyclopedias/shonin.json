@@ -196,7 +196,7 @@
         "id": "shonin-022",
         "number": "22",
         "category": "仕事",
-        "title": "どうせで棚上げ",
+        "title": "好都合な理由",
         "description": "他者の成功を“運”や“容姿”などのお陰とすることで、自分の存在や価値を守ろうとする。",
         "image": "/encyclopedias/shonin/shonin22.webp"
       },
@@ -233,20 +233,44 @@
         "image": "/encyclopedias/shonin/shonin26.webp"
       },
       {
-        "id": "shonin-021",
-        "number": "21",
-        "category": "子ども・子育て",
-        "title": "引き止めて",
-        "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
-        "image": "/encyclopedias/shonin/shonin21.webp"
+        "id": "shonin-027",
+        "number": "27",
+        "category": "分かりづらい",
+        "title": "権威への反発",
+        "description": "ネガティブな形でも自分に注目が向くことで、自分の存在を確認・周知している。",
+        "image": "/encyclopedias/shonin/shonin27.webp"
       },
       {
-        "id": "shonin-021",
-        "number": "21",
-        "category": "子ども・子育て",
+        "id": "shonin-028",
+        "number": "28",
+        "category": "分かりづらい",
+        "title": "ここだここだ！",
+        "description": "大きな音（エンジン・音楽・物音）を通して、自分の存在を確認・周知している。",
+        "image": "/encyclopedias/shonin/shonin28.webp"
+      },
+      {
+        "id": "shonin-029",
+        "number": "29",
+        "category": "分かりづらい",
+        "title": "裏アカウント",
+        "description": "この世界に自分という人間が存在していることをひっそりと自他に周知している。",
+        "image": "/encyclopedias/shonin/shonin29.webp"
+      },
+      {
+        "id": "shonin-030",
+        "number": "30",
+        "category": "分かりづらい",
+        "title": "自虐アタック",
+        "description": "過度な自虐や謙遜を行い、相手から否定を誘う会話によって自己価値を確認する。",
+        "image": "/encyclopedias/shonin/shonin30.webp"
+      },
+      {
+        "id": "shonin-031",
+        "number": "31",
+        "category": "分かりづらい",
         "title": "引き止めて",
         "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
-        "image": "/encyclopedias/shonin/shonin21.webp"
+        "image": "/encyclopedias/shonin/shonin31.webp"
       }
       
           ]
