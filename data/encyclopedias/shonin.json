@@ -268,9 +268,33 @@
         "id": "shonin-031",
         "number": "31",
         "category": "分かりづらい",
-        "title": "引き止めて",
-        "description": "退社を引き止められること、「いないと回らない」と言われることがすごく嬉しい。",
+        "title": "盛り上げ役",
+        "description": "自虐キャラや盛り上げ役に徹することで、無理してでも自己価値を維持しようとする。",
         "image": "/encyclopedias/shonin/shonin31.webp"
+      },
+      {
+        "id": "shonin-032",
+        "number": "32",
+        "category": "分かりづらい",
+        "title": "我欲の善行",
+        "description": "承認という見返りを期待して良いこと（挨拶・席を譲る）をすると、期待外れに腹が立つ",
+        "image": "/encyclopedias/shonin/shonin32.webp"
+      },
+      {
+        "id": "shonin-033",
+        "number": "33",
+        "category": "分かりづらい",
+        "title": "マウント用意",
+        "description": "悩みを聞き出したり解決策を提示することで、自己価値をアピールできる展開に持ち込む。",
+        "image": "/encyclopedias/shonin/shonin33.webp"
+      },
+      {
+        "id": "shonin-034",
+        "number": "34",
+        "category": "分かりづらい",
+        "title": "少数という誇り",
+        "description": "自身ではなく「少数である」というブランドによって自分の存在や価値を認識している。",
+        "image": "/encyclopedias/shonin/shonin34.webp"
       }
       
           ]
