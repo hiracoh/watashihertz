@@ -340,7 +340,9 @@ return (
     <article
             style={{
               maxWidth: 680,
-              margin: '64px auto',
+              margin: book.id === 'shonin'
+  ? '140px auto'
+  : '64px auto',
               padding: '40px 24px',
               borderTop: '1px solid #c9c0af',
               borderBottom: '1px solid #c9c0af',
