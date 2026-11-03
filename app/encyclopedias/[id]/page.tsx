@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { encyclopediaData } from '@/data/encyclopedias/index';
 import MagazinePage from './MagazinePage';
+import type { MagazineBook } from './FashionMagazine';
 import styles from './page.module.css';
 
 export default function EncyclopediaPage({
@@ -18,9 +19,9 @@ export default function EncyclopediaPage({
 }
 
 if (book.type === 'magazine') {
-  return <MagazinePage book={book} />;
+  return <MagazinePage book={book as MagazineBook} />;
 }
-
+  
 const items = book.items as Array<{
   id: string;
   number: string;
