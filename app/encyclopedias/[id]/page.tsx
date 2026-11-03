@@ -250,22 +250,19 @@ return (
   {groups.map((group, groupIndex) => (
     <div key={groupIndex}>
 
-      {/* カテゴリー見出し */}
-      {group.category && (
-        <h3
-          style={{
-            margin: '120px 0 28px',
-            textAlign: 'center',
-            fontSize: 26,
-            fontWeight: 500,
-            letterSpacing: '0.12em',
-            color: '#403a32',
-          }}
-        >
-          {group.category}
-        </h3>
-      )}
-
+     {/* カテゴリー見出し */}
+{group.category && (
+  <h3
+    className={styles.encyclopediaCategory}
+    style={{
+      margin: '120px 0 40px',
+      textAlign: 'center',
+      color: '#403a32',
+    }}
+  >
+    {group.category}
+  </h3>
+)}
       {/* 各カテゴリー内の図鑑イラスト */}
       <div className={styles.encyclopediaGrid}>
         {group.items.map((item) => (
