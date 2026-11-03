@@ -54,7 +54,7 @@ return (
   <main
   className={styles.paperPage}
   style={{
-        maxWidth: 900,
+        maxWidth: 1200,
         margin: '0 auto',
         padding: '32px 20px 80px',
       }}
@@ -254,7 +254,7 @@ return (
       {group.category && (
         <h3
           style={{
-            margin: '48px 0 28px',
+            margin: '120px 0 28px',
             textAlign: 'center',
             fontSize: 26,
             fontWeight: 500,
