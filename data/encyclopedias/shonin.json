@@ -23,11 +23,9 @@
         "backgroundOpacity": 0.05
       }
     },
-  "interlude": {
-  "after": 0,
+ "interlude": {
   "afterCategory": "日常",
   "title": "承認欲求を、もう少し深く。",
-  "label": "承認欲求を、もう少し深く。",
   "text": [
     "ここに説明文の一段落目を入力します。",
     "ここに説明文の二段落目を入力します。"
