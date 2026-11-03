@@ -337,8 +337,9 @@ return (
 
       {/* カテゴリーの間に挿入する説明文 */}
       {'interlude' in book &&
-        book.interlude.afterCategory === group.category && (
-          <article
+  'afterCategory' in book.interlude &&
+  book.interlude.afterCategory === group.category && (
+    <article
             style={{
               maxWidth: 680,
               margin: '64px auto',
@@ -357,7 +358,7 @@ return (
                 lineHeight: 1.6,
               }}
             >
-              {book.interlude.title}
+{'title' in book.interlude && book.interlude.title}
             </h3>
 
             {book.interlude.text.map((paragraph, index) => (
