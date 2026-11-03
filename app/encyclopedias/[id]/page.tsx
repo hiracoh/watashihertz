@@ -255,7 +255,7 @@ return (
   <h3
     className={styles.encyclopediaCategory}
     style={{
-      margin: '120px 0 40px',
+      margin: '180px 0 40px',
       textAlign: 'center',
       color: '#403a32',
     }}
