@@ -14,7 +14,7 @@ const DEBUG_POINTS = true;
 
 export type MagazineBook = {
   id: string;
-  type: string;
+type: 'magazine';
   layout?: string;
   title: string;
 
