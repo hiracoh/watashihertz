@@ -295,6 +295,38 @@
         "title": "少数という誇り",
         "description": "自身ではなく「少数である」というブランドによって自分の存在や価値を認識している。",
         "image": "/encyclopedias/shonin/shonin34.webp"
+      },
+      {
+        "id": "shonin-035",
+        "number": "35",
+        "category": "SNS",
+        "title": "煽り投稿",
+        "description": "多くの批判が向けられるとわかった上でクソコメをし、自分の存在を確認・拡散する。",
+        "image": "/encyclopedias/shonin/shonin35.webp"
+      },
+      {
+        "id": "shonin-036",
+        "number": "36",
+        "category": "SNS",
+        "title": "生きた証",
+        "description": "美しい日常や思い出を投稿することで、自分の存在を自身や他者に残そうとする。",
+        "image": "/encyclopedias/shonin/shonin36.webp"
+      },
+      {
+        "id": "shonin-037",
+        "number": "37",
+        "category": "SNS",
+        "title": "一喜一憂乱高下",
+        "description": "閲覧数に加え、誰がいいねして誰がしてないのかまで気になる。自己価値を小刻みに確認。",
+        "image": "/encyclopedias/shonin/shonin37.webp"
+      },
+      {
+        "id": "shonin-038",
+        "number": "38",
+        "category": "SNS",
+        "title": "とにかくバズ",
+        "description": "投稿したいものというよりバズるための投稿をする。次第に承認欲求に犯されている。",
+        "image": "/encyclopedias/shonin/shonin38.webp"
       }
       
           ]
