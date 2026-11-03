@@ -21,8 +21,36 @@ if (book.type === 'magazine') {
   return <MagazinePage book={book} />;
 }
 
+const items = book.items as Array<{
+  id: string;
+  number: string;
+  category?: string;
+  title: string;
+  description?: string;
+  image?: string;
+}>;
+
+const groups: Array<{
+  category?: string;
+  items: typeof items;
+}> = [];
+
+items.forEach((item) => {
+  const category = item.category?.trim() || undefined;
+  const lastGroup = groups[groups.length - 1];
+
+  if (!lastGroup || lastGroup.category !== category) {
+    groups.push({
+      category,
+      items: [item],
+    });
+  } else {
+    lastGroup.items.push(item);
+  }
+});
+
 return (
-    <main
+  <main
   className={styles.paperPage}
   style={{
         maxWidth: 900,
@@ -217,78 +245,139 @@ return (
           {book.title}
         </h2>
 
-        <div
-  className={styles.encyclopediaGrid}
-  style={{
-    display: 'grid',
-    gap: 20,
-  }}
->
-          {book.items.map((item) => (
-            <article
-              key={item.id}
+       <div>
+  {groups.map((group, groupIndex) => (
+    <div key={groupIndex}>
+
+      {/* カテゴリー見出し */}
+      {group.category && (
+        <h3
+          style={{
+            margin: '48px 0 28px',
+            textAlign: 'center',
+            fontSize: 26,
+            fontWeight: 500,
+            letterSpacing: '0.12em',
+            color: '#403a32',
+          }}
+        >
+          {group.category}
+        </h3>
+      )}
+
+      {/* 各カテゴリー内の図鑑イラスト */}
+      <div className={styles.encyclopediaGrid}>
+        {group.items.map((item) => (
+          <article
+            key={item.id}
+            style={{
+              padding: 24,
+              borderBottom: '1px solid #ddd4c5',
+              minWidth: 0,
+            }}
+          >
+            <div
+              className={styles.encyclopediaNumber}
               style={{
-                padding: 24,
-                borderBottom: '1px solid #ddd4c5',
+                marginBottom: 8,
+                color: '#9a8c79',
+                letterSpacing: '0.12em',
               }}
             >
+              {item.number}
+            </div>
+
+            {item.image && (
               <div
-                className={styles.encyclopediaNumber}
                 style={{
-                  marginBottom: 8,
-                  color: '#9a8c79',
-                  letterSpacing: '0.12em',
+                  position: 'relative',
+                  width: '100%',
+                  maxWidth: 420,
+                  aspectRatio: '1 / 1',
+                  margin: '0 auto 20px',
                 }}
               >
-                {item.number}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 700px) 90vw, 420px"
+                  style={{
+                    objectFit: 'contain',
+                  }}
+                />
               </div>
-              {item.image && (
-  <div
-    style={{
-      position: 'relative',
-      width: '100%',
-      maxWidth: 420,
-      aspectRatio: '1 / 1',
-      margin: '0 auto 20px',
-    }}
-  >
-    <Image
-      src={item.image}
-      alt={item.title}
-      fill
-      sizes="(max-width: 600px) 90vw, 420px"
-      style={{
-        objectFit: 'contain',
-      }}
-    />
-  </div>
-)}
+            )}
 
-              <h3
-  className={styles.encyclopediaTitle}
-  style={{
-                  margin: '0 0 4px',
-                  color: '#403a32',
+            <h3
+              className={styles.encyclopediaTitle}
+              style={{
+                margin: '0 0 4px',
+                color: '#403a32',
+              }}
+            >
+              {item.title}
+            </h3>
+
+            {item.description !== undefined && (
+              <p
+                className={styles.encyclopediaDescription}
+                style={{
+                  margin: 0,
+                  lineHeight: 1.9,
+                  color: '#666057',
                 }}
               >
-                {item.title}
-              </h3>
+                {item.description}
+              </p>
+            )}
+          </article>
+        ))}
+      </div>
 
-             {'description' in item && (
-  <p
-    className={styles.encyclopediaDescription}
-    style={{
-      margin: 0,
-      lineHeight: 1.9,
-      color: '#666057',
-    }}
-  >
-    {item.description}
-  </p>
-)}
-            </article>
-          ))}
-        </div>
+      {/* カテゴリーの間に挿入する説明文 */}
+      {'interlude' in book &&
+        book.interlude.afterCategory === group.category && (
+          <article
+            style={{
+              maxWidth: 680,
+              margin: '64px auto',
+              padding: '40px 24px',
+              borderTop: '1px solid #c9c0af',
+              borderBottom: '1px solid #c9c0af',
+              color: '#514a41',
+            }}
+          >
+            <h3
+              style={{
+                margin: '0 0 28px',
+                fontSize: 24,
+                fontWeight: 500,
+                textAlign: 'center',
+                lineHeight: 1.6,
+              }}
+            >
+              {book.interlude.title}
+            </h3>
+
+            {book.interlude.text.map((paragraph, index) => (
+              <p
+                key={index}
+                style={{
+                  margin: index === 0 ? 0 : '20px 0 0',
+                  fontSize: 16,
+                  lineHeight: 2.2,
+                }}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </article>
+        )}
+
+    </div>
+  ))}
+</div>
       </section>
     </main>
   );
