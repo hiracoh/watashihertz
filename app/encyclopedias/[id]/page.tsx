@@ -218,11 +218,12 @@ return (
         </h2>
 
         <div
-          style={{
-            display: 'grid',
-            gap: 20,
-          }}
-        >
+  className={styles.encyclopediaGrid}
+  style={{
+    display: 'grid',
+    gap: 20,
+  }}
+>
           {book.items.map((item) => (
             <article
               key={item.id}
