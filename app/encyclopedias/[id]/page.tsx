@@ -264,8 +264,13 @@ return (
   </h3>
 )}
       {/* 各カテゴリー内の図鑑イラスト */}
-      <div className={styles.encyclopediaGrid}>
-        {group.items.map((item) => (
+<div
+  className={
+    'columns' in book && book.columns === 2
+      ? styles.encyclopediaGrid
+      : styles.encyclopediaGridSingle
+  }
+>        {group.items.map((item) => (
           <article
             key={item.id}
             style={{
