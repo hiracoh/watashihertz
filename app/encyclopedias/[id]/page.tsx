@@ -343,8 +343,9 @@ return (
   'afterCategory' in book.interlude &&
   book.interlude.afterCategory === group.category && (
     <article
-            style={{
-              maxWidth: 680,
+  className={styles.encyclopediaInterlude}
+  style={{
+    maxWidth: 680,
               margin: book.id === 'shonin'
   ? '140px auto'
   : '64px auto',
@@ -355,8 +356,9 @@ return (
             }}
           >
             <h3
-              style={{
-                margin: '0 0 28px',
+  className={styles.encyclopediaInterludeTitle}
+  style={{
+    margin: '0 0 28px',
                 fontSize: 24,
                 fontWeight: 500,
                 textAlign: 'center',
@@ -368,9 +370,10 @@ return (
 
             {book.interlude.text.map((paragraph, index) => (
               <p
-                key={index}
-                style={{
-                  margin: index === 0 ? 0 : '20px 0 0',
+  key={index}
+  className={styles.encyclopediaInterludeText}
+  style={{
+    margin: index === 0 ? 0 : '20px 0 0',
                   fontSize: 16,
                   lineHeight: 2.2,
                 }}
