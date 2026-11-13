@@ -35,44 +35,44 @@
   "comparisons": [
   {
     "number": "其の一",
-    "leftImage": "/encyclopedias/shonin_left01.webp",
-    "rightImage": "/encyclopedias/shonin_right01.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left01.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right01.webp",
     "description": "「自分の価値を確認する」という共通の目的に向かって、自虐・自慢という一見すると逆の手段がある。"
   },
     {
     "number": "其の二",
-    "leftImage": "/encyclopedias/shonin_left02.webp",
-    "rightImage": "/encyclopedias/shonin_right02.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left02.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right02.webp",
     "description": "自分は有益な存在というアピールのために、尽くす人間もいればマウントを取る人間もいる。"
   },
     {
     "number": "其の三",
-    "leftImage": "/encyclopedias/shonin_left03.webp",
-    "rightImage": "/encyclopedias/shonin_right03.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left03.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right03.webp",
     "description": "従おうが背こうが「他人からの期待や注目という呪縛」に縛られており、存在を自他に向けて叫んでいる。"
   },
     {
     "number": "其の四",
-    "leftImage": "/encyclopedias/shonin_left04.webp",
-    "rightImage": "/encyclopedias/shonin_right04.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left04.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right04.webp",
     "description": "自分という存在を受け入れて欲しいとの願いから、晒そうとする人も合わせようとする人もいる。"
   },
     {
     "number": "其の五",
-    "leftImage": "/encyclopedias/shonin_left05.webp",
-    "rightImage": "/encyclopedias/shonin_right05.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left05.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right05.webp",
     "description": "はなから褒める・貶すつもりでいる場合、それは自己価値を保つための行動だったりする。"
   },
     {
     "number": "其の六",
-    "leftImage": "/encyclopedias/shonin_left06.webp",
-    "rightImage": "/encyclopedias/shonin_right06.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left06.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right06.webp",
     "description": "本心ではなく「あえて」そうしているなら、同調も孤立も自他への価値アピールに他ならない。"
   },
     {
     "number": "其の七",
-    "leftImage": "/encyclopedias/shonin_left07.webp",
-    "rightImage": "/encyclopedias/shonin_right07.webp",
+    "leftImage": "/encyclopedias/shonin/shonin_left07.webp",
+    "rightImage": "/encyclopedias/shonin/shonin_right07.webp",
     "description": "承認への肯定も否定も「〇〇という自分を認めて」と同じ声が響いていることが少なくない。"
   }
     
