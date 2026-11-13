@@ -32,6 +32,14 @@
     "①②はプラスマイナスに揺れる感情的な反応、③④は自分の「存在」や「価値」を“自他”に示す行動となります。"
   ]
 },
+  "comparisons": [
+  {
+    "number": "其の一",
+    "leftImage": "/encyclopedias/shonin/comparison-01-left.webp",
+    "rightImage": "/encyclopedias/shonin/comparison-01-right.webp",
+    "description": "ここに左右の行動に共通する心理の説明文を記入します。"
+  }
+],
     "items": [
       {
         "id": "shonin-001",
