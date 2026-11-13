@@ -157,6 +157,18 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+  position: relative;
+}
+.comparisonImages::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #c9c0af;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .comparisonImage {
