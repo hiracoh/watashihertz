@@ -132,3 +132,76 @@
     line-height: 1.85 !important;
   }
 }
+/* 逆に見えるけど、根っこは同じ */
+
+.comparisonSection {
+  margin-top: 160px;
+}
+
+.comparisonSpread {
+  margin: 0 auto 120px;
+  padding: 32px 24px 40px;
+  border: 1px solid #c9c0af;
+  background: #faf7ef;
+}
+
+.comparisonNumber {
+  margin-bottom: 28px;
+  text-align: center;
+  font-family: 'Yuji Syuku', serif;
+  font-size: 26px;
+  color: #514a41;
+}
+
+.comparisonImages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.comparisonImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+}
+
+.comparisonDescription {
+  max-width: 680px;
+  margin: 36px auto 0;
+  text-align: center;
+  font-family: 'Klee One', serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2;
+  color: #514a41;
+}
+
+/* スマホ表示 */
+
+@media (max-width: 700px) {
+  .comparisonSection {
+    margin-top: 100px;
+  }
+
+  .comparisonSpread {
+    padding: 24px 10px 32px;
+    margin-bottom: 80px;
+  }
+
+  .comparisonNumber {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .comparisonImages {
+    gap: 6px;
+  }
+
+  .comparisonDescription {
+    margin-top: 28px;
+    padding: 0 8px;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+}
