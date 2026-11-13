@@ -6,6 +6,12 @@ import MagazinePage from './MagazinePage';
 import type { MagazineBook } from './FashionMagazine';
 import styles from './page.module.css';
 
+type ComparisonItem = {
+  number: string;
+  leftImage: string;
+  rightImage: string;
+  description: string;
+};
 export default function EncyclopediaPage({
   params,
 }: {
@@ -31,7 +37,11 @@ const items = book.items as Array<{
   image?: string;
 }>;
 
-const groups: Array<{
+const comparisons: ComparisonItem[] =
+  'comparisons' in book
+    ? (book.comparisons as ComparisonItem[])
+    : [];
+  const groups: Array<{
   category?: string;
   items: typeof items;
 }> = [];
@@ -388,6 +398,46 @@ return (
   ))}
 </div>
       </section>
+    {comparisons.length > 0 && (
+  <section className={styles.comparisonSection}>
+    {comparisons.map((comparison, index) => (
+      <article
+        key={index}
+        className={styles.comparisonSpread}
+      >
+        <div className={styles.comparisonNumber}>
+          {comparison.number}
+        </div>
+
+        <div className={styles.comparisonImages}>
+          <div className={styles.comparisonImage}>
+            <Image
+              src={comparison.leftImage}
+              alt={`${comparison.number} 左側`}
+              fill
+              sizes="(max-width: 700px) 45vw, 540px"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+
+          <div className={styles.comparisonImage}>
+            <Image
+              src={comparison.rightImage}
+              alt={`${comparison.number} 右側`}
+              fill
+              sizes="(max-width: 700px) 45vw, 540px"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        </div>
+
+        <p className={styles.comparisonDescription}>
+          {comparison.description}
+        </p>
+      </article>
+    ))}
+  </section>
+)}
     </main>
   );
 }
