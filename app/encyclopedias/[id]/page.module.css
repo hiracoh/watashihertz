@@ -114,24 +114,7 @@
   grid-template-columns: minmax(0, 1fr);
   gap: 20px;
 }
-/* 承認欲求：スマホ版の中間説明 */
-@media (max-width: 700px) {
-  .encyclopediaInterlude {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
 
-  .encyclopediaInterludeTitle {
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-    letter-spacing: 0 !important;
-  }
-
-  .encyclopediaInterludeText {
-    font-size: 15px !important;
-    line-height: 1.85 !important;
-  }
-}
 /* 逆に見えるけど、根っこは同じ */
 
 .comparisonSection {
