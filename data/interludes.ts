@@ -20,6 +20,8 @@ export type InterludeStyle = {
 
   textAlign?: 'left' | 'center' | 'right';
   color?: string;
+  borderTop?: boolean;
+borderBottom?: boolean;
 
   mobile?: Omit<InterludeStyle, 'mobile'>;
 };
