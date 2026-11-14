@@ -48,6 +48,12 @@ export default function InterludeBlock({ interlude }: Props) {
 
     '--interlude-align': design.textAlign ?? 'center',
     '--interlude-color': design.color ?? '#514a41',
+    borderTop: design.borderTop
+  ? '1px solid #c9c0af'
+  : undefined,
+borderBottom: design.borderBottom
+  ? '1px solid #c9c0af'
+  : undefined,
 
     '--mobile-width': `${mobile.maxWidth ?? design.maxWidth ?? 680}px`,
     '--mobile-padding-x': `${mobile.paddingX ?? design.paddingX ?? 12}px`,
