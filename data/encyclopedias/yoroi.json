@@ -16,18 +16,59 @@
     "本誌では、8名のモデルがどんな鎧をまとい、自らを認識し支えているのかを眺めていきます。"
   ]
 },
-  "interlude": {
-  "after": 4,
-  "label": "INTERLUDE",
-  "text": [
-    "鎧とは自己定義であり、支えであり、自分を大きく見せてくれる。",
-    "ただそれは同時に、どこまでも「鎧」であって、あなたそのものではない。",
-    "そこで、お金、能力、過去、人間関係…とあなたが所有するパーツを一つずつ脱いでみる。",
-    "全てを脱ぎ去って文字通り「裸」になったとき、あなたはあなたをどう受け止めるだろうか。"
-  ],
-  "coreMessage":[ "裸の自分に「価値が下がった」と感じますか？"
-  ]
-},
+  
+"interludes": [
+  {
+    "id": "yoroi-main-interlude",
+    "after": "item:yoroi-004",
+    "type": "text",
+    "label": "INTERLUDE",
+    "text": [
+      "鎧とは自己定義であり、支えであり、自分を大きく見せてくれる。",
+      "ただそれは同時に、どこまでも「鎧」であって、あなたそのものではない。",
+      "そこで、お金、能力、過去、人間関係…とあなたが所有するパーツを一つずつ脱いでみる。",
+      "全てを脱ぎ去って文字通り「裸」になったとき、あなたはあなたをどう受け止めるだろうか。"
+    ],
+    "coreMessage": [
+      "裸の自分に「価値が下がった」と感じますか？"
+    ],
+    "design": {
+      "maxWidth": 980,
+      "paddingX": 40,
+      "paddingY": 0,
+      "marginTop": 220,
+      "marginBottom": 260,
+      "fontFamily": "sans",
+      "coreFontFamily": "zen",
+      "textSize": 18,
+      "coreSize": 30,
+      "lineHeight": 2.6,
+      "coreLineHeight": 2,
+      "letterSpacing": 0.045,
+      "coreLetterSpacing": 0.08,
+      "labelSize": 12,
+      "labelLetterSpacing": 0.38,
+      "labelMarginBottom": 42,
+      "coreMarginTop": 100,
+      "textAlign": "center",
+      "color": "#5f5a54",
+      "mobile": {
+        "paddingX": 12,
+        "marginTop": 170,
+        "marginBottom": 190,
+        "textSize": 14,
+        "coreSize": 21,
+        "lineHeight": 2.2,
+        "coreLineHeight": 2,
+        "labelSize": 10,
+        "labelMarginBottom": 32,
+        "coreMarginTop": 62,
+        "coreLetterSpacing": 0.06
+      }
+    }
+  }
+],
+
 
  "ending": {
   "text": [
