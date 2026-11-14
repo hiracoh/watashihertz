@@ -26,7 +26,8 @@
   font-family: var(--interlude-title-font);
   font-size: var(--interlude-title-size);
   line-height: var(--interlude-title-line-height);
-  font-weight: 400;
+  text-align: center;
+font-weight: 500;
 }
 
 .body {
