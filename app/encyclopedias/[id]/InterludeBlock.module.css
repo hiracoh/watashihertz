@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Yuji+Syuku&family=Zen+Old+Mincho:wght@400;600&display=swap');
+
+.interlude {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--interlude-width);
+  margin: var(--interlude-margin-top) auto
+    var(--interlude-margin-bottom);
+  padding: var(--interlude-padding-y)
+    var(--interlude-padding-x);
+
+  font-family: var(--interlude-font);
+  color: var(--interlude-color);
+  text-align: var(--interlude-align);
+}
+
+.label {
+  margin-bottom: 28px;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
+.title {
+  margin: 0 0 28px;
+  font-family: var(--interlude-title-font);
+  font-size: var(--interlude-title-size);
+  line-height: var(--interlude-title-line-height);
+  font-weight: 400;
+}
+
+.body {
+  font-size: var(--interlude-text-size);
+  line-height: var(--interlude-line-height);
+}
+
+.body p {
+  margin: 0 0 20px;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+.core {
+  margin-top: 64px;
+  font-family: var(--interlude-core-font);
+  font-size: var(--interlude-core-size);
+  line-height: var(--interlude-core-line-height);
+}
+
+.core p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .interlude {
+    max-width: var(--mobile-width);
+    margin-top: var(--mobile-margin-top);
+    margin-bottom: var(--mobile-margin-bottom);
+    padding: var(--mobile-padding-y)
+      var(--mobile-padding-x);
+
+    font-family: var(--mobile-font);
+    color: var(--mobile-color);
+    text-align: var(--mobile-align);
+  }
+
+  .title {
+    font-family: var(--mobile-title-font);
+    font-size: var(--mobile-title-size);
+    line-height: var(--mobile-title-line-height);
+  }
+
+  .body {
+    font-size: var(--mobile-text-size);
+    line-height: var(--mobile-line-height);
+  }
+
+  .core {
+    font-family: var(--mobile-core-font);
+    font-size: var(--mobile-core-size);
+    line-height: var(--mobile-core-line-height);
+  }
+}
