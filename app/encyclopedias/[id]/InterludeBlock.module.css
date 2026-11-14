@@ -15,10 +15,11 @@
   text-align: var(--interlude-align);
 }
 
+
 .label {
-  margin-bottom: 28px;
-  font-size: 12px;
-  letter-spacing: 0.25em;
+  margin-bottom: var(--interlude-label-margin);
+  font-size: var(--interlude-label-size);
+  letter-spacing: var(--interlude-label-spacing);
 }
 
 .title {
@@ -27,12 +28,13 @@
   font-size: var(--interlude-title-size);
   line-height: var(--interlude-title-line-height);
   text-align: center;
-font-weight: 500;
+  font-weight: 500;
 }
 
 .body {
   font-size: var(--interlude-text-size);
   line-height: var(--interlude-line-height);
+  letter-spacing: var(--interlude-letter-spacing);
 }
 
 .body p {
@@ -44,10 +46,11 @@ font-weight: 500;
 }
 
 .core {
-  margin-top: 64px;
+  margin-top: var(--interlude-core-margin);
   font-family: var(--interlude-core-font);
   font-size: var(--interlude-core-size);
   line-height: var(--interlude-core-line-height);
+  letter-spacing: var(--interlude-core-spacing);
 }
 
 .core p {
