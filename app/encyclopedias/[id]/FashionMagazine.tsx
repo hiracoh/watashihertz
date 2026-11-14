@@ -107,7 +107,7 @@ export default function FashionMagazine({
   </section>
 )}
 
-{book.items.map((item, index) => (
+{book.items.map((item) => (
   <Fragment key={item.id}>
     {renderInterludes('before', `item:${item.id}`)}
     <article className="fashionArticle">
@@ -604,22 +604,7 @@ export default function FashionMagazine({
 }
 
 /* 4人目の後に入る中間メッセージ：PC基本デザイン */
-.fashionInterlude {
-  width: 100%;
-  max-width: 980px;
-  margin: 220px auto 260px;
-  padding: 0 40px;
-  box-sizing: border-box;
-  text-align: center;
-}
 
-.fashionInterludeLabel {
-  margin-bottom: 42px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.38em;
-  color: #77716a;
-}
 
 .fashionInterludeText {
   max-width: 900px;
@@ -681,15 +666,6 @@ export default function FashionMagazine({
   margin-bottom: 18px;
 }
 /* 4人目後の中間メッセージ：スマホ用 */
-.fashionInterlude {
-  margin: 170px auto 190px;
-  padding: 0 12px;
-}
-
-.fashionInterludeLabel {
-  margin-bottom: 32px;
-  font-size: 10px;
-}
 
 .fashionInterludeText {
   font-size: 14px;
