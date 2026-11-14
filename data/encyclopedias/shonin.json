@@ -24,26 +24,51 @@
         "backgroundOpacity": 0.05
       }
     },
- "interlude": {
-  "afterCategory": "日常",
-  "title": "承認欲求を、もう少し深く。",
-  "text": [
-    "承認欲求による人間の動きは主に４つです。①満たされて嬉しい ②満たされず不満 ③満たすために行動 ④守る（損なわない）ために行動",
-    "①②はプラスマイナスに揺れる感情的な反応、③④は自分の「存在」や「価値」を“自他”に示す行動となります。"
-  ]
-},
+ 
+"interludes": [
+  {
+    "id": "shonin-daily-explanation",
+    "after": "category:日常",
+    "type": "text",
+    "title": "承認欲求を、もう少し深く。",
+    "text": [
+      "承認欲求による人間の動きは主に４つです。①満たされて嬉しい ②満たされず不満 ③満たすために行動 ④守る（損なわない）ために行動",
+      "①②はプラスマイナスに揺れる感情的な反応、③④は自分の「存在」や「価値」を“自他”に示す行動となります。"
+    ],
+    "design": {
+      "maxWidth": 680,
+      "marginTop": 140,
+      "marginBottom": 140,
+      "paddingX": 24,
+      "paddingY": 40,
+      "titleSize": 24,
+      "textSize": 16,
+      "lineHeight": 2.2,
+      "textAlign": "left",
+      "borderTop": true,
+      "borderBottom": true,
+      "mobile": {
+        "paddingX": 12,
+        "titleSize": 20,
+        "textSize": 15,
+        "lineHeight": 1.85
+      }
+    }
+  }
+],
+
   "comparisons": [
   {
     "number": "其の一",
     "leftImage": "/encyclopedias/shonin/shonin_left01.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right01.webp",
-    "description": "「自分の価値を確認する」という共通の目的に向かって、自虐・自慢という一見すると逆の手段がある。"
+    "description": "「自分の価値を確認する」という共通の動機（目的）で、自慢や自虐という一見逆の手段をとる。"
   },
     {
     "number": "其の二",
     "leftImage": "/encyclopedias/shonin/shonin_left02.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right02.webp",
-    "description": "自分は有益な存在というアピールのために、尽くす人間もいればマウントを取る人間もいる。"
+    "description": "自分の価値を損なわないために、尽くす人（左女性）もいれば支配する人（右男性）もいる。"
   },
     {
     "number": "其の三",
