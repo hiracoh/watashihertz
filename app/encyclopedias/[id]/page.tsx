@@ -5,6 +5,8 @@ import { encyclopediaData } from '@/data/encyclopedias/index';
 import MagazinePage from './MagazinePage';
 import type { MagazineBook } from './FashionMagazine';
 import styles from './page.module.css';
+import InterludeBlock from './InterludeBlock';
+import type { Interlude } from '@/data/interludes';
 
 type ComparisonItem = {
   number: string;
@@ -36,6 +38,28 @@ const items = book.items as Array<{
   description?: string;
   image?: string;
 }>;
+
+const interludes: Interlude[] =
+  'interludes' in book
+    ? (book.interludes as Interlude[])
+    : [];
+
+const renderInterludes = (
+  position: 'before' | 'after',
+  anchor: string
+) =>
+  interludes
+    .filter((interlude) => interlude[position] === anchor)
+    .map((interlude) => (
+      <InterludeBlock
+        key={interlude.id}
+        interlude={interlude}
+      />
+    ));
+
+const hasBeforeComparisons = interludes.some(
+  (interlude) => interlude.before === 'comparisons'
+);
 
 const comparisons: ComparisonItem[] =
   'comparisons' in book
@@ -256,9 +280,13 @@ return (
           {book.title}
         </h2>
 
-       <div>
+{renderInterludes('before', 'items')}
+
+<div>
   {groups.map((group, groupIndex) => (
     <div key={groupIndex}>
+      {group.category &&
+  renderInterludes('before', `category:${group.category}`)}
 
      {/* カテゴリー見出し */}
 {group.category && (
@@ -348,58 +376,25 @@ return (
         ))}
       </div>
 
-      {/* カテゴリーの間に挿入する説明文 */}
-      {'interlude' in book &&
-  'afterCategory' in book.interlude &&
-  book.interlude.afterCategory === group.category && (
-    <article
-  className={styles.encyclopediaInterlude}
-  style={{
-    maxWidth: 680,
-              margin: book.id === 'shonin'
-  ? '140px auto'
-  : '64px auto',
-              padding: '40px 24px',
-              borderTop: '1px solid #c9c0af',
-              borderBottom: '1px solid #c9c0af',
-              color: '#514a41',
-            }}
-          >
-            <h3
-  className={styles.encyclopediaInterludeTitle}
-  style={{
-    margin: '0 0 28px',
-                fontSize: 24,
-                fontWeight: 500,
-                textAlign: 'center',
-                lineHeight: 1.6,
-              }}
-            >
-{'title' in book.interlude && book.interlude.title}
-            </h3>
-
-            {book.interlude.text.map((paragraph, index) => (
-              <p
-  key={index}
-  className={styles.encyclopediaInterludeText}
-  style={{
-    margin: index === 0 ? 0 : '20px 0 0',
-                  fontSize: 16,
-                  lineHeight: 2.2,
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-          </article>
-        )}
+      
+{group.category &&
+  renderInterludes('after', `category:${group.category}`)}
 
     </div>
   ))}
 </div>
       </section>
+    {renderInterludes('after', 'items')}
+
+{comparisons.length > 0 &&
+  renderInterludes('before', 'comparisons')}
     {comparisons.length > 0 && (
-  <section className={styles.comparisonSection}>
+  <section
+    className={styles.comparisonSection}
+    style={{
+      marginTop: hasBeforeComparisons ? 0 : undefined,
+    }}
+  >
     {comparisons.map((comparison, index) => (
       <article
         key={index}
@@ -436,8 +431,12 @@ return (
         </p>
       </article>
     ))}
-  </section>
+   </section>
 )}
+
+{comparisons.length > 0 &&
+  renderInterludes('after', 'comparisons')}
+
     </main>
   );
 }
