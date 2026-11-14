@@ -20,6 +20,12 @@ export type InterludeStyle = {
 
   textAlign?: 'left' | 'center' | 'right';
   color?: string;
+  letterSpacing?: number;
+labelLetterSpacing?: number;
+labelSize?: number;
+labelMarginBottom?: number;
+coreMarginTop?: number;
+coreLetterSpacing?: number;
   borderTop?: boolean;
 borderBottom?: boolean;
 
