@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { Fragment } from 'react';
+import InterludeBlock from './InterludeBlock';
+import type { Interlude } from '@/data/interludes';
 import { Zen_Old_Mincho } from 'next/font/google';
 
 const zenOldMincho = Zen_Old_Mincho({
@@ -24,13 +26,7 @@ type: 'magazine';
     text: string[];
   };
 
-  interlude?: {
-    after: number;
-    label?: string;
-    text: string[];
-    coreMessage?: string[];
-  };
-
+  interludes?: Interlude[];
   ending?: {
   text: string[];
   coreMessage?: string[];
@@ -68,8 +64,25 @@ export default function FashionMagazine({
 }: {
   book: MagazineBook;
 }) {
+  
+  const interludes = book.interludes ?? [];
+
+  const renderInterludes = (
+    position: 'before' | 'after',
+    anchor: string
+  ) =>
+    interludes
+      .filter((interlude) => interlude[position] === anchor)
+      .map((interlude) => (
+        <InterludeBlock
+          key={interlude.id}
+          interlude={interlude}
+        />
+      ));
+
   return (
     <main className="magazinePage">
+      {renderInterludes('before', 'items')}
       {/* 雑誌上部 */}
      
 {book.magazineIntro && (
@@ -96,6 +109,7 @@ export default function FashionMagazine({
 
 {book.items.map((item, index) => (
   <Fragment key={item.id}>
+    {renderInterludes('before', `item:${item.id}`)}
     <article className="fashionArticle">
       <div className="fashionHeading">
   <div className="fashionHeadingMeta">
@@ -340,36 +354,10 @@ export default function FashionMagazine({
           </div>
     </article>
 
-    {book.interlude &&
-      book.interlude.after === index + 1 && (
-        <section className="fashionInterlude">
-          {book.interlude.label && (
-            <div className="fashionInterludeLabel">
-              {book.interlude.label}
-            </div>
-          )}
-
-          <div className="fashionInterludeText">
-            {book.interlude.text.map((paragraph, paragraphIndex) => (
-              <p key={paragraphIndex}>
-                {paragraph}
-              </p>
-            ))}
-          </div>
-
-          {book.interlude.coreMessage && (
-            <div
-              className={`fashionInterludeCore ${zenOldMincho.className}`}
-            >
-              {book.interlude.coreMessage.map((line, lineIndex) => (
-  <div key={lineIndex}>{line}</div>
+    {renderInterludes('after', `item:${item.id}`)}
+     </Fragment>
 ))}
-            </div>
-          )}
-        </section>
-      )}
-  </Fragment>
-))}
+    {renderInterludes('after', 'items')}
       {book.ending && (
   <section className="fashionEnding">
     <div className="fashionInterludeText">
