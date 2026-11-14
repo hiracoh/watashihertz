@@ -48,6 +48,12 @@ export default function InterludeBlock({ interlude }: Props) {
 
     '--interlude-align': design.textAlign ?? 'center',
     '--interlude-color': design.color ?? '#514a41',
+    '--interlude-letter-spacing': `${design.letterSpacing ?? 0}em`,
+'--interlude-label-spacing': `${design.labelLetterSpacing ?? 0.25}em`,
+'--interlude-label-size': `${design.labelSize ?? 12}px`,
+'--interlude-label-margin': `${design.labelMarginBottom ?? 28}px`,
+'--interlude-core-margin': `${design.coreMarginTop ?? 64}px`,
+'--interlude-core-spacing': `${design.coreLetterSpacing ?? 0}em`,
     borderTop: design.borderTop
   ? '1px solid #c9c0af'
   : undefined,
@@ -84,6 +90,18 @@ borderBottom: design.borderBottom
 
     '--mobile-align': mobile.textAlign ?? design.textAlign ?? 'center',
     '--mobile-color': mobile.color ?? design.color ?? '#514a41',
+    '--mobile-letter-spacing':
+  `${mobile.letterSpacing ?? design.letterSpacing ?? 0}em`,
+'--mobile-label-spacing':
+  `${mobile.labelLetterSpacing ?? design.labelLetterSpacing ?? 0.25}em`,
+'--mobile-label-size':
+  `${mobile.labelSize ?? design.labelSize ?? 12}px`,
+'--mobile-label-margin':
+  `${mobile.labelMarginBottom ?? design.labelMarginBottom ?? 28}px`,
+'--mobile-core-margin':
+  `${mobile.coreMarginTop ?? design.coreMarginTop ?? 64}px`,
+'--mobile-core-spacing':
+  `${mobile.coreLetterSpacing ?? design.coreLetterSpacing ?? 0}em`,
   } as CSSProperties;
 
   return (
