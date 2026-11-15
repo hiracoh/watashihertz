@@ -74,10 +74,13 @@ export default function FashionMagazine({
     interludes
       .filter((interlude) => interlude[position] === anchor)
       .map((interlude) => (
-        <InterludeBlock
-          key={interlude.id}
-          interlude={interlude}
-        />
+        
+<InterludeBlock
+  key={interlude.id}
+  interlude={interlude}
+  variant="magazine"
+/>
+
       ));
 
   return (
