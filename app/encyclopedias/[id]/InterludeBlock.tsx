@@ -3,9 +3,18 @@ import type { CSSProperties } from 'react';
 import type { Interlude, InterludeStyle } from '@/data/interludes';
 import styles from './InterludeBlock.module.css';
 
+import {
+  encyclopediaInterludePreset,
+  magazineInterludePreset,
+} from '@/data/interludePresets';
+
+
+
 type Props = {
   interlude: Interlude;
+  variant?: 'encyclopedia' | 'magazine';
 };
+
 
 const fontFamilies = {
   klee: "'Klee One', serif",
@@ -13,15 +22,33 @@ const fontFamilies = {
   zen: "'Zen Old Mincho', serif",
   serif: 'serif',
   sans: 'sans-serif',
+  inherit: 'inherit',
 };
 
 function font(name?: InterludeStyle['fontFamily']) {
   return fontFamilies[name ?? 'klee'];
 }
 
-export default function InterludeBlock({ interlude }: Props) {
-  const design = interlude.design ?? {};
-  const mobile = design.mobile ?? {};
+
+export default function InterludeBlock({
+  interlude,
+  variant = 'encyclopedia',
+}: Props) {
+  const preset =
+    variant === 'magazine'
+      ? magazineInterludePreset
+      : encyclopediaInterludePreset;
+
+  const design: InterludeStyle = {
+    ...preset,
+    ...interlude.design,
+  };
+
+  const mobile = {
+    ...preset.mobile,
+    ...interlude.design?.mobile,
+  };
+
 
   const variables = {
     '--interlude-width': `${design.maxWidth ?? 680}px`,
@@ -49,7 +76,8 @@ export default function InterludeBlock({ interlude }: Props) {
     '--interlude-align': design.textAlign ?? 'center',
     '--interlude-color': design.color ?? '#514a41',
     '--interlude-letter-spacing': `${design.letterSpacing ?? 0}em`,
-'--interlude-label-spacing': `${design.labelLetterSpacing ?? 0.25}em`,
+'--interlude-paragraph-spacing': `${design.paragraphSpacing ?? 20}px`,
+    '--interlude-label-spacing': `${design.labelLetterSpacing ?? 0.25}em`,
 '--interlude-label-size': `${design.labelSize ?? 12}px`,
 '--interlude-label-margin': `${design.labelMarginBottom ?? 28}px`,
 '--interlude-core-margin': `${design.coreMarginTop ?? 64}px`,
@@ -92,6 +120,10 @@ borderBottom: design.borderBottom
     '--mobile-color': mobile.color ?? design.color ?? '#514a41',
     '--mobile-letter-spacing':
   `${mobile.letterSpacing ?? design.letterSpacing ?? 0}em`,
+    
+'--mobile-paragraph-spacing':
+  `${mobile.paragraphSpacing ?? design.paragraphSpacing ?? 20}px`,
+
 '--mobile-label-spacing':
   `${mobile.labelLetterSpacing ?? design.labelLetterSpacing ?? 0.25}em`,
 '--mobile-label-size':
