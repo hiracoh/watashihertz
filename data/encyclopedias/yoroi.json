@@ -31,41 +31,7 @@
     ],
     "coreMessage": [
       "裸の自分に「価値が下がった」と感じますか？"
-    ],
-    "design": {
-      "maxWidth": 980,
-      "paddingX": 40,
-      "paddingY": 0,
-      "marginTop": 220,
-      "marginBottom": 260,
-      "fontFamily": "sans",
-      "coreFontFamily": "zen",
-      "textSize": 18,
-      "coreSize": 30,
-      "lineHeight": 2.6,
-      "coreLineHeight": 2,
-      "letterSpacing": 0.045,
-      "coreLetterSpacing": 0.08,
-      "labelSize": 12,
-      "labelLetterSpacing": 0.38,
-      "labelMarginBottom": 42,
-      "coreMarginTop": 100,
-      "textAlign": "center",
-      "color": "#5f5a54",
-      "mobile": {
-        "paddingX": 12,
-        "marginTop": 170,
-        "marginBottom": 190,
-        "textSize": 14,
-        "coreSize": 21,
-        "lineHeight": 2.2,
-        "coreLineHeight": 2,
-        "labelSize": 10,
-        "labelMarginBottom": 32,
-        "coreMarginTop": 62,
-        "coreLetterSpacing": 0.06
-      }
-    }
+    ]
   }
 ],
 
