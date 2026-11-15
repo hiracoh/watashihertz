@@ -1,8 +1,9 @@
 
 export type InterludeStyle = {
-  fontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans';
-  titleFontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans';
-  coreFontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans';
+fontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans' | 'inherit';
+titleFontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans' | 'inherit';
+coreFontFamily?: 'klee' | 'yuji' | 'zen' | 'serif' | 'sans' | 'inherit';
+
 
   maxWidth?: number;
   paddingX?: number;
@@ -26,6 +27,8 @@ labelSize?: number;
 labelMarginBottom?: number;
 coreMarginTop?: number;
 coreLetterSpacing?: number;
+
+paragraphSpacing?: number;
   borderTop?: boolean;
 borderBottom?: boolean;
 
