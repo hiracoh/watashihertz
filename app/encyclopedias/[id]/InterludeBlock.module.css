@@ -37,8 +37,9 @@
   letter-spacing: var(--interlude-letter-spacing);
 }
 
+
 .body p {
-  margin: 0 0 20px;
+  margin: 0 0 var(--interlude-paragraph-spacing);
 }
 
 .body p:last-child {
@@ -58,6 +59,11 @@
 }
 
 @media (max-width: 700px) {
+  
+  .body p {
+    margin-bottom: var(--mobile-paragraph-spacing);
+  }
+
   .interlude {
     max-width: var(--mobile-width);
     margin-top: var(--mobile-margin-top);
