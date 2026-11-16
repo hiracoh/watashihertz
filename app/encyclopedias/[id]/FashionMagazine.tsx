@@ -27,11 +27,7 @@ type: 'magazine';
   };
 
   interludes?: Interlude[];
-  ending?: {
-  text: string[];
-  coreMessage?: string[];
-};
-
+  
   cover?: {
     subtitle?: string;
     image?: string;
@@ -588,40 +584,6 @@ export default function FashionMagazine({
   display: none;
 }
 
-/* 4人目の後に入る中間メッセージ：PC基本デザイン */
-
-
-.fashionInterludeText {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 2.6;
-  letter-spacing: 0.045em;
-  color: #5f5a54;
-}
-
-.fashionInterludeText p {
-  margin: 0 0 30px;
-}
-
-.fashionInterludeText p:last-child {
-  margin-bottom: 0;
-}
-
-.fashionInterludeCore {
-  max-width: 850px;
-  margin: 100px auto 0;
-  font-size: 30px;
-  line-height: 2;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #3f3b37;
-}
-.fashionEnding {
-  margin: 140px auto 100px;
-  text-align: center;
-}
-
 @media (max-width: 700px) {
         .magazineIntro {
   margin: 70px auto 160px;
@@ -650,25 +612,7 @@ export default function FashionMagazine({
 .magazineIntroText p {
   margin-bottom: 18px;
 }
-/* 4人目後の中間メッセージ：スマホ用 */
 
-.fashionInterludeText {
-  font-size: 14px;
-  line-height: 2.2;
-  text-wrap: pretty;
-  word-break: auto-phrase;
-}
-
-.fashionInterludeText p {
-  margin-bottom: 24px;
-}
-
-.fashionInterludeCore {
-  margin-top: 62px;
-  font-size: 21px;
-  line-height: 2;
-  letter-spacing: 0.06em;
-}
           .magazinePage {
             padding: 24px 6px 60px;
           }
