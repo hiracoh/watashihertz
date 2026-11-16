@@ -49,6 +49,7 @@
 .core {
   margin-top: var(--interlude-core-margin);
   font-family: var(--interlude-core-font);
+  font-weight: 600;
   font-size: var(--interlude-core-size);
   line-height: var(--interlude-core-line-height);
   letter-spacing: var(--interlude-core-spacing);
