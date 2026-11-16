@@ -361,25 +361,7 @@ export default function FashionMagazine({
      </Fragment>
 ))}
     {renderInterludes('after', 'items')}
-      {book.ending && (
-  <section className="fashionEnding">
-    <div className="fashionInterludeText">
-      {book.ending.text.map((paragraph, index) => (
-        <p key={index}>
-          {paragraph}
-        </p>
-      ))}
-    </div>
-
-    {book.ending.coreMessage && (
-      <div className={`fashionInterludeCore ${zenOldMincho.className}`}>
-        {book.ending.coreMessage.map((line, lineIndex) => (
-          <div key={lineIndex}>{line}</div>
-        ))}
-      </div>
-    )}
-  </section>
-)}
+      
       <style>{`
         .magazinePage {
           width: 100%;
