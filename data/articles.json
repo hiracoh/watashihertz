@@ -22,6 +22,17 @@
     "featured": true
   },
   {
+    "id": "article-028",
+    "title": "自然と人間",
+    "summary": "自然は我々に何を見せているのか",
+    "tags": [ "人間・人生とは"],
+    "charCount": 9500,
+    "url": "https://note.com/hiracoh/n/n10d9b72e25e1",
+    "thumb": "https://assets.st-note.com/production/uploads/images/332458711/rectangle_large_type_2_eeeaafa19ac3d70d5bef2630ac6bb7d6.jpeg?width=1200",
+    "type": "article",
+    "planRequired": 7
+  },
+  {
     "id": "article-027",
     "title": "承認欲求ノ解体新書",
     "summary": "承認欲求を非難する日を終わらせたい",
