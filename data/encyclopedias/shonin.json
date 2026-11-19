@@ -64,18 +64,19 @@
   "text": [
     "最後に、一見すると正反対の行動でも、同じ承認欲求・動機で動いているものを紹介。"
   ],
-  
 "design": {
-  "titleSize": 32,
-  "textSize": 16,
+  "titleFontFamily": "yuji",
+  "titleSize": 42,
+  "textSize": 18,
   "textAlign": "center",
   "borderTop": false,
   "borderBottom": false,
   "marginTop": 180,
   "marginBottom": 60,
   "mobile": {
-    "titleSize": 24,
-    "textSize": 14,
+    "titleFontFamily": "yuji",
+    "titleSize": 30,
+    "textSize": 16,
     "marginTop": 140,
     "marginBottom": 50
   }
