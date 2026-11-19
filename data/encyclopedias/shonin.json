@@ -64,21 +64,23 @@
   "text": [
     "最後に、一見すると正反対の行動でも、同じ承認欲求・動機で動いているものを紹介。"
   ],
-  "design": {
+  
+"design": {
+  "titleSize": 32,
+  "textSize": 16,
+  "textAlign": "center",
+  "borderTop": false,
+  "borderBottom": false,
+  "marginTop": 180,
+  "marginBottom": 60,
+  "mobile": {
     "titleSize": 24,
-    "textSize": 16,
-    "textAlign": "center",
-    "borderTop": false,
-    "borderBottom": false,
-    "marginTop": 60,
-    "marginBottom": 60,
-    "mobile": {
-      "titleSize": 20,
-      "textSize": 14,
-      "marginTop": 50,
-      "marginBottom": 50
-    }
+    "textSize": 14,
+    "marginTop": 140,
+    "marginBottom": 50
   }
+}
+
 }
 ],
 
