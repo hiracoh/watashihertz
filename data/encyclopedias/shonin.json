@@ -54,15 +54,25 @@
         "lineHeight": 1.85
       }
     }
+  },
+  {
+    "id": "shonin-comparisons-intro",
+    "before": "comparisons",
+    "type": "text",
+    "title": "逆に見えるが同じ根っこ",
+    "text": [
+      "一見すると正反対の行動でも、同じ承認欲求・動機で動いていたりする。"
+    ]
   }
 ],
 
-  "comparisons": [
+"comparisons": [
+
   {
     "number": "其の一",
     "leftImage": "/encyclopedias/shonin/shonin_left01.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right01.webp",
-    "description": "「自分の価値を確認する」という共通の動機（目的）で、自慢や自虐という一見逆の手段をとる。"
+    "description": "「自分の価値を確認する」という共通の動機（目的）で、自慢や自虐という手段をとる。"
   },
     {
     "number": "其の二",
@@ -74,7 +84,7 @@
     "number": "其の三",
     "leftImage": "/encyclopedias/shonin/shonin_left03.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right03.webp",
-    "description": "従おうが背こうが「他人からの期待や注目という呪縛」に縛られており、存在を自他に向けて叫んでいる。"
+    "description": "従おうが背こうが「他人の期待や注目という呪縛」に縛られており、存在を自他に向けて叫んでいる。"
   },
     {
     "number": "其の四",
@@ -310,103 +320,104 @@
         "title": "自立の喪失感",
         "description": "”親の役割”を通して自己価値を保っている場合、子離れができず喪失感に襲われる。",
         "image": "/encyclopedias/shonin/shonin26.webp"
-      },
-      {
-        "id": "shonin-027",
-        "number": "27",
-        "category": "分かりづらい",
-        "title": "権威への反発",
-        "description": "ネガティブな形でも自分に注目が向くことで、自分の存在を確認・周知している。",
-        "image": "/encyclopedias/shonin/shonin27.webp"
-      },
-      {
-        "id": "shonin-028",
-        "number": "28",
-        "category": "分かりづらい",
-        "title": "自分はここだ！",
-        "description": "大きな音（エンジン・音楽・物音）を通して、自分の存在を確認・周知している。",
-        "image": "/encyclopedias/shonin/shonin28.webp"
-      },
-      {
-        "id": "shonin-029",
-        "number": "29",
-        "category": "分かりづらい",
-        "title": "裏アカウント",
-        "description": "この世界に自分という人間が存在していることをひっそりと自他に周知している。",
-        "image": "/encyclopedias/shonin/shonin29.webp"
-      },
-      {
-        "id": "shonin-030",
-        "number": "30",
-        "category": "分かりづらい",
-        "title": "自虐アタック",
-        "description": "過度な自虐や謙遜によって相手からの否定を誘うことで自己価値を確認する。",
-        "image": "/encyclopedias/shonin/shonin30.webp"
-      },
-      {
-        "id": "shonin-031",
-        "number": "31",
-        "category": "分かりづらい",
-        "title": "盛り上げ役",
-        "description": "自虐キャラや盛り上げ役に徹することで、無理してでも自己価値を維持しようとする。",
-        "image": "/encyclopedias/shonin/shonin31.webp"
-      },
-      {
-        "id": "shonin-032",
-        "number": "32",
-        "category": "分かりづらい",
-        "title": "我欲の善行",
-        "description": "承認という見返りを期待して善行（挨拶・席を譲る）をすると、期待外れに腹が立つ。",
-        "image": "/encyclopedias/shonin/shonin32.webp"
-      },
-      {
-        "id": "shonin-033",
-        "number": "33",
-        "category": "分かりづらい",
-        "title": "マウント用意",
-        "description": "悩みを聞き出したり解決策を提示することで、自己価値をアピールできる展開に持ち込む。",
-        "image": "/encyclopedias/shonin/shonin33.webp"
-      },
-      {
-        "id": "shonin-034",
-        "number": "34",
-        "category": "分かりづらい",
-        "title": "少数という誇り",
-        "description": "自身ではなく「少数である」というブランドによって自分の存在や価値を認識している。",
-        "image": "/encyclopedias/shonin/shonin34.webp"
-      },
-      {
-        "id": "shonin-035",
-        "number": "35",
-        "category": "SNS",
-        "title": "煽り投稿",
-        "description": "わざとクソコメをし、集まる批判という影響を通して自分の存在を確認・拡散する。",
-        "image": "/encyclopedias/shonin/shonin35.webp"
-      },
-      {
-        "id": "shonin-036",
-        "number": "36",
-        "category": "SNS",
-        "title": "生きた証",
-        "description": "美しい日常や思い出を投稿することで、自分という存在を自身や他者に示す。",
-        "image": "/encyclopedias/shonin/shonin36.webp"
-      },
-      {
-        "id": "shonin-037",
-        "number": "37",
-        "category": "SNS",
-        "title": "一喜一憂乱高下",
-        "description": "閲覧数に加え、誰がいいねしてるしてないかまで気になる。自己価値を小刻みに確認。",
-        "image": "/encyclopedias/shonin/shonin37.webp"
-      },
-      {
-        "id": "shonin-038",
-        "number": "38",
-        "category": "SNS",
-        "title": "とにかくバズ",
-        "description": "投稿したいものというよりバズるための投稿をする。徐々に承認欲求に犯されている。",
-        "image": "/encyclopedias/shonin/shonin38.webp"
       }
-      
-          ]
-  }
+,
+{
+  "id": "shonin-035",
+  "number": "27",
+  "category": "SNS",
+  "title": "煽り投稿",
+  "description": "わざとクソコメをし、集まる批判という影響を通して自分の存在を確認・拡散する。",
+  "image": "/encyclopedias/shonin/shonin35.webp"
+},
+{
+  "id": "shonin-036",
+  "number": "28",
+  "category": "SNS",
+  "title": "生きた証",
+  "description": "美しい日常や思い出を投稿することで、自分という存在を自身や他者に示す。",
+  "image": "/encyclopedias/shonin/shonin36.webp"
+},
+{
+  "id": "shonin-037",
+  "number": "29",
+  "category": "SNS",
+  "title": "一喜一憂乱高下",
+  "description": "閲覧数に加え、誰がいいねしてるしてないかまで気になる。自己価値を小刻みに確認。",
+  "image": "/encyclopedias/shonin/shonin37.webp"
+},
+{
+  "id": "shonin-038",
+  "number": "30",
+  "category": "SNS",
+  "title": "とにかくバズ",
+  "description": "投稿したいものというよりバズるための投稿をする。徐々に承認欲求に犯されている。",
+  "image": "/encyclopedias/shonin/shonin38.webp"
+},
+{
+  "id": "shonin-027",
+  "number": "31",
+  "category": "一見そうは見えない",
+  "title": "権威への反発",
+  "description": "ネガティブな形でも自分に注目が向くことで、自分の存在を確認・周知している。",
+  "image": "/encyclopedias/shonin/shonin27.webp"
+},
+{
+  "id": "shonin-028",
+  "number": "32",
+  "category": "一見そうは見えない",
+  "title": "自分はここだ！",
+  "description": "大きな音（エンジン・音楽・物音）を通して、自分の存在を確認・周知している。",
+  "image": "/encyclopedias/shonin/shonin28.webp"
+},
+{
+  "id": "shonin-029",
+  "number": "33",
+  "category": "一見そうは見えない",
+  "title": "裏アカウント",
+  "description": "この世界に自分という人間が存在していることをひっそりと自他に周知している。",
+  "image": "/encyclopedias/shonin/shonin29.webp"
+},
+{
+  "id": "shonin-030",
+  "number": "34",
+  "category": "一見そうは見えない",
+  "title": "自虐アタック",
+  "description": "過度な自虐や謙遜によって相手からの否定を誘うことで自己価値を確認する。",
+  "image": "/encyclopedias/shonin/shonin30.webp"
+},
+{
+  "id": "shonin-031",
+  "number": "35",
+  "category": "一見そうは見えない",
+  "title": "盛り上げ役",
+  "description": "自虐キャラや盛り上げ役に徹することで、無理してでも自己価値を維持しようとする。",
+  "image": "/encyclopedias/shonin/shonin31.webp"
+},
+{
+  "id": "shonin-032",
+  "number": "36",
+  "category": "一見そうは見えない",
+  "title": "我欲の善行",
+  "description": "承認という見返りを期待して善行（挨拶・席を譲る）をすると、期待外れに腹が立つ。",
+  "image": "/encyclopedias/shonin/shonin32.webp"
+},
+{
+  "id": "shonin-033",
+  "number": "37",
+  "category": "一見そうは見えない",
+  "title": "マウント用意",
+  "description": "悩みを聞き出したり解決策を提示することで、自己価値をアピールできる展開に持ち込む。",
+  "image": "/encyclopedias/shonin/shonin33.webp"
+},
+{
+  "id": "shonin-034",
+  "number": "38",
+  "category": "一見そうは見えない",
+  "title": "少数という誇り",
+  "description": "自身ではなく「少数である」というブランドによって自分の存在や価値を認識している。",
+  "image": "/encyclopedias/shonin/shonin34.webp"
+}
+
+]
+}
