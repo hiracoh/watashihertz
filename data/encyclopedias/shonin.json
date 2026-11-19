@@ -62,7 +62,7 @@
   "type": "text",
   "title": "逆に見えるが同じ根っこ",
   "text": [
-    "最後に、一見すると正反対の行動でも、同じ承認欲求・動機で動いているものを紹介。"
+    "最後に、一見すると正反対の行動でも、同じ承認欲求・動機で動いているもの。"
   ],
 "design": {
   "titleFontFamily": "yuji",
@@ -98,37 +98,37 @@
     "number": "其の二",
     "leftImage": "/encyclopedias/shonin/shonin_left02.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right02.webp",
-    "description": "自分の価値を損なわないために、尽くす人（左女性）もいれば支配する人（右男性）もいる。"
+    "description": "自分の価値を損なわないため、尽くす人（左女性）もいれば支配する人（右男性）もいる。"
   },
     {
     "number": "其の三",
     "leftImage": "/encyclopedias/shonin/shonin_left03.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right03.webp",
-    "description": "従おうが背こうが「他人の期待や注目という呪縛」に縛られており、存在を自他に向けて叫んでいる。"
+    "description": "両者とも「他人の期待や注目という呪縛」に縛られており、存在を自他に対し叫んでいる。"
   },
     {
     "number": "其の四",
     "leftImage": "/encyclopedias/shonin/shonin_left04.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right04.webp",
-    "description": "自分という存在を受け入れて欲しいとの願いから、晒そうとする人も合わせようとする人もいる。"
+    "description": "自分という存在を受け入れて欲しいとの願いから、晒す人もいれば合わせる人もいる。"
   },
     {
     "number": "其の五",
     "leftImage": "/encyclopedias/shonin/shonin_left05.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right05.webp",
-    "description": "はなから褒める・貶すつもりでいる場合、それは自己価値を保つための行動だったりする。"
+    "description": "はなから褒める・貶すつもりならば、それは自己価値を保つための行動だったりする。"
   },
     {
     "number": "其の六",
     "leftImage": "/encyclopedias/shonin/shonin_left06.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right06.webp",
-    "description": "本心ではなく「あえて」そうしているなら、同調も孤立も自他への価値アピールに他ならない。"
+    "description": "本心ではなく“あえて”そうしているなら、同調も孤立も自他へのアピールに他ならない。"
   },
     {
     "number": "其の七",
     "leftImage": "/encyclopedias/shonin/shonin_left07.webp",
     "rightImage": "/encyclopedias/shonin/shonin_right07.webp",
-    "description": "承認への肯定も否定も「〇〇という自分を認めて」と同じ声が響いていることが少なくない。"
+    "description": "承認へのお願いも拒絶も「そんな自分を認めて」と同じ声が響いていることが少なくない。"
   }
     
 ],
