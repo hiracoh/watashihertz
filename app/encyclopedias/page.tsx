@@ -47,7 +47,7 @@ export default function EncyclopediasPage() {
             marginBottom: 0,
             fontSize: 14,
             lineHeight: 1.8,
-            color: '#666',
+            color: 'var(--muted)',
           }}
         >
           人間に現れるさまざまな姿を、ひとつの視点から眺めます。
