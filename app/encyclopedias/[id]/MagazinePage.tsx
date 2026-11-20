@@ -11,5 +11,7 @@ export default function MagazinePage({
     return <FashionMagazine book={book} />;
   }
 
-  return null;
+  throw new Error(
+    `未対応の雑誌レイアウトです: ${book.layout ?? '未指定'}（図鑑ID: ${book.id}）。layout には "fashion-magazine" を指定してください。`
+  );
 }
