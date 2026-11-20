@@ -16,21 +16,21 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body className={zenMaru.className}>
         <header style={{
-          padding:'1rem 1.25rem', borderBottom:'1px solid #e6e2d9',
+          padding:'1rem 1.25rem', borderBottom:'1px solid var(--line)',
           background:'var(--ivory)', position:'sticky', top:0
         }}>
           <nav style={{ display:'flex', gap:'1rem', alignItems:'center' }}>
-            <a href="/" style={{ fontWeight:700, textDecoration:'none', color:'#222' }}>ワタシヘルツ</a>
+            <a href="/" style={{ fontWeight:700, textDecoration:'none', color:'var(--ink)' }}>ワタシヘルツ</a>
             <div style={{ display:'flex', gap:'0.75rem' }}>
               <a href="/plans" style={{ textDecoration:'none', color:'#444' }}>プラン</a>
               <a href="/content" style={{ textDecoration:'none', color:'#444' }}>コンテンツ</a>
             </div>
           </nav>
         </header>
-        <main style={{ padding:'2rem 1.25rem', maxWidth:960, margin:'0 auto' }}>
+        <main style={{ padding:'var(--page-padding-y) var(--page-padding-x)', maxWidth:'var(--page-max-width)', margin:'0 auto' }}>
           {children}
         </main>
-        <footer style={{ padding:'2rem 1.25rem', borderTop:'1px solid #e6e2d9', color:'#666' }}>
+        <footer style={{ padding:'var(--page-padding-y) var(--page-padding-x)', borderTop:'1px solid var(--line)', color:'var(--muted)' }}>
           © {new Date().getFullYear()} ワタシヘルツ
         </footer>
       </body>
