@@ -11,17 +11,6 @@
     "featured": true
   },
   {
-    "id": "2025-10-03-guide2",
-    "title": "心の準備",
-    "url": "/guide/second",
-    "thumb": "/map.jpg",
-    "tags": [],
-    "summary": "こちらの場所に向いている人について",
-    "planRequired": 0, 
-    "type": "article",
-    "featured": true
-  },
-  {
     "id": "article-028",
     "title": "自然と人間",
     "summary": "自然は我々に何を見せているのか",
