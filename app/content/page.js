@@ -69,8 +69,8 @@ style={{
                 padding: '0.4rem 0.75rem',
                 borderRadius: 999,
                 border: active ? '1px solid #222' : '1px solid #ddd',
-                background: active ? '#fff' : '#F6F1E9',
-                color: '#222',
+                background: active ? 'var(--card)' : 'var(--ivory)',
+                color: 'var(--ink)',
               }}
             >
               {t.label}
@@ -83,7 +83,7 @@ style={{
       {tab === 'articles' && (
         <div>
           <h2 style={{ marginTop: 0 }}>記事</h2>
-          <p style={{ color: '#666' }}>
+          <p style={{ color: 'var(--muted)' }}>
             テーマ別に整理した記事の一覧です（クリックで note に移動）。
           </p>
 
@@ -98,7 +98,7 @@ style={{
             />
             <button
               type="submit"
-              style={{ padding: '0.55rem 0.9rem', borderRadius: 10, border: '1px solid #222', background: '#fff' }}
+              style={{ padding: '0.55rem 0.9rem', borderRadius: 10, border: '1px solid #222', background: 'var(--card)' }}
             >
               検索
             </button>
@@ -114,8 +114,8 @@ style={{
                 borderRadius: 999,
                 border: '1px solid #ddd',
                 textDecoration: 'none',
-                color: tag ? '#222' : '#fff',
-                background: tag ? '#fff' : '#222',
+                color: tag ? 'var(--ink)' : 'var(--card)',
+                background: tag ? 'var(--card)' : 'var(--ink)',
               }}
             >
               すべて
@@ -130,8 +130,8 @@ style={{
                   borderRadius: 999,
                   border: '1px solid #ddd',
                   textDecoration: 'none',
-                  background: tag === t ? '#222' : '#fff',
-                  color: tag === t ? '#fff' : '#222',
+                  background: tag === t ? 'var(--ink)' : 'var(--card)',
+                  color: tag === t ? 'var(--card)' : 'var(--ink)',
                 }}
               >
                 {t}
@@ -140,7 +140,7 @@ style={{
           </div>
 
           {/* ③ 件数 */}
-          <div style={{ color: '#777', fontSize: 13, margin: '0.25rem 0 0.75rem' }}>
+          <div style={{ color: 'var(--text-subtle)', fontSize: 13, margin: '0.25rem 0 0.75rem' }}>
             {articles.length} 件
             {tag ? `（タグ: ${tag}）` : ''}
             {q ? `（検索: ${q}）` : ''}
@@ -158,7 +158,7 @@ style={{
             {articles.map(a => (
               <article
                 key={a.link}
-                style={{ background: '#fff', border: '1px solid #eee', borderRadius: 12, overflow: 'hidden' }}
+                style={{ background: 'var(--card)', border: '1px solid #eee', borderRadius: 12, overflow: 'hidden' }}
               >
                 {/* ▼ サムネ */}
                 <div
@@ -192,7 +192,7 @@ style={{
                         width: '100%',
                         background:
                           'linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.0) 90%)',
-                        color: '#fff',
+                        color: 'var(--button-text)',
                         padding: '0.4rem 0.8rem',
                         fontSize: 13,
                         fontWeight: 500,
@@ -218,7 +218,7 @@ style={{
                       href={a.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ textDecoration: 'none', color: '#222' }}
+                      style={{ textDecoration: 'none', color: 'var(--ink)' }}
                     >
                       {a.title}
                     </a>
@@ -226,7 +226,7 @@ style={{
 
                   <div
                     style={{
-                      color: '#777',
+                      color: 'var(--text-subtle)',
                       fontSize: 12,
                       margin: '0 0 0.5rem',
                       display: 'flex',
@@ -241,7 +241,7 @@ style={{
                   </div>
 
                   {a.summary && (
-                    <p style={{ color: '#555', margin: '0 0 0.75rem' }}>
+                    <p style={{ color: 'var(--text-secondary)', margin: '0 0 0.75rem' }}>
                       {a.summary}
                     </p>
                   )}
@@ -254,8 +254,8 @@ style={{
                       display: 'inline-block',
                       padding: '0.4rem 0.8rem',
                       borderRadius: 8,
-                      background: '#222',
-                      color: '#fff',
+                      background: 'var(--button-bg)',
+                      color: 'var(--button-text)',
                       fontSize: 14,
                       textDecoration: 'none',
                     }}
@@ -267,7 +267,7 @@ style={{
             ))}
           </div>
 
-          <p style={{ color: '#777', fontSize: 13, marginTop: '0.75rem' }}>
+          <p style={{ color: 'var(--text-subtle)', fontSize: 13, marginTop: '0.75rem' }}>
             すべての記事：{' '}
             <a
               href="https://note.com/hiracoh"
@@ -284,7 +284,7 @@ style={{
       {tab === 'audio' && (
         <div>
           <h2>音声</h2>
-          <p style={{ color: '#666' }}>ここに音声（ポッドキャスト等）を並べます。</p>
+          <p style={{ color: 'var(--muted)' }}>ここに音声（ポッドキャスト等）を並べます。</p>
           <audio controls src="" style={{ width: '100%' }} />
         </div>
       )}
@@ -303,10 +303,10 @@ style={{
             {[1, 2, 3].map(i => (
               <div
                 key={i}
-                style={{ background: '#fff', border: '1px solid #eee', borderRadius: 12, padding: '0.9rem' }}
+                style={{ background: 'var(--card)', border: '1px solid #eee', borderRadius: 12, padding: '0.9rem' }}
               >
                 <div style={{ fontWeight: 600 }}>カード {i}</div>
-                <div style={{ color: '#666', marginTop: '0.25rem' }}>
+                <div style={{ color: 'var(--muted)', marginTop: '0.25rem' }}>
                   “違っても同じでも自分は自分”
                 </div>
               </div>
