@@ -29,7 +29,7 @@ body {
 
 /* ユーティリティ（必要に応じて使う） */
 .container { max-width: var(--page-max-width); margin: 0 auto; padding: var(--page-padding-y) var(--page-padding-x); }
-.card { background: var(--card); border: 1px solid #eee; border-radius: var(--radius); padding: 1rem; }
+.card { background: var(--card); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 1rem; }
 
 /* 通常ページで共有するボタン。個別の形状が必要なものは別指定のまま残す */
 .button-primary, .button-outline {
