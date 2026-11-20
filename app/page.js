@@ -1,24 +1,5 @@
 import articles from "../data/articles.json"; // 相対パスで安全（Imageは使わないのでimport不要）
 
-// ボタンスタイル
-const btnPrimary = {
-  display: "inline-block",
-  padding: "0.6rem 1rem",
-  borderRadius: 12,
-  background: "#222",
-  color: "#fff",
-  textDecoration: "none",
-};
-const btnGhost = {
-  display: "inline-block",
-  padding: "0.6rem 1rem",
-  borderRadius: 12,
-  border: "1px solid #222",
-  textDecoration: "none",
-  color: "#222",
-  background: "#fff",
-};
-
 // ガイド用の最小カード
 function ArticleCardInline({ a }) {
   return (
@@ -100,7 +81,7 @@ function ArticleCardInline({ a }) {
                 borderRadius: 12,
                 fontSize: 14,
                 textDecoration: "none",
-                color: "#222",
+                color: "var(--ink)",
               }}
             >
               記事を読む
@@ -182,7 +163,7 @@ const featured = Array.isArray(articles)
           <p
             style={{
               margin: "0 0 2rem",
-              color: "#555",
+              color: "var(--text-secondary)",
               whiteSpace: "pre-line",
               fontWeight: 400,
               lineHeight: 1.7,
@@ -200,10 +181,10 @@ const featured = Array.isArray(articles)
               justifyContent: "center",
             }}
           >
-            <a href="/plans" style={btnPrimary}>
+            <a href="/plans" className="button-primary">
               プランを見る
             </a>
-            <a href="/content" style={btnGhost}>
+            <a href="/content" className="button-outline">
               コンテンツへ
             </a>
           </div>
