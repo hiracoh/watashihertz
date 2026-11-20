@@ -2,12 +2,12 @@ export default function Plans() {
   return (
     <section>
       <h1 style={{ fontSize:'1.5rem', marginTop:0 }}>プラン</h1>
-      <p style={{ color:'#555' }}>お好きな関わり方で地図を描いてください。</p>
+      <p style={{ color:'var(--text-secondary)' }}>お好きな関わり方で地図を描いてください。</p>
 
-   <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
+   <div style={{ background:'var(--card)', border:'1px solid var(--border-soft)', borderRadius:'var(--button-radius)', padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>こんにちは</h2>
   <p>運営者と<strong>ご挨拶を</strong>交わすプラン</p>
-  <p style={{ margin:'0.25rem 0', color:'#666' }}>無料</p>
+  <p style={{ margin:'0.25rem 0', color:'var(--muted)' }}>無料</p>
 
   <div style={{
     display:'inline-block',
@@ -28,13 +28,13 @@ export default function Plans() {
   </ul>
 
 </div>
-      <p style={{ color:'#555' }}>運営者を応援してくださる方はこちら。</p>
+      <p style={{ color:'var(--text-secondary)' }}>運営者を応援してくださる方はこちら。</p>
 
       
-      <div style={{ background:'#fff', border:'1px solid #eee', borderRadius:12, padding:'1rem' }}>
+      <div style={{ background:'var(--card)', border:'1px solid var(--border-soft)', borderRadius:'var(--button-radius)', padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>とりあえず一杯</h2>
   <p>運営者に<strong>「まあ一杯どうぞ」</strong>とするプラン</p>
-  <p style={{ margin:'0.25rem 0', color:'#666' }}>¥700 / 月</p>
+  <p style={{ margin:'0.25rem 0', color:'var(--muted)' }}>¥700 / 月</p>
 
   <div style={{
     display:'inline-block',
@@ -56,17 +56,17 @@ export default function Plans() {
 
   <a href="#" style={{
     display:'inline-block', marginTop:'0.75rem', padding:'0.5rem 0.9rem',
-    borderRadius:8, background:'#222', color:'#fff', textDecoration:'none'
+    borderRadius:8, background:'var(--button-bg)', color:'var(--button-text)', textDecoration:'none'
   }}>
     このプランにする
   </a>
 </div>
 
 
-        <div style={{ background:'#fff', border:'2px solid #222', borderRadius:12, padding:'1rem' }}>
+        <div style={{ background:'var(--card)', border:'2px solid #222', borderRadius:'var(--button-radius)', padding:'1rem' }}>
   <h2 style={{ marginTop:0 }}>チキン南蛮定食</h2>
   <p>運営者に<strong>「これでご飯でも」</strong>とするプラン</p>
-  <p style={{ margin:'0.25rem 0', color:'#666' }}>¥1,200 / 月</p>
+  <p style={{ margin:'0.25rem 0', color:'var(--muted)' }}>¥1,200 / 月</p>
 
   <div style={{
     display:'inline-block',
@@ -88,13 +88,13 @@ export default function Plans() {
 
   <a href="#" style={{
     display:'inline-block', marginTop:'0.75rem', padding:'0.5rem 0.9rem',
-    borderRadius:8, background:'#222', color:'#fff', textDecoration:'none'
+    borderRadius:8, background:'var(--button-bg)', color:'var(--button-text)', textDecoration:'none'
   }}>
     このプランにする
   </a>
 </div>
 
-      <p style={{ marginTop:'1rem', color:'#777', fontSize:14 }}>
+      <p style={{ marginTop:'1rem', color:'var(--text-subtle)', fontSize:14 }}>
         ※ 決済は後でMemberful/Stripe連携に差し替え可能です。
       </p>
     </section>
