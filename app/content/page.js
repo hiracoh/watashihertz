@@ -98,7 +98,7 @@ style={{
             />
             <button
               type="submit"
-              style={{ padding: '0.55rem 0.9rem', borderRadius: 10, border: '1px solid #222', background: 'var(--card)' }}
+              style={{ padding: '0.55rem 0.9rem', borderRadius: 10, border: '1px solid var(--button-outline)', background: 'var(--card)' }}
             >
               検索
             </button>
@@ -158,7 +158,7 @@ style={{
             {articles.map(a => (
               <article
                 key={a.link}
-                style={{ background: 'var(--card)', border: '1px solid #eee', borderRadius: 12, overflow: 'hidden' }}
+                style={{ background: 'var(--card)', border: '1px solid var(--border-soft)', borderRadius: 12, overflow: 'hidden' }}
               >
                 {/* ▼ サムネ */}
                 <div
@@ -303,7 +303,7 @@ style={{
             {[1, 2, 3].map(i => (
               <div
                 key={i}
-                style={{ background: 'var(--card)', border: '1px solid #eee', borderRadius: 12, padding: '0.9rem' }}
+                style={{ background: 'var(--card)', border: '1px solid var(--border-soft)', borderRadius: 12, padding: '0.9rem' }}
               >
                 <div style={{ fontWeight: 600 }}>カード {i}</div>
                 <div style={{ color: 'var(--muted)', marginTop: '0.25rem' }}>
