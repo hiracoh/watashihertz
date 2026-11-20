@@ -12,7 +12,7 @@ const zenOldMincho = Zen_Old_Mincho({
   preload: false,
 });
 
-const DEBUG_POINTS = true;
+const DEBUG_POINTS = false;
 
 export type MagazineBook = {
   id: string;
