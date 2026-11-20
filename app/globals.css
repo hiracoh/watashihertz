@@ -6,6 +6,18 @@
   --line: #e6e2d9;
   --card: #fff;
   --radius: 14px;
+  /* 共通デザイン：既存の表示色・寸法を維持 */
+  --text-secondary: #555;
+  --text-subtle: #777;
+  --border-soft: #eee;
+  --button-bg: #222;
+  --button-text: #fff;
+  --button-outline: #222;
+  --button-radius: 12px;
+  --button-padding: 0.6rem 1rem;
+  --page-max-width: 960px;
+  --page-padding-x: 1.25rem;
+  --page-padding-y: 2rem;
 }
 
 * { box-sizing: border-box; }
@@ -16,5 +28,15 @@ body {
 }
 
 /* ユーティリティ（必要に応じて使う） */
-.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem; }
+.container { max-width: var(--page-max-width); margin: 0 auto; padding: var(--page-padding-y) var(--page-padding-x); }
 .card { background: var(--card); border: 1px solid #eee; border-radius: var(--radius); padding: 1rem; }
+
+/* 通常ページで共有するボタン。個別の形状が必要なものは別指定のまま残す */
+.button-primary, .button-outline {
+  display: inline-block;
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  text-decoration: none;
+}
+.button-primary { background: var(--button-bg); color: var(--button-text); }
+.button-outline { border: 1px solid var(--button-outline); color: var(--ink); background: var(--card); }
