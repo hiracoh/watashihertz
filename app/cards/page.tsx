@@ -31,7 +31,7 @@ export default function CardsPage() {
           placeholder="タグ・メッセージで検索"
           style={{
             width: '100%',
-            border: '1px solid #ccc',
+            border: '1px solid var(--line)',
             borderRadius: 8,
             padding: '10px 12px',
             fontSize: 14,
