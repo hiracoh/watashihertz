@@ -258,7 +258,7 @@
         "number": "16",
         "category": "恋愛",
         "title": "好かれて満足",
-        "description": "相手からの好意が確定すると満足する。誰かの特別になることで価値を確認。",
+        "description": "相手からの好意が確定すると満足する。誰かの特別になることによって価値を確認。",
         "image": "/encyclopedias/shonin/shonin16.webp"
       },
       {
@@ -282,7 +282,7 @@
         "number": "19",
         "category": "仕事",
         "title": "サラり自慢",
-        "description": "価値が承認された実績を会話の中にさらりとねじ込む。",
+        "description": "自己価値が証明された過去を会話の中にさらりとねじ込む。",
         "image": "/encyclopedias/shonin/shonin19.webp"
       },
       {
@@ -322,7 +322,7 @@
         "number": "24",
         "category": "子ども・子育て",
         "title": "存在の否定",
-        "description": "不合格（受験・レギュラー・その他）は自分の“存在”が否定されたようでひどく落ち込む。",
+        "description": "不合格（受験・レギュラー争いなど）は自分の“存在”が否定されたようでひどく落ち込む。",
         "image": "/encyclopedias/shonin/shonin24.webp"
       },
       {
@@ -337,8 +337,8 @@
         "id": "shonin-026",
         "number": "26",
         "category": "子ども・子育て",
-        "title": "自立の喪失感",
-        "description": "”親の役割”を通して自己価値を保っている場合、子離れができず喪失感に襲われる。",
+        "title": "子離れ喪失感",
+        "description": "”親という役割”を通し自己価値を保っている場合、子離れができず喪失感に襲われる。",
         "image": "/encyclopedias/shonin/shonin26.webp"
       }
 ,
@@ -347,7 +347,7 @@
   "number": "27",
   "category": "SNS",
   "title": "煽り投稿",
-  "description": "わざとクソコメをし、集まる批判という影響を通して自分の存在を確認・拡散する。",
+  "description": "わざとクソコメをし、集まる批判という影響を通して自分の存在を確かめる。",
   "image": "/encyclopedias/shonin/shonin35.webp"
 },
 {
