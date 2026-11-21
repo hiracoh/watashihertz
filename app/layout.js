@@ -1,4 +1,5 @@
 import './globals.css';
+import ContentDropdown from '../components/ContentDropdown';
 import { Zen_Maru_Gothic } from 'next/font/google';
 
 const zenMaru = Zen_Maru_Gothic({ subsets: ['latin'], weight: ['400','500','700'] });
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
             <a href="/" style={{ fontWeight:700, textDecoration:'none', color:'var(--ink)' }}>ワタシヘルツ</a>
             <div style={{ display:'flex', gap:'0.75rem' }}>
               <a href="/plans" style={{ textDecoration:'none', color:'#444' }}>プラン</a>
-              <a href="/content" style={{ textDecoration:'none', color:'#444' }}>コンテンツ</a>
+              <ContentDropdown />
             </div>
           </nav>
         </header>
