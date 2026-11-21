@@ -1,6 +1,6 @@
 function GuideHeading({ image, children }) {
   return (
-    <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", margin: "2rem 0 0.75rem" }}>
+    <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", margin: "3.5rem 0 0.75rem" }}>
       <img src={image} alt="" width={800} height={800} loading="lazy" decoding="async"
         style={{ display: "block", width: "clamp(56px, 12vw, 84px)", height: "auto", aspectRatio: "1 / 1", objectFit: "contain", flexShrink: 0 }}
       />
