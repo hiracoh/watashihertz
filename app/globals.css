@@ -82,6 +82,8 @@ body {
   height: auto;
   object-fit: contain;
   margin: 0 1%;
+  /* ラベルを含む行の中心ではなく、人物イラストの中心に寄せる */
+  transform: translateY(-0.9rem);
 }
 @media (max-width: 600px) {
   .home-steps {
@@ -95,6 +97,7 @@ body {
     flex-basis: 5%;
     width: 5%;
     margin: 0 0.5%;
+    transform: translateY(-0.7rem);
   }
   .home-steps-label {
     font-size: clamp(0.75rem, 3.5vw, 1.25rem);
