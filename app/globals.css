@@ -107,3 +107,50 @@ body {
     letter-spacing: 0;
   }
 }
+
+
+/* 全ページ共通：コンテンツのドロップダウン */
+.content-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.content-dropdown-trigger {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #444;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.content-dropdown-chevron {
+  font-size: 1rem;
+  line-height: 1;
+}
+.content-dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 9rem;
+  padding: 0.45rem 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  z-index: 1;
+}
+.content-dropdown-list a {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.content-dropdown-list a:hover,
+.content-dropdown-list a:focus-visible {
+  background: var(--ivory);
+}
