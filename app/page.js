@@ -173,6 +173,25 @@ const featured = Array.isArray(articles)
 気になる情報に触れて、少し座って自分に問い、たゆたう次を描く場所。`}
           </p>
 
+          {/* 3つのステップ：画像・文字・矢印を独立させ、画面幅に合わせて調整 */}
+          <div className="home-steps" aria-label="探す、知る、自分事する">
+            {[
+              { image: "/sagasu.webp", label: "探す" },
+              { image: "/shiru.webp", label: "知る" },
+              { image: "/jibungoto.webp", label: "自分事する" },
+            ].map((step, index) => (
+              <div className="home-steps-part" key={step.label}>
+                {index > 0 && (
+                  <img className="home-steps-arrow" src="/arrow.webp" alt="" aria-hidden="true" />
+                )}
+                <div className="home-steps-item">
+                  <img className="home-steps-image" src={step.image} alt="" />
+                  <span className="home-steps-label">{step.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div
             style={{
               display: "flex",
