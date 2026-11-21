@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={zenMaru.className}>
         <header style={{
           padding:'1rem 1.25rem', borderBottom:'1px solid var(--line)',
-          background:'var(--ivory)', position:'sticky', top:0
+          background:'var(--ivory)', position:'sticky', top:0, zIndex:1000
         }}>
           <nav style={{ display:'flex', gap:'1rem', alignItems:'center' }}>
             <a href="/" style={{ fontWeight:700, textDecoration:'none', color:'var(--ink)' }}>ワタシヘルツ</a>
