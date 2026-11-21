@@ -40,3 +40,64 @@ body {
 }
 .button-primary { background: var(--button-bg); color: var(--button-text); }
 .button-outline { border: 1px solid var(--button-outline); color: var(--ink); background: var(--card); }
+
+
+/* ホーム：3つのステップ（PC・スマホ共通で横並び） */
+.home-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 2rem;
+}
+.home-steps-part {
+  display: contents;
+}
+.home-steps-item {
+  flex: 0 1 27%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.home-steps-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+.home-steps-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.home-steps-arrow {
+  display: block;
+  flex: 0 0 7%;
+  width: 7%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 1%;
+}
+@media (max-width: 600px) {
+  .home-steps {
+    margin-bottom: 1.5rem;
+  }
+  .home-steps-item {
+    flex-basis: 29%;
+    gap: 0.25rem;
+  }
+  .home-steps-arrow {
+    flex-basis: 5%;
+    width: 5%;
+    margin: 0 0.5%;
+  }
+  .home-steps-label {
+    font-size: clamp(0.75rem, 3.5vw, 1.25rem);
+    letter-spacing: 0;
+  }
+}
