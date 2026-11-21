@@ -31,8 +31,8 @@ export default function ContentDropdown() {
       {open && (
         <div className="content-dropdown-list" id="content-dropdown-links">
           <a href="/content">記事</a>
-          <a href="/cards">カード</a>
           <a href="/encyclopedias">図鑑</a>
+          <a href="/cards">カード</a>
         </div>
       )}
     </div>
