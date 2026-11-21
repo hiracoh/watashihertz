@@ -1,3 +1,14 @@
+function GuideHeading({ image, children }) {
+  return (
+    <h2 style={{ display: "flex", alignItems: "center", gap: "0.5rem", margin: "2rem 0 0.75rem" }}>
+      <img src={image} alt="" width={800} height={800} loading="lazy" decoding="async"
+        style={{ display: "block", width: "clamp(56px, 12vw, 84px)", height: "auto", aspectRatio: "1 / 1", objectFit: "contain", flexShrink: 0 }}
+      />
+      <span style={{ minWidth: 0 }}>{children}</span>
+    </h2>
+  );
+}
+
 export default function GuidePage() {
   return (
     <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
@@ -20,7 +31,7 @@ export default function GuidePage() {
 
       <p>{`それでは、この場の力を最大限受け取るためのステップを紹介します。`}</p>
 
-      <h2>① 探す</h2>
+      <GuideHeading image="/sagasu.webp">① 探す</GuideHeading>
 
       <p>{`暮らしの中でふと湧いた疑問を逃さずにすくい取るようにします。`}</p>
 
@@ -34,7 +45,7 @@ export default function GuidePage() {
 
       <p>{`あなたの疑問に、あなた自身が付き合いながら考えて感じる、この時間はとても大切です。`}</p>
 
-      <h2>② 知る</h2>
+      <GuideHeading image="/shiru.webp">② 知る</GuideHeading>
 
       <p>{`この場は人間の無意識など“見えづらいもの”を多く扱っています。`}</p>
 
@@ -50,7 +61,7 @@ export default function GuidePage() {
 
       <p>{`自らの世界から「なんで・どうして」を減らすことで、軽やかに生きる友となれれば幸いです。`}</p>
 
-      <h2>③ じぶんごと</h2>
+      <GuideHeading image="/jibungoto.webp">③ じぶんごと</GuideHeading>
 
       <p>{`最後に、とても大切にしたいのが「自分事する」ということ。`}</p>
 
@@ -66,7 +77,7 @@ export default function GuidePage() {
       
       そんな空間になればと思っています。`}</p>
 
-      <h2>正解などない世界で</h2>
+      <GuideHeading image="/chizu.webp">正解などない世界で</GuideHeading>
 
       <p>{`この場には「正しい」も「これをやるべき」もありません。`}</p>
 
