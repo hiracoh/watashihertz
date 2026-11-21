@@ -14,7 +14,7 @@ export default function GuidePage() {
     <main style={{ maxWidth: 768, margin: "0 auto", padding: "40px 16px" }}>
       <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2rem)", fontWeight: 600, marginBottom: "2.5rem" }}>
         このサイトの歩き方
-        <span aria-hidden="true" style={{ display: "block", width: "65px", height: "3px", background: "#817568", marginTop: "0.75rem" }} />
+        <span aria-hidden="true" style={{ display: "block", width: "100%", height: "2px", background: "linear-gradient(to right, #817568, transparent)", marginTop: "0.75rem" }} />
       </h1>
 
       <p>{`この場所では様々なコンテンツを通して、人間や人生を切り取っています。`}</p>
