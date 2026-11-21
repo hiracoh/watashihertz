@@ -8,10 +8,12 @@ export default function ContentDropdown() {
   return (
     <div
       className="content-dropdown"
-      onMouseEnter={(event) => {
-        if (event.nativeEvent.pointerType !== 'touch') setOpen(true);
+      onPointerEnter={(event) => {
+        if (event.pointerType === 'mouse') setOpen(true);
       }}
-      onMouseLeave={() => setOpen(false)}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse') setOpen(false);
+      }}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
