@@ -178,7 +178,7 @@ const featured = Array.isArray(articles)
             {[
               { image: "/sagasu.webp", label: "探す" },
               { image: "/shiru.webp", label: "知る" },
-              { image: "/jibungoto.webp", label: "自分事する" },
+              { image: "/jibungoto.webp", label: "じぶんごと" },
             ].map((step, index) => (
               <div className="home-steps-part" key={step.label}>
                 {index > 0 && (
