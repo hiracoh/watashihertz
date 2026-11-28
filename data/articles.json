@@ -11,6 +11,17 @@
     "featured": true
   },
   {
+    "id": "article-029",
+    "title": "大衆のあり方が映す社会",
+    "summary": "人類が対峙する今と未来",
+    "tags": [ "人間の傾向","よりよく生きる" ],
+    "charCount": 9500,
+    "url": "https://note.com/hiracoh/n/nf3f3d7dedb26",
+    "thumb": "https://assets.st-note.com/production/uploads/images/341678755/rectangle_large_type_2_ff2a8d035dcfb6d710f056530fa733b6.jpeg?width=1200",
+    "type": "article",
+    "planRequired": 0
+  },
+  {
     "id": "article-028",
     "title": "自然と人間",
     "summary": "自然は我々に何を見せているのか",
